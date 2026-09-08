@@ -8,6 +8,7 @@ the app, compatible playlist examples, and verifiable releases.
 
 ## Compatibility
 
+- Versions are available for **iOS**, **tvOS**, and **macOS**.
 - **HLS** (`.m3u8`), including **SAMPLE-AES** when the source provides an
   authorized ClearKey/raw key.
 - **DASH / MPD** (`.mpd`) with CENC and an authorized ClearKey/raw key.
@@ -57,4 +58,3 @@ official release. LiveContainer runs it inside its container.
 This repository does not publish source code, keys, signing profiles,
 credentials, or third-party material. Public issues should contain only data
 that can safely be shared.
-

@@ -3,6 +3,9 @@
 Public builds are released only from this repository's
 [Releases](https://github.com/jopsis/InputStreamPlayer/releases) section.
 
+InputStream Player is available for **iOS**, **tvOS**, and **macOS**. Each
+release identifies the platforms it includes.
+
 Each release includes:
 
 - the IPA;
@@ -34,4 +37,3 @@ official documentation:
 Then download the IPA and its checksum from this release, verify the file, and
 import it into LiveContainer. Refer to LiveContainer's official guide for its
 requirements, compatibility, and import steps.
-

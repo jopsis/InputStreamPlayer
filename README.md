@@ -9,6 +9,7 @@ la aplicación, ejemplos de listas compatibles y las releases verificables.
 
 ## Compatibilidad
 
+- Versiones disponibles para **iOS**, **tvOS** y **macOS**.
 - **HLS** (`.m3u8`), incluido **SAMPLE-AES** cuando la fuente proporciona una
   clave ClearKey/raw-key autorizada.
 - **DASH / MPD** (`.mpd`) con CENC y ClearKey/raw-key autorizada.
