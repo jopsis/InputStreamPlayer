@@ -7,6 +7,16 @@ la aplicación, ejemplos de listas compatibles y las releases verificables.
 > usuario tiene autorización de acceso. No incluye listas, credenciales ni
 > claves de terceros.
 
+## Capturas
+
+### iOS
+
+![Biblioteca de emisiones en iOS](assets/screenshots/ios-library.png)
+
+### tvOS
+
+![Añadir una fuente en tvOS](assets/screenshots/tvos-sources.png)
+
 ## Compatibilidad
 
 - Versiones disponibles para **iOS**, **tvOS** y **macOS**.

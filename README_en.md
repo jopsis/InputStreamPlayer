@@ -6,6 +6,16 @@ the app, compatible playlist examples, and verifiable releases.
 > InputStream Player is intended for content the user is authorized to access.
 > It does not include third-party playlists, credentials, or keys.
 
+## Screenshots
+
+### iOS
+
+![Broadcast library on iOS](assets/screenshots/ios-library.png)
+
+### tvOS
+
+![Add a source on tvOS](assets/screenshots/tvos-sources.png)
+
 ## Compatibility
 
 - Versions are available for **iOS**, **tvOS**, and **macOS**.
