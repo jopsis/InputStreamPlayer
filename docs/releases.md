@@ -1,8 +1,7 @@
 # Releases
 
 Las builds públicas se publican exclusivamente desde la sección
-[Releases](https://github.com/jopsis/InputStreamPlayer/releases) de este
-repositorio.
+[Releases](../../../releases) de este repositorio.
 
 InputStream Player está disponible para **iOS**, **tvOS** y **macOS**. Cada
 release indica las plataformas incluidas.

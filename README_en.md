@@ -33,9 +33,9 @@ structural examples are placeholders.
 
 ## Releases
 
-Published versions will appear under
-[Releases](https://github.com/jopsis/InputStreamPlayer/releases). Each IPA is
-accompanied by its SHA-256 checksum and release notes.
+Published versions will appear under this repository's
+[Releases](../../releases) section. Each IPA is accompanied by its SHA-256
+checksum and release notes.
 
 Read [how to verify and install a release](docs/releases_en.md) before
 installing it. SideStore distribution requires a valid Apple account and is

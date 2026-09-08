@@ -34,9 +34,9 @@ proveedores; las claves de los ejemplos estructurales son valores de reserva.
 
 ## Releases
 
-Las versiones publicadas aparecerán en la pestaña
-[Releases](https://github.com/jopsis/InputStreamPlayer/releases). Cada IPA se
-acompañará de su checksum SHA-256 y notas de versión.
+Las versiones publicadas aparecerán en la pestaña [Releases](../../releases) de
+este repositorio. Cada IPA se acompañará de su checksum SHA-256 y notas de
+versión.
 
 Consulta [cómo verificar e instalar una release](docs/releases.md) antes de
 instalarla. La distribución mediante SideStore requiere una cuenta de Apple
