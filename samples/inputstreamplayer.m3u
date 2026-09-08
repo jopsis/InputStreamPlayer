@@ -1,0 +1,48 @@
+#EXTM3U
+# Ejemplos de estructura: URLs y claves de reserva, sin contenido reproducible.
+
+#EXTINF:-1 tvg-id="canal-demo-hls" tvg-logo="https://example.invalid/canal-demo-hls.png" group-title="Demo",Canal Demo — HLS claro
+#KODIPROP:inputstream.adaptive.manifest_type=hls
+https://example.invalid/hls/playlist.m3u8
+
+#EXTINF:-1 tvg-id="canal-demo-sample-aes" tvg-logo="https://example.invalid/canal-demo-sample-aes.png" group-title="Demo",Canal Demo — HLS SAMPLE-AES con ClearKey
+#KODIPROP:inputstream.adaptive.manifest_type=hls
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=00112233445566778899aabbccddeeff:ffeeddccbbaa99887766554433221100
+https://example.invalid/hls-sample-aes/playlist.m3u8
+
+#EXTINF:-1 tvg-id="canal-demo-mpd" tvg-logo="https://example.invalid/canal-demo-mpd.png" group-title="Demo",Canal Demo — DASH / MPD con ClearKey
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=00112233445566778899aabbccddeeff:ffeeddccbbaa99887766554433221100
+https://example.invalid/dash/manifest.mpd
+
+#EXTINF:-1 tvg-id="canal-demo-smooth" tvg-logo="https://example.invalid/canal-demo-smooth.png" group-title="Demo",Canal Demo — Smooth Streaming con ClearKey
+#KODIPROP:inputstream.adaptive.manifest_type=ism
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=00112233445566778899aabbccddeeff:ffeeddccbbaa99887766554433221100
+https://example.invalid/smooth/Manifest
+
+# Demostraciones públicas de terceros. Su disponibilidad puede cambiar.
+
+#EXTINF:-1 tvg-name="Live (HLS en directo, claro)" group-title="Test HLS",Live — HLS en directo (Unified Streaming demo)
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=hls
+https://demo.unified-streaming.com/k8s/live/stable/live.isml/.m3u8
+
+#EXTINF:-1 tvg-name="Live (ISML en directo, claro)" group-title="Test ISML",Live — Smooth Streaming en directo (Unified Streaming demo)
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=ism
+https://demo.unified-streaming.com/k8s/live/stable/live.isml/Manifest
+
+#EXTINF:-1 tvg-name="Live (DASH en directo, claro)" group-title="Test DASH",Live — DASH en directo (Unified Streaming demo)
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+https://demo.unified-streaming.com/k8s/live/stable/live.isml/.mpd
+
+#EXTINF:-1 tvg-name="Axinom ClearKey" group-title="Test DASH",Axinom Tears of Steel (DASH + CENC raw-key, single-key)
+#KODIPROP:inputstream=inputstream.adaptive
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=9eb4050de44b4802932e27d75083e266:166634c675823c235a4a9446fad52e4d
+https://media.axprod.net/TestVectors/v7-MultiDRM-SingleKey/Manifest_1080p_ClearKey.mpd
