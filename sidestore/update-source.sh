@@ -61,6 +61,7 @@ while IFS= read -r tag; do
 
   version_entry="$(jq -n \
     --arg version "${tag#v}" \
+    --arg publishedAt "$(jq -r '.publishedAt' <<<"$release_json")" \
     --arg date "$(jq -r '.publishedAt' <<<"$release_json" | cut -dT -f1)" \
     --arg downloadURL "$(jq -r '.url' <<<"$ipa_entry")" \
     --argjson size "$(jq -r '.size' <<<"$ipa_entry")" \
@@ -69,6 +70,7 @@ while IFS= read -r tag; do
     --arg localizedDescription "$(jq -r '.body' <<<"$release_json")" \
     '{
       version: $version,
+      _publishedAt: $publishedAt,
       date: $date,
       downloadURL: $downloadURL,
       size: $size,
@@ -83,8 +85,12 @@ done <<<"$tags"
 
 # Orden cronológico inverso (más reciente primero): AltStore/SideStore
 # muestran como "latest" la primera versión de la lista cuyo min/maxOSVersion
-# sea compatible con el dispositivo.
-versions_json="$(jq -c 'sort_by(.date) | reverse' <<<"$versions_json")"
+# sea compatible con el dispositivo. Se ordena por el timestamp completo
+# (_publishedAt), no por `date` (solo YYYY-MM-DD): dos releases publicadas el
+# mismo día quedarían en orden arbitrario si se ordenara solo por fecha.
+versions_json="$(jq -c '
+  sort_by(._publishedAt) | reverse | map(del(._publishedAt))
+' <<<"$versions_json")"
 
 jq -n \
   --arg name "InputStream Player" \

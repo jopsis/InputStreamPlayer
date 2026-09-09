@@ -13,15 +13,6 @@
       "tintColor": "14B85C",
       "versions": [
         {
-          "version": "0.4.0",
-          "date": "2026-09-09",
-          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.4.0/InputStreamPlayer-iOS-0.4.0-4-unsigned.ipa",
-          "size": 14786740,
-          "minOSVersion": "16.0",
-          "sha256": "9c15d485ac7274ccc1d56e0e9ba979da422246ce7a279b81eae5615777aa8cdd",
-          "localizedDescription": "Versión 0.4.0."
-        },
-        {
           "version": "0.4.1",
           "date": "2026-09-09",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.4.1/InputStreamPlayer-iOS-0.4.1-5-unsigned.ipa",
@@ -29,6 +20,15 @@
           "minOSVersion": "16.0",
           "sha256": "174c3a26586bb03072586ef614d598255953c5aa5c6c558130355292ae254fa3",
           "localizedDescription": "\n- iOS conserva las fuentes de fichero entre reinicios mediante bookmarks persistentes; editar el nombre de una fuente ya no elimina su lista en iOS ni tvOS.\n- Los selectores de pistas iOS admiten catálogos largos con desplazamiento completo y la opción automática muestra la calidad efectiva. Los controles de pantalla completa de iOS y tvOS se ocultan tras unos segundos de inactividad y reaparecen al interactuar.\n- HLS SAMPLE-AES/ClearKey incorpora más margen de búfer, reintentos de segmento y un proxy progresivo robusto ante escrituras interrumpidas y respuestas parciales. ISML/ClearKey conserva el orden de los fragmentos, reintenta fallos transitorios y salta de forma acotada huecos que ya han abandonado la ventana DVR, sin detener definitivamente el feed.\n- El descifrado AES-CTR reutiliza el contexto criptográfico y procesa contadores por lotes; el escaneo y la normalización PIFF evitan conversiones y copias completas repetidas. En la prueba Release de 8 MiB, cifrar y descifrar tarda aproximadamente 29 ms en el equipo de validación.\n- Si dos paradas reales de caché se repiten en un minuto usando calidad automática, el reproductor selecciona una representación inferior y reconstruye la sesión una sola vez, evitando oscilaciones. Se añadieron métricas de caché, pérdidas de fotogramas y decoder para facilitar diagnósticos sin registrar URLs ni claves.\n- Corregido que iOS y tvOS atenuaran la pantalla y acabaran bloqueándola durante la reproducción: `IOSMPVPlaybackController` desactiva `UIApplication.isIdleTimerDisabled` mientras `pause=no` y lo restaura al pausar o detener la sesión. El audio en segundo plano y la restauración de la reproducción al desbloquear no cambian.\n- Corregido que una lista JSON completa fallara al importarse si un solo canal traía `\"key\": \"\"` (habitual en listas [operador de pago] reales para \"todavía sin clave\"): `JSONPlaylistParser`/`M3UPlaylistParser` tratan una clave ClearKey vacía como contenido claro en vez de lanzar `invalidLicenseKey`. Además `PlaylistParsingError` ahora es `LocalizedError` con mensajes en español y envuelve los fallos de canal/muestra con su nombre (`Canal \"X\": …`), en vez del genérico \"The operation couldn't be completed (error N)\" de iOS.\n- Verificados 111 tests compartidos (107 de la base 0.4.0 más 4 de regresión para el fix de claves ClearKey vacías) y reproducción real de HLS SAMPLE-AES y ISML ClearKey en iPhone 17 Pro Simulator y Apple TV 4K Simulator, incluyendo recuperación adaptativa y continuidad de audio/vídeo. Los simuladores usan decodificación software; VideoToolbox continúa siendo la ruta solicitada en dispositivo. El fix de bloqueo de pantalla depende de hardware real para su validación: el Simulator no atenúa ni bloquea la pantalla."
+        },
+        {
+          "version": "0.4.0",
+          "date": "2026-09-09",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.4.0/InputStreamPlayer-iOS-0.4.0-4-unsigned.ipa",
+          "size": 14786740,
+          "minOSVersion": "16.0",
+          "sha256": "9c15d485ac7274ccc1d56e0e9ba979da422246ce7a279b81eae5615777aa8cdd",
+          "localizedDescription": "Versión 0.4.0."
         },
         {
           "version": "0.3.0",
