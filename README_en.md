@@ -45,7 +45,9 @@ structural examples are placeholders.
 
 Published versions will appear under this repository's
 [Releases](../../releases) section. Each IPA is accompanied by its SHA-256
-checksum and release notes.
+checksum and release notes. The [SideStore source](#add-inputstream-player-as-a-sidestore-source)
+is refreshed with every release and lets you install/update without visiting
+this tab.
 
 Read [how to verify and install a release](docs/releases_en.md) before
 installing it. SideStore distribution requires a valid Apple account and is
@@ -54,14 +56,28 @@ subject to Apple's signing limits.
 ## Installing on iPhone and iPad
 
 Install InputStream Player with **SideStore**, preferably inside
-**LiveContainer**. Download the IPA from an official release and first follow
-the official installation guides:
+**LiveContainer**. First follow the official installation guides:
 
 - [Install SideStore](https://docs.sidestore.io/docs/installation/install)
 - [Install LiveContainer with SideStore](https://livecontainer.github.io/docs/installation)
 
-Once LiveContainer is configured, import the InputStream Player IPA from the
-official release. LiveContainer runs it inside its container.
+### Add InputStream Player as a SideStore source
+
+Instead of downloading the IPA by hand on every release, add this repository
+as a SideStore **source** and new versions will show up there with an
+"Update" button:
+
+[![Add to SideStore](https://img.shields.io/badge/SideStore-Add%20source-14B85C)](sidestore://source?url=https%3A%2F%2Fjopsis.github.io%2FInputStreamPlayer%2Fsidestore%2Fapps.json)
+
+- Direct button (open it from your iPhone/iPad, it won't work on desktop):
+  [`sidestore://source?url=https://jopsis.github.io/InputStreamPlayer/sidestore/apps.json`](sidestore://source?url=https%3A%2F%2Fjopsis.github.io%2FInputStreamPlayer%2Fsidestore%2Fapps.json)
+- Add it manually in SideStore → Sources → **+** → Add Source:
+  `https://jopsis.github.io/InputStreamPlayer/sidestore/apps.json`
+- More details: [sidestore/](https://jopsis.github.io/InputStreamPlayer/sidestore/)
+
+Once LiveContainer is configured, import the InputStream Player IPA (from the
+official release, or from SideStore's own managed install) to run it inside
+its container.
 
 ## Repository scope
 

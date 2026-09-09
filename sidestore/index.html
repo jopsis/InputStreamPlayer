@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>InputStream Player — Source de SideStore</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    margin: 0;
+    padding: 2rem 1.25rem 3rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #f5f7f6;
+    color: #14201a;
+    display: flex;
+    justify-content: center;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { background: #0f1512; color: #eef4f0; }
+  }
+  main { max-width: 40rem; width: 100%; }
+  .icon {
+    width: 96px;
+    height: 96px;
+    border-radius: 22px;
+    display: block;
+    margin: 0 auto 1.25rem;
+    box-shadow: 0 6px 24px rgba(20, 184, 92, 0.25);
+  }
+  h1 { text-align: center; font-size: 1.6rem; margin: 0 0 0.4rem; }
+  p.lead { text-align: center; opacity: 0.75; margin: 0 0 2rem; }
+  .card {
+    background: rgba(20, 184, 92, 0.08);
+    border: 1px solid rgba(20, 184, 92, 0.25);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .add-button {
+    display: block;
+    text-align: center;
+    background: #14b85c;
+    color: #04180d;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.9rem 1.25rem;
+    border-radius: 12px;
+    font-size: 1.05rem;
+  }
+  .add-button:active { opacity: 0.85; }
+  code, .url-box {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.85rem;
+    word-break: break-all;
+  }
+  .url-box {
+    display: block;
+    margin-top: 0.75rem;
+    padding: 0.75rem;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+  }
+  @media (prefers-color-scheme: dark) {
+    .url-box { background: rgba(255, 255, 255, 0.08); }
+  }
+  ol { padding-left: 1.25rem; line-height: 1.6; }
+  a { color: #0e9a4c; }
+  @media (prefers-color-scheme: dark) { a { color: #4fe08f; } }
+  footer { text-align: center; margin-top: 2rem; font-size: 0.8rem; opacity: 0.6; }
+</style>
+</head>
+<body>
+<main>
+  <img class="icon" src="../assets/icon.png" alt="Icono de InputStream Player">
+  <h1>InputStream Player en SideStore</h1>
+  <p class="lead">Instala y actualiza InputStream Player directamente desde SideStore, sin descargar el IPA a mano en cada release.</p>
+
+  <div class="card">
+    <a class="add-button" href="sidestore://source?url=https%3A%2F%2Fjopsis.github.io%2FInputStreamPlayer%2Fsidestore%2Fapps.json">
+      Añadir source a SideStore
+    </a>
+    <span class="url-box">https://jopsis.github.io/InputStreamPlayer/sidestore/apps.json</span>
+  </div>
+
+  <p>Si el botón no abre SideStore automáticamente (por ejemplo, al abrir este enlace fuera de Safari en iOS), añade la fuente a mano:</p>
+  <ol>
+    <li>Abre <strong>SideStore</strong> → pestaña <strong>Sources</strong>.</li>
+    <li>Toca <strong>+</strong> → <strong>Add Source</strong>.</li>
+    <li>Pega la URL de arriba.</li>
+  </ol>
+
+  <p>Antes de instalar, revisa los requisitos previos: <a href="https://docs.sidestore.io/docs/installation/install">instalación de SideStore</a> y, si vas a ejecutar la app dentro de LiveContainer, <a href="https://livecontainer.github.io/docs/installation">instalación de LiveContainer con SideStore</a>. Detalles de verificación y checksums en <a href="../docs/releases.md">docs/releases.md</a>.</p>
+
+  <footer>
+    InputStream Player no incluye listas, credenciales ni claves de terceros.
+    <br>
+    <a href="https://github.com/jopsis/InputStreamPlayer">Repositorio en GitHub</a>
+  </footer>
+</main>
+</body>
+</html>

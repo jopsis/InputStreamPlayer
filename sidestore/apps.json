@@ -1,0 +1,37 @@
+{
+  "name": "InputStream Player",
+  "identifier": "com.InputStreamPlayer.sidestore-source",
+  "sourceURL": "https://jopsis.github.io/InputStreamPlayer/sidestore/apps.json",
+  "apps": [
+    {
+      "name": "InputStream Player",
+      "bundleIdentifier": "com.InputStreamPlayer",
+      "developerName": "jopsis",
+      "subtitle": "Reproductor HLS/DASH/Smooth Streaming con ClearKey raw-key",
+      "localizedDescription": "Reproductor nativo para iOS/tvOS/macOS de listas HLS, DASH/MPD y Microsoft Smooth Streaming (ISML), con soporte ClearKey/raw-key para el contenido autorizado por el usuario. No implementa FairPlay, Widevine ni PlayReady.",
+      "iconURL": "https://jopsis.github.io/InputStreamPlayer/assets/icon.png",
+      "tintColor": "14B85C",
+      "versions": [
+        {
+          "version": "0.4.0",
+          "date": "2026-09-09",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.4.0/InputStreamPlayer-iOS-0.4.0-4-unsigned.ipa",
+          "size": 14786740,
+          "minOSVersion": "16.0",
+          "sha256": "9c15d485ac7274ccc1d56e0e9ba979da422246ce7a279b81eae5615777aa8cdd",
+          "localizedDescription": "Versión 0.4.0."
+        },
+        {
+          "version": "0.3.0",
+          "date": "2026-09-08",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.3.0/InputStreamPlayer-iOS-0.3.0-3-unsigned.ipa",
+          "size": 14743748,
+          "minOSVersion": "16.0",
+          "sha256": "9ca2bbaf3a19d9a2f869dbaf2892e28b111ef4e5be6b83342462a8019a45f3ad",
+          "localizedDescription": "Versión 0.3.0."
+        }
+      ]
+    }
+  ],
+  "news": []
+}
