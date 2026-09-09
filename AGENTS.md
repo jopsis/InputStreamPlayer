@@ -8,34 +8,49 @@ de firma ni credenciales.
 
 ## Checklist al publicar una release nueva
 
-1. Construir el IPA sin firmar (iOS y, si aplica, tvOS) desde el repositorio
-   de código con `Tooling/distribution/build-ios-ipa.sh` /
-   `build-tvos-ipa.sh`, alineado con la versión y build number del proyecto
-   Xcode.
-2. Subir manualmente en GitHub → **Releases** → *Draft a new release*:
-   - tag `vX.Y.Z` (coincide con `MARKETING_VERSION`);
-   - el/los IPA sin firmar, con nombre
-     `InputStreamPlayer-iOS-X.Y.Z-BUILD-unsigned.ipa` (y su equivalente tvOS);
-   - el fichero `.sha256` de cada IPA;
-   - notas de versión en la descripción de la release.
-3. **Actualizar el source de SideStore** (no se hace solo):
-   ```sh
-   sidestore/update-source.sh
-   git add sidestore/apps.json
-   git commit -m "sidestore: actualiza apps.json para vX.Y.Z"
-   git push
-   ```
-   El script lee las releases publicadas con `gh` (requiere estar
-   autenticado) y regenera `sidestore/apps.json` con la versión, tamaño,
-   sha256 y fecha reales de cada release que tenga un IPA de iOS sin firmar
-   adjunto. **Sin este paso, SideStore no verá la versión nueva** aunque la
-   release ya esté publicada en GitHub — el source es un fichero estático,
-   no consulta la API de GitHub en directo.
-4. Comprobar que GitHub Pages sirve el JSON actualizado:
+Desde 2026-09-09 este paso está automatizado por
+`Tooling/distribution/publish-release.sh` en el repositorio de código (privado).
+No lo dupliques a mano salvo que ese script falle y necesites recuperar el
+proceso manual descrito más abajo.
+
+1. En el repositorio de código: construir el IPA sin firmar de iOS y tvOS
+   (misma versión/build en ambos) con `Tooling/distribution/build-ios-ipa.sh`
+   / `build-tvos-ipa.sh`.
+2. En el repositorio de código: `Tooling/distribution/publish-release.sh
+   --check` y, si todo va bien, `Tooling/distribution/publish-release.sh` sin
+   flags. Ese script (ejecutándose desde el checkout del código, con este
+   repositorio como `PUBLIC_REPO_DIR` — por defecto la ruta hermana
+   `../InputStreamPlayer`):
+   - crea la release `vX.Y.Z` en GitHub con los 4 artefactos (IPA + `.sha256`
+     de iOS y tvOS) y las notas tomadas del `CHANGELOG.md` del código;
+   - ejecuta aquí mismo `sidestore/update-source.sh`, y si `apps.json` cambió,
+     hace commit y `push` en este repositorio y fuerza un rebuild de Pages.
+   - Exige que **este** repositorio esté en `main`, limpio y sincronizado con
+     `origin/main` antes de tocar nada — si tienes cambios locales aquí,
+     confírmalos o descártalos antes de ejecutarlo.
+3. Comprobar que GitHub Pages sirve el JSON actualizado:
    `https://jopsis.github.io/InputStreamPlayer/sidestore/apps.json` (puede
    tardar uno o dos minutos en desplegarse tras el push).
-5. Si cambia el `IPHONEOS_DEPLOYMENT_TARGET` del proyecto Xcode, actualizar la
+4. Si cambia el `IPHONEOS_DEPLOYMENT_TARGET` del proyecto Xcode, actualizar la
    variable `min_os_version` en `sidestore/update-source.sh` a la vez.
+
+### Recuperación manual (si `publish-release.sh` no está disponible)
+
+```sh
+sidestore/update-source.sh
+git add sidestore/apps.json
+git commit -m "sidestore: actualiza apps.json para vX.Y.Z"
+git push
+```
+
+`sidestore/update-source.sh` lee las releases ya publicadas con `gh` (requiere
+estar autenticado) y regenera `sidestore/apps.json` con la versión, tamaño,
+sha256 y fecha reales de cada release que tenga un IPA de iOS sin firmar
+adjunto — pero **no crea la release por sí solo**: si el IPA/`.sha256` no
+están subidos a mano en GitHub → Releases primero, no hay nada que leer.
+**Sin ejecutar este script tras publicar una release, SideStore no verá la
+versión nueva** aunque ya esté en GitHub — el source es un fichero estático,
+no consulta la API de GitHub en directo.
 
 ## Dónde vive cada cosa
 
