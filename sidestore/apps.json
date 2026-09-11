@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.5.9",
+          "date": "2026-09-11",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.9/InputStreamPlayer-iOS-0.5.9-16-unsigned.ipa",
+          "size": 15223389,
+          "minOSVersion": "16.0",
+          "sha256": "469328daadfe93b5aae096a5ade48ac3d90e7adc686e8852ac42f10851d1829d",
+          "localizedDescription": "MPD CBCD. Playlists .ispl (inputstreamplayer encriptadas). Corrección en canales que requieren cabeceras HTTP personalizadas."
+        },
+        {
           "version": "0.5.8",
           "date": "2026-09-10",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.8/InputStreamPlayer-iOS-0.5.8-15-unsigned.ipa",
