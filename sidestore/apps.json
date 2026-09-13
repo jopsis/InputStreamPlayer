@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.5.11",
+          "date": "2026-09-13",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.11/InputStreamPlayer-iOS-0.5.11-18-unsigned.ipa",
+          "size": 15223950,
+          "minOSVersion": "16.0",
+          "sha256": "56516ac27b62d64f83f9055809f7998e31af119b67d079219e997dd4a47a7930",
+          "localizedDescription": "Soporte para listas cifradas. Corregidos los fallos que impedían cargar listas guardadas en Windows y canales que necesitan cabeceras HTTP propias."
+        },
+        {
           "version": "0.5.9",
           "date": "2026-09-11",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.9/InputStreamPlayer-iOS-0.5.9-16-unsigned.ipa",
