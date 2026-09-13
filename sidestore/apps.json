@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.5.12",
+          "date": "2026-09-13",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.12/InputStreamPlayer-iOS-0.5.12-19-unsigned.ipa",
+          "size": 15224607,
+          "minOSVersion": "16.0",
+          "sha256": "474d77d0ba4743d6118d8c39867368fafe44f22c8032cd4560058e5bed0e7372",
+          "localizedDescription": "Las listas con alguna clave errónea ya se importan: solo se descarta el canal afectado en vez de fallar entera. Soporte para listas que declaran cabeceras en la propia URL."
+        },
+        {
           "version": "0.5.11",
           "date": "2026-09-13",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.11/InputStreamPlayer-iOS-0.5.11-18-unsigned.ipa",
