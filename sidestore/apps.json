@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.5.13",
+          "date": "2026-09-15",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.13/InputStreamPlayer-iOS-0.5.13-20-unsigned.ipa",
+          "size": 15251204,
+          "minOSVersion": "16.0",
+          "sha256": "bb503000d044494eaa6df9fedf3ef04473c39e06934caaef922c9cf78c243309",
+          "localizedDescription": "Ahora puedes recargar tus listas cuando quieras, y programar que cada una se actualice sola cada X horas y minutos."
+        },
+        {
           "version": "0.5.12",
           "date": "2026-09-13",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.12/InputStreamPlayer-iOS-0.5.12-19-unsigned.ipa",
