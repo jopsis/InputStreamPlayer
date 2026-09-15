@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.5.15",
+          "date": "2026-09-15",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.15/InputStreamPlayer-iOS-0.5.15-22-unsigned.ipa",
+          "size": 15270393,
+          "minOSVersion": "16.0",
+          "sha256": "8791293418a81c80c83843b63a3f495bbb12820f3e8b515b3b853d3e33741b79",
+          "localizedDescription": "Corregido un fallo que cortaba la reproducción de muchos canales DASH en directo a los pocos segundos de empezar."
+        },
+        {
           "version": "0.5.14",
           "date": "2026-09-15",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.14/InputStreamPlayer-iOS-0.5.14-21-unsigned.ipa",
