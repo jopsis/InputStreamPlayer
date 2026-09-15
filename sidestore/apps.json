@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.5.14",
+          "date": "2026-09-15",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.14/InputStreamPlayer-iOS-0.5.14-21-unsigned.ipa",
+          "size": 15270437,
+          "minOSVersion": "16.0",
+          "sha256": "557462ac1aea2c33850b4cde042345c0e632d46fe292da1ed613df22be38baec",
+          "localizedDescription": "Nuevas listas personalizadas: crea tus propias listas y ve pegando canales en formato M3U, con la opción de borrarlos uno a uno."
+        },
+        {
           "version": "0.5.13",
           "date": "2026-09-15",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.13/InputStreamPlayer-iOS-0.5.13-20-unsigned.ipa",
