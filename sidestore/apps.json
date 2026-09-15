@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.5.16",
+          "date": "2026-09-15",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.16/InputStreamPlayer-iOS-0.5.16-23-unsigned.ipa",
+          "size": 15288146,
+          "minOSVersion": "16.0",
+          "sha256": "c2a372dfddef406c16acced4c8ccb7179daa22f762b83bffa62686ed2f33ce95",
+          "localizedDescription": "Los canales DASH en directo ahora abren mucho más rápido: de casi un minuto a unos pocos segundos."
+        },
+        {
           "version": "0.5.15",
           "date": "2026-09-15",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.15/InputStreamPlayer-iOS-0.5.15-22-unsigned.ipa",
