@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.5.21",
+          "date": "2026-09-16",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.21/InputStreamPlayer-iOS-0.5.21-28-unsigned.ipa",
+          "size": 15505026,
+          "minOSVersion": "16.0",
+          "sha256": "1e1a640f5cecbe593fc24aa018f49add0814546f815be5e04d2b2f2fc212e435",
+          "localizedDescription": "La guía, a tu manera\n\n• La guía sigue el orden de tus listas en vez del alfabético.\n• Nuevo filtro por grupo en la guía, para ir directo al que te interesa sin recorrerla entera.\n• Si tienes un canal en varios grupos, ahora aparece en todos y cada uno reproduce su propia versión.\n• Las categorías de Emisiones también salen en el orden de tus listas.\n• Añadir una fuente o una guía se ve más claro: cada forma de hacerlo en su bloque y con su botón."
+        },
+        {
           "version": "0.5.20",
           "date": "2026-09-16",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.20/InputStreamPlayer-iOS-0.5.20-27-unsigned.ipa",
