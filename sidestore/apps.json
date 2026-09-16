@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.5.18",
+          "date": "2026-09-16",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.18/InputStreamPlayer-iOS-0.5.18-25-unsigned.ipa",
+          "size": 15487764,
+          "minOSVersion": "16.0",
+          "sha256": "098fde2758f1dc36a742a6ecf1daf20d9a4550154d8cf301cf43c3121a4ac8dc",
+          "localizedDescription": "Guía de programación (EPG)\n\n• Nueva sección Guía: mira qué están dando en cada canal, en lista o en rejilla, y salta a reproducirlo desde ahí.\n• Alta de guías XMLTV por URL, comprimidas o no, con refresco automático. Si tu lista ya trae la suya declarada, se da de alta sola.\n• Las tarjetas de canal muestran qué hay ahora y qué viene después.\n• El reproductor enseña el programa en curso y el siguiente.\n• Ya se aceptan enlaces de Google Drive: pega el de compartir y funciona."
+        },
+        {
           "version": "0.5.17",
           "date": "2026-09-15",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.17/InputStreamPlayer-iOS-0.5.17-24-unsigned.ipa",
