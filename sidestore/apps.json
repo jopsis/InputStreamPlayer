@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.5.23",
+          "date": "2026-09-17",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.23/InputStreamPlayer-iOS-0.5.23-30-unsigned.ipa",
+          "size": 15517182,
+          "minOSVersion": "16.0",
+          "sha256": "8582c6850a9ea8d1947e7e7d4b8e4129cdc28a35e99d8ad3b83d9820b83f3835",
+          "localizedDescription": "Canales con varias claves\n\n• Los canales que declaran una clave por pista ya funcionan. Antes ni aparecían en la lista.\n• Se aceptan las tres formas de escribirlas: kid:clave, varias separadas por comas, y el objeto JSON.\n• Con varias claves se descifran todas las pistas. Antes, de haberlas leído, habrías tenido imagen sin sonido o al revés."
+        },
+        {
           "version": "0.5.22",
           "date": "2026-09-17",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.22/InputStreamPlayer-iOS-0.5.22-29-unsigned.ipa",
