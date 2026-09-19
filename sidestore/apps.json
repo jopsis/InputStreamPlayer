@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.5.24",
+          "date": "2026-09-19",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.24/InputStreamPlayer-iOS-0.5.24-31-unsigned.ipa",
+          "size": 15536527,
+          "minOSVersion": "16.0",
+          "sha256": "81d3f8fd40202ec07bd3a3a82e41c09e358516cda8a4cc23e04d45952c0c7da2",
+          "localizedDescription": "Información de la emisión\n\n• Botón de información en el reproductor: resolución, fotogramas por segundo, códecs, tasa de bits, sonido y si la decodificación va por hardware o por CPU.\n• Cuando un canal no abre, se enseña el código con el que contestó el servidor (401, 403, 404, 429, 502…) y qué significa, en vez de un «fallo al cargar» a secas.\n• Disponible en iOS y en tvOS."
+        },
+        {
           "version": "0.5.23",
           "date": "2026-09-17",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.23/InputStreamPlayer-iOS-0.5.23-30-unsigned.ipa",
