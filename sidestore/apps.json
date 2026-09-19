@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.5.25",
+          "date": "2026-09-19",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.25/InputStreamPlayer-iOS-0.5.25-32-unsigned.ipa",
+          "size": 15541729,
+          "minOSVersion": "16.0",
+          "sha256": "3ddb4067143bf0b821b08ed140bb2d355b82888b9facbbe7b3909846148b3b9d",
+          "localizedDescription": "Una clave por calidad\n\n• Los canales cuyo manifiesto cifra cada calidad con una clave distinta ya arrancan: las pistas cuya clave no está en la lista se descartan en vez de tumbar el canal entero.\n• Esas calidades tampoco aparecen ya en el selector de imagen, porque no se pueden ver.\n• Corregido un fallo de la versión anterior que hacía que los canales DASH con una sola clave usaran el juego de claves indexado, y con algunos operadores eso no descifra."
+        },
+        {
           "version": "0.5.24",
           "date": "2026-09-19",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.24/InputStreamPlayer-iOS-0.5.24-31-unsigned.ipa",
