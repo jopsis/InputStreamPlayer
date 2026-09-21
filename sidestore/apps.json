@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.5.27",
+          "date": "2026-09-21",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.27/InputStreamPlayer-iOS-0.5.27-34-unsigned.ipa",
+          "size": 15614498,
+          "minOSVersion": "16.0",
+          "sha256": "9c125c4afcd6adf4b1435c5030833894855cd996b57d30034501b2bab3dbe13a",
+          "localizedDescription": "Guía navegable\n\n• La guía abre en rejilla y llega hasta ocho días atrás, para poder elegir un programa ya emitido.\n• Los canales sin guía, y los huecos de los que la tienen a ratos, se rellenan con bloques de una hora para poder saltar a un momento concreto.\n• Una guía añadida a mano se actualiza sola cada doce horas; antes se descargaba una vez y no volvía a mirarse.\n• tvOS: seis canales por fila en Emisiones, y en la rejilla el mando ya no se para en el borde de la franja horaria.\n• tvOS: el IPA lo rechazaban algunos instaladores de sideloading. Corregido."
+        },
+        {
           "version": "0.5.26",
           "date": "2026-09-21",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.26/InputStreamPlayer-iOS-0.5.26-33-unsigned.ipa",
