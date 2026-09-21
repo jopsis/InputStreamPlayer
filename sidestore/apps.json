@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.5.26",
+          "date": "2026-09-21",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.26/InputStreamPlayer-iOS-0.5.26-33-unsigned.ipa",
+          "size": 15606908,
+          "minOSVersion": "16.0",
+          "sha256": "b06cd7008664edd96b94d3130816a8f982a5f05fb975a291c92d1984e2ddf890",
+          "localizedDescription": "Catchup: ver programas ya emitidos\n\n• Desde la guía puedes pulsar un programa que ya pasó y verlo, si tu lista trae archivo. Funciona en iOS y en tvOS.\n• Se lee el formato de catchup de las listas M3U (catchup, catchup-source, catchup-days…) y los campos catchup_url y catchup_key de las listas JSON, con su clave propia.\n• El programa se sirve según se ve, sin descargarlo entero, y la barra de tiempo permite saltar a cualquier minuto.\n• La guía conserva ahora los programas ya emitidos, así que el pasado se va llenando día a día hasta lo que cubra tu archivo.\n• Botón de información con resolución, códecs y tasa de bits, y el código del servidor cuando un canal no abre.\n• tvOS: el selector de pistas y el de día pasan a un panel, y se arreglan los rótulos que se partían en dos líneas."
+        },
+        {
           "version": "0.5.25",
           "date": "2026-09-19",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.25/InputStreamPlayer-iOS-0.5.25-32-unsigned.ipa",
