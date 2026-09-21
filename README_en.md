@@ -25,6 +25,9 @@ the app, compatible playlist examples, and verifiable releases.
 - **Microsoft Smooth Streaming** (`.ism` / `.isml` and `Manifest`) with an
   authorized ClearKey/raw key.
 - **M3U/M3U8** and **JSON** sources.
+- **Programme guide** from XMLTV guides, plain or gzipped.
+- **Catch-up**: watch programmes that already aired when the playlist declares
+  the channel's archive. See [how to declare it](docs/formatos-de-listas_en.md#catch-up).
 
 FairPlay, Widevine, and PlayReady licenses requiring a license server are not
 supported. Only add a key to a playlist when the content owner has expressly

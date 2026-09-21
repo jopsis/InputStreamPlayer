@@ -26,6 +26,9 @@ la aplicación, ejemplos de listas compatibles y las releases verificables.
 - **Microsoft Smooth Streaming** (`.ism` / `.isml` y `Manifest`) con
   ClearKey/raw-key autorizada.
 - Fuentes en formato **M3U/M3U8** y **JSON**.
+- **Guía de programación** a partir de guías XMLTV, con o sin gzip.
+- **Catchup**: ver programas ya emitidos cuando la lista declara el archivo del
+  canal. Ver [cómo declararlo](docs/formatos-de-listas.md#catchup).
 
 No se admiten licencias FairPlay, Widevine o PlayReady que requieran un servidor
 de licencias. Una clave solo debe añadirse a una lista cuando el titular del

@@ -1,4 +1,4 @@
-#EXTM3U
+#EXTM3U x-tvg-url="https://example.invalid/guide.xml.gz"
 # Structure examples: placeholder URLs and keys, with no playable content.
 
 #EXTINF:-1 tvg-id="demo-channel-hls" tvg-logo="https://example.invalid/demo-channel-hls.png" group-title="Demo",Demo Channel — Clear HLS
@@ -22,6 +22,20 @@ https://example.invalid/dash/manifest.mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=00112233445566778899aabbccddeeff:ffeeddccbbaa99887766554433221100
 https://example.invalid/smooth/Manifest
+
+# Catch-up: the archive has its own address and its own key. The times come
+# from the guide declared in the header. See docs/formatos-de-listas_en.md.
+
+#EXTINF:-1 tvg-id="demo-channel-catchup" group-title="Demo" catchup="default" catchup-days="8" catchup-source="https://example.invalid/archive/demo-channel/Manifest?device_profile=mss&start_time={start_iso}&end_time={end_iso}",Demo Channel — Smooth with catch-up
+#KODIPROP:inputstream.adaptive.manifest_type=ism
+#KODIPROP:inputstream.adaptive.license_type=clearkey
+#KODIPROP:inputstream.adaptive.license_key=00112233445566778899aabbccddeeff:ffeeddccbbaa99887766554433221100
+#KODIPROP:inputstream.adaptive.catchup_license_key=aabbccddeeff00112233445566778899:99887766554433221100ffeeddccbbaa
+https://example.invalid/live/demo-channel/Manifest
+
+#EXTINF:-1 tvg-id="demo-channel-catchup-append" group-title="Demo" catchup="append" catchup-days="7" catchup-source="?utc={utc}&utcend={utcend}",Demo Channel — DASH with catch-up (append mode)
+#KODIPROP:inputstream.adaptive.manifest_type=mpd
+https://example.invalid/live/demo-channel/manifest.mpd
 
 # Public third-party demonstrations. Availability may change.
 

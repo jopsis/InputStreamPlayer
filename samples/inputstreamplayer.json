@@ -6,5 +6,15 @@
     "tvg_id": "canal-demo",
     "group": "Demo",
     "logo": "https://example.invalid/canal-demo.png"
+  },
+  {
+    "name": "Canal Demo con catchup",
+    "url": "https://example.invalid/directo/canal-demo/Manifest",
+    "key": "00112233445566778899aabbccddeeff:ffeeddccbbaa99887766554433221100",
+    "tvg_id": "canal-demo-catchup",
+    "group": "Demo",
+    "catchup_url": "https://example.invalid/archivo/canal-demo/Manifest?device_profile=mss",
+    "catchup_key": "aabbccddeeff00112233445566778899:99887766554433221100ffeeddccbbaa",
+    "catchup_days": 8
   }
 ]
