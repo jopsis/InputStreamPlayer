@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.5.28",
+          "date": "2026-09-22",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.28/InputStreamPlayer-iOS-0.5.28-35-unsigned.ipa",
+          "size": 15627244,
+          "minOSVersion": "16.0",
+          "sha256": "b576ba02ab50310f977d19c660433ea0aa0fd7597db7263e8ee97ececc97c5f0",
+          "localizedDescription": "Arreglos de campo\n\n• Los menús ya no van a tirones mientras se reproduce: el vídeo se componía en el hilo principal y ahora va en el suyo.\n• Apple TV: no se descargaba ninguna guía EPG. Las instantáneas iban a una carpeta donde tvOS no deja escribir.\n• Apple TV: ya se puede cambiar de pista de audio y de imagen. El panel se cerraba solo a los tres segundos y no respondía al OK.\n• «Ver desde el principio» seguía con el directo en lugar de ir al inicio del programa.\n• Una guía que no se descarga ahora dice por qué, en su propia fila.\n• Las listas con varias claves en una misma línea descifran mejor: se manda también una clave de reserva."
+        },
+        {
           "version": "0.5.27",
           "date": "2026-09-21",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.27/InputStreamPlayer-iOS-0.5.27-34-unsigned.ipa",
