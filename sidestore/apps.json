@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.5.29",
+          "date": "2026-09-23",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.29/InputStreamPlayer-iOS-0.5.29-36-unsigned.ipa",
+          "size": 15694561,
+          "minOSVersion": "16.0",
+          "sha256": "2e6c2b5d6364a9854a9495b508d84690fb43f2b342920045f8554483596c444f",
+          "localizedDescription": "\n- Incrementada y alineada la versión visible de iOS y tvOS a `0.5.29` (build 36).\n- Recoge la entrada siguiente: la decodificación deja de copiar cada fotograma\n  a memoria normal y de vuelta. Es el cambio de rendimiento más grande que ha\n  tenido la reproducción hasta ahora, y no toca ni una línea de la interfaz.\n- **tvOS va sin probar en aparato.** El cambio es el mismo código y la misma\n  biblioteca reconstruida, y en iPhone el color sale correcto, pero un Apple TV\n  no ha visto todavía esta versión. Si el color saliera mal, se vuelve atrás\n  con una línea."
+        },
+        {
           "version": "0.5.28",
           "date": "2026-09-22",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.28/InputStreamPlayer-iOS-0.5.28-35-unsigned.ipa",
