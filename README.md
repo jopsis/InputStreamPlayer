@@ -83,6 +83,12 @@ Una vez configurado LiveContainer, importa la IPA de InputStream Player (desde
 la release oficial o desde la propia instalación gestionada por SideStore) para
 ejecutarla dentro de su contenedor.
 
+> **Si usas LiveContainer, activa antes «Corregir selector de archivos»** en
+> los ajustes de InputStream Player dentro de LiveContainer. Sin ese ajuste,
+> añadir una lista «desde un fichero» abre el selector pero no importa nada al
+> pulsar «Abrir». El porqué y las alternativas, en
+> [cómo verificar e instalar una release](docs/releases.md#ajuste-obligatorio-en-livecontainer-el-selector-de-archivos).
+
 ## Alcance de este repositorio
 
 Este repositorio no publica código fuente, claves, perfiles de firma,

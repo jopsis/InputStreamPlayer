@@ -82,6 +82,12 @@ Once LiveContainer is configured, import the InputStream Player IPA (from the
 official release, or from SideStore's own managed install) to run it inside
 its container.
 
+> **If you use LiveContainer, turn on "Fix File Picker" first**, in the
+> InputStream Player settings inside LiveContainer. Without it, adding a
+> playlist "from a file" opens the picker but imports nothing when you tap
+> "Open". The reason and the workarounds are in
+> [how to verify and install a release](docs/releases_en.md#required-livecontainer-setting-the-file-picker).
+
 ## Repository scope
 
 This repository does not publish source code, keys, signing profiles,
