@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.5.32",
+          "date": "2026-09-24",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.32/InputStreamPlayer-iOS-0.5.32-39-unsigned.ipa",
+          "size": 15701042,
+          "minOSVersion": "16.0",
+          "sha256": "5780ecf96709bbc72c6d9d5ac36f1d4d8ce021d174afce35e2d1fb37e5827863",
+          "localizedDescription": "\n- Incrementada y alineada la versión visible de iOS y tvOS a `0.5.32` (build 39).\n- Recoge la entrada siguiente: la release incluye por primera vez una IPA para\n  Mac con Apple Silicon, instalable con PlayCover, con experiencia limitada (la\n  app de iPhone/iPad en una ventana). iPhone, iPad y Apple TV no cambian."
+        },
+        {
           "version": "0.5.31",
           "date": "2026-09-24",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.31/InputStreamPlayer-iOS-0.5.31-38-unsigned.ipa",
