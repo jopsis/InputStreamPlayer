@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.5.30",
+          "date": "2026-09-24",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.30/InputStreamPlayer-iOS-0.5.30-37-unsigned.ipa",
+          "size": 15699309,
+          "minOSVersion": "16.0",
+          "sha256": "d7b9b36e7ab8dfd199fbdd72b8ed21791c7514c2065f6aca2fb23e52846aff9b",
+          "localizedDescription": "\n- Incrementada y alineada la versión visible de iOS y tvOS a `0.5.30` (build 37).\n- Recoge la entrada siguiente: nueva preferencia «Calidad de imagen», con\n  «Eficiente» por defecto para aligerar el trabajo de pintar cada fotograma,\n  sobre todo en equipos antiguos y en Apple TV 4K. «Alta calidad» conserva el\n  comportamiento anterior."
+        },
+        {
           "version": "0.5.29",
           "date": "2026-09-23",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.29/InputStreamPlayer-iOS-0.5.29-36-unsigned.ipa",
