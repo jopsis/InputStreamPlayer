@@ -3,13 +3,14 @@
 Las builds públicas se publican exclusivamente desde la sección
 [Releases](../../../releases) de este repositorio.
 
-InputStream Player está disponible para **iOS**, **tvOS** y **macOS**. Cada
-release indica las plataformas incluidas.
+InputStream Player está disponible para **iOS**, **tvOS** y **macOS** (Mac con
+Apple Silicon, mediante PlayCover). Cada release incluye:
 
-Cada entrega incluirá:
-
-- el IPA;
-- un fichero `.sha256` con la suma SHA-256 del IPA;
+- `InputStreamPlayer-iOS-…-unsigned.ipa`: iPhone y iPad (SideStore/LiveContainer);
+- `InputStreamPlayer-tvOS-…-unsigned.ipa`: Apple TV;
+- `InputStreamPlayer-macOS-PlayCover-….ipa`: Mac con Apple Silicon, con
+  PlayCover y experiencia limitada (ver más abajo);
+- un fichero `.sha256` con la suma SHA-256 de cada IPA;
 - la versión, fecha y notas de cambio;
 - cualquier requisito de compatibilidad conocido.
 
@@ -66,3 +67,16 @@ Mientras tanto, las otras dos formas de añadir una lista no se ven afectadas y
 funcionan igual: **desde una URL** y **crear una lista a mano**. Si tienes la
 lista en un archivo y no quieres tocar ajustes, súbela a cualquier sitio que
 dé un enlace directo y añádela por URL.
+
+## Mac con Apple Silicon (PlayCover)
+
+La IPA `InputStreamPlayer-macOS-PlayCover-….ipa` es la misma app de iPhone,
+firmada para que [PlayCover](https://playcover.io) la acepte. Verifícala como
+cualquier otra y arrástrala a PlayCover.
+
+Tiene **experiencia limitada**:
+
+- Solo Mac con **Apple Silicon** (M1 o posterior); en Mac con Intel no funciona.
+- Es una app de iPhone/iPad en una ventana, pensada para pantalla táctil.
+- Si algún botón o menú no responde, desactiva el **mapeo de teclas** de
+  PlayCover para esta app (clic derecho sobre la app en PlayCover → Ajustes).

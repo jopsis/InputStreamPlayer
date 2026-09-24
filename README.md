@@ -19,7 +19,8 @@ la aplicación, ejemplos de listas compatibles y las releases verificables.
 
 ## Compatibilidad
 
-- Versiones disponibles para **iOS**, **tvOS** y **macOS**.
+- Versiones disponibles para **iOS**, **tvOS** y **macOS** (Mac con Apple
+  Silicon, mediante PlayCover y con experiencia limitada; ver más abajo).
 - **HLS** (`.m3u8`), incluido **SAMPLE-AES** cuando la fuente proporciona una
   clave ClearKey/raw-key autorizada.
 - **DASH / MPD** (`.mpd`) con CENC y ClearKey/raw-key autorizada.
@@ -88,6 +89,24 @@ ejecutarla dentro de su contenedor.
 > añadir una lista «desde un fichero» abre el selector pero no importa nada al
 > pulsar «Abrir». El porqué y las alternativas, en
 > [cómo verificar e instalar una release](docs/releases.md#ajuste-obligatorio-en-livecontainer-el-selector-de-archivos).
+
+## Mac con Apple Silicon (PlayCover)
+
+Cada release incluye `InputStreamPlayer-macOS-PlayCover-X.Y.Z-N.ipa`: la misma
+app de iPhone, preparada para instalarse en un Mac con chip M mediante
+[PlayCover](https://playcover.io). Arrástrala a PlayCover y ábrela desde ahí.
+
+Es una opción **con experiencia limitada**:
+
+- Solo funciona en Mac con **Apple Silicon** (M1 o posterior). En Mac con Intel
+  no hay forma de ejecutarla.
+- Es una app de iPhone/iPad dentro de una ventana, pensada para pantalla
+  táctil: sin menús de Mac y con pocos atajos de teclado.
+- Si algún botón o menú no responde, desactiva el **mapeo de teclas** de
+  PlayCover para esta app (clic derecho sobre la app en PlayCover → Ajustes).
+
+La reproducción es la misma que en iPhone. Para instalarla en iPhone o iPad
+usa la IPA de iOS, no esta.
 
 ## Alcance de este repositorio
 

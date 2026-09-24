@@ -3,13 +3,14 @@
 Public builds are released only from this repository's
 [Releases](../../../releases) section.
 
-InputStream Player is available for **iOS**, **tvOS**, and **macOS**. Each
-release identifies the platforms it includes.
+InputStream Player is available for **iOS**, **tvOS**, and **macOS** (Apple
+Silicon Macs, through PlayCover). Each release includes:
 
-Each release includes:
-
-- the IPA;
-- a `.sha256` file with the IPA's SHA-256 checksum;
+- `InputStreamPlayer-iOS-…-unsigned.ipa`: iPhone and iPad (SideStore/LiveContainer);
+- `InputStreamPlayer-tvOS-…-unsigned.ipa`: Apple TV;
+- `InputStreamPlayer-macOS-PlayCover-….ipa`: Apple Silicon Macs, with PlayCover
+  and a limited experience (see below);
+- a `.sha256` file with each IPA's SHA-256 checksum;
 - version, date, and release notes;
 - any known compatibility requirements.
 
@@ -66,3 +67,16 @@ In the meantime the other two ways to add a playlist are unaffected and work as
 usual: **from a URL** and **creating a playlist by hand**. If your playlist is
 in a file and you would rather not touch settings, upload it anywhere that
 gives a direct link and add it by URL.
+
+## Apple Silicon Macs (PlayCover)
+
+The `InputStreamPlayer-macOS-PlayCover-….ipa` IPA is the same iPhone app, signed
+so that [PlayCover](https://playcover.io) accepts it. Verify it like any other
+release file and drag it into PlayCover.
+
+It offers a **limited experience**:
+
+- Apple **Silicon** Macs only (M1 or later); it does not work on Intel Macs.
+- It is an iPhone/iPad app in a window, designed for a touch screen.
+- If a button or menu does not respond, turn off PlayCover's **keymapping** for
+  this app (right-click the app in PlayCover → Settings).

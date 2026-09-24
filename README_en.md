@@ -18,7 +18,8 @@ the app, compatible playlist examples, and verifiable releases.
 
 ## Compatibility
 
-- Versions are available for **iOS**, **tvOS**, and **macOS**.
+- Versions are available for **iOS**, **tvOS**, and **macOS** (Apple Silicon
+  Macs, through PlayCover and with a limited experience; see below).
 - **HLS** (`.m3u8`), including **SAMPLE-AES** when the source provides an
   authorized ClearKey/raw key.
 - **DASH / MPD** (`.mpd`) with CENC and an authorized ClearKey/raw key.
@@ -87,6 +88,24 @@ its container.
 > playlist "from a file" opens the picker but imports nothing when you tap
 > "Open". The reason and the workarounds are in
 > [how to verify and install a release](docs/releases_en.md#required-livecontainer-setting-the-file-picker).
+
+## Apple Silicon Macs (PlayCover)
+
+Every release includes `InputStreamPlayer-macOS-PlayCover-X.Y.Z-N.ipa`: the same
+iPhone app, prepared to be installed on an M-series Mac with
+[PlayCover](https://playcover.io). Drag it into PlayCover and open it from there.
+
+This is a **limited experience** option:
+
+- It only works on **Apple Silicon** Macs (M1 or later). There is no way to run
+  it on Intel Macs.
+- It is an iPhone/iPad app inside a window, designed for a touch screen: no Mac
+  menus and few keyboard shortcuts.
+- If a button or menu does not respond, turn off PlayCover's **keymapping** for
+  this app (right-click the app in PlayCover → Settings).
+
+Playback is the same as on iPhone. To install on iPhone or iPad, use the iOS
+IPA, not this one.
 
 ## Repository scope
 

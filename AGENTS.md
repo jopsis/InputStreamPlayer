@@ -15,14 +15,16 @@ proceso manual descrito más abajo.
 
 1. En el repositorio de código: construir el IPA sin firmar de iOS y tvOS
    (misma versión/build en ambos) con `Tooling/distribution/build-ios-ipa.sh`
-   / `build-tvos-ipa.sh`.
+   / `build-tvos-ipa.sh`, y después el IPA para Mac con
+   `build-macos-playcover-ipa.sh`, que se deriva del de iOS.
 2. En el repositorio de código: `Tooling/distribution/publish-release.sh
    --check` y, si todo va bien, `Tooling/distribution/publish-release.sh` sin
    flags. Ese script (ejecutándose desde el checkout del código, con este
    repositorio como `PUBLIC_REPO_DIR` — por defecto la ruta hermana
    `../InputStreamPlayer`):
-   - crea la release `vX.Y.Z` en GitHub con los 4 artefactos (IPA + `.sha256`
-     de iOS y tvOS) y las notas tomadas del `CHANGELOG.md` del código;
+   - crea la release `vX.Y.Z` en GitHub con los 6 artefactos (IPA + `.sha256`
+     de iOS, tvOS y macOS/PlayCover) y las notas tomadas del `CHANGELOG.md`
+     del código;
    - ejecuta aquí mismo `sidestore/update-source.sh`, y si `apps.json` cambió,
      hace commit y `push` en este repositorio y fuerza un rebuild de Pages.
    - Exige que **este** repositorio esté en `main`, limpio y sincronizado con
@@ -78,5 +80,10 @@ release de GitHub.
 - No añadir una versión al source que no tenga ya su release publicada (con
   IPA + `.sha256`) en GitHub: el script solo puede leer lo que existe.
 - No prometer compatibilidad FairPlay/Widevine/PlayReady ni instalación fuera
-  de SideStore/LiveContainer en la documentación pública: no es el alcance de
-  este proyecto (ver el repositorio de código para el detalle DRM).
+  de SideStore/LiveContainer (iPhone/iPad) y PlayCover (Mac con Apple Silicon,
+  experiencia limitada) en la documentación pública: no es el alcance de este
+  proyecto (ver el repositorio de código para el detalle DRM).
+- No meter la IPA `InputStreamPlayer-macOS-PlayCover-*` en el source de
+  SideStore: no es para iPhone. `update-source.sh` solo recoge
+  `InputStreamPlayer-iOS-*-unsigned.ipa`, y el nombre de la de Mac lo evita a
+  propósito.
