@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.5.33",
+          "date": "2026-09-25",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.33/InputStreamPlayer-iOS-0.5.33-40-unsigned.ipa",
+          "size": 15709683,
+          "minOSVersion": "16.0",
+          "sha256": "7578bed9e8dad63a60edb51a1f4dc1984ef104fec7db7122bc0888b3e85053d1",
+          "localizedDescription": "\n- Incrementada y alineada la versión visible de iOS y tvOS a `0.5.33` (build 40).\n- Recoge la entrada siguiente: cambiar de idioma en un directo ya no deja el\n  canal parado ni desfasado, nueva preferencia «Idioma de audio», la pista\n  elegida a mano se recuerda en cada canal, y en Apple TV el inicio pasa a 7\n  canales por fila, la guía muestra 4 horas con logos y el panel del\n  reproductor ocupa menos.\n- Incluye también `docs/poc/scope-picture-in-picture.md`: el PiP queda\n  analizado y aparcado para retomarlo."
+        },
+        {
           "version": "0.5.32",
           "date": "2026-09-24",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.32/InputStreamPlayer-iOS-0.5.32-39-unsigned.ipa",
