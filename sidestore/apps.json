@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.5.34",
+          "date": "2026-09-25",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.34/InputStreamPlayer-iOS-0.5.34-41-unsigned.ipa",
+          "size": 15915522,
+          "minOSVersion": "16.0",
+          "sha256": "edf3007be697136ce66f3c15cbfeecf3a6523a40d812cd62953c510a8ae4224b",
+          "localizedDescription": "\n- Incrementada y alineada la versión visible de iOS y tvOS a `0.5.34` (build 41).\n- Recoge las entradas siguientes:\n  - **Motor de vídeo «Sistema» por defecto**: el vídeo se muestra sin OpenGL,\n    con la capa de vídeo del propio aparato. El 4K HDR de 10 bits, que antes\n    salía azul, se ve y en su formato. OpenGL queda como alternativa en\n    Preferencias.\n  - **Subtítulos** seleccionables desde el reproductor, apagados por defecto, y\n    las pistas de audio y subtítulos de los archivos directos (MKV/MP4) por fin\n    elegibles.\n  - **Addons de Stremio**: sección «Addons» con catálogo, búsqueda, géneros,\n    fichas de películas y series y todas las versiones de cada título\n    agrupadas por calidad.\n- Sin probar en Apple TV real: el motor «Sistema» y el botón atrás en las\n  pantallas de Addons."
+        },
+        {
           "version": "0.5.33",
           "date": "2026-09-25",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.33/InputStreamPlayer-iOS-0.5.33-40-unsigned.ipa",
@@ -272,15 +281,6 @@
           "minOSVersion": "16.0",
           "sha256": "9c15d485ac7274ccc1d56e0e9ba979da422246ce7a279b81eae5615777aa8cdd",
           "localizedDescription": "Versión 0.4.0."
-        },
-        {
-          "version": "0.3.0",
-          "date": "2026-09-08",
-          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.3.0/InputStreamPlayer-iOS-0.3.0-3-unsigned.ipa",
-          "size": 14743748,
-          "minOSVersion": "16.0",
-          "sha256": "9ca2bbaf3a19d9a2f869dbaf2892e28b111ef4e5be6b83342462a8019a45f3ad",
-          "localizedDescription": "Versión 0.3.0."
         }
       ]
     }
