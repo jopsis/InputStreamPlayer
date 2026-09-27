@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.5.39",
+          "date": "2026-09-27",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.39/InputStreamPlayer-iOS-0.5.39-46-unsigned.ipa",
+          "size": 15967009,
+          "minOSVersion": "16.0",
+          "sha256": "a217a273d6e613504a00dbc69306ed119144ffa71223ae5c6aa7316d873800b4",
+          "localizedDescription": "\n- Incrementada y alineada la versión visible de iOS y tvOS a `0.5.39` (build 46).\n- **Arreglado: un canal DASH cuya dirección redirige a un manifiesto firmado\n  (`…/dash_high.mpd?token=…&cid=…&did=…`) no abría** («unrecognized file\n  format»). La app sirve a mpv una copia del manifiesto desde `127.0.0.1`, y\n  para que los segmentos relativos sigan resolviendo contra el origen le pone\n  un `BaseURL` absoluto. Ese `BaseURL` salía de `deletingLastPathComponent()`,\n  que conserva la query:\n  - metía un `&` sin escapar en el XML, y libxml2 no podía leerlo\n    («EntityRef: expecting ';'», «missing root node»);\n  - aunque se hubiera podido leer, los segmentos habrían quedado colgados\n    detrás de la query.\n\n  Ahora la base es el directorio del manifiesto sin query ni fragmento, que es\n  contra lo que resuelve un segmento relativo (RFC 3986), y todo lo que se\n  inserta en el XML va escapado. Los `$` de la ruta de sesión no molestan:\n  FFmpeg copia tal cual los `$…$` que no son campos de plantilla. Visto en el\n  simulador de iPhone con la URL del usuario: 1080p a 25 fps, audio AAC y\n  subtítulos. Dos pruebas nuevas en `DASHManifestPrunerTests`."
+        },
+        {
           "version": "0.5.38",
           "date": "2026-09-26",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.38/InputStreamPlayer-iOS-0.5.38-45-unsigned.ipa",
@@ -272,15 +281,6 @@
           "minOSVersion": "16.0",
           "sha256": "469328daadfe93b5aae096a5ade48ac3d90e7adc686e8852ac42f10851d1829d",
           "localizedDescription": "MPD CBCD. Playlists .ispl (inputstreamplayer encriptadas). Corrección en canales que requieren cabeceras HTTP personalizadas."
-        },
-        {
-          "version": "0.5.8",
-          "date": "2026-09-10",
-          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.8/InputStreamPlayer-iOS-0.5.8-15-unsigned.ipa",
-          "size": 15194772,
-          "minOSVersion": "16.0",
-          "sha256": "fef0119eac45c0081f2c72444cb150907b778b760dbd73473844b7ae076b2e0b",
-          "localizedDescription": "Mejoras en código fuente"
         }
       ]
     }
