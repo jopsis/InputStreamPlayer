@@ -4,7 +4,7 @@ title: Política de privacidad · Privacy policy
 
 # Política de privacidad de InputStream Player
 
-Última actualización: 28 de septiembre de 2026.
+Última actualización: 28 de septiembre de 2026 (Trakt).
 
 InputStream Player es un reproductor de vídeo para iPhone, iPad, Apple TV y
 Mac. Esta política explica qué datos maneja y dónde quedan.
@@ -58,6 +58,23 @@ ajusta a la [Política de datos de usuario de los servicios de API de
 Google](https://developers.google.com/terms/api-services-user-data-policy),
 incluidos los requisitos de uso limitado.
 
+## Trakt (opcional)
+
+Si conectas tu cuenta de Trakt, la app habla directamente con Trakt, sin pasar
+por ningún servidor nuestro:
+
+- **Trae de Trakt** lo que has visto, lo que tienes a medias y tu watchlist.
+- **Manda a Trakt** lo que marcas como visto o no visto, tu lista «Ver más
+  tarde» y lo que estás viendo en cada momento («viendo ahora»).
+- **Solo viajan los títulos con id de IMDb o TMDB.**
+- **La sesión** se guarda en el Llavero de cada aparato y los desarrolladores
+  no tienen acceso a ella.
+- **Qué hace Trakt con esos datos** lo explica su propia política de
+  privacidad.
+
+Para dejar de sincronizar: en la app, «Desconectar Trakt». Para retirar el
+permiso, en Trakt: Settings → Connected Apps.
+
 ## Contacto
 
 Dudas o peticiones: abre una incidencia en
@@ -67,7 +84,7 @@ https://github.com/jopsis/InputStreamPlayer/issues
 
 # InputStream Player privacy policy
 
-Last updated: September 28, 2026.
+Last updated: September 28, 2026 (Trakt).
 
 InputStream Player is a video player for iPhone, iPad, Apple TV and Mac. This
 policy explains what data it handles and where that data stays.
@@ -119,6 +136,23 @@ InputStream Player's use and transfer of information received from Google APIs
 adheres to the [Google API Services User Data
 Policy](https://developers.google.com/terms/api-services-user-data-policy),
 including the Limited Use requirements.
+
+## Trakt (optional)
+
+If you connect your Trakt account, the app talks to Trakt directly, never
+through a server of ours:
+
+- **From Trakt** it brings what you have watched, what you left half-way and
+  your watchlist.
+- **To Trakt** it sends what you mark as watched or unwatched, your
+  watch-later list and what you are watching at the moment ("watching now").
+- **Only titles with an IMDb or TMDB id** are synced.
+- **The session** is kept in each device's Keychain and the developers have
+  no access to it.
+- **What Trakt does with that data** is covered by Trakt's own privacy policy.
+
+To stop syncing: "Desconectar Trakt" in the app. To revoke access, on Trakt:
+Settings → Connected Apps.
 
 ## Contact
 
