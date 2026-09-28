@@ -34,9 +34,9 @@ ellos.
 Si inicias sesión con Google, la app sincroniza tu configuración y lo que has
 visto entre tus aparatos usando tu propio Google Drive:
 
-- Usa solo el permiso `drive.appdata`, que da acceso a una **carpeta oculta y
-  privada de la app** dentro de tu Drive. La app no puede ver, leer ni
-  modificar ningún otro archivo de tu Drive.
+- Usa solo el permiso `drive.file`, que da acceso **únicamente a los archivos
+  que crea la propia app**: una carpeta «InputStream Player» en tu Drive. La
+  app no puede ver, leer ni modificar ningún otro archivo de tu Drive.
 - En esa carpeta se guarda:
   - tu configuración (listas, guías, addons con sus direcciones, preferencias);
   - lo que has visto, con el punto por el que ibas;
@@ -49,8 +49,7 @@ visto entre tus aparatos usando tu propio Google Drive:
 Para dejar de sincronizar y borrar esos datos:
 
 1. En la app, cierra la sesión de Google.
-2. En Google Drive, ve a Configuración → Gestionar aplicaciones →
-   InputStream Player → «Eliminar datos ocultos de la aplicación».
+2. En Google Drive, borra la carpeta «InputStream Player».
 3. Para retirar el permiso, entra en https://myaccount.google.com/permissions
    y quita InputStream Player.
 
@@ -97,9 +96,9 @@ videos). What those services do with your connection is up to them.
 If you sign in with Google, the app syncs your settings and watch history
 across your devices using your own Google Drive:
 
-- It uses only the `drive.appdata` scope, which grants access to a **hidden,
-  app-private folder** inside your Drive. The app cannot see, read or modify
-  any other file in your Drive.
+- It uses only the `drive.file` scope, which grants access **only to the files
+  the app itself creates**: an "InputStream Player" folder in your Drive. The
+  app cannot see, read or modify any other file in your Drive.
 - That folder holds:
   - your settings (lists, guides, add-ons with their addresses, preferences);
   - what you have watched, with where you left off;
@@ -112,8 +111,7 @@ across your devices using your own Google Drive:
 To stop syncing and delete that data:
 
 1. In the app, sign out of Google.
-2. In Google Drive, open Settings → Manage apps → InputStream Player →
-   "Delete hidden app data".
+2. In Google Drive, delete the "InputStream Player" folder.
 3. To revoke the permission, go to https://myaccount.google.com/permissions
    and remove InputStream Player.
 
