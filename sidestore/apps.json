@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.7.2",
+          "date": "2026-09-28",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.7.2/InputStreamPlayer-iOS-0.7.2-50-unsigned.ipa",
+          "size": 16336857,
+          "minOSVersion": "16.0",
+          "sha256": "db977a579095a44a59555780ed2721b692a280cb808d51c917343babbc60b416",
+          "localizedDescription": "\n- Incrementada y alineada la versión visible de iOS y tvOS a `0.7.2` (build 50). Incluye también la entrada siguiente.\n- **Arreglado el «cancelled» al conectar Trakt en el iPhone.** El enlace y\n  «Cancelar» iban en la misma fila de la lista, y en iOS tocar una fila pulsa\n  todos sus botones: abrir la página cancelaba la conexión sin que se viera.\n- **Los pasos, cada uno en su fila** (componente `IOSDeviceCodeRows`, para\n  Trakt y para Google con código):\n  1. La página de activación. Al tocarla se copia el código y se abre dentro\n     de la app.\n  2. El código grande, con botón de copiar.\n  3. Esperando.\n  4. «Ya lo he autorizado» (con tic), que pregunta en ese momento.\n  5. «Cancelar», aparte.\n- **Cerrar el navegador con la X no cancela:** solo pregunta en ese momento.\n- **Sin límite de tiempo:** si el código caduca, se pide otro y se enseña. Si\n  no hay red, se reintenta. Al volver a la app se pregunta enseguida. Solo se\n  deja de esperar con «Cancelar».\n- **El bloque ya no salta arriba** mientras hay un código, ni en iPhone ni en\n  Apple TV.\n- **Probado por el usuario** en el simulador de iPhone."
+        },
+        {
           "version": "0.7.1",
           "date": "2026-09-28",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.7.1/InputStreamPlayer-iOS-0.7.1-49-unsigned.ipa",
@@ -272,15 +281,6 @@
           "minOSVersion": "16.0",
           "sha256": "557462ac1aea2c33850b4cde042345c0e632d46fe292da1ed613df22be38baec",
           "localizedDescription": "Nuevas listas personalizadas: crea tus propias listas y ve pegando canales en formato M3U, con la opción de borrarlos uno a uno."
-        },
-        {
-          "version": "0.5.13",
-          "date": "2026-09-15",
-          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.13/InputStreamPlayer-iOS-0.5.13-20-unsigned.ipa",
-          "size": 15251204,
-          "minOSVersion": "16.0",
-          "sha256": "bb503000d044494eaa6df9fedf3ef04473c39e06934caaef922c9cf78c243309",
-          "localizedDescription": "Ahora puedes recargar tus listas cuando quieras, y programar que cada una se actualice sola cada X horas y minutos."
         }
       ]
     }
