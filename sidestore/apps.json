@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.7.1",
+          "date": "2026-09-28",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.7.1/InputStreamPlayer-iOS-0.7.1-49-unsigned.ipa",
+          "size": 16326418,
+          "minOSVersion": "16.0",
+          "sha256": "f6c583befa1a6ec06d9b2565c92a1c39bfdbfb5a2e177a1c5b868f1644021748",
+          "localizedDescription": "\n- Incrementada y alineada la versión visible de iOS y tvOS a `0.7.1` (build 49).\n- **Arreglado: al conectar Trakt en el iPhone, la conexión fallaba al volver\n  de autorizar con «the network connection was lost».**\n  - Qué pasaba: se autorizaba en Safari en el mismo aparato, iOS congelaba la\n    app y cortaba la petición con la que preguntaba a Trakt si ya estaba\n    autorizado. Ese corte se tomaba como error y se descartaba el código,\n    aunque el usuario ya lo hubiera aceptado.\n  - Ahora los errores de red pasajeros (conexión perdida, tiempo agotado, sin\n    red) cuentan como «seguir esperando» y se sigue con el mismo código. Lo\n    mismo en el inicio de sesión de Google con código.\n- **En el iPhone, las páginas de Trakt y de Google se abren dentro de la app**\n  (Safari integrado), así que la app ya no pasa a segundo plano mientras se\n  autoriza.\n- **Con un código pendiente, su bloque va el primero** en «Ajustes ›\n  Sincronización», como ya pasaba en el Apple TV.\n- **Visto en el simulador:** 40 s en Safari y de vuelta, sigue esperando con el\n  mismo código.\n- **Confirmado por el uso real:** el iPhone del usuario, con el botón de Google\n  del navegador, aparece en la misma carpeta de Drive que el Apple TV (con\n  código)."
+        },
+        {
           "version": "0.7.0",
           "date": "2026-09-28",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.7.0/InputStreamPlayer-iOS-0.7.0-48-unsigned.ipa",
@@ -272,15 +281,6 @@
           "minOSVersion": "16.0",
           "sha256": "bb503000d044494eaa6df9fedf3ef04473c39e06934caaef922c9cf78c243309",
           "localizedDescription": "Ahora puedes recargar tus listas cuando quieras, y programar que cada una se actualice sola cada X horas y minutos."
-        },
-        {
-          "version": "0.5.12",
-          "date": "2026-09-13",
-          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.12/InputStreamPlayer-iOS-0.5.12-19-unsigned.ipa",
-          "size": 15224607,
-          "minOSVersion": "16.0",
-          "sha256": "474d77d0ba4743d6118d8c39867368fafe44f22c8032cd4560058e5bed0e7372",
-          "localizedDescription": "Las listas con alguna clave errónea ya se importan: solo se descarta el canal afectado en vez de fallar entera. Soporte para listas que declaran cabeceras en la propia URL."
         }
       ]
     }
