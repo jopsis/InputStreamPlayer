@@ -34,8 +34,11 @@ fi
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 out_file="$script_dir/apps.json"
 
-tags="$(gh release list --repo "$repo" --json tagName,isDraft,isPrerelease \
+tags="$(gh release list --repo "$repo" --limit 100 --json tagName,isDraft,isPrerelease \
   --jq '[.[] | select(.isDraft == false and .isPrerelease == false) | .tagName] | join("\n")')"
+# Nota: el límite por defecto de 'gh release list' es 30. Con más de 30
+# releases publicadas, la más reciente podría quedar fuera y SideStore no
+# vería la versión nueva.
 
 if [[ -z "$tags" ]]; then
   echo "error: no se encontraron releases publicadas en $repo" >&2

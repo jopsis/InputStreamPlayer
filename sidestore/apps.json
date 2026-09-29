@@ -281,6 +281,105 @@
           "minOSVersion": "16.0",
           "sha256": "8791293418a81c80c83843b63a3f495bbb12820f3e8b515b3b853d3e33741b79",
           "localizedDescription": "Corregido un fallo que cortaba la reproducción de muchos canales DASH en directo a los pocos segundos de empezar."
+        },
+        {
+          "version": "0.5.14",
+          "date": "2026-09-15",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.14/InputStreamPlayer-iOS-0.5.14-21-unsigned.ipa",
+          "size": 15270437,
+          "minOSVersion": "16.0",
+          "sha256": "557462ac1aea2c33850b4cde042345c0e632d46fe292da1ed613df22be38baec",
+          "localizedDescription": "Nuevas listas personalizadas: crea tus propias listas y ve pegando canales en formato M3U, con la opción de borrarlos uno a uno."
+        },
+        {
+          "version": "0.5.13",
+          "date": "2026-09-15",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.13/InputStreamPlayer-iOS-0.5.13-20-unsigned.ipa",
+          "size": 15251204,
+          "minOSVersion": "16.0",
+          "sha256": "bb503000d044494eaa6df9fedf3ef04473c39e06934caaef922c9cf78c243309",
+          "localizedDescription": "Ahora puedes recargar tus listas cuando quieras, y programar que cada una se actualice sola cada X horas y minutos."
+        },
+        {
+          "version": "0.5.12",
+          "date": "2026-09-13",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.12/InputStreamPlayer-iOS-0.5.12-19-unsigned.ipa",
+          "size": 15224607,
+          "minOSVersion": "16.0",
+          "sha256": "474d77d0ba4743d6118d8c39867368fafe44f22c8032cd4560058e5bed0e7372",
+          "localizedDescription": "Las listas con alguna clave errónea ya se importan: solo se descarta el canal afectado en vez de fallar entera. Soporte para listas que declaran cabeceras en la propia URL."
+        },
+        {
+          "version": "0.5.11",
+          "date": "2026-09-13",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.11/InputStreamPlayer-iOS-0.5.11-18-unsigned.ipa",
+          "size": 15223950,
+          "minOSVersion": "16.0",
+          "sha256": "56516ac27b62d64f83f9055809f7998e31af119b67d079219e997dd4a47a7930",
+          "localizedDescription": "Soporte para listas cifradas. Corregidos los fallos que impedían cargar listas guardadas en Windows y canales que necesitan cabeceras HTTP propias."
+        },
+        {
+          "version": "0.5.9",
+          "date": "2026-09-11",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.9/InputStreamPlayer-iOS-0.5.9-16-unsigned.ipa",
+          "size": 15223389,
+          "minOSVersion": "16.0",
+          "sha256": "469328daadfe93b5aae096a5ade48ac3d90e7adc686e8852ac42f10851d1829d",
+          "localizedDescription": "MPD CBCD. Playlists .ispl (inputstreamplayer encriptadas). Corrección en canales que requieren cabeceras HTTP personalizadas."
+        },
+        {
+          "version": "0.5.8",
+          "date": "2026-09-10",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.8/InputStreamPlayer-iOS-0.5.8-15-unsigned.ipa",
+          "size": 15194772,
+          "minOSVersion": "16.0",
+          "sha256": "fef0119eac45c0081f2c72444cb150907b778b760dbd73473844b7ae076b2e0b",
+          "localizedDescription": "Mejoras en código fuente"
+        },
+        {
+          "version": "0.5.3",
+          "date": "2026-09-10",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.3/InputStreamPlayer-iOS-0.5.3-10-unsigned.ipa",
+          "size": 15191875,
+          "minOSVersion": "16.0",
+          "sha256": "5e9dfee5ef24f63502c197af0bd8db0f24de3c6c6c759ca096d11718e53b91c1",
+          "localizedDescription": "\n- Investigado si se podía sustituir el proxy HTTP local por un stream `stream_cb` de libmpv (sin socket, callback en proceso). Descartado con evidencia de código: `demux/demux_lavf.c:1067-1068` muestra que el demuxer HLS de FFmpeg abre variant playlists/keys/segmentos vía `nested_io_open` → `default_io_open`, el open **nativo** de FFmpeg — nunca pasa por `stream_cb` (que solo intercepta la apertura del fichero inicial de mpv, `stream/stream_cb.c`). Sin proxy HTTP real no hay forma de interceptar esas peticiones internas.\n- En su lugar, `HLSClearKeyProxy` ahora puede descifrar el segmento SAMPLE-AES él mismo antes de servirlo, en vez de reenviarlo cifrado para que lo descifre FFmpeg. Usa una nueva librería Rust vendorizada, `iori-ffi` (envuelve `iori-ssa`, `ThirdParty/src/iori-ssa/`, descifrado SAMPLE-AES de TS ya probado en producción por N_m3u8DL-RE/similares), compilada para `aarch64-apple-{darwin,ios,ios-sim,tvos,tvos-sim}` con `Tooling/rust/build-iori-ffi.sh` y expuesta a Swift como `CLibIoriFFI` (macOS, módulo SwiftPM) / vía bridging header (`iori_ffi.h`, iOS/tvOS).\n- Alcance deliberadamente acotado al caso seguro: solo descifra cuando hay IV **explícito** (atributo `IV=0x...` en `#EXT-X-KEY`, incluido el que ya materializa `HLSSampleAESPlaylistRewriter` desde un descriptor `skd://`) y la petición cubre el segmento desde el primer byte. Si el IV es implícito (número de secuencia, sin atributo) o el rango empieza a mitad de segmento, se reenvía sin tocar como hasta ahora — nunca peor que antes, solo deja de aplicarse la optimización para ese segmento.\n- Validando en Simulator con contenido real (Movistar+) se encontraron y corrigieron dos bugs que dejaban la optimización siempre inactiva en la práctica: (1) el escáner de IV explícito miraba la playlist *original*, pero la mayoría de orígenes reales codifican el IV dentro del propio descriptor `skd://` en base64, sin atributo `IV=` visible hasta que `HLSSampleAESPlaylistRewriter` lo decodifica y lo materializa al reescribir — ahora se escanea la playlist *reescrita*, emparejando línea a línea con la original (mismo número de líneas por contrato de `rewrite`) para conservar la URL de origen correcta como clave. (2) La condición exigía la ausencia total de cabecera `Range`, pero FFmpeg manda `Range: bytes=0-` incluso pidiendo el segmento completo — nunca sin cabecera — así que nunca se cumplía; se corrigió a \"empieza en el byte 0\", que es la condición real que importa para el estado CBC.\n- Al vendorizar `iori-ssa` se encontró y corrigió un bug de fondo: `decrypt_mpegts` volcaba los últimos paquetes PES pendientes de cada PID al final del segmento iterando un `HashMap`, cuyo orden de iteración es aleatorio por proceso en Rust — daba una salida no reproducible entre ejecuciones para segmentos con vídeo+audio cifrados simultáneamente (el caso normal). Se corrigió ordenando por PID antes de volcar (`ThirdParty/src/iori-ssa/src/lib.rs`). Verificado con `ffmpeg -f md5` por pista que el contenido decodificado es idéntico al de referencia en ambos casos (el desorden solo afectaba al orden relativo de los últimos ~6 paquetes TS entre PIDs distintos, no a ningún byte descifrado) — 5/5 ejecuciones consistentes tras el fix, frente a ~intermitente antes.\n- Tests unitarios nuevos en `iori-ffi` (Rust) contra fixtures reales AC-3/E-AC-3 SAMPLE-AES con clave/IV conocidos: coincidencia exacta con la referencia, detección de clave incorrecta, punteros nulos, entrada vacía.\n- Validado en Simulator iOS con la misma lista real usada en los pasos anteriores.\n- Incrementada y alineada la versión visible de iOS y tvOS a `0.5.3` (build 10)."
+        },
+        {
+          "version": "0.5.2",
+          "date": "2026-09-09",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.2/InputStreamPlayer-iOS-0.5.2-9-unsigned.ipa",
+          "size": 14861505,
+          "minOSVersion": "16.0",
+          "sha256": "99678e49851197fc510d69b75049b307f1de00cfeb16a71ee79fbb8828af2457",
+          "localizedDescription": "\n- Segundo paso de optimización del arranque HLS ClearKey+SAMPLE-AES, tras el 0.5.1. `HLSMasterMetadataLoader.inspect` descarga la media playlist de la primera variante solo para distinguir TS de fMP4/CMAF, y ese cuerpo se descartaba. Ahora `HLSMasterInspection` lo expone (`sniffedVariant: HLSSniffedVariant?`) y `HLSClearKeyProxy.preparePlayback(for:prefetched:sniffedVariant:)` lo reescribe y lo prima en su caché (`primeSniffedVariant`, best-effort con `try?`) bajo la misma URL que calculará el rewriter del master para esa variante.\n- Si mpv acaba seleccionando justo esa variante (caso común: única variante, o automática = mayor bitrate = primera listada), se ahorra una segunda descarga real de su media playlist. Si elige otra, el dato simplemente no se usa — sin riesgo, sin cambio de comportamiento observable. Se marca `consumeOnce: true` igual que cualquier media playlist no primada, para que los refrescos de directo posteriores sigan yendo al origen.\n- Los tres puntos de llamada (`IOSMPVPlaybackController.swift` iOS/tvOS, `main.swift` y `GUIPlaybackSession.swift` macOS) pasan `inspection?.sniffedVariant`.\n- Validado en Simulator iOS con la misma lista real usada en el paso anterior.\n- Incrementada y alineada la versión visible de iOS y tvOS a `0.5.2` (build 9).\n\n- HLS con ClearKey + SAMPLE-AES legacy (TS) tardaba ~10-12s en arrancar. Parte de la causa: `HLSMasterMetadataLoader.inspect` descarga el manifiesto master para distinguir TS de fMP4, y justo después `HLSClearKeyProxy.preparePlayback` volvía a descargar el mismo master desde cero para reescribirlo — dos peticiones de red seriadas al mismo recurso antes de que mpv reciba una URL.\n- `HLSMasterInspection` ahora expone el cuerpo y la URL efectiva ya descargados (`rootPlaylist`, `rootEffectiveURL`). `HLSClearKeyProxy.preparePlayback(for:prefetched:)` acepta ese par opcional y se salta su propia descarga cuando lo recibe. Los tres puntos de llamada (`IOSMPVPlaybackController.swift` iOS/tvOS, `main.swift` y `GUIPlaybackSession.swift` macOS) pasan el resultado de `inspect()` en vez de descartarlo.\n- No cambia el comportamiento observable: mismo contenido, misma reescritura, mismo cacheo del master en el proxy — solo se ahorra una descarga real. El resto de causas identificadas (probesize forzado a 1 MiB, `cache-pause-wait=4`, la media playlist de la variante elegida sigue sin primar) quedan fuera de esta entrega, documentadas como optimizaciones futuras.\n- Validado en Simulator iOS con la lista real que reportó la lentitud original.\n- Incrementada y alineada la versión visible de iOS y tvOS a `0.5.1` (build 8); macOS no cambia de versión (comparte el fix de código, no tiene versión propia en este repo).\n\n- Un usuario reportó que en iPadOS, reproduciendo HLS, el vídeo \"se ralentiza y después acelera rápido hasta llegar al punto donde iba\". Causa: el render software de mpv (`MPV_RENDER_API_TYPE_SW`, introducido en el refactor a Metal del 2026-09-07) convierte cada frame a RGB en un único hilo de CPU — el propio `render.h` de mpv lo describe como \"extremely simple (but slow)... you probably don't want to use this\". Bajo la carga de CPU sostenida de iPadOS, ese hilo se atrasa del reloj de audio (independiente) y luego drena de golpe el backlog ya decodificado: el patrón exacto reportado.\n- `IOSMPVMetalView.swift`/`IOSMPVSoftwareMetalRenderer` se sustituyen por `IOSMPVRenderView.swift` (CAEAGLLayer + `EAGLContext(api: .openGLES3)` + `CADisplayLink`, la implementación real que existía antes del refactor a Metal, recuperada del historial). `IOSMPVPlaybackController` usa `gpu-api=opengl`.\n- En dispositivo se probaron `hwdec=videotoolbox` (interop de copia cero, `hwdec_ios_gl.m`) y `hwdec=auto-safe`; ambos dieron color incorrecto validado en un iPhone real. El propio `hwdec_ios_gl.m` (código de 2013/2017) intercambia formatos `GL_RED`/`GL_RG` por `GL_LUMINANCE`/`GL_LUMINANCE_ALPHA` para esquivar un error de `CVOpenGLESTextureCacheCreateTextureFromImage` en modo GLES3 (comentario del propio fichero); ese intercambio probablemente no informa bien al generador de shaders de mpv sobre el canal de croma resultante, produciendo el color equivocado — sin tocar mpv no hay forma limpia de confirmarlo o arreglarlo. Se cambia a `hwdec=videotoolbox-copy`: decodifica por hardware igual, pero copia el frame a memoria normal y sube la textura por la misma ruta que ya se confirmó con color correcto en Simulator (decodificación software con el mismo render OpenGL ES). Pendiente de validar en el iPhone real del usuario.\n- El Simulator mantiene `hwdec=no` y recupera el workaround `scale`/`cscale`/`dscale=bilinear` (los escaladores con LUT de mpv dejan una cuadrícula negra en el OpenGL ES emulado del Simulator al ampliar vídeo pequeño).\n- `Tooling/ios/build-libmpv-xcframework.sh` y `Tooling/tvos/build-libmpv-xcframework.sh`: `-Dgl/-Dplain-gl/-Dios-gl` pasan a `enabled` (libmpv), `-Dopengl` a `enabled` en libplacebo (Vulkan/D3D11 siguen `disabled`). `-Dvideotoolbox-gl` se queda en `disabled`: probamos activarlo pensando que sumaba el interop de copia cero, pero es la ruta macOS/Cocoa (`gl-cocoa`), mutuamente excluyente con `ios-gl` en `hwdec_vt.h` (`#if HAVE_VIDEOTOOLBOX_GL ... #elif HAVE_IOS_GL`); combinar ambos rompe la compilación de `hwdec_ios_gl.m` (referencia un campo del struct que solo existe en la otra rama). `ios-gl=enabled` por sí solo ya incluye su propio interop VideoToolbox→textura GLES completo. No cambia nada de FFmpeg (`--enable-videotoolbox` ya estaba activo).\n- Alcance acotado a iOS/tvOS: macOS se queda en el render software/Metal (`Sources/PlayerDemoApp/MPVMetalView.swift`), sin cambios — el bug es específico de iPadOS y nadie lo reportó en Mac.\n- Se descartó volver a AVPlayer (ya se probó en 2026-09-05/06 y se sustituyó por no soportar raw-key/ClearKey, DASH ni ISML) y usar Vulkan/D3D vía libplacebo (`gpu-next` es interno de mpv, no expone un tipo de Render API público para embedding — confirmado en `ThirdParty/src/mpv/include/mpv/render.h`, que solo declara `opengl` y `sw`).\n- Incrementada y alineada la versión visible de iOS y tvOS a `0.5.0` (build 7); macOS no cambia porque no se toca en esta entrega."
+        },
+        {
+          "version": "0.4.1",
+          "date": "2026-09-09",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.4.1/InputStreamPlayer-iOS-0.4.1-5-unsigned.ipa",
+          "size": 14788256,
+          "minOSVersion": "16.0",
+          "sha256": "174c3a26586bb03072586ef614d598255953c5aa5c6c558130355292ae254fa3",
+          "localizedDescription": "- iOS conserva las fuentes de fichero entre reinicios mediante bookmarks persistentes; editar el nombre de una fuente ya no elimina su lista en iOS ni tvOS.\r\n- Los selectores de pistas iOS admiten catálogos largos con desplazamiento completo y la opción automática muestra la calidad efectiva. Los controles de pantalla completa de iOS y tvOS se ocultan tras unos segundos de inactividad y reaparecen al interactuar.\r\n- HLS SAMPLE-AES/ClearKey incorpora más margen de búfer, reintentos de segmento y un proxy progresivo robusto ante escrituras interrumpidas y respuestas parciales. ISML/ClearKey conserva el orden de los fragmentos, reintenta fallos transitorios y salta de forma acotada huecos que ya han abandonado la ventana DVR, sin detener definitivamente el feed.\r\n- El descifrado AES-CTR reutiliza el contexto criptográfico y procesa contadores por lotes; el escaneo y la normalización PIFF evitan conversiones y copias completas repetidas. En la prueba Release de 8 MiB, cifrar y descifrar tarda aproximadamente 29 ms en el equipo de validación.\r\n- Si dos paradas reales de caché se repiten en un minuto usando calidad automática, el reproductor selecciona una representación inferior y reconstruye la sesión una sola vez, evitando oscilaciones. Se añadieron métricas de caché, pérdidas de fotogramas y decoder para facilitar diagnósticos sin registrar URLs ni claves.\r\n- Corregido que iOS y tvOS atenuaran la pantalla y acabaran bloqueándola durante la reproducción: `IOSMPVPlaybackController` desactiva `UIApplication.isIdleTimerDisabled` mientras `pause=no` y lo restaura al pausar o detener la sesión. El audio en segundo plano y la restauración de la reproducción al desbloquear no cambian.\r\n- Corregido que una lista JSON completa fallara al importarse si un solo canal traía `\"key\": \"\"` (habitual en listas reales para \"todavía sin clave\"): `JSONPlaylistParser`/`M3UPlaylistParser` tratan una clave ClearKey vacía como contenido claro en vez de lanzar `invalidLicenseKey`. Además `PlaylistParsingError` ahora es `LocalizedError` con mensajes en español y envuelve los fallos de canal/muestra con su nombre (`Canal \"X\": …`), en vez del genérico \"The operation couldn't be completed (error N)\" de iOS.\r\n- Verificados 111 tests compartidos (107 de la base 0.4.0 más 4 de regresión para el fix de claves ClearKey vacías) y reproducción real de HLS SAMPLE-AES y ISML ClearKey en iPhone 17 Pro Simulator y Apple TV 4K Simulator, incluyendo recuperación adaptativa y continuidad de audio/vídeo. Los simuladores usan decodificación software; VideoToolbox continúa siendo la ruta solicitada en dispositivo. El fix de bloqueo de pantalla depende de hardware real para su validación: el Simulator no atenúa ni bloquea la pantalla.\r"
+        },
+        {
+          "version": "0.4.0",
+          "date": "2026-09-09",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.4.0/InputStreamPlayer-iOS-0.4.0-4-unsigned.ipa",
+          "size": 14786740,
+          "minOSVersion": "16.0",
+          "sha256": "9c15d485ac7274ccc1d56e0e9ba979da422246ce7a279b81eae5615777aa8cdd",
+          "localizedDescription": "Versión 0.4.0."
+        },
+        {
+          "version": "0.3.0",
+          "date": "2026-09-08",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.3.0/InputStreamPlayer-iOS-0.3.0-3-unsigned.ipa",
+          "size": 14743748,
+          "minOSVersion": "16.0",
+          "sha256": "9ca2bbaf3a19d9a2f869dbaf2892e28b111ef4e5be6b83342462a8019a45f3ad",
+          "localizedDescription": "Versión 0.3.0."
         }
       ]
     }
