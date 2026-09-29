@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.8.3",
+          "date": "2026-09-29",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.8.3/InputStreamPlayer-iOS-0.8.3-53-unsigned.ipa",
+          "size": 16369829,
+          "minOSVersion": "16.0",
+          "sha256": "b79e0cc41b988b8b0a28248df67b1daccbb766026e42ee00e852667f110781cc",
+          "localizedDescription": "\n- Incrementada y alineada la versión visible de iOS, tvOS y Android a `0.8.3`\n  (build 53). Android toma la versión del proyecto de iOS.\n- **Arreglado: en Google TV el salvapantallas se llevaba el vídeo mientras el\n  audio seguía sonando, y en tablet la pantalla se atenuaba y se bloqueaba.**\n  Android no tenía ningún equivalente al `isIdleTimerDisabled` de iOS: nadie\n  marcaba la ventana como «mantener encendida». Mientras se reproduce, la\n  ventana lleva ahora `FLAG_KEEP_SCREEN_ON`; al pausar o salir se quita. El\n  sistema dejaba así de apagar la pantalla, de modo que no destruye la\n  superficie del reproductor a mitad de emisión.\n- **Arreglado: en pantalla completa la imagen salía estirada.** La superficie\n  del reproductor ocupaba todo el hueco de la pantalla y es el sistema el que\n  escala el marco hasta la superficie, así que una fuente con otra proporción\n  se deformaba. Ahora la superficie se dimensiona con la proporción de la\n  imagen que informa mpv (`video-params/aspect`, ya corregida por la de píxel)\n  y se centra sobre el fondo negro; la imagen encaja exactamente, con barras\n  arriba y abajo cuando toca.\n- **Arreglado: con el renderizado por sistema, cierto Dolby Vision se oía pero\n  no se veía.** `vo=mediacodec_embed` solo sabe dibujar marcos de MediaCodec;\n  si mpv acaba decodificando por software (un códec que el dispositivo no\n  soporta), no pinta nada. Al abrirse el vídeo se comprueba ahora\n  `hwdec-current` y, si está en «no», se pasa a `vo=gpu`, que sí dibuja\n  cualquier marco: se prefiere una imagen correcta a ninguna."
+        },
+        {
           "version": "0.8.2",
           "date": "2026-09-29",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.8.2/InputStreamPlayer-iOS-0.8.2-52-unsigned.ipa",
