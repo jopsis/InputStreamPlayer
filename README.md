@@ -19,8 +19,9 @@ la aplicación, ejemplos de listas compatibles y las releases verificables.
 
 ## Compatibilidad
 
-- Versiones disponibles para **iOS**, **tvOS** y **macOS** (Mac con Apple
-  Silicon, mediante PlayCover y con experiencia limitada; ver más abajo).
+- Versiones disponibles para **iOS**, **tvOS**, **macOS** (Mac con Apple
+  Silicon, mediante PlayCover y con experiencia limitada; ver más abajo) y
+  **Android** (móvil y Google TV).
 - **HLS** (`.m3u8`), incluido **SAMPLE-AES** cuando la fuente proporciona una
   clave ClearKey/raw-key autorizada.
 - **DASH / MPD** (`.mpd`) con CENC y ClearKey/raw-key autorizada.
@@ -49,10 +50,10 @@ proveedores; las claves de los ejemplos estructurales son valores de reserva.
 ## Releases
 
 Las versiones publicadas aparecerán en la pestaña [Releases](../../releases) de
-este repositorio. Cada IPA se acompañará de su checksum SHA-256 y notas de
-versión. El [source de SideStore](#añadir-inputstream-player-como-source-de-sidestore)
-se actualiza con cada release y permite instalar/actualizar sin pasar por esta
-pestaña.
+este repositorio. Cada IPA y APK se acompañará de su checksum SHA-256 y notas
+de versión. El [source de SideStore](#añadir-inputstream-player-como-source-de-sidestore)
+se actualiza con cada release y permite instalar/actualizar la versión iOS sin
+pasar por esta pestaña.
 
 Consulta [cómo verificar e instalar una release](docs/releases.md) antes de
 instalarla. La distribución mediante SideStore requiere una cuenta de Apple
@@ -89,6 +90,21 @@ ejecutarla dentro de su contenedor.
 > añadir una lista «desde un fichero» abre el selector pero no importa nada al
 > pulsar «Abrir». El porqué y las alternativas, en
 > [cómo verificar e instalar una release](docs/releases.md#ajuste-obligatorio-en-livecontainer-el-selector-de-archivos).
+
+## Android (móvil y Google TV)
+
+La release incluye dos APKs de Android:
+
+- `InputStreamPlayer-Android-arm64-…apk`: móviles y teles modernas de 64 bits.
+- `InputStreamPlayer-Android-armv7-…apk`: teles de 32 bits, como el Chromecast
+  con Google TV.
+
+Descarga el APK adecuado para tu aparato desde la [release](../../../releases)
+y verifica su checksum `.sha256`. En Android, permite la instalación de
+aplicaciones de orígenes desconocidos cuando el sistema lo pida.
+
+En Google TV o Android TV, usa un navegador o un pendrive para transferir el
+APK, o una herramienta de instalación remota como `adb`.
 
 ## Mac con Apple Silicon (PlayCover)
 

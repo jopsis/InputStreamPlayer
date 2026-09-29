@@ -18,8 +18,9 @@ the app, compatible playlist examples, and verifiable releases.
 
 ## Compatibility
 
-- Versions are available for **iOS**, **tvOS**, and **macOS** (Apple Silicon
-  Macs, through PlayCover and with a limited experience; see below).
+- Versions are available for **iOS**, **tvOS**, **macOS** (Apple Silicon
+  Macs, through PlayCover and with a limited experience; see below), and
+  **Android** (phone and Google TV).
 - **HLS** (`.m3u8`), including **SAMPLE-AES** when the source provides an
   authorized ClearKey/raw key.
 - **DASH / MPD** (`.mpd`) with CENC and an authorized ClearKey/raw key.
@@ -48,10 +49,10 @@ structural examples are placeholders.
 ## Releases
 
 Published versions will appear under this repository's
-[Releases](../../releases) section. Each IPA is accompanied by its SHA-256
+[Releases](../../releases) section. Each IPA and APK is accompanied by its SHA-256
 checksum and release notes. The [SideStore source](#add-inputstream-player-as-a-sidestore-source)
-is refreshed with every release and lets you install/update without visiting
-this tab.
+is refreshed with every release and lets you install/update the iOS version
+without visiting this tab.
 
 Read [how to verify and install a release](docs/releases_en.md) before
 installing it. SideStore distribution requires a valid Apple account and is
@@ -88,6 +89,21 @@ its container.
 > playlist "from a file" opens the picker but imports nothing when you tap
 > "Open". The reason and the workarounds are in
 > [how to verify and install a release](docs/releases_en.md#required-livecontainer-setting-the-file-picker).
+
+## Android (phone and Google TV)
+
+The release includes two Android APKs:
+
+- `InputStreamPlayer-Android-arm64-…apk`: modern 64-bit phones and TVs.
+- `InputStreamPlayer-Android-armv7-…apk`: 32-bit TVs, such as Chromecast with
+  Google TV.
+
+Download the right APK for your device from the
+[release](../../../releases), verify its `.sha256` checksum, and install it
+allowing apps from unknown sources when the system asks.
+
+On Google TV or Android TV, use a browser, a USB drive, or a remote install tool
+such as `adb` to transfer and install the APK.
 
 ## Apple Silicon Macs (PlayCover)
 

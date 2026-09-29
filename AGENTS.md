@@ -15,20 +15,20 @@ proceso manual descrito más abajo.
 
 1. En el repositorio de código: construir el IPA sin firmar de iOS y tvOS
    (misma versión/build en ambos) con `Tooling/distribution/build-ios-ipa.sh`
-   / `build-tvos-ipa.sh`, y después el IPA para Mac con
-   `build-macos-playcover-ipa.sh`, que se deriva del de iOS.
+   / `build-tvos-ipa.sh`, el IPA para Mac con
+   `build-macos-playcover-ipa.sh` (deriva del de iOS) y los APKs de Android
+   con `build-android-apk.sh`.
 2. En el repositorio de código: `Tooling/distribution/publish-release.sh
    --check` y, si todo va bien, `Tooling/distribution/publish-release.sh` sin
    flags. Ese script (ejecutándose desde el checkout del código, con este
    repositorio como `PUBLIC_REPO_DIR` — por defecto la ruta hermana
    `../InputStreamPlayer`):
-   - crea la release `vX.Y.Z` en GitHub con los 6 artefactos (IPA + `.sha256`
-     de iOS, tvOS y macOS/PlayCover) y las notas tomadas del `CHANGELOG.md`
-     del código;
+   - crea la release `vX.Y.Z` en GitHub con los IPAs + `.sha256` de iOS, tvOS
+     y macOS/PlayCover, y los APKs + `.sha256` de Android si están en `dist/`;
    - ejecuta aquí mismo `sidestore/update-source.sh`, y si `apps.json` cambió,
      hace commit y `push` en este repositorio y fuerza un rebuild de Pages.
    - Exige que **este** repositorio esté en `main`, limpio y sincronizado con
-     `origin/main` antes de tocar nada — si tienes cambios locales aquí,
+     `origin/main` antes de tocarlo — si tienes cambios locales aquí,
      confírmalos o descártalos antes de ejecutarlo.
 3. Comprobar que GitHub Pages sirve el JSON actualizado:
    `https://jopsis.github.io/InputStreamPlayer/sidestore/apps.json` (puede

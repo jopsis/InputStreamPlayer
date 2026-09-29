@@ -3,14 +3,19 @@
 Las builds públicas se publican exclusivamente desde la sección
 [Releases](../../../releases) de este repositorio.
 
-InputStream Player está disponible para **iOS**, **tvOS** y **macOS** (Mac con
-Apple Silicon, mediante PlayCover). Cada release incluye:
+InputStream Player está disponible para **iOS**, **tvOS**, **macOS** (Mac con
+Apple Silicon, mediante PlayCover) y **Android** (móvil y Google TV). Cada
+release incluye:
 
 - `InputStreamPlayer-iOS-…-unsigned.ipa`: iPhone y iPad (SideStore/LiveContainer);
 - `InputStreamPlayer-tvOS-…-unsigned.ipa`: Apple TV;
 - `InputStreamPlayer-macOS-PlayCover-….ipa`: Mac con Apple Silicon, con
   PlayCover y experiencia limitada (ver más abajo);
-- un fichero `.sha256` con la suma SHA-256 de cada IPA;
+- `InputStreamPlayer-Android-arm64-….apk`: Android de 64 bits (móviles y teles
+  modernas);
+- `InputStreamPlayer-Android-armv7-….apk`: Android de 32 bits (p. ej.
+  Chromecast con Google TV);
+- un fichero `.sha256` con la suma SHA-256 de cada IPA y APK;
 - la versión, fecha y notas de cambio;
 - cualquier requisito de compatibilidad conocido.
 
@@ -67,6 +72,18 @@ Mientras tanto, las otras dos formas de añadir una lista no se ven afectadas y
 funcionan igual: **desde una URL** y **crear una lista a mano**. Si tienes la
 lista en un archivo y no quieres tocar ajustes, súbela a cualquier sitio que
 dé un enlace directo y añádela por URL.
+
+## Android (móvil y Google TV)
+
+La release incluye dos APKs:
+
+- `InputStreamPlayer-Android-arm64-….apk`: móviles y teles modernas de 64 bits.
+- `InputStreamPlayer-Android-armv7-….apk`: teles de 32 bits, como el Chromecast
+  con Google TV.
+
+Descarga el APK adecuado para tu aparato, verifica su checksum `.sha256` y
+instálalo permitiendo aplicaciones de orígenes desconocidos si el sistema lo
+pide. En Google TV o Android TV puedes usar un navegador, un pendrive o `adb`.
 
 ## Mac con Apple Silicon (PlayCover)
 

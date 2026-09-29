@@ -3,14 +3,18 @@
 Public builds are released only from this repository's
 [Releases](../../../releases) section.
 
-InputStream Player is available for **iOS**, **tvOS**, and **macOS** (Apple
-Silicon Macs, through PlayCover). Each release includes:
+InputStream Player is available for **iOS**, **tvOS**, **macOS** (Apple
+Silicon Macs, through PlayCover), and **Android** (phone and Google TV). Each
+release includes:
 
 - `InputStreamPlayer-iOS-…-unsigned.ipa`: iPhone and iPad (SideStore/LiveContainer);
 - `InputStreamPlayer-tvOS-…-unsigned.ipa`: Apple TV;
 - `InputStreamPlayer-macOS-PlayCover-….ipa`: Apple Silicon Macs, with PlayCover
   and a limited experience (see below);
-- a `.sha256` file with each IPA's SHA-256 checksum;
+- `InputStreamPlayer-Android-arm64-….apk`: 64-bit Android (modern phones and TVs);
+- `InputStreamPlayer-Android-armv7-….apk`: 32-bit Android (e.g. Chromecast with
+  Google TV);
+- a `.sha256` file with each IPA and APK's SHA-256 checksum;
 - version, date, and release notes;
 - any known compatibility requirements.
 
@@ -67,6 +71,18 @@ In the meantime the other two ways to add a playlist are unaffected and work as
 usual: **from a URL** and **creating a playlist by hand**. If your playlist is
 in a file and you would rather not touch settings, upload it anywhere that
 gives a direct link and add it by URL.
+
+## Android (phone and Google TV)
+
+The release includes two APKs:
+
+- `InputStreamPlayer-Android-arm64-….apk`: modern 64-bit phones and TVs.
+- `InputStreamPlayer-Android-armv7-….apk`: 32-bit TVs, such as Chromecast with
+  Google TV.
+
+Download the right APK for your device, verify its `.sha256` checksum, and
+install it allowing apps from unknown sources if the system asks. On Google TV
+or Android TV, use a browser, a USB drive, or `adb` to transfer and install it.
 
 ## Apple Silicon Macs (PlayCover)
 
