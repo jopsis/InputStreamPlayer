@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.8.2",
+          "date": "2026-09-29",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.8.2/InputStreamPlayer-iOS-0.8.2-52-unsigned.ipa",
+          "size": 16369828,
+          "minOSVersion": "16.0",
+          "sha256": "b2f534a421336cec374fed19d5183346a80100822b520103e1098c42d702852e",
+          "localizedDescription": "\n- Incrementada y alineada la versión visible de iOS, tvOS y Android a `0.8.2`\n  (build 52). Android toma la versión del proyecto de iOS.\n- **Se puede elegir la calidad en Android.** El proxy siempre recorta el master\n  a una sola variante para que mpv arranque rápido, así que las demás no\n  existían para el reproductor. El núcleo compartido\n  (`Sources/ISPAndroidCore/CorePlayback.swift`) publica ahora las variantes\n  HLS y las representaciones DASH que había descartado, y la UI de Android las\n  lista: cambiar de resolución ya no exige parar y volver a preparar la\n  emisión.\n- **Renderizado por sistema en Android, activado por defecto.** En\n  **Ajustes → Imagen → Renderizado por sistema** mpv dibuja con\n  `vo=mediacodec_embed` y `hwdec=mediacodec` directamente sobre la\n  superficie, sin pasar por OpenGL: es el equivalente del modo «Sistema» de\n  iOS (`libmpv` + `videotoolbox` + `AVSampleBufferDisplayLayer`). Reduce el\n  consumo y los tirones en equipos modestos. Se puede desactivar para volver\n  al renderizado de siempre, porque `mediacodec_embed` no dibuja los\n  subtítulos incrustados de mpv (limitación conocida, pendiente de una segunda\n  fase).\n- **El HLS arranca más rápido.** Con la sonda corta el `probesize` baja de\n  1 MB a 64 KB, y el proxy se queda con una sola entrada cuando un master\n  repite la misma URI de vídeo con grupos de audio distintos: FFmpeg trataba\n  cada repetición como una pista y sondeaba todas al arrancar.\n- **Auto-actualizador en Android.** Al pasar la app a primer plano comprueba,\n  como mucho una vez por hora, la última release de GitHub; si hay una versión\n  más nueva, descarga el APK de su arquitectura, comprueba el SHA-256\n  publicado y que la firma coincida con la de la app instalada, y abre el\n  instalador del sistema. Ahí termina: la instalación la confirma el usuario\n  con el diálogo de Android, y un APK firmado con otra clave no sirve. Solo en\n  compilaciones de depuración admite `--es ispUpdateFeed URL` y\n  `--ez ispUpdateNow true` para probarlo sin publicar una release.\n- **«Aparato» pasa a «Dispositivo»** en todos los textos de sincronización de\n  iOS, tvOS y Android.\n- **Arreglado: el filtro de variantes descartaba todas las de HLS.** Miraba\n  `videoCodec`, un campo que no existe en esa clase, así que siempre era\n  nulo; ahora comprueba `codec`."
+        },
+        {
           "version": "0.8.0",
           "date": "2026-09-29",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.8.0/InputStreamPlayer-iOS-0.8.0-51-unsigned.ipa",
