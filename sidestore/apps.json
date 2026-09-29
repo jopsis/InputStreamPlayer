@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.8.0",
+          "date": "2026-09-29",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.8.0/InputStreamPlayer-iOS-0.8.0-51-unsigned.ipa",
+          "size": 16369461,
+          "minOSVersion": "16.0",
+          "sha256": "48557fb0d0ce129b78990ed52a090446d939b7828355cd294a04a8eb858f7bfb",
+          "localizedDescription": "InputStream Player 0.8.0 (build 51).\n\nNovedades principales:\n- Nueva app de Android y Google TV, con el mismo núcleo Swift compartido por JNI.\n- Los proxies de HLS, DASH y Smooth Streaming pasan a un módulo compartido entre todas las plataformas.\n- Mejor estabilidad en HLS cifrado en directo.\n- Arreglos en sincronización y en listas JSON con claves mal escritas."
+        },
+        {
           "version": "0.7.2",
           "date": "2026-09-28",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.7.2/InputStreamPlayer-iOS-0.7.2-50-unsigned.ipa",
@@ -272,15 +281,6 @@
           "minOSVersion": "16.0",
           "sha256": "8791293418a81c80c83843b63a3f495bbb12820f3e8b515b3b853d3e33741b79",
           "localizedDescription": "Corregido un fallo que cortaba la reproducción de muchos canales DASH en directo a los pocos segundos de empezar."
-        },
-        {
-          "version": "0.5.14",
-          "date": "2026-09-15",
-          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.14/InputStreamPlayer-iOS-0.5.14-21-unsigned.ipa",
-          "size": 15270437,
-          "minOSVersion": "16.0",
-          "sha256": "557462ac1aea2c33850b4cde042345c0e632d46fe292da1ed613df22be38baec",
-          "localizedDescription": "Nuevas listas personalizadas: crea tus propias listas y ve pegando canales en formato M3U, con la opción de borrarlos uno a uno."
         }
       ]
     }
