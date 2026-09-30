@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.1",
+          "date": "2026-09-30",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.1/InputStreamPlayer-iOS-0.9.1-55-unsigned.ipa",
+          "size": 16368568,
+          "minOSVersion": "16.0",
+          "sha256": "055a176a70c3728bcc0c0c5ab782ef7a7769f1fdb65a8e644da3bd19275a0a60",
+          "localizedDescription": "Novedades de 0.9.1 (build 55):\n• Ajustes → Actualizaciones → «Buscar actualizaciones»: comprueba si hay una versión nueva cuando quieras, sin esperar a la comprobación automática, y te cuenta qué está haciendo y el motivo exacto si algo falla.\n• El actualizador automático deja de callar los errores: sin conexión, sin APK para el equipo o con la firma distinta se explican en esa misma fila."
+        },
+        {
           "version": "0.9.0",
           "date": "2026-09-30",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.0/InputStreamPlayer-iOS-0.9.0-54-unsigned.ipa",
