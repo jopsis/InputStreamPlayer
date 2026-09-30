@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.0",
+          "date": "2026-09-30",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.0/InputStreamPlayer-iOS-0.9.0-54-unsigned.ipa",
+          "size": 16368569,
+          "minOSVersion": "16.0",
+          "sha256": "b6c8ee3732dd578fd9cc5d3711c842f3b5ef2ff4e838fa05d4fb5819ff7cb0fa",
+          "localizedDescription": "Novedades de 0.9.0 (build 54):\n• Android: mientras se leen las listas se ve «Cargando canales» en lugar de «Sin resultados».\n• El formato de cada canal (HLS, DASH, ISML) baja al pie de la tarjeta en iOS, Android y Apple TV: se ve igual en las tres apps y no tapa el logo.\n• Con el mando, la barra de tiempo ya se puede usar: las flechas mueven el foco y el botón central activa el salto de 10 segundos.\n• El arranque de Android carga el núcleo y la configuración de guías y addons en segundo plano."
+        },
+        {
           "version": "0.8.3",
           "date": "2026-09-29",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.8.3/InputStreamPlayer-iOS-0.8.3-53-unsigned.ipa",
