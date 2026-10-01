@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.5",
+          "date": "2026-10-01",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.5/InputStreamPlayer-iOS-0.9.5-59-unsigned.ipa",
+          "size": 16420944,
+          "minOSVersion": "16.0",
+          "sha256": "7174df7e44f92fb5a36deb64266e6c1c3cb08ac5b0aedabc94e60430b018d375",
+          "localizedDescription": "Novedades:\n- Nueva fila «Vistos recientemente» en Addons; «Seguir viendo» solo muestra lo que está a medias.\n- Android: nuevo APK universal (arm64 + armv7) para quien no sepa cuál le toca, p. ej. Nvidia Shield. Siguen los APK arm64 y armv7 por separado.\n- Android: catchup con la ventana del programa.\n- iOS: la guía se mueve arrastrando en horizontal; al tocar una pestaña vuelve a su raíz."
+        },
+        {
           "version": "0.9.4",
           "date": "2026-10-01",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.4/InputStreamPlayer-iOS-0.9.4-58-unsigned.ipa",
