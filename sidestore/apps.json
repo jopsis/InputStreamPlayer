@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.6",
+          "date": "2026-10-04",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.6/InputStreamPlayer-iOS-0.9.6-60-unsigned.ipa",
+          "size": 16450127,
+          "minOSVersion": "16.0",
+          "sha256": "a9b87b17043b373e53e5984ec56666ed1e7cba64adf7bceb67eac25a997568c6",
+          "localizedDescription": "Novedades:\n- Nueva opción «Usar XDP DNS» en Preferencias › Red (desactivada por defecto): resuelve los nombres con el DNS cifrado de XDP en vez del de tu red. Puede arreglar canales o listas que no cargan por fallos o bloqueos del DNS de tu operador.\n- Funciona en iOS, tvOS y Android (los APK siguen siendo arm64, armv7 y universal)."
+        },
+        {
           "version": "0.9.5",
           "date": "2026-10-01",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.5/InputStreamPlayer-iOS-0.9.5-59-unsigned.ipa",
