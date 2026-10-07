@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.7",
+          "date": "2026-10-07",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.7/InputStreamPlayer-iOS-0.9.7-61-unsigned.ipa",
+          "size": 16483652,
+          "minOSVersion": "16.0",
+          "sha256": "ce44e7361d22e36f3e070cb99798ca43bb9fd143575d47173434048f86c56aae",
+          "localizedDescription": "Novedades:\n- Tus listas personales de Trakt aparecen en la pestaña Addons (si has conectado Trakt): ábrelas para ver su contenido y entra en cualquier título.\n- Los botones «Ver más tarde» y «Vista» se distinguen ahora claramente cuando están activados.\n- Los enlaces de una película o serie se pueden filtrar por addon y por HDR, además de por calidad."
+        },
+        {
           "version": "0.9.6",
           "date": "2026-10-04",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.6/InputStreamPlayer-iOS-0.9.6-60-unsigned.ipa",
