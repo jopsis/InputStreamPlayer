@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.8",
+          "date": "2026-10-07",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.8/InputStreamPlayer-iOS-0.9.8-62-unsigned.ipa",
+          "size": 16544980,
+          "minOSVersion": "16.0",
+          "sha256": "92bf005f67e9e0776d993cdaa7b8c2ca5debb4de673d0be21624289d8f18b5e0",
+          "localizedDescription": "Novedades:\n- Nuevo selector «Directo / Bajo demanda» en Emisiones: las películas y series de tus listas salen aparte, con carteles, y no se mezclan con el directo.\n- Las series se agrupan: una tarjeta por serie, con sus temporadas y episodios.\n- Puedes reanudar por donde ibas, volver a empezar y marcar películas, episodios o temporadas como vistos. «Seguir viendo» aparece encima de los carteles.\n- Funciona en iOS, tvOS y Android (los APK siguen siendo arm64, armv7 y universal)."
+        },
+        {
           "version": "0.9.7",
           "date": "2026-10-07",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.7/InputStreamPlayer-iOS-0.9.7-61-unsigned.ipa",
