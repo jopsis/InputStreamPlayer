@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.12",
+          "date": "2026-10-08",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.12/InputStreamPlayer-iOS-0.9.12-66-unsigned.ipa",
+          "size": 16623441,
+          "minOSVersion": "16.0",
+          "sha256": "08bde45ae9d331ad8ef2da907ebdfddfd6294b73e881dd732092531c94530c82",
+          "localizedDescription": "\n- **La sinopsis de la serie** (`info.plot` del título) se perdía: cada episodio\n  se quedaba con la suya y la de la serie no iba a ningún sitio. Ahora viaja\n  aparte (`VODMetadata.seriesPlot`, `seriesPlot` en el núcleo de Android) y la\n  ficha de la serie la muestra. Un episodio sin sinopsis propia ya no hereda la\n  de la serie en su fila.\n- **La cabecera de una serie** no enseña la duración: la que había era la del\n  primer episodio («47 min»).\n- **Botones:** «Reproducir» y «Tráiler» van juntos (iOS: en la misma tarjeta;\n  Android: uno al lado del otro; tvOS: seguidos en la fila) y «Marcar vista»\n  pasa a la cabecera, debajo de los datos. Lo pidió un usuario.\n- Ganchos de prueba de iOS: `--playlist <ruta> --channel -1` carga la lista sin\n  reproducir nada, `--ui-testing-vod` vale también con `--playlist`, y\n  `--ui-testing-open-vod <título>` abre ese título."
+        },
+        {
           "version": "0.9.11",
           "date": "2026-10-08",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.11/InputStreamPlayer-iOS-0.9.11-65-unsigned.ipa",
