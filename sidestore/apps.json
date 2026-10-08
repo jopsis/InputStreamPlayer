@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.11",
+          "date": "2026-10-08",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.11/InputStreamPlayer-iOS-0.9.11-65-unsigned.ipa",
+          "size": 16621480,
+          "minOSVersion": "16.0",
+          "sha256": "62445d75f1a8063e7b59ce6a5ed877f4b8dbcf86406301dcbc8c15da0de6bb3b",
+          "localizedDescription": "\n#### Tráileres en Addons (YouTube) y días de la Guía en español\n\n- **Botón «Tráiler» en las fichas de Addons.** El id de YouTube sale de TMDb,\n  en el idioma del aparato y si no en inglés (tráiler antes que teaser, oficial\n  antes que no oficial), o del propio addon (`trailerStreams` y `trailers` de\n  Cinemeta). A TMDb no se le hace ninguna petición más: los vídeos llegan en la\n  misma que la sinopsis (`append_to_response=videos`). Se abre en YouTube\n  porque mpv no puede reproducirlo (no llevamos yt-dlp): en Android y Google TV\n  con `vnd.youtube:` (o el navegador), en iOS con el enlace web (la app de\n  YouTube si está, o Safari) y en tvOS con `youtube://` (si no está la app, lo\n  avisa).\n- **Guía en iOS y tvOS:** el día de la semana del selector («Tuesday 6») salía\n  en el idioma del aparato. Ahora va en español, como «Hoy» y «Ayer», y como\n  ya lo hacía Android.\n- **«Vistos recientemente»:** «visto el 8 Oct» salía con el mes en el idioma\n  del aparato (`WatchDetailFormat` usaba `Locale.current`). Ahora, «8 oct».\n\n#### Fichas de los catálogos JSON: sinopsis, reparto, valoración y tráiler\n\n- **Películas con `videos: [...]`:** el catálogo del usuario da las películas\n  como una lista de versiones y no con `video`; por eso «Sirat» no salía. Se\n  usa la primera versión, con su propia ficha (`info.plot`, `duration`).\n- **La ficha (`VODMetadata`)**: sinopsis, valoración, año, géneros, reparto,\n  dirección, país, duración y tráiler, de `info` del título y de la versión o\n  el episodio (el episodio hereda lo de la serie). Lo vacío o a cero\n  (`\"rating\": \"0.0\"`, `\"year\": 0`, `\"plot\": \"\"`) no cuenta. Viaja al núcleo de\n  Android en `meta` de cada canal.\n- **En las fichas de «Bajo demanda»** (Android, iOS y tvOS): año, valoración y\n  duración junto al grupo; géneros; sinopsis plegable con «Ver más» (solo en\n  películas); dirección, reparto y país. Cada episodio enseña su duración y su\n  sinopsis. Las acciones quedan arriba, antes de la sinopsis.\n- **Botón «Tráiler»** si la lista lo trae: se reproduce como un vídeo sin clave\n  con las cabeceras del título (Android lo pide con el id del canal más\n  `#trailer`; `PlaylistEntry.trailerEntry`). Probado con el de «Sirat» (DASH\n  de Movistar, 1080p) en el OnePlus."
+        },
+        {
           "version": "0.9.10",
           "date": "2026-10-08",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.10/InputStreamPlayer-iOS-0.9.10-64-unsigned.ipa",
