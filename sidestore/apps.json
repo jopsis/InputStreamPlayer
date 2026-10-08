@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.13",
+          "date": "2026-10-08",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.13/InputStreamPlayer-iOS-0.9.13-67-unsigned.ipa",
+          "size": 16623442,
+          "minOSVersion": "16.0",
+          "sha256": "b49eee58219ed4cf13f1760332e644f46963f47db27575b602e6dda48086a0c7",
+          "localizedDescription": "\n#### Progreso de la descarga de actualizaciones (Android)\n\n- La fila **Buscar actualizaciones** enseña lo que hace el actualizador,\n  también cuando busca solo al abrir la app (antes descargaba sin que se viera):\n  «Descargando la versión 0.9.13… 45 % (27 de 61 MB)» con una barra de\n  progreso, y luego «Comprobando la descarga…» y «Abriendo el instalador…».\n  `AppUpdater.activity` es el estado; la descarga avisa cada 1 %.\n- Probado en el OnePlus con el feed de depuración (`ispUpdateFeed`) apuntando a\n  la release real con otra etiqueta: se ve el porcentaje y la barra.\n\n#### «Enviar registro» en Ajustes (Android)\n\n- **Ajustes → Preferencias → Ayuda → Enviar registro** (al final del todo: se usa muy de vez en cuando) prepara un `.txt` y abre «Compartir»\n  (Telegram, correo, Drive…); si el aparato no tiene con qué compartir, lo deja\n  en Descargas. Es para diagnosticar en aparatos que no tenemos (la Shield de un\n  usuario que no reproduce nada por HTTPS).\n- Lleva: versión, modelo, Android, ABIs y si el proceso es de 64 bits, los\n  ajustes que influyen (XDP DNS, renderizado, buffer), las últimas 3.000 líneas\n  de `core.log` y las últimas 6.000 del logcat de la app, donde mpv cuenta qué\n  abre y por qué falla (`[ffmpeg] tls: …`, `HTTP error …`).\n- **Se tapan los secretos** antes de compartir (`DiagnosticsLog.redact`): pares\n  ClearKey `kid:clave`, `cenc_decryption_key`, `alldebrid=` y demás debrid de\n  Torrentio, tokens y claves de cabeceras y parámetros (`x-tcdn-token`,\n  `api_key`, `Bearer`…) y los tramos largos de ruta con los que los addons\n  configurados guardan la configuración del usuario (`/c/AZqsUO…/` de Stremtir,\n  `enc_…` de Peerflix). Probado con un episodio real de AllDebrid en el OnePlus:\n  ninguna clave quedó a la vista."
+        },
+        {
           "version": "0.9.12",
           "date": "2026-10-08",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.12/InputStreamPlayer-iOS-0.9.12-66-unsigned.ipa",
