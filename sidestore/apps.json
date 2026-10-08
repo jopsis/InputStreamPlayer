@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.9",
+          "date": "2026-10-08",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.9/InputStreamPlayer-iOS-0.9.9-63-unsigned.ipa",
+          "size": 16546957,
+          "minOSVersion": "16.0",
+          "sha256": "ff28a1b7198522527deb4c75323849142cccd0e9715d5f873a629e9657d1c034",
+          "localizedDescription": "\n#### Información del canal desplazable con el mando (Android TV)\n\n- El diálogo de Información no se podía desplazar con el mando: el foco iba\n  directo al botón «Hecho» y lo que no cabía en pantalla quedaba fuera de\n  alcance. Ahora el contenido toma el foco: arriba y abajo lo desplazan y, al\n  llegar al final, abajo pasa a «Hecho» (y arriba vuelve al texto).\n- **Búfer en Información (Android):** nueva fila «Búfer» en Reproducción con los\n  segundos de vídeo que mpv tiene guardados por delante\n  (`demuxer-cache-duration`), como ya mostraban iOS y tvOS.\n\n#### Buffer configurable: directo y bajo demanda por separado\n\n- **Preferencias → Buffer** (Android, iOS y tvOS): segundos de vídeo por\n  adelantado para **Directo** (2–60 s, por defecto 30, como hasta ahora) y para\n  **Bajo demanda y addons** (10–300 s, por defecto 45). Lo segundo vale para\n  películas y episodios de listas, vídeos de addons y programas grabados, es\n  decir, todo lo que no es `isZappable`. Se aplica al abrir el siguiente vídeo.\n- Cambian `cache-secs` y `demuxer-readahead-secs` de mpv, y el tope de memoria\n  (`demuxer-max-bytes`) sube con los segundos: 3,2 MB por segundo, entre 96 y\n  384 MB. Son ajustes del aparato; no viajan con la sincronización.\n\n#### El zapping con arriba y abajo, solo en el directo\n\n- **Arriba y abajo (y el deslizamiento vertical en iOS) solo pasan de canal en el\n  directo.** Con una película, un episodio de una lista, un vídeo de un addon o\n  un programa grabado ya no cambian a otro canal: en Android y tvOS enseñan los\n  mandos, como el botón central, y en iOS no hacen nada. La regla es\n  `IOSLibraryChannel.isZappable` / `Channel.isZappable`: no es bajo demanda, no\n  lleva contexto de visto (addons) y no es catchup. El reproductor recibe el\n  zapping solo si el canal lo permite.\n- **El zapping nunca salta a una película:** con la pantalla en «Bajo demanda»,\n  los canales entre los que se zapea son todos los del directo\n  (`zapChannels`); antes salían de la lista filtrada, que ahí eran películas."
+        },
+        {
           "version": "0.9.8",
           "date": "2026-10-07",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.8/InputStreamPlayer-iOS-0.9.8-62-unsigned.ipa",
