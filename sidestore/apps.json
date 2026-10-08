@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.10",
+          "date": "2026-10-08",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.10/InputStreamPlayer-iOS-0.9.10-64-unsigned.ipa",
+          "size": 16557458,
+          "minOSVersion": "16.0",
+          "sha256": "a773514402cddf747993ed4a17e8c5bff72dc82688be3bbf242f020ec6d03812",
+          "localizedDescription": "\n#### Catálogos JSON con `video` y `seasons` (VOD)\n\n- `JSONPlaylistParser` entiende un tercer esquema: un catálogo de películas y\n  series donde cada título trae `name`, `category`, `info` (`poster`, `bg`),\n  `video`, `drm: \"clearkey\"` + `drmkey: \"kid:key\"` y `headers`\n  (`Nombre=valor&Otro=valor`, como el `stream_headers` de Kodi). Las series\n  traen `seasons[].episodes[]` con su propio `video`, `drm`, `drmkey` y\n  `headers`. Todo es bajo demanda; vale una lista o un único título.\n- Los episodios salen con su título (o «Episodio N») y su `SeriesInfo` (serie,\n  temporada y episodio), así que se agrupan en «Bajo demanda» como las series de las listas M3U. El póster es\n  el logo y `bg`, el fondo del reproductor. La sinopsis y el reparto de `info`\n  no se usan todavía.\n- Una clave `drmkey` mal formada descarta solo ese título; un `drm` que no sea\n  `clearkey` se reproduce sin clave. Una lista de canales no se confunde con un\n  catálogo (no tiene `video` ni `seasons`).\n- Probado con los dos ficheros de ejemplo, completados a mano porque\n  `vod2.txt` está cortado en mitad de la lista de episodios."
+        },
+        {
           "version": "0.9.9",
           "date": "2026-10-08",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.9/InputStreamPlayer-iOS-0.9.9-63-unsigned.ipa",
