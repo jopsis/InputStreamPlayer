@@ -44,7 +44,9 @@ Cada archivo va con su checksum SHA-256. Antes de instalar, lee
   Los catálogos JSON pueden traer ficha completa (sinopsis, reparto, año,
   géneros, duración) y tráiler ([formato](docs/formatos-de-listas.md#catálogos-de-películas-y-series-json)).
 - **Addons de Stremio:** catálogos, fichas con tráiler (desde TMDb) y enlaces de
-  los addons que añadas, y listas de Trakt.
+  los addons que añadas, y listas de Trakt. Trae de serie Cinemeta (catálogos y
+  fichas) y **OpenSubtitles** (subtítulos en tu idioma aunque el vídeo no los
+  traiga); se admiten también otros addons de subtítulos.
 - **Pistas:** calidad de vídeo, idioma de audio y subtítulos elegibles. El
   idioma preferido se elige en Ajustes y la pista elegida a mano se recuerda en
   cada canal.

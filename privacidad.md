@@ -4,7 +4,7 @@ title: Política de privacidad · Privacy policy
 
 # Política de privacidad de InputStream Player
 
-Última actualización: 9 de octubre de 2026 (Android, TMDb, DNS y registro).
+Última actualización: 9 de octubre de 2026 (Android, TMDb, OpenSubtitles, DNS y registro).
 
 InputStream Player (ISPlayer) es un reproductor de vídeo para iPhone, iPad,
 Apple TV, Mac y Android (móvil, Google TV y Android TV). Esta política explica
@@ -37,6 +37,10 @@ ellos.
 - **TMDb (The Movie Database):** en Addons, para traer la ficha y el tráiler de
   una película o serie, la app pide a TMDb los datos de ese título por su
   identificador y en tu idioma. No se envía nada tuyo.
+- **OpenSubtitles (addon de Stremio):** al reproducir un vídeo de Addons, la
+  app pide al addon de OpenSubtitles (y a los demás addons de subtítulos que
+  tengas) la lista de subtítulos de ese título por su identificador de IMDb.
+  El fichero solo se descarga si eliges uno. Se puede desactivar en Tus addons.
 - **YouTube:** el botón «Tráiler» de un addon abre el vídeo en la app de
   YouTube o en el navegador; a partir de ahí se aplica la política de YouTube.
 - **XDP DNS (opcional):** si activas «Usar XDP DNS» en Preferencias, los
@@ -110,7 +114,7 @@ https://github.com/jopsis/InputStreamPlayer/issues
 
 # InputStream Player privacy policy
 
-Last updated: October 9, 2026 (Android, TMDb, DNS, and logs).
+Last updated: October 9, 2026 (Android, TMDb, OpenSubtitles, DNS, and logs).
 
 InputStream Player (ISPlayer) is a video player for iPhone, iPad, Apple TV,
 Mac, and Android (phone, Google TV, and Android TV). This policy explains what
@@ -142,6 +146,10 @@ videos). What those services do with your connection is up to them.
 - **TMDb (The Movie Database):** in Add-ons, to get the details and trailer of
   a movie or series, the app asks TMDb for that title's data by its identifier
   and in your language. Nothing about you is sent.
+- **OpenSubtitles (Stremio add-on):** when you play a video from Add-ons, the
+  app asks the OpenSubtitles add-on (and any other subtitle add-ons you have)
+  for the subtitles of that title by its IMDb identifier. A file is only
+  downloaded if you pick one. It can be turned off in Tus addons.
 - **YouTube:** an add-on's "Tráiler" button opens the video in the YouTube app
   or the browser; from there, YouTube's policy applies.
 - **XDP DNS (optional):** if you turn on "Usar XDP DNS" in Preferences, the

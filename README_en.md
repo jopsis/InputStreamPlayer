@@ -43,7 +43,9 @@ Every file comes with its SHA-256 checksum. Before installing, read
   can carry full details (plot, cast, year, genres, runtime) and a trailer
   ([format](docs/formatos-de-listas_en.md#movie-and-series-catalogs-json)).
 - **Stremio add-ons:** catalogs, detail pages with trailers (from TMDb), and
-  streams from the add-ons you add, plus Trakt lists.
+  streams from the add-ons you add, plus Trakt lists. Cinemeta (catalogs and
+  details) and **OpenSubtitles** (subtitles in your language even when the
+  video has none) come built in; other subtitle add-ons work too.
 - **Tracks:** pick the video quality, audio language, and subtitles. The
   preferred language is set in Settings, and a track picked by hand is
   remembered per channel.
