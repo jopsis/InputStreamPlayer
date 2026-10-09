@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.18",
+          "date": "2026-10-09",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.18/InputStreamPlayer-iOS-0.9.18-72-unsigned.ipa",
+          "size": 16710485,
+          "minOSVersion": "16.0",
+          "sha256": "8d89dd2e6d3e8f6f87305ce3a17bb25962787931b0f9fd70f112e49f140e24b6",
+          "localizedDescription": "\n#### Subtítulos de addons (OpenSubtitles por defecto)\n\n- Los addons de Stremio con el recurso `subtitles` ya sirven: antes se\n  rechazaban como «no aporta nada». `StremioClient.subtitles` y\n  `subtitleOptions` piden a todos los activos que los dan para el id de IMDb\n  (`movie` o `series` con `tt…:temporada:episodio`) y `StremioSubtitles`\n  los ordena (idioma preferido, inglés, resto), los etiqueta («Español ·\n  OpenSubtitles v3») y deja como mucho cuatro por idioma.\n- **OpenSubtitles v3** (`opensubtitles-v3.strem.io`, gratis y sin cuenta)\n  viene con la app como Cinemeta: se instala al entrar en Addons y se puede\n  desactivar, no quitar (`StremioOfficialAddons.builtIn`).\n- En el reproductor, los vídeos de Addons añaden esos subtítulos al menú.\n  Nada se descarga hasta elegir uno: entonces mpv lo carga con `sub-add`\n  (asíncrono en iOS/tvOS, `MPV_EVENT_COMMAND_REPLY`) y se recuerda su pista\n  para volver a él sin descargarlo. Sin idioma de audio elegido, manda el del\n  sistema.\n- Probado en el OnePlus con «Matrix Reloaded»: subtítulo en español de\n  OpenSubtitles cargado y en pantalla. En iOS/tvOS compila, sin probar en\n  ejecución.\n\n#### Navegación en Addons (Android)\n\n- **El diálogo de «visto» se cerraba solo con el mando:** al abrirse con una\n  pulsación larga, las repeticiones y el soltado del mismo OK pulsaban\n  «Cancelar». `Modifier.ignoringHeldSelectKey()` las ignora hasta soltar; se\n  aplica a episodios de Addons y Bajo demanda, programas de la Guía y quitar\n  de «Seguir viendo»/«Ver más tarde». Probado con el mando en el emulador de\n  Android TV.\n- **Volver atrás llevaba al principio de Addons:** cada pantalla de la pila\n  guarda ahora su estado (`rememberSaveableStateHolder`): búsqueda,\n  desplazamiento y filtros; la última búsqueda se guarda para no repetirla.\n- La ficha de un título pasa los botones a otra línea en vez de estrechar el\n  último («Tráiler» salía en columna)."
+        },
+        {
           "version": "0.9.17",
           "date": "2026-10-09",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.17/InputStreamPlayer-iOS-0.9.17-71-unsigned.ipa",
