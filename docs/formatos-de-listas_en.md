@@ -36,13 +36,61 @@ Supported `manifest_type` values:
 | `ism` | Smooth Streaming (`.ism`/`.isml`) with an authorized ClearKey/raw key |
 
 Keys use `KID:KEY`, with both values encoded as 16-byte hexadecimal strings
-(32 hexadecimal characters each). `#EXTVLCOPT:http-user-agent=` can set a user
-agent; `inputstream.adaptive.stream_headers` can set HTTP headers.
+(32 hexadecimal characters each). When each track is encrypted with a
+different key, list several pairs separated by commas (`KID1:KEY1,KID2:KEY2`);
+the ClearKey JSON object is accepted too.
+
+`#EXTVLCOPT:http-user-agent=` can set a user agent, and
+`inputstream.adaptive.stream_headers` can set HTTP headers, in the form
+`Name=value&Other=value`:
+
+```m3u
+#KODIPROP:inputstream.adaptive.stream_headers=X-Token=abc123&Referer=https://example.invalid/
+```
+
+### Movies and series (on demand)
+
+A playlist can mix live channels with movies and episodes. On-demand entries
+show up under **Emisiones → Bajo demanda** (On demand), not in live TV. M3U has
+no field for this, so it is worked out from what each entry says, in this
+order:
+
+1. **The declared type:** `tvg-type`, `type`, `media-type`, or `group-type` set
+   to `movie`, `series`, `vod`, `episode`… (or `live` to force live).
+2. **The Xtream Codes path:** `/movie/…` and `/series/…` are on demand;
+   `/live/…` is live.
+3. **The extension:** `.mp4`, `.mkv`, `.avi`, `.mov`… are video files.
+4. **The `#EXTINF` duration:** channels use `-1`; a duration of two minutes or
+   more is taken as a movie.
+
+The group name does not count: there are live channels in groups called
+"Movies" or "Series".
+
+Episodes are grouped by series and season from their name: `Show S01E02`,
+`Show.s1.e2`, `Show - T01E02`, or `Show 1x02`.
+
+```m3u
+#EXTINF:120 tvg-type="movie" tvg-logo="https://example.invalid/poster.jpg" group-title="Movies",Demo Movie
+https://example.invalid/vod/demo-movie.mp4
+#EXTINF:-1 tvg-type="series" group-title="Series",Demo Show S01E01
+https://example.invalid/vod/demo-show/s01e01.mkv
+```
 
 ## JSON
 
-The flat format is an array of channels. `name` and `url` are required;
-`key`, `group`, `logo`, and `user_agent` are optional.
+The flat format is an array of channels. `name` and `url` are required; the
+rest are optional:
+
+| Field | Purpose |
+| --- | --- |
+| `key` | ClearKey key, in the same forms as the M3U `license_key` |
+| `group` | Channel group |
+| `logo` | Logo |
+| `tvg_id` | Channel identifier in the guide |
+| `user_agent` | User agent used to request the video |
+| `type` | `movie`, `episode`, `series`… for on-demand content; `live` for live |
+| `serie_name`, `season`, `episode` | Which series, season, and episode it is |
+| `catchup_url`, `catchup_key`, `catchup_days`… | See [Catch-up](#catch-up) |
 
 ```json
 [
@@ -66,6 +114,88 @@ The grouped schema is also supported: each group declares `name`, an optional
 `key`, and `user_agent`.
 
 See the complete files in [samples](../samples/).
+
+## Movie and series catalogs (JSON)
+
+For on-demand content with full details there is a third JSON schema: an
+array of titles (or a single title). Everything in it goes to **Bajo demanda**
+(On demand). A **movie** has `video` (or `videos`, a list of versions); a
+**series** has `seasons`.
+
+```json
+[
+  {
+    "name": "Demo Movie",
+    "category": "Movies",
+    "trailer": "https://example.invalid/trailers/demo-movie.mpd",
+    "video": "https://example.invalid/vod/demo-movie/manifest.mpd",
+    "drm": "clearkey",
+    "drmkey": "00112233445566778899aabbccddeeff:ffeeddccbbaa99887766554433221100",
+    "headers": "X-Token=abc123",
+    "info": {
+      "poster": "https://example.invalid/posters/demo-movie.jpg",
+      "bg": "https://example.invalid/backdrops/demo-movie.jpg",
+      "plot": "Movie plot.",
+      "rating": "7.4",
+      "year": "2025",
+      "genre": ["Drama", "Adventure"],
+      "cast": ["Actress One", "Actor Two"],
+      "director": ["Demo Director"],
+      "country": ["Spain"],
+      "duration": 6540
+    }
+  },
+  {
+    "name": "Demo Show",
+    "category": "Series",
+    "info": { "plot": "Plot of the whole series.", "year": "2026", "genre": "Comedy" },
+    "seasons": [
+      {
+        "season": 1,
+        "episodes": [
+          {
+            "episode": 1,
+            "name": "The beginning",
+            "video": "https://example.invalid/vod/demo-show/s01e01.m3u8",
+            "info": { "plot": "Episode plot.", "duration": 47 }
+          }
+        ]
+      }
+    ]
+  }
+]
+```
+
+| Field | Purpose |
+| --- | --- |
+| `name` | Title |
+| `category` | Group it appears in (Movies, Series…) |
+| `video` | Video address (HLS, DASH, Smooth, or a file) |
+| `videos` | The movie as a list of versions, each with its own `video`, `drm`, `drmkey`, `headers`, and `info`. The first one with a `video` is played |
+| `seasons` | Seasons: `season` (number) and `episodes`, each with `episode`, `name`, `video`, `drm`, `drmkey`, `headers`, and `info` |
+| `drm` | `clearkey` if encrypted; without it, it plays in the clear |
+| `drmkey` | Key as `KID:KEY` (or several, separated by commas) |
+| `headers` | HTTP headers, as `Name=value&Other=value` |
+| `trailer` | A trailer address; adds a "Tráiler" button to the detail page |
+| `info` | The details (see below) |
+
+`info` fields, all optional:
+
+| Field | Content |
+| --- | --- |
+| `poster`, `bg` | Poster and backdrop |
+| `plot` | Plot. In a series, the series plot; each episode can carry its own |
+| `rating`, `year` | Rating and year; numbers or text both work |
+| `genre`, `cast`, `director`, `country` | A list of names or comma-separated text |
+| `duration` | In minutes (`47`) or seconds (`3420`): above 400 it is taken as seconds |
+
+The parser is lenient: unused fields are ignored, an empty or zero value
+(`"rating": "0"`, `"plot": ""`) counts as unknown, and a title, season, or
+episode that cannot be read is skipped without breaking the rest. An episode
+inherits from the series whatever it lacks (year, genres, cast…), and without a
+`name` it is called "Episodio N".
+
+Complete example in [samples/catalogo-vod.json](../samples/catalogo-vod.json).
 
 ## Programme guide (EPG)
 

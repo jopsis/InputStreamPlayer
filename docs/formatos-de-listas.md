@@ -37,14 +37,61 @@ Valores admitidos de `manifest_type`:
 | `ism` | Smooth Streaming (`.ism`/`.isml`) con ClearKey/raw-key autorizada |
 
 La clave utiliza `KID:KEY`, ambos en hexadecimal y de 16 bytes (32 caracteres
-hexadecimales cada uno). También se acepta `#EXTVLCOPT:http-user-agent=` para
-declarar un agente de usuario y `inputstream.adaptive.stream_headers` para
-cabeceras HTTP.
+hexadecimales cada uno). Si cada pista va cifrada con una clave distinta se
+ponen varias parejas separadas por comas (`KID1:KEY1,KID2:KEY2`); también se
+acepta el objeto JSON de ClearKey.
+
+También se acepta `#EXTVLCOPT:http-user-agent=` para declarar un agente de
+usuario y `inputstream.adaptive.stream_headers` para cabeceras HTTP, con la
+forma `Nombre=valor&Otro=valor`:
+
+```m3u
+#KODIPROP:inputstream.adaptive.stream_headers=X-Token=abc123&Referer=https://example.invalid/
+```
+
+### Películas y series (bajo demanda)
+
+Una lista puede mezclar canales en directo con películas y episodios. Los que
+son bajo demanda aparecen en **Emisiones → Bajo demanda**, no en el directo.
+Como el M3U no tiene un campo para eso, se deduce de lo que dice cada entrada,
+por este orden:
+
+1. **El tipo declarado:** `tvg-type`, `type`, `media-type` o `group-type` con
+   `movie`, `series`, `vod`, `episode`… (o `live` para forzar directo).
+2. **La ruta de Xtream Codes:** `/movie/…` y `/series/…` son bajo demanda;
+   `/live/…`, directo.
+3. **La extensión:** `.mp4`, `.mkv`, `.avi`, `.mov`… son ficheros de vídeo.
+4. **La duración del `#EXTINF`:** los canales llevan `-1`; una duración de
+   dos minutos o más se toma como película.
+
+El nombre del grupo no cuenta: hay canales en directo en grupos que se llaman
+«Cine» o «Series».
+
+Los episodios se agrupan por serie y temporada a partir del nombre:
+`Serie S01E02`, `Serie.s1.e2`, `Serie - T01E02` o `Serie 1x02`.
+
+```m3u
+#EXTINF:120 tvg-type="movie" tvg-logo="https://example.invalid/poster.jpg" group-title="Películas",Película Demo
+https://example.invalid/vod/pelicula-demo.mp4
+#EXTINF:-1 tvg-type="series" group-title="Series",Serie Demo S01E01
+https://example.invalid/vod/serie-demo/s01e01.mkv
+```
 
 ## JSON
 
 El formato plano es un array de canales. Los campos requeridos son `name` y
-`url`; los campos `key`, `group`, `logo` y `user_agent` son opcionales.
+`url`; los demás son opcionales:
+
+| Campo | Para qué sirve |
+| --- | --- |
+| `key` | Clave ClearKey, con las mismas formas que `license_key` del M3U |
+| `group` | Grupo del canal |
+| `logo` | Logotipo |
+| `tvg_id` | Identificador del canal en la guía |
+| `user_agent` | Agente de usuario para pedir el vídeo |
+| `type` | `movie`, `episode`, `series`… para contenido bajo demanda; `live` para directo |
+| `serie_name`, `season`, `episode` | De qué serie, temporada y episodio es |
+| `catchup_url`, `catchup_key`, `catchup_days`… | Ver [Catchup](#catchup) |
 
 ```json
 [
@@ -68,6 +115,88 @@ opcional y `samples`; cada sample declara `name`, `uri`, `logo`, `kid`, `key`
 y `user_agent` opcionales.
 
 Consulta los ficheros completos en [samples](../samples/).
+
+## Catálogos de películas y series (JSON)
+
+Para contenido bajo demanda con ficha completa hay un tercer esquema JSON: un
+array de títulos (o un único título). Todo lo que contiene va a **Bajo
+demanda**. Una **película** lleva `video` (o `videos`, una lista de
+versiones); una **serie** lleva `seasons`.
+
+```json
+[
+  {
+    "name": "Película Demo",
+    "category": "Películas",
+    "trailer": "https://example.invalid/trailers/pelicula-demo.mpd",
+    "video": "https://example.invalid/vod/pelicula-demo/manifest.mpd",
+    "drm": "clearkey",
+    "drmkey": "00112233445566778899aabbccddeeff:ffeeddccbbaa99887766554433221100",
+    "headers": "X-Token=abc123",
+    "info": {
+      "poster": "https://example.invalid/posters/pelicula-demo.jpg",
+      "bg": "https://example.invalid/fondos/pelicula-demo.jpg",
+      "plot": "Sinopsis de la película.",
+      "rating": "7.4",
+      "year": "2025",
+      "genre": ["Drama", "Aventura"],
+      "cast": ["Actriz Uno", "Actor Dos"],
+      "director": ["Directora Demo"],
+      "country": ["España"],
+      "duration": 6540
+    }
+  },
+  {
+    "name": "Serie Demo",
+    "category": "Series",
+    "info": { "plot": "Sinopsis de la serie entera.", "year": "2026", "genre": "Comedia" },
+    "seasons": [
+      {
+        "season": 1,
+        "episodes": [
+          {
+            "episode": 1,
+            "name": "El principio",
+            "video": "https://example.invalid/vod/serie-demo/s01e01.m3u8",
+            "info": { "plot": "Sinopsis del episodio.", "duration": 47 }
+          }
+        ]
+      }
+    ]
+  }
+]
+```
+
+| Campo | Para qué sirve |
+| --- | --- |
+| `name` | Título |
+| `category` | Grupo en el que aparece (Películas, Series…) |
+| `video` | Dirección del vídeo (HLS, DASH, Smooth o fichero) |
+| `videos` | La película como lista de versiones, cada una con su `video`, `drm`, `drmkey`, `headers` e `info`. Se reproduce la primera que tenga `video` |
+| `seasons` | Temporadas: `season` (número) y `episodes`, cada uno con `episode`, `name`, `video`, `drm`, `drmkey`, `headers` e `info` |
+| `drm` | `clearkey` si va cifrado; sin él, se reproduce en claro |
+| `drmkey` | Clave en la forma `KID:KEY` (o varias, separadas por comas) |
+| `headers` | Cabeceras HTTP, como `Nombre=valor&Otro=valor` |
+| `trailer` | Dirección de un tráiler; aparece el botón «Tráiler» en la ficha |
+| `info` | La ficha (ver abajo) |
+
+Campos de `info`, todos opcionales:
+
+| Campo | Contenido |
+| --- | --- |
+| `poster`, `bg` | Cartel y fondo |
+| `plot` | Sinopsis. En una serie, la de la serie; cada episodio puede traer la suya |
+| `rating`, `year` | Valoración y año; valen como número o como texto |
+| `genre`, `cast`, `director`, `country` | Una lista de nombres o un texto con comas |
+| `duration` | En minutos (`47`) o en segundos (`3420`): por encima de 400 se toma como segundos |
+
+La lista es tolerante: los campos que no se usan se ignoran, un valor vacío o a
+cero (`"rating": "0"`, `"plot": ""`) cuenta como que no se sabe, y un título,
+temporada o episodio que no se pueda leer se salta sin tumbar el resto. Un
+episodio hereda de la serie lo que no traiga (año, géneros, reparto…), y si no
+tiene `name` se llama «Episodio N».
+
+Ejemplo completo en [samples/catalogo-vod.json](../samples/catalogo-vod.json).
 
 ## Guía de programación (EPG)
 

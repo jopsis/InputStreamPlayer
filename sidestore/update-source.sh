@@ -103,7 +103,7 @@ jq -n \
   --arg bundleIdentifier "com.InputStreamPlayer" \
   --arg developerName "jopsis" \
   --arg subtitle "Reproductor HLS/DASH/Smooth Streaming con ClearKey raw-key" \
-  --arg localizedDescription "Reproductor nativo para iOS/tvOS/macOS de listas HLS, DASH/MPD y Microsoft Smooth Streaming (ISML), con soporte ClearKey/raw-key para el contenido autorizado por el usuario. No implementa FairPlay, Widevine ni PlayReady." \
+  --arg localizedDescription "Reproductor de listas HLS, DASH/MPD y Microsoft Smooth Streaming (ISML) para iPhone, iPad, Apple TV, Mac y Android, con soporte ClearKey/raw-key para el contenido autorizado por el usuario. Directo con guía y catchup, películas y series bajo demanda, addons de Stremio y sincronización opcional con Google Drive y Trakt. No implementa FairPlay, Widevine ni PlayReady." \
   --arg iconURL "$icon_url" \
   --arg tintColor "14B85C" \
   --argjson versions "$versions_json" \

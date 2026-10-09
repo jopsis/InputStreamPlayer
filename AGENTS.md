@@ -24,7 +24,8 @@ proceso manual descrito más abajo.
    repositorio como `PUBLIC_REPO_DIR` — por defecto la ruta hermana
    `../InputStreamPlayer`):
    - crea la release `vX.Y.Z` en GitHub con los IPAs + `.sha256` de iOS, tvOS
-     y macOS/PlayCover, y los APKs + `.sha256` de Android si están en `dist/`;
+     y macOS/PlayCover, y los APKs + `.sha256` de Android (arm64, armv7 y
+     universal) si están en `dist/`;
    - ejecuta aquí mismo `sidestore/update-source.sh`, y si `apps.json` cambió,
      hace commit y `push` en este repositorio y fuerza un rebuild de Pages.
    - Exige que **este** repositorio esté en `main`, limpio y sincronizado con
@@ -35,6 +36,18 @@ proceso manual descrito más abajo.
    tardar uno o dos minutos en desplegarse tras el push).
 4. Si cambia el `IPHONEOS_DEPLOYMENT_TARGET` del proyecto Xcode, actualizar la
    variable `min_os_version` en `sidestore/update-source.sh` a la vez.
+5. **Revisar la documentación pública** si la release cambia algo que se ve
+   desde fuera, en español y en inglés a la vez:
+   - una función nueva o retirada → «Qué hace» en `README.md`/`README_en.md`;
+   - un formato o campo de lista nuevo → `docs/formatos-de-listas*.md` y, si
+     ayuda, un ejemplo en `samples/` (comprobar que la app lo carga);
+   - artefactos, nombres de fichero o instalación → `docs/releases*.md` y el
+     README;
+   - un servicio externo nuevo, o datos que salen del aparato →
+     `privacidad.md` (las dos mitades) y su fecha.
+   Los enlaces a releases van siempre absolutos
+   (`https://github.com/jopsis/InputStreamPlayer/releases` o `…/releases/latest`):
+   GitHub resuelve mal los relativos desde el README y desde `docs/`.
 
 ### Recuperación manual (si `publish-release.sh` no está disponible)
 
@@ -62,6 +75,9 @@ no consulta la API de GitHub en directo.
 | `sidestore/update-source.sh` | Script que regenera `apps.json` desde `gh release list` |
 | `sidestore/index.html` | Página con el botón "Add to SideStore" (servida por GitHub Pages) |
 | `docs/releases.md`, `docs/releases_en.md` | Instrucciones de verificación/instalación para humanos |
+| `docs/formatos-de-listas.md`, `docs/formatos-de-listas_en.md` | Referencia de los formatos de lista (M3U, JSON, catálogos, guía, catchup) |
+| `samples/` | Listas de ejemplo; `catalogo-vod.json` es el catálogo de películas y series |
+| `privacidad.md` | Política de privacidad (español e inglés en el mismo fichero) |
 | `README.md`, `README_en.md` | Punto de entrada público, enlaza el source de SideStore |
 
 ## Formato del source

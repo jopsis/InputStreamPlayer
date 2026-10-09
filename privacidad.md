@@ -4,10 +4,11 @@ title: Política de privacidad · Privacy policy
 
 # Política de privacidad de InputStream Player
 
-Última actualización: 28 de septiembre de 2026 (Trakt).
+Última actualización: 9 de octubre de 2026 (Android, TMDb, DNS y registro).
 
-InputStream Player es un reproductor de vídeo para iPhone, iPad, Apple TV y
-Mac. Esta política explica qué datos maneja y dónde quedan.
+InputStream Player (ISPlayer) es un reproductor de vídeo para iPhone, iPad,
+Apple TV, Mac y Android (móvil, Google TV y Android TV). Esta política explica
+qué datos maneja y dónde quedan.
 
 ## Lo que la app no hace
 
@@ -23,11 +24,36 @@ Para funcionar, la app guarda en tu aparato lo que tú configuras:
 - tus preferencias;
 - lo que has visto y lo que quieres ver más tarde.
 
-Las contraseñas y claves que introduces se guardan en el Llavero del sistema.
+Las contraseñas y claves que introduces se guardan en el Llavero del sistema
+(iPhone, iPad, Apple TV y Mac) o en el almacenamiento privado de la app, al que
+no accede ninguna otra app (Android).
 
 La app se conecta directamente a las direcciones que tú añades (listas,
 guías, addons, vídeos). Lo que hagan esos servicios con tu conexión depende de
 ellos.
+
+## Otros servicios con los que habla la app
+
+- **TMDb (The Movie Database):** en Addons, para traer la ficha y el tráiler de
+  una película o serie, la app pide a TMDb los datos de ese título por su
+  identificador y en tu idioma. No se envía nada tuyo.
+- **YouTube:** el botón «Tráiler» de un addon abre el vídeo en la app de
+  YouTube o en el navegador; a partir de ahí se aplica la política de YouTube.
+- **XDP DNS (opcional):** si activas «Usar XDP DNS» en Preferencias, los
+  nombres de los servidores a los que se conecta la app se resuelven con XDP
+  DNS (`lite.xdp.es`), cifrado, en vez de con el DNS de tu red. Apagado por
+  defecto.
+- **GitHub (Android):** para buscar actualizaciones, la app de Android consulta
+  la última release publicada en este repositorio y, si hay una nueva, descarga
+  de ahí el APK.
+
+## Registro de fallos (Android)
+
+**Ajustes → Preferencias → Enviar registro** crea un fichero con el registro
+de la app y datos del aparato (modelo, versión de Android y de la app) para
+enviarlo a quien tú elijas con el menú de compartir. Antes de crearlo se
+ocultan las claves, los tokens y las configuraciones de los addons. El fichero
+no sale del aparato si no lo compartes tú.
 
 ## Sincronización con Google Drive (opcional)
 
@@ -84,10 +110,11 @@ https://github.com/jopsis/InputStreamPlayer/issues
 
 # InputStream Player privacy policy
 
-Last updated: September 28, 2026 (Trakt).
+Last updated: October 9, 2026 (Android, TMDb, DNS, and logs).
 
-InputStream Player is a video player for iPhone, iPad, Apple TV and Mac. This
-policy explains what data it handles and where that data stays.
+InputStream Player (ISPlayer) is a video player for iPhone, iPad, Apple TV,
+Mac, and Android (phone, Google TV, and Android TV). This policy explains what
+data it handles and where that data stays.
 
 ## What the app does not do
 
@@ -103,10 +130,34 @@ To work, the app stores on your device what you set up:
 - your preferences;
 - what you have watched and your watch-later list.
 
-Passwords and keys you enter are stored in the system Keychain.
+Passwords and keys you enter are stored in the system Keychain (iPhone, iPad,
+Apple TV, and Mac) or in the app's private storage, which no other app can
+access (Android).
 
 The app connects directly to the addresses you add (lists, guides, add-ons,
 videos). What those services do with your connection is up to them.
+
+## Other services the app talks to
+
+- **TMDb (The Movie Database):** in Add-ons, to get the details and trailer of
+  a movie or series, the app asks TMDb for that title's data by its identifier
+  and in your language. Nothing about you is sent.
+- **YouTube:** an add-on's "Tráiler" button opens the video in the YouTube app
+  or the browser; from there, YouTube's policy applies.
+- **XDP DNS (optional):** if you turn on "Usar XDP DNS" in Preferences, the
+  names of the servers the app connects to are resolved with XDP DNS
+  (`lite.xdp.es`), encrypted, instead of your network's DNS. Off by default.
+- **GitHub (Android):** to look for updates, the Android app checks the latest
+  release published in this repository and, if there is a new one, downloads
+  the APK from there.
+
+## Diagnostics log (Android)
+
+**Ajustes → Preferencias → Enviar registro** creates a file with the app's log
+and device details (model, Android and app version) to send to whoever you
+choose through the share menu. Keys, tokens, and add-on configurations are
+hidden before the file is created. The file never leaves the device unless you
+share it.
 
 ## Google Drive sync (optional)
 
