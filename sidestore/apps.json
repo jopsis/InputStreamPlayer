@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.14",
+          "date": "2026-10-09",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.14/InputStreamPlayer-iOS-0.9.14-68-unsigned.ipa",
+          "size": 16632147,
+          "minOSVersion": "16.0",
+          "sha256": "b5b5cd01c7f6db8d487e5c6db70a0f4a8a75de78992681eab8b06f1ddccc420a",
+          "localizedDescription": "\n- **«Formato no válido» con `vod4`:** la ficha de la serie traía\n  `\"genre\": \"Drama\"` (texto en vez de lista) y un solo campo así tumbaba el\n  título, y con él la lista entera. La ficha se lee ahora campo a campo y sin\n  exigir tipos (`genre`, `cast`, `director`, `country` valen como lista o como\n  texto), los números de temporada y episodio pueden venir como texto, y un\n  título, temporada o episodio ilegible se salta en vez de anular la lista.\n- **`duration` en segundos** (3420) además de en minutos (47): por encima de\n  400 se toma como segundos.\n- **El 4K de Movistar no abría** («Unable to parse '' - missing root node» y\n  luego «Error when loading first fragment of playlist»). Tres fallos:\n  - `DASHManifestPruner` tomaba el primer `BaseURL` del documento como base de\n    todo, y en estos manifiestos el único va en la representación de\n    subtítulos: el vídeo y el audio quedaban relativos al proxy local. Ahora\n    solo cuenta un `BaseURL` del MPD o del `Period`; si no hay, se inyecta.\n  - El proxy DASH contestaba el manifiesto a **cualquier** ruta (un segmento\n    mal resuelto recibía otro manifiesto, que el demuxer pegaba al primero) y no\n    entendía `Range`. Ahora solo sirve `/manifest.mpd` (lo demás, 404) y\n    atiende `Range: bytes=N-` (206 / 416).\n  - Los subtítulos TTML sueltos (`application/ttml+xml` con un `BaseURL` a un\n    `.ttml`, sin plantilla de segmentos) se quitan del manifiesto: el demuxer\n    DASH de FFmpeg solo abre pistas en fragmentos MP4 y una que no puede abrir\n    tumba la reproducción. Los subtítulos en MP4 (`stpp`, `wvtt`) se quedan.\n- Probado en el OnePlus con la lista real y un token de Movistar válido:\n  «Sirat» en 4K HEVC, audio 5.1 en español."
+        },
+        {
           "version": "0.9.13",
           "date": "2026-10-08",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.13/InputStreamPlayer-iOS-0.9.13-67-unsigned.ipa",
