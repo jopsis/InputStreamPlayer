@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.15",
+          "date": "2026-10-09",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.15/InputStreamPlayer-iOS-0.9.15-69-unsigned.ipa",
+          "size": 16655921,
+          "minOSVersion": "16.0",
+          "sha256": "4985c1f710117cd65aa6dd39c74cb3d79a2dfb812cbd44bcb3c797da4bcd14e5",
+          "localizedDescription": "\n- **Android:** `dev.jdtech.mpv:libmpv:1.0.0` (FFmpeg 8.1, Mbed TLS 3.6.6)\n  pasa a `com.github.Stremio:libmpv-android:v1.0.0-stremio01`, el fork de\n  Stremio del mismo proyecto: mpv 0.41.0, **FFmpeg 9.0.2** y **Mbed TLS\n  3.6.7**, con el mismo paquete `dev.jdtech.mpv`. Lo compila su CI desde el\n  código; JitPack solo reempaqueta el AAR de la release de GitHub (idéntico\n  byte a byte) y en `settings.gradle.kts` queda limitado a ese grupo. Mbed\n  TLS 3.6.7 corrige fallos de seguridad y de compatibilidad TLS 1.2/1.3.\n- La interfaz `EventObserver` de ese AAR añade `endFile(reason, error)`:\n  `MpvPlayer` anota en el registro el código de error de mpv cuando un\n  stream no abre, para que «Enviar registro» diga por qué.\n- **iOS, tvOS y macOS:** FFmpeg n9.0.1 → **n9.0.2** (unos 80 arreglos, muchos\n  de seguridad: escrituras fuera de límites, desbordamientos en mov, dash,\n  ogg…), FriBidi 1.0.16 → 1.0.17 y HarfBuzz 14.4.0 → 14.6.0 en los scripts\n  de `Tooling/{ios,tvos,poc0}`, sus README y el ADR-001. mpv sigue en 0.41.0\n  con los mismos parches.\n- Probado con cuatro listas reales (Movistar ISML, HLS y DASH ClearKey, DAZN\n  HLS, Vodafone por HTTP, Amazon y agiletv por HTTPS) en el simulador de\n  iPhone, el de Apple TV y el OnePlus en 64 y 32 bits. Los dos canales que no\n  abren tampoco lo hacían con la libmpv anterior (CDN de Movistar caído y un\n  403 de openstream)."
+        },
+        {
           "version": "0.9.14",
           "date": "2026-10-09",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.14/InputStreamPlayer-iOS-0.9.14-68-unsigned.ipa",
