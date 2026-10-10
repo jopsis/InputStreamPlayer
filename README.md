@@ -47,6 +47,12 @@ Cada archivo va con su checksum SHA-256. Antes de instalar, lee
   los addons que añadas, y listas de Trakt. Trae de serie Cinemeta (catálogos y
   fichas) y **OpenSubtitles** (subtítulos en tu idioma aunque el vídeo no los
   traiga); se admiten también otros addons de subtítulos.
+- **Favoritos y recientes:** dos grupos fijos al principio de Emisiones. Un
+  canal se añade a favoritos manteniéndolo pulsado o con la estrella del
+  reproductor.
+- **Multiview:** hasta cuatro canales en directo a la vez en una cuadrícula,
+  desde el botón de cuadrícula del reproductor. Suena el cuadro elegido y
+  cualquiera pasa a pantalla completa.
 - **Pistas:** calidad de vídeo, idioma de audio y subtítulos elegibles. El
   idioma preferido se elige en Ajustes y la pista elegida a mano se recuerda en
   cada canal.
@@ -54,8 +60,9 @@ Cada archivo va con su checksum SHA-256. Antes de instalar, lee
   con tu propio Google Drive, y con **Trakt**.
 - **DNS cifrado opcional** (XDP DNS), para redes cuyo DNS bloquea algunos
   servidores.
-- **Android:** actualizaciones desde la propia app y «Enviar registro» para
-  compartir un registro de fallos sin claves ni tokens.
+- **Android:** actualizaciones desde la propia app y «Enviar registro», que
+  manda al desarrollador un registro de fallos sin claves ni tokens
+  ([privacidad](privacidad.md)).
 
 ## Compatibilidad
 

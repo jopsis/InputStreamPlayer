@@ -4,7 +4,7 @@ title: Política de privacidad · Privacy policy
 
 # Política de privacidad de InputStream Player
 
-Última actualización: 9 de octubre de 2026 (Android, TMDb, OpenSubtitles, DNS y registro).
+Última actualización: 10 de octubre de 2026 (envío del registro por Telegram).
 
 InputStream Player (ISPlayer) es un reproductor de vídeo para iPhone, iPad,
 Apple TV, Mac y Android (móvil, Google TV y Android TV). Esta política explica
@@ -12,7 +12,8 @@ qué datos maneja y dónde quedan.
 
 ## Lo que la app no hace
 
-- No tiene servidores propios. Los desarrolladores no reciben ningún dato tuyo.
+- No tiene servidores propios. Los desarrolladores no reciben ningún dato tuyo,
+  salvo el registro de fallos si tú decides enviarlo (ver más abajo).
 - No usa analítica, publicidad ni seguimiento de ningún tipo.
 - No vende ni comparte datos con nadie.
 
@@ -54,10 +55,19 @@ ellos.
 ## Registro de fallos (Android)
 
 **Ajustes → Preferencias → Enviar registro** crea un fichero con el registro
-de la app y datos del aparato (modelo, versión de Android y de la app) para
-enviarlo a quien tú elijas con el menú de compartir. Antes de crearlo se
-ocultan las claves, los tokens y las configuraciones de los addons. El fichero
-no sale del aparato si no lo compartes tú.
+de la app y datos del aparato (modelo, versión de Android y de la app). Antes
+de crearlo se ocultan las claves, los tokens y las configuraciones de los
+addons. El registro sí incluye direcciones de listas, guías y vídeos.
+
+- **Enviar:** el fichero, junto con lo que escribas en «¿Qué ha pasado?», se
+  manda al desarrollador como un mensaje de Telegram (con un bot de Telegram
+  que solo sirve para esto). Solo lo lee el desarrollador, para encontrar el
+  fallo, y no se usa para nada más. Telegram lo transporta y guarda según su
+  propia política de privacidad. Si quieres que se borre, abre una incidencia
+  con el código que te muestra la app.
+- **Compartir…:** lo mandas tú a quien elijas con el menú de compartir.
+
+El fichero no sale del aparato si no pulsas uno de los dos.
 
 ## Sincronización con Google Drive (opcional)
 
@@ -114,7 +124,7 @@ https://github.com/jopsis/InputStreamPlayer/issues
 
 # InputStream Player privacy policy
 
-Last updated: October 9, 2026 (Android, TMDb, OpenSubtitles, DNS, and logs).
+Last updated: October 10, 2026 (sending the log through Telegram).
 
 InputStream Player (ISPlayer) is a video player for iPhone, iPad, Apple TV,
 Mac, and Android (phone, Google TV, and Android TV). This policy explains what
@@ -122,7 +132,8 @@ data it handles and where that data stays.
 
 ## What the app does not do
 
-- It has no servers of its own. The developers receive none of your data.
+- It has no servers of its own. The developers receive none of your data,
+  except the diagnostics log if you choose to send it (see below).
 - It uses no analytics, advertising or tracking of any kind.
 - It does not sell or share data with anyone.
 
@@ -162,10 +173,20 @@ videos). What those services do with your connection is up to them.
 ## Diagnostics log (Android)
 
 **Ajustes → Preferencias → Enviar registro** creates a file with the app's log
-and device details (model, Android and app version) to send to whoever you
-choose through the share menu. Keys, tokens, and add-on configurations are
-hidden before the file is created. The file never leaves the device unless you
-share it.
+and device details (model, Android and app version). Keys, tokens, and add-on
+configurations are hidden before the file is created. The log does include
+the addresses of lists, guides, and videos.
+
+- **Enviar (Send):** the file, along with whatever you write in "¿Qué ha
+  pasado?", is sent to the developer as a Telegram message (through a Telegram
+  bot used only for this). Only the developer reads it, to find the bug, and it
+  is not used for anything else. Telegram carries and stores it under its own
+  privacy policy. If you want it deleted, open an issue with the code the app
+  shows you.
+- **Compartir… (Share):** you send it yourself to whoever you choose through
+  the share menu.
+
+The file never leaves the device unless you tap one of the two.
 
 ## Google Drive sync (optional)
 

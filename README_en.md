@@ -46,6 +46,11 @@ Every file comes with its SHA-256 checksum. Before installing, read
   streams from the add-ons you add, plus Trakt lists. Cinemeta (catalogs and
   details) and **OpenSubtitles** (subtitles in your language even when the
   video has none) come built in; other subtitle add-ons work too.
+- **Favorites and recents:** two fixed groups at the start of Emisiones. Add a
+  channel to favorites by long-pressing it or with the player's star.
+- **Multiview:** up to four live channels at once in a grid, from the
+  player's grid button. The selected tile plays sound, and any tile can go
+  full screen.
 - **Tracks:** pick the video quality, audio language, and subtitles. The
   preferred language is set in Settings, and a track picked by hand is
   remembered per channel.
@@ -53,8 +58,9 @@ Every file comes with its SHA-256 checksum. Before installing, read
   devices through your own Google Drive, and with **Trakt**.
 - **Optional encrypted DNS** (XDP DNS), for networks whose DNS blocks some
   servers.
-- **Android:** in-app updates and "Enviar registro" (send log) to share a
-  diagnostics log with keys and tokens removed.
+- **Android:** in-app updates and "Enviar registro" (send log), which sends
+  the developer a diagnostics log with keys and tokens removed
+  ([privacy](privacidad.md)).
 
 The app's interface is in Spanish.
 
