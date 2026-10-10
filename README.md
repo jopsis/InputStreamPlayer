@@ -69,8 +69,9 @@ Cada archivo va con su checksum SHA-256. Antes de instalar, lee
 - **Microsoft Smooth Streaming** (`.ism` / `.isml` y `Manifest`) con
   ClearKey/raw-key autorizada.
 - Ficheros de vídeo directos (MP4, MKV, TS…).
-- Fuentes en formato **M3U/M3U8** y **JSON**, por URL o desde un fichero, y
-  listas cifradas `.ispl`.
+- Fuentes en formato **M3U/M3U8** y **JSON** (también los catálogos de
+  películas y series de OTT Navigator), por URL o desde un fichero, y listas
+  cifradas `.ispl`.
 
 No se admiten licencias FairPlay, Widevine o PlayReady que requieran un servidor
 de licencias. Una clave solo debe añadirse a una lista cuando el titular del

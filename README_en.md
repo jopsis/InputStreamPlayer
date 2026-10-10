@@ -70,8 +70,8 @@ The app's interface is in Spanish.
 - **Microsoft Smooth Streaming** (`.ism` / `.isml` and `Manifest`) with an
   authorized ClearKey/raw key.
 - Direct video files (MP4, MKV, TS…).
-- **M3U/M3U8** and **JSON** sources, by URL or from a file, and encrypted
-  `.ispl` playlists.
+- **M3U/M3U8** and **JSON** sources (including OTT Navigator's movie and
+  series catalogs), by URL or from a file, and encrypted `.ispl` playlists.
 
 FairPlay, Widevine, and PlayReady licenses requiring a license server are not
 supported. Only add a key to a playlist when the content owner has expressly

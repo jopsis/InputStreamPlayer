@@ -118,7 +118,9 @@ See the complete files in [samples](../samples/).
 ## Movie and series catalogs (JSON)
 
 For on-demand content with full details there is a third JSON schema: an
-array of titles (or a single title). Everything in it goes to **Bajo demanda**
+array of titles (or a single title). It is the same format as
+[OTT Navigator's "Media library file"](https://ottnav.github.io/faq.html#media-library-file-json),
+so its playlists work as they are. Everything in it goes to **Bajo demanda**
 (On demand). A **movie** has `video` (or `videos`, a list of versions); a
 **series** has `seasons`.
 
@@ -172,18 +174,18 @@ array of titles (or a single title). Everything in it goes to **Bajo demanda**
 | `category` | Group it appears in (Movies, Series…) |
 | `video` | Video address (HLS, DASH, Smooth, or a file) |
 | `videos` | The movie as a list of versions, each with its own `video`, `drm`, `drmkey`, `headers`, and `info`. The first one with a `video` is played |
-| `seasons` | Seasons: `season` (number) and `episodes`, each with `episode`, `name`, `video`, `drm`, `drmkey`, `headers`, and `info` |
+| `seasons` | Seasons: `season` (number) and `episodes`, each with `episode`, `name`, `video`, `drm`, `drmkey`, `headers`, and `info`. Without numbers, they are numbered by position (1, 2, 3…) |
 | `drm` | `clearkey` if encrypted; without it, it plays in the clear |
 | `drmkey` | Key as `KID:KEY` (or several, separated by commas) |
-| `headers` | HTTP headers, as `Name=value&Other=value` |
-| `trailer` | A trailer address; adds a "Tráiler" button to the detail page |
+| `headers` | HTTP headers, as `Name=value&Other=value` or as an object (`{"User-Agent": "…"}`) |
+| `trailer` | Trailer: a video address, or a YouTube one (or just the video id), which opens in YouTube. Adds a "Tráiler" button to the detail page. Also accepted inside `info` |
 | `info` | The details (see below) |
 
 `info` fields, all optional:
 
 | Field | Content |
 | --- | --- |
-| `poster`, `bg` | Poster and backdrop |
+| `poster`, `bg` (or `backdrop`) | Poster and backdrop |
 | `plot` | Plot. In a series, the series plot; each episode can carry its own |
 | `rating`, `year` | Rating and year; numbers or text both work |
 | `genre`, `cast`, `director`, `country` | A list of names or comma-separated text |
@@ -194,6 +196,16 @@ The parser is lenient: unused fields are ignored, an empty or zero value
 episode that cannot be read is skipped without breaking the rest. An episode
 inherits from the series whatever it lacks (year, genres, cast…), and without a
 `name` it is called "Episodio N".
+
+As in OTT Navigator, these are accepted too:
+
+- **Per-language text:** `"name:es": "…"` replaces `name` when the device is
+  in that language (works for any field).
+- **BASE64:** a technical item `{ "base64": "name,video" }` in the list says
+  which fields are encoded (no padding); `*` marks every text value.
+
+`drm` only accepts `clearkey`: Widevine and others needing a license server
+are not supported.
 
 Complete example in [samples/catalogo-vod.json](../samples/catalogo-vod.json).
 

@@ -119,7 +119,9 @@ Consulta los ficheros completos en [samples](../samples/).
 ## Catálogos de películas y series (JSON)
 
 Para contenido bajo demanda con ficha completa hay un tercer esquema JSON: un
-array de títulos (o un único título). Todo lo que contiene va a **Bajo
+array de títulos (o un único título). Es el mismo formato que el
+[«Media library file» de OTT Navigator](https://ottnav.github.io/faq.html#media-library-file-json),
+así que sus listas sirven tal cual. Todo lo que contiene va a **Bajo
 demanda**. Una **película** lleva `video` (o `videos`, una lista de
 versiones); una **serie** lleva `seasons`.
 
@@ -173,18 +175,18 @@ versiones); una **serie** lleva `seasons`.
 | `category` | Grupo en el que aparece (Películas, Series…) |
 | `video` | Dirección del vídeo (HLS, DASH, Smooth o fichero) |
 | `videos` | La película como lista de versiones, cada una con su `video`, `drm`, `drmkey`, `headers` e `info`. Se reproduce la primera que tenga `video` |
-| `seasons` | Temporadas: `season` (número) y `episodes`, cada uno con `episode`, `name`, `video`, `drm`, `drmkey`, `headers` e `info` |
+| `seasons` | Temporadas: `season` (número) y `episodes`, cada uno con `episode`, `name`, `video`, `drm`, `drmkey`, `headers` e `info`. Sin números, se numeran por su posición (1, 2, 3…) |
 | `drm` | `clearkey` si va cifrado; sin él, se reproduce en claro |
 | `drmkey` | Clave en la forma `KID:KEY` (o varias, separadas por comas) |
-| `headers` | Cabeceras HTTP, como `Nombre=valor&Otro=valor` |
-| `trailer` | Dirección de un tráiler; aparece el botón «Tráiler» en la ficha |
+| `headers` | Cabeceras HTTP, como `Nombre=valor&Otro=valor` o como objeto (`{"User-Agent": "…"}`) |
+| `trailer` | Tráiler: una dirección de vídeo, o de YouTube (o solo el id del vídeo), que se abre en YouTube. Aparece el botón «Tráiler» en la ficha. También vale dentro de `info` |
 | `info` | La ficha (ver abajo) |
 
 Campos de `info`, todos opcionales:
 
 | Campo | Contenido |
 | --- | --- |
-| `poster`, `bg` | Cartel y fondo |
+| `poster`, `bg` (o `backdrop`) | Cartel y fondo |
 | `plot` | Sinopsis. En una serie, la de la serie; cada episodio puede traer la suya |
 | `rating`, `year` | Valoración y año; valen como número o como texto |
 | `genre`, `cast`, `director`, `country` | Una lista de nombres o un texto con comas |
@@ -195,6 +197,15 @@ cero (`"rating": "0"`, `"plot": ""`) cuenta como que no se sabe, y un título,
 temporada o episodio que no se pueda leer se salta sin tumbar el resto. Un
 episodio hereda de la serie lo que no traiga (año, géneros, reparto…), y si no
 tiene `name` se llama «Episodio N».
+
+Como en OTT Navigator, también se admiten:
+
+- **Textos por idioma:** `"name:es": "…"` sustituye a `name` si el aparato
+  está en ese idioma (vale para cualquier campo).
+- **BASE64:** un elemento técnico `{ "base64": "name,video" }` en la lista
+  dice qué campos van codificados (sin relleno); `*` marca todos los textos.
+
+`drm` solo admite `clearkey`: Widevine y otros con servidor de licencias no.
 
 Ejemplo completo en [samples/catalogo-vod.json](../samples/catalogo-vod.json).
 
