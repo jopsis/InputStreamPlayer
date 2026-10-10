@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.19",
+          "date": "2026-10-10",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.19/InputStreamPlayer-iOS-0.9.19-73-unsigned.ipa",
+          "size": 16723515,
+          "minOSVersion": "16.0",
+          "sha256": "35c51f57906b16f8e0b3bb7e4da356a5a79c8ca558f00df33f96c61fa052945e",
+          "localizedDescription": "\n#### Catálogos JSON con el formato de OTT Navigator\n\n- El catálogo JSON ya era el «Media library file» de OTT Navigator\n  (https://ottnav.github.io/faq.html#media-library-file-json); ahora se lee\n  entero. `OTVNormalizer` (en `JSONPlaylistParser.swift`) deja el JSON como\n  si no trajera lo siguiente antes de decodificarlo:\n  - textos en BASE64 sin relleno, según el elemento técnico\n    `{ \"base64\": \"name,video\" }` (`*`: todos los textos);\n  - textos por idioma (`\"name:es\"`): manda el del idioma del aparato.\n- `headers` como objeto JSON (`{\"User-Agent\": \"…\"}`). Antes un objeto hacía\n  fallar la decodificación y el título desaparecía de la lista.\n- Temporadas y episodios sin número se numeran por su posición.\n- `backdrop` como fondo y `trailer` dentro de `info`, también como id de\n  YouTube suelto.\n- Los tráileres de YouTube (`VODMetadata.trailerYouTubeID`) ya no intentan\n  abrirse en mpv, que no puede: se abren en YouTube (Safari o la app en iOS,\n  la app en tvOS, `vnd.youtube:` o el navegador en Android).\n- Tests: `OTTNavigatorCatalogTests`, con el ejemplo oficial tal cual. Sin\n  probar en aparato con una lista real.\n\n#### Addons detrás de un proxy (Pictorium)\n\n- Un addon cuya dirección lleva parámetros\n  (`…/api/proxy/manifest.json?url=…&u=…`, el proxy de pósters de Pictorium)\n  perdía la query al pedir catálogos, fichas, enlaces y subtítulos. Ahora\n  `StremioAddonURL.query` se añade a cada recurso, como hace Stremio.\n- Cinemeta y OpenSubtitles se reconocen por su dirección, no por su id: un\n  proxy repite el id del addon que envuelve y se confundía con el de serie.\n- El addon propio de Pictorium (`/u/…/manifest.json`) ya funcionaba. Su\n  proxy responde hoy 403 a cualquier petición (lado servidor), así que esa\n  forma no se ha podido probar contra el servicio real."
+        },
+        {
           "version": "0.9.18",
           "date": "2026-10-09",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.18/InputStreamPlayer-iOS-0.9.18-72-unsigned.ipa",
