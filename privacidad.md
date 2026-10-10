@@ -4,7 +4,7 @@ title: Política de privacidad · Privacy policy
 
 # Política de privacidad de InputStream Player
 
-Última actualización: 10 de octubre de 2026 (envío del registro por Telegram).
+Última actualización: 10 de octubre de 2026 (el registro incluye los últimos cierres de la app).
 
 InputStream Player (ISPlayer) es un reproductor de vídeo para iPhone, iPad,
 Apple TV, Mac y Android (móvil, Google TV y Android TV). Esta política explica
@@ -55,7 +55,8 @@ ellos.
 ## Registro de fallos (Android)
 
 **Ajustes → Preferencias → Enviar registro** crea un fichero con el registro
-de la app y datos del aparato (modelo, versión de Android y de la app). Antes
+de la app, datos del aparato (modelo, versión de Android y de la app) y por qué
+se cerró la app las últimas veces (hora, motivo y memoria que usaba). Antes
 de crearlo se ocultan las claves, los tokens y las configuraciones de los
 addons. El registro sí incluye direcciones de listas, guías y vídeos.
 
@@ -124,7 +125,7 @@ https://github.com/jopsis/InputStreamPlayer/issues
 
 # InputStream Player privacy policy
 
-Last updated: October 10, 2026 (sending the log through Telegram).
+Last updated: October 10, 2026 (the log includes the app's last closures).
 
 InputStream Player (ISPlayer) is a video player for iPhone, iPad, Apple TV,
 Mac, and Android (phone, Google TV, and Android TV). This policy explains what
@@ -172,8 +173,9 @@ videos). What those services do with your connection is up to them.
 
 ## Diagnostics log (Android)
 
-**Ajustes → Preferencias → Enviar registro** creates a file with the app's log
-and device details (model, Android and app version). Keys, tokens, and add-on
+**Ajustes → Preferencias → Enviar registro** creates a file with the app's log,
+device details (model, Android and app version), and why the app closed the
+last few times (time, reason, and memory in use). Keys, tokens, and add-on
 configurations are hidden before the file is created. The log does include
 the addresses of lists, guides, and videos.
 
