@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.24",
+          "date": "2026-10-11",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.24/InputStreamPlayer-iOS-0.9.24-78-unsigned.ipa",
+          "size": 16820288,
+          "minOSVersion": "16.0",
+          "sha256": "de5f0a02e816395c944510630b9b8c7c8b0a20ed59448d09719092d698062744",
+          "localizedDescription": "\n- **Cierre al cambiar de motor (Android, desde 0.9.22):** la superficie de\n  vídeo no se recreaba al pasar de ExoPlayer a MPV (o al revés), así que el\n  motor nuevo no tenía dónde pintar y mpv abortaba\n  (`vo_mediacodec_embed: WinID != 0`), visto en una Bravia. Ahora hay una\n  superficie por reproductor (`key(player)`). Probado en un OnePlus 7 Pro en\n  los dos sentidos.\n- **ExoPlayer sin imagen:** Dolby Vision o AV1 que el decodificador del aparato\n  no puede («excede sus capacidades») fallan al momento con el aviso de probar\n  el otro motor; y si hay vídeo en el búfer pero ninguna imagen en 20 s,\n  también (visto en una Shield con Dolby Vision perfil 10 sobre AV1, que se\n  quedaba cargando sin decir nada).\n- **Sin decodificadores libres** (multiview en una Bravia, que solo tiene dos):\n  el mensaje lo dice en vez de «el aparato no sabe decodificar este vídeo».\n- **Núcleo:** si el alimentador de un Smooth falla (un 412 al empezar), se\n  cierra el flujo; antes el reproductor se quedaba esperando para siempre sin\n  reconectar ni avisar.\n- **ISML en directo con ExoPlayer (OnePlus 7 Pro):** tardaba ~50 s en arrancar\n  (mpv, 9 s) y luego se paraba cada minuto. Tres causas, todas del lado de\n  ExoPlayer: el ajustador de tiempos compartido por vídeo y audio (ahora uno\n  por flujo: el núcleo ya los hace empezar en el mismo punto, medido a 9 ms);\n  el control de búfer, que no sabía cuánto llevaba y esperaba a llenarlo\n  (ahora arranca en cuanto hay datos); y el lector progresivo, que se detenía\n  cada 1 MB a esperar permiso y frenaba al alimentador (ahora no se detiene).\n  Medido: arranca en 0,7 s y sin paradas en más de 3 minutos.\n- Solo en depuración: `EventLogger` de ExoPlayer al registro, y en el núcleo\n  el instante del primer fragmento de cada pista."
+        },
+        {
           "version": "0.9.23",
           "date": "2026-10-11",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.23/InputStreamPlayer-iOS-0.9.23-77-unsigned.ipa",
