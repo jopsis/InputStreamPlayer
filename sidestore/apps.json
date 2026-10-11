@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.23",
+          "date": "2026-10-11",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.23/InputStreamPlayer-iOS-0.9.23-77-unsigned.ipa",
+          "size": 16819322,
+          "minOSVersion": "16.0",
+          "sha256": "81c5fa1954aa1cc064352be5292fbada4de64b8dedc5b57a1e7ae04815a478fa",
+          "localizedDescription": "\n- El arreglo de la 0.9.22 (`vo=libmpv`) no bastaba: reproducido en el\n  simulador con cuatro HLS locales y `--ui-testing-multiview` (solo Debug:\n  entra en el multiview y añade un cuadro cada 8 s).\n- Causa 1: al entrar en el multiview, SwiftUI aún actualizaba la superficie\n  de pantalla completa que se iba y su `updateUIView` le quitaba el\n  reproductor a la del cuadro. Ahora la vista nueva se engancha al crearse,\n  `updateUIView` solo engancha si no hay ninguna, y al quitarse una vista el\n  vídeo vuelve a la anterior que siga viva (`IOSMPVPlayerSurface` y\n  `TVOSMPVPlayerSurface` con coordinador).\n- Causa 2: al soltar la vista anterior se libera el contexto de render y con\n  él la salida de vídeo de mpv, que no vuelve ni con `vo` ni quitando y\n  poniendo la pista. Con el vídeo en marcha, cambiar de vista vuelve a abrir\n  el canal (lo que no es directo, por donde iba).\n- Comprobado en el simulador: los cuatro cuadros con imagen y solo suena el\n  elegido. ExoPlayer y multiview probados además en un OnePlus 7 Pro real\n  (4 canales a 720p por hardware, unos 386 MB)."
+        },
+        {
           "version": "0.9.22",
           "date": "2026-10-11",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.22/InputStreamPlayer-iOS-0.9.22-76-unsigned.ipa",
