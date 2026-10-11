@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.26",
+          "date": "2026-10-11",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.26/InputStreamPlayer-iOS-0.9.26-80-unsigned.ipa",
+          "size": 16820288,
+          "minOSVersion": "16.0",
+          "sha256": "db555683a3a75bd2b69a148e7c9da942d3d3e527fa2e9a82b896cba8559839fe",
+          "localizedDescription": "\nAviso de un usuario de Apple TV.\n\n- **Preferencias:** la pantalla no tenía desplazamiento vertical y no cabía:\n  empezaba a media tarjeta de OpenGL/Sistema y no bajaba de «Red». Ahora va en\n  un `ScrollView`.\n- **Fuentes y Guías EPG:** el foco de tvOS solo baja a lo que tiene justo\n  debajo, y bajo «Cerrar» o el campo del nombre no había nada enfocable (el\n  icono de la tarjeta, el título de la fila). Cabecera, tarjeta de añadir y\n  cada fila son ahora `focusSection`: desde cualquier botón se baja y se sube.\n- **Guía:** desde «Antes» no se bajaba a la rejilla (debajo están los nombres\n  de los canales); ahora sí. La guía abre con el foco en lo que se emite en el\n  primer canal en vez de en «Cerrar». La franja pasa de cuatro a dos horas,\n  como en iPad y Android, y la rejilla llega al borde de abajo en vez de\n  cortarse a media fila dejando una franja libre.\n- `--ui-testing-show-guide-sources` abre la gestión de guías para pruebas.\n- Probado en el simulador de Apple TV 4K pulsando el mando desde un test de\n  interfaz (`XCUIRemote`); no en un Apple TV real."
+        },
+        {
           "version": "0.9.25",
           "date": "2026-10-11",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.25/InputStreamPlayer-iOS-0.9.25-79-unsigned.ipa",
