@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.25",
+          "date": "2026-10-11",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.25/InputStreamPlayer-iOS-0.9.25-79-unsigned.ipa",
+          "size": 16820288,
+          "minOSVersion": "16.0",
+          "sha256": "4dd6bf8b4cc2ede68d8faf8ca74d04f80d55c52af3bb276825e8196415da1f73",
+          "localizedDescription": "\n- Un MKV Dolby Vision perfil 7 (`dvhe.07.06`, el de los UHD) en una Shield:\n  el aviso de la 0.9.24 saltó bien («el aparato no decodifica»), pero se\n  puede ver. `DolbyVisionCompat` envuelve los extractores de archivos y, si\n  ningún decodificador Dolby Vision del aparato admite el perfil 7, presenta\n  la pista como HEVC: el decodificador HEVC reproduce la capa base (HDR10) e\n  ignora la de mejora. Sin muestra de perfil 7 a mano: comprobado solo que MP4\n  y MKV normales siguen abriendo."
+        },
+        {
           "version": "0.9.24",
           "date": "2026-10-11",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.24/InputStreamPlayer-iOS-0.9.24-78-unsigned.ipa",
