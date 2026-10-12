@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.29",
+          "date": "2026-10-12",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.29/InputStreamPlayer-iOS-0.9.29-83-unsigned.ipa",
+          "size": 16820288,
+          "minOSVersion": "16.0",
+          "sha256": "e42395391365f643f866199ade9b7517b80a90c65b642ab1fde1b879db581c86",
+          "localizedDescription": "\nUn log de la Bravia (0.9.28, ExoPlayer, directo Smooth de 1080p) acaba en ANR\ncon 1704 MB de PSS tras minutos de tirones. El montón de Java iba en 18/36 MB,\nasí que lo que crece es memoria nativa; el log no dice qué. Revisado el código\nen busca de acumulaciones:\n\n- **Arreglado:** `ExoPlayerEngine.start` liberaba una sesión «caducada» con\n  `background.execute` aunque `release()` ya hubiera apagado el ejecutor:\n  `RejectedExecutionException` en el hilo principal y la sesión del núcleo\n  (proxies, alimentador Smooth) quedaba viva. Ahora se libera en un hilo\n  aparte si el ejecutor ya no acepta tareas (`MpvPlayer` ya lo protegía).\n- **Sin cambios, anotado:** el `LoadControl` en tiempo real de ExoPlayer para\n  Smooth pide 4× el búfer (120 s con 30 s) y con `prioritizeTimeOverSizeThresholds`\n  ignora el tope de bytes: ~100–150 MB por reproductor a 1080p, más con mayor\n  bitrate y × el número de reproductores en multiview. Tres diccionarios del\n  proxy HLS (`resourcesByToken`, `tokensByResource`, `explicitIVsByResource`)\n  crecen con cada segmento del directo y no se vacían: KB por hora, no explica\n  el caso. El alimentador Smooth no acumula (un fragmento a la vez, escritura\n  con contrapresión).\n- **Para medir:** el registro incluye ahora la pila del hilo principal de los\n  ANR («Cierres anteriores») y una línea «Memoria» cada 30 s mientras se\n  reproduce (total, Java, nativa, gráfica, código).\n- Probado en un OnePlus 7 Pro (64 bits, ExoPlayer, compilación de depuración):\n  LA 1 (ISML) 10 min seguidos con la memoria plana (307 → 315 MB de PSS),\n  12 aperturas y cierres de canales sin tendencia (318–343 MB), y BBC Top Gear\n  (ISML, el del log) con la memoria nativa en 57–66 MB durante 8 min, hasta\n  que el móvil se desconectó. No reproduce el problema de la Bravia (32 bits, 2\n  decodificadores); la pila del ANR no se ha podido forzar, sin probar."
+        },
+        {
           "version": "0.9.28",
           "date": "2026-10-12",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.28/InputStreamPlayer-iOS-0.9.28-82-unsigned.ipa",
