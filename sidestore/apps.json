@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.28",
+          "date": "2026-10-12",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.28/InputStreamPlayer-iOS-0.9.28-82-unsigned.ipa",
+          "size": 16820288,
+          "minOSVersion": "16.0",
+          "sha256": "7feea2965848a136bd9a7e648130ead382965be15f008c624647f27883cd8db1",
+          "localizedDescription": "\n- Un perfil Dolby Vision 5 se ve morado y verdoso con ExoPlayer en una Bravia\n  VH21 y bien con mpv, sin que el log diga si la tele anuncia Dolby Vision\n  («BRAVIA 4K VH21» es una plataforma compartida por modelos con y sin él). El\n  encabezado del registro lleva ahora «Pantalla:» (tipos HDR que declara, la\n  misma consulta que usa ExoPlayer para elegir decodificador) y «Decodificadores\n  Dolby Vision:» con los perfiles de cada uno.\n- Prueba: con ExoPlayer, si el vídeo es HDR o Dolby Vision la ventana pide\n  `COLOR_MODE_HDR` (y lo deja en el de siempre al salir), por si la tele no\n  entraba en su modo HDR con el decodificador Dolby Vision. La Sony\n  XR-75X90K sí anuncia Dolby Vision; no hay certeza de que ésta sea la causa.\n  Compila; sin probar en aparato (no hay esa Bravia a mano)."
+        },
+        {
           "version": "0.9.27",
           "date": "2026-10-12",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.27/InputStreamPlayer-iOS-0.9.27-81-unsigned.ipa",
