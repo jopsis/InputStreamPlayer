@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.27",
+          "date": "2026-10-12",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.27/InputStreamPlayer-iOS-0.9.27-81-unsigned.ipa",
+          "size": 16820286,
+          "minOSVersion": "16.0",
+          "sha256": "2a7a99548ecaac8abec456c48cff0c4c9b340d5a72f3da69b8899dd22fd8a8f4",
+          "localizedDescription": "\n- Un usuario con una Bravia VH21 veía mal los colores de una película con\n  ExoPlayer y bien con mpv. El registro no decía nada: en producción ExoPlayer\n  no escribía el decodificador ni el formato, solo en depuración. Ahora, al\n  abrir el vídeo, deja en el registro el decodificador elegido y el formato\n  (códec, tamaño, bitrate y primarios/transferencia/rango de color). No cambia\n  la reproducción; solo sirve para diagnosticar el siguiente log. Lo único que\n  se sabía de la película por el lado de mpv: H.264 1080p SDR, BT.709, rango\n  limitado, con `OMX.MTK.VIDEO.DECODER.AVC`."
+        },
+        {
           "version": "0.9.26",
           "date": "2026-10-11",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.26/InputStreamPlayer-iOS-0.9.26-80-unsigned.ipa",
