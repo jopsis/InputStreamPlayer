@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.30",
+          "date": "2026-10-13",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.30/InputStreamPlayer-iOS-0.9.30-84-unsigned.ipa",
+          "size": 16820288,
+          "minOSVersion": "16.0",
+          "sha256": "e304d3219c1eb129a566252039425563a8bac13bd0b1f3cf61596a986d2c6f5d",
+          "localizedDescription": "\n- Quien no haya elegido motor en Preferencias pasa a ExoPlayer (antes MPV).\n  Quien ya eligió uno conserva su elección (queda guardada en el aparato). Se\n  puede cambiar en Preferencias → Reproductor o desde el propio reproductor\n  (Pistas → Reproductor), y si un vídeo no abre la app ofrece probar con el otro.\n- El texto de Preferencias y los README públicos dicen ahora que ExoPlayer es el\n  predeterminado.\n- Sale como 0.9.30 y no como segunda 0.9.29: la versión ya estaba publicada y\n  el código de versión de Android sale de ella."
+        },
+        {
           "version": "0.9.29",
           "date": "2026-10-12",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.29/InputStreamPlayer-iOS-0.9.29-83-unsigned.ipa",
