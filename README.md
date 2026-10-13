@@ -60,9 +60,9 @@ Cada archivo va con su checksum SHA-256. Antes de instalar, lee
   con tu propio Google Drive, y con **Trakt**.
 - **DNS cifrado opcional** (XDP DNS), para redes cuyo DNS bloquea algunos
   servidores.
-- **Android:** dos motores de reproducción, MPV (el de siempre) y
-  **ExoPlayer** (los decodificadores y la conexión segura del sistema), a
-  elegir en Preferencias o desde el propio reproductor; si un vídeo no abre con
+- **Android:** dos motores de reproducción, **ExoPlayer** (el predeterminado:
+  los decodificadores y la conexión segura del sistema) y MPV (abre casi
+  cualquier formato), a elegir en Preferencias o desde el propio reproductor; si un vídeo no abre con
   uno, la app ofrece probar con el otro. Actualizaciones desde la propia app y
   «Enviar registro», que
   manda al desarrollador un registro de fallos sin claves ni tokens

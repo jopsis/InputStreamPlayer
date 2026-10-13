@@ -58,8 +58,9 @@ Every file comes with its SHA-256 checksum. Before installing, read
   devices through your own Google Drive, and with **Trakt**.
 - **Optional encrypted DNS** (XDP DNS), for networks whose DNS blocks some
   servers.
-- **Android:** two playback engines, MPV (the usual one) and **ExoPlayer**
-  (the system's decoders and secure connection), chosen in Preferences or
+- **Android:** two playback engines, **ExoPlayer** (the default: the
+  system's decoders and secure connection) and MPV (opens almost any
+  format), chosen in Preferences or
   from the player itself; if a video won't open with one, the app offers to
   try the other. In-app updates and "Enviar registro" (send log), which sends
   the developer a diagnostics log with keys and tokens removed
