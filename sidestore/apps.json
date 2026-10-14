@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.32",
+          "date": "2026-10-14",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.32/InputStreamPlayer-iOS-0.9.32-86-unsigned.ipa",
+          "size": 16826005,
+          "minOSVersion": "16.0",
+          "sha256": "b676422f34f7b48f3587f98f2f309dcbce3c2c36300364734a0de5576776cf1b",
+          "localizedDescription": "\nUn log de la Bravia con la 0.9.31 (HLS cifrado de Top Gear, ExoPlayer) acababa en\n«sin memoria» a 1528 MB: la memoria nativa subía ~48 MB/min, al ritmo del vídeo,\ny no se liberaba. La 0.9.31 solo arreglaba el Smooth (ISML); el proxy HLS cifrado\nusaba `URLSession.data(for:)` para bajar cada segmento (~4,6 MB) y retenía todos.\n\n- **Perfil de heap en un Chromecast (32 bits):** con la cola directa solo en la\n  sesión, seguía retenida la copia que `completeTask` hace del cuerpo de cada\n  `data(for:)` (72 asignaciones, 75 MB en 100 s). La retención tiene dos partes\n  independientes: los trozos que se entregan por la `OperationQueue` de corelibs\n  (arreglada con `DirectOperationQueue`) y la tarea de `data(for:)`, que queda\n  viva con su cuerpo aunque la cola sea otra.\n- **Arreglo:** `DelegateDownloader` (ahora en PlaylistKit, antes\n  `SmoothDownloader`) descarga respuestas enteras con una tarea de delegado y\n  `DirectOperationQueue`; `AppNetwork.data(for:)` lo usa en Android y en el resto\n  sigue siendo `URLSession.data(for:)`. Pasan por él: manifiestos y fragmentos\n  Smooth, el proxy HLS cifrado y su metadata, el proxy DASH, Trakt y Drive,\n  Stremio/addons y el sondeo de canales. `AppNetwork.defaultSession`,\n  `makeSession` y `CustomDNS` llevan la cola directa a las sesiones que quedan.\n  Los delegados de streaming del proxy HLS (`streamingSession`) no se tocan: no\n  se pueden probar sin un canal de Movistar.\n- **Medido en el Chromecast, 5 min:** HLS cifrado con ExoPlayer, memoria nativa\n  **45–61 MB plana** (antes 85→272 MB y subiendo); ISML 56–68 MB (la pendiente\n  residual de la 0.9.31, ~3-4 MB/min, queda en ~1 MB/min o menos). Trakt\n  sincroniza («Sincronizado ahora mismo») y la pestaña Addons carga su catálogo y\n  «Seguir viendo» con el progreso de Trakt.\n- Sin probar en el OnePlus (se desconectó de adb), en la Bravia ni con Drive (la\n  cuenta de Google no está en el Chromecast). Apple no cambia.\n- Los 2 tests de `PlaybackModelTests.StreamInfoTests` ya fallaban antes (sin\n  relación)."
+        },
+        {
           "version": "0.9.31",
           "date": "2026-10-14",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.31/InputStreamPlayer-iOS-0.9.31-85-unsigned.ipa",
