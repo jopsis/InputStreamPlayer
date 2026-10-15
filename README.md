@@ -172,7 +172,7 @@ Mac (SwiftUI), no la de iPhone en una ventana. Descomprime el ZIP, arrastra
   **Visualización**: «Centro multimedia» (la de Apple TV, pensada para verla
   con el teclado desde lejos) y «Clásica» (la de iPhone). Funciona en ventana o
   en pantalla completa (⌃⌘F), con teclado y ratón; la chuleta de atajos está en
-  Preferencias.
+  Preferencias y, completa, en [Atajos de teclado y ratón](#atajos-en-mac).
 - La reproducción usa el decodificador por hardware del Mac (VideoToolbox).
 - **La app no está notarizada** (no hay cuenta de pago de Apple Developer), así
   que macOS la bloquea la primera vez. Para abrirla: intenta abrirla, ve a
@@ -180,6 +180,38 @@ Mac (SwiftUI), no la de iPhone en una ventana. Descomprime el ZIP, arrastra
   o quita la marca de cuarentena con
   `xattr -dr com.apple.quarantine /Applications/ISPlayer.app`.
 - Verifica el ZIP con su `.sha256`, como cualquier otra descarga.
+
+### Atajos en Mac
+
+**Por las pantallas**
+
+| Tecla | Qué hace |
+|---|---|
+| Flechas o Tab (Mayús+Tab, hacia atrás) | Mover el foco |
+| Intro o Espacio | Elegir lo enfocado |
+| Esc o Retroceso | Volver atrás / cerrar la pantalla de arriba |
+| ⌃⌘F | Pantalla completa (también en el menú **Visualización**) |
+
+Escribiendo en el buscador las teclas son del campo; **Esc** lo suelta y las
+flechas vuelven a mover el foco.
+
+**En el reproductor**
+
+| Tecla | Qué hace |
+|---|---|
+| Espacio | Pausa / reanudar |
+| ← → | Atrás / adelante 10 s (en directos con retroceso y vídeos) |
+| J / L | Atrás / adelante 10 s |
+| ↑ ↓ | Canal anterior / siguiente (con los controles ocultos); con ellos a la vista, mueven el foco |
+| M | Silenciar |
+| F | Pantalla completa |
+| I | Información de la reproducción |
+| Intro | Mostrar los controles |
+| Esc | Ocultar los controles; con ellos ocultos, cerrar el reproductor |
+
+**Ratón:** pasar por encima resalta, un clic elige, y mover el ratón muestra
+los controles. Un clic sobre el vídeo los muestra u oculta, un doble clic activa
+la pantalla completa y se puede arrastrar la barra de progreso para saltar.
 
 ## Privacidad
 

@@ -144,5 +144,6 @@ elegibles en Preferencias («Centro multimedia» y «Clásica»). Verifícala co
   Ábrela desde **Ajustes del Sistema → Privacidad y seguridad → Abrir
   igualmente**, o quita la cuarentena con
   `xattr -dr com.apple.quarantine /Applications/ISPlayer.app`.
+- Atajos de teclado y ratón: [README → Atajos en Mac](../README.md#atajos-en-mac).
 - Sus ajustes y secretos se guardan en `~/Library/Application Support/ISPlayer/`
   y en las preferencias de la app; no usa el Llavero.

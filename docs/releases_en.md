@@ -6,20 +6,20 @@ most recent one is always at
 [releases/latest](https://github.com/jopsis/InputStreamPlayer/releases/latest).
 
 InputStream Player is available for **iOS**, **tvOS**, **macOS** (Apple
-Silicon Macs, through PlayCover), and **Android** (phone, Google TV and Android
+Silicon Macs, native app), and **Android** (phone, Google TV and Android
 TV). In app drawers it shows up as **ISPlayer**. Each release includes
 (`X.Y.Z` is the version and `N` the build number):
 
 - `InputStreamPlayer-iOS-X.Y.Z-N-unsigned.ipa`: iPhone and iPad (SideStore/LiveContainer);
 - `InputStreamPlayer-tvOS-X.Y.Z-N-unsigned.ipa`: Apple TV;
-- `InputStreamPlayer-macOS-PlayCover-X.Y.Z-N.ipa`: Apple Silicon Macs, with
-  PlayCover and a limited experience (see below);
+- `InputStreamPlayer-macOS-X.Y.Z-N.zip`: native app for Apple Silicon Macs
+  (see below);
 - `InputStreamPlayer-Android-arm64-X.Y.Z-N.apk`: 64-bit Android (modern phones
   and TVs);
 - `InputStreamPlayer-Android-armv7-X.Y.Z-N.apk`: 32-bit Android (e.g.
   Chromecast with Google TV);
 - `InputStreamPlayer-Android-universal-X.Y.Z-N.apk`: both of the above in one;
-- a `.sha256` file with each IPA and APK's SHA-256 checksum;
+- a `.sha256` file with each IPA, ZIP and APK's SHA-256 checksum;
 - version, date, and release notes;
 - any known compatibility requirements.
 
@@ -30,7 +30,7 @@ same release and verify that they match:
 
 ```sh
 # macOS
-shasum -a 256 InputStreamPlayer-*.ipa
+shasum -a 256 InputStreamPlayer-*.ipa InputStreamPlayer-*.zip
 # Linux
 sha256sum InputStreamPlayer-*.apk
 # Windows (PowerShell)
@@ -131,15 +131,19 @@ Uninstalling deletes the app's local data. URL sources, settings, and watch
 history come back when you sign in to Google Drive again, if you were using
 sync; playlists added from a file have to be added again.
 
-## Apple Silicon Macs (PlayCover)
+## Apple Silicon Macs
 
-The `InputStreamPlayer-macOS-PlayCover-….ipa` IPA is the same iPhone app, signed
-so that [PlayCover](https://playcover.io) accepts it. Verify it like any other
-release file and drag it into PlayCover.
+`InputStreamPlayer-macOS-….zip` contains **ISPlayer.app**, a native Mac app
+(SwiftUI) with hardware playback (VideoToolbox) and two interfaces you can
+choose in Preferences ("Media center" and "Classic"). Verify it against its
+`.sha256`, unzip it and drag it to *Applications*.
 
-It offers a **limited experience**:
+- Apple **Silicon** Macs only (M1 or later).
+- The signature is ad hoc and the app is **not notarized**: macOS blocks it the
+  first time. Open it from **System Settings → Privacy & Security → Open
+  Anyway**, or remove the quarantine flag with
+  `xattr -dr com.apple.quarantine /Applications/ISPlayer.app`.
+- Keyboard and mouse shortcuts: [README → Mac shortcuts](../README_en.md#mac-shortcuts).
+- Its settings and secrets are stored in `~/Library/Application Support/ISPlayer/`
+  and in the app's preferences; it does not use the Keychain.
 
-- Apple **Silicon** Macs only (M1 or later); it does not work on Intel Macs.
-- It is an iPhone/iPad app in a window, designed for a touch screen.
-- If a button or menu does not respond, turn off PlayCover's **keymapping** for
-  this app (right-click the app in PlayCover → Settings).

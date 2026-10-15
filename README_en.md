@@ -170,7 +170,8 @@ Each release includes `InputStreamPlayer-macOS-X.Y.Z-N.zip`: a native Mac app
 - It has two interfaces, switched in **Preferences** or from the **View** menu:
   "Media center" (the Apple TV one, meant to be used from the keyboard at a
   distance) and "Classic" (the iPhone one). It runs windowed or full screen
-  (⌃⌘F), with keyboard and mouse; the shortcut cheat sheet is in Preferences.
+  (⌃⌘F), with keyboard and mouse; the shortcut cheat sheet is in Preferences
+  and the full list is in [Mac shortcuts](#mac-shortcuts).
 - Playback uses the Mac's hardware decoder (VideoToolbox).
 - **The app is not notarized** (there is no paid Apple Developer account), so
   macOS blocks it the first time. To open it: try to open it, then go to
@@ -178,6 +179,38 @@ Each release includes `InputStreamPlayer-macOS-X.Y.Z-N.zip`: a native Mac app
   the quarantine flag with
   `xattr -dr com.apple.quarantine /Applications/ISPlayer.app`.
 - Verify the ZIP against its `.sha256`, like any other download.
+
+### Mac shortcuts
+
+**Moving around the screens**
+
+| Key | What it does |
+|---|---|
+| Arrows or Tab (Shift+Tab goes back) | Move the focus |
+| Return or Space | Choose the focused item |
+| Esc or Delete | Go back / close the top screen |
+| ⌃⌘F | Full screen (also in the **View** menu) |
+
+While you type in the search box the keys belong to the field; **Esc** releases
+it and the arrows move the focus again.
+
+**In the player**
+
+| Key | What it does |
+|---|---|
+| Space | Pause / resume |
+| ← → | Back / forward 10 s (videos and live streams with rewind) |
+| J / L | Back / forward 10 s |
+| ↑ ↓ | Previous / next channel (with the controls hidden); with them shown they move the focus |
+| M | Mute |
+| F | Full screen |
+| I | Playback information |
+| Return | Show the controls |
+| Esc | Hide the controls; with them hidden, close the player |
+
+**Mouse:** hovering highlights, a click chooses, and moving the mouse shows
+the controls. A click on the video shows or hides them, a double click toggles
+full screen, and you can drag the progress bar to seek.
 
 ## Privacy
 
