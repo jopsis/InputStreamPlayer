@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.39",
+          "date": "2026-10-15",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.39/InputStreamPlayer-iOS-0.9.39-93-unsigned.ipa",
+          "size": 16857425,
+          "minOSVersion": "16.0",
+          "sha256": "dfd0f2d890d3602001954c437c26323db57d977de09b81bd3b6d79af2f145642",
+          "localizedDescription": "New: the video information window now shows the dynamic range (HDR10, HLG, SDR, and Dolby Vision on Android with ExoPlayer) and the color space (BT.2020, BT.709…). Available on iPhone/iPad, Apple TV, Mac and Android.\n\nNuevo: la ventana de información del vídeo muestra ahora el rango dinámico (HDR10, HLG, SDR y, en Android con ExoPlayer, Dolby Vision) y el espacio de color (BT.2020, BT.709…). Disponible en iPhone/iPad, Apple TV, Mac y Android."
+        },
+        {
           "version": "0.9.38",
           "date": "2026-10-15",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.38/InputStreamPlayer-iOS-0.9.38-92-unsigned.ipa",
