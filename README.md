@@ -10,7 +10,7 @@ con su nombre completo.
 > usuario tiene autorización de acceso. No incluye listas, credenciales ni
 > claves de terceros.
 
-[English version](README_en.md)
+**Web:** [isplayer.joplabs.app](https://isplayer.joplabs.app) · [English version](README_en.md)
 
 ## Descargas
 
@@ -58,6 +58,10 @@ Cada archivo va con su checksum SHA-256. Antes de instalar, lee
   cada canal.
 - **Sincronización opcional** de fuentes, ajustes y lo visto entre tus aparatos
   con tu propio Google Drive, y con **Trakt**.
+- **Listas cifradas:** cifra tu lista en el navegador con el
+  [cifrador web](https://isplayer.joplabs.app/cifrar/) y comparte solo la
+  dirección y una clave, en lugar de dejarla abierta en internet. La lista no
+  sale de tu aparato y el cifrador no puede descifrar.
 - **DNS cifrado opcional** (XDP DNS), para redes cuyo DNS bloquea algunos
   servidores.
 - **Android:** dos motores de reproducción, **ExoPlayer** (el predeterminado:

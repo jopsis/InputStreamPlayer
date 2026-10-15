@@ -9,7 +9,7 @@ the app it uses its full name.
 > InputStream Player is intended for content the user is authorized to access.
 > It does not include third-party playlists, credentials, or keys.
 
-[Versión en español](README.md)
+**Web:** [isplayer.joplabs.app](https://isplayer.joplabs.app/en/) · [Versión en español](README.md)
 
 ## Downloads
 
@@ -56,6 +56,10 @@ Every file comes with its SHA-256 checksum. Before installing, read
   remembered per channel.
 - **Optional sync** of sources, settings, and watch history across your
   devices through your own Google Drive, and with **Trakt**.
+- **Encrypted lists:** encrypt your list in the browser with the
+  [web encryptor](https://isplayer.joplabs.app/en/encrypt/) and share only the
+  address and a key, instead of leaving it open on the internet. The list never
+  leaves your device and the encryptor cannot decrypt.
 - **Optional encrypted DNS** (XDP DNS), for networks whose DNS blocks some
   servers.
 - **Android:** two playback engines, **ExoPlayer** (the default: the
