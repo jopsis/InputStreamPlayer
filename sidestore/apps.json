@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.33",
+          "date": "2026-10-15",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.33/InputStreamPlayer-iOS-0.9.33-87-unsigned.ipa",
+          "size": 16828548,
+          "minOSVersion": "16.0",
+          "sha256": "4c6b15ddf7033cd1640328a95d71d81ed9cc86b666c0235486840d5affaeebf3",
+          "localizedDescription": "Nuevo: app nativa para Mac con Apple Silicon (ZIP), con dos interfaces y reproducción por hardware. Sustituye a la versión de PlayCover.\nAndroid TV: el foco del mando vuelve a donde estabas al salir de un canal o una ficha, las filas se entran por el primer elemento, las series abren en la temporada por la que vas y el aro de foco ya no pisa los títulos.\nAndroid: si ExoPlayer no puede reproducir el audio (por ejemplo Dolby Digital Plus en un Chromecast), la app pasa sola a mpv."
+        },
+        {
           "version": "0.9.32",
           "date": "2026-10-14",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.32/InputStreamPlayer-iOS-0.9.32-86-unsigned.ipa",
