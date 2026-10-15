@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.36",
+          "date": "2026-10-15",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.36/InputStreamPlayer-iOS-0.9.36-90-unsigned.ipa",
+          "size": 16830788,
+          "minOSVersion": "16.0",
+          "sha256": "68c1a22c42f5fd246265da71bae551a153a64a3339d8b2288d7550a079f1bb6f",
+          "localizedDescription": "Arregla el error 310 al refrescar listas con el DNS propio tras suspender la app (todos los sistemas). Mac: el buscador ya no queda sobre el vídeo, los controles se ocultan con el ratón quieto y la cabecera dice macOS. Errores HTTP más claros (p. ej. 429)."
+        },
+        {
           "version": "0.9.34",
           "date": "2026-10-15",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.34/InputStreamPlayer-iOS-0.9.34-88-unsigned.ipa",
