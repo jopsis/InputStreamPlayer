@@ -38,7 +38,7 @@ proceso manual descrito más abajo.
    variable `min_os_version` en `sidestore/update-source.sh` a la vez.
 5. **Revisar la documentación pública** si la release cambia algo que se ve
    desde fuera, en español y en inglés a la vez:
-   - una función nueva o retirada → «Qué hace» en `README.md`/`README_en.md`;
+   - una función nueva o retirada → «Qué hace» en `README.md`/`README_en.md` (viñeta corta; el detalle va en la web, `Web/` del repo de código);
    - un formato o campo de lista nuevo → `docs/formatos-de-listas*.md` y, si
      ayuda, un ejemplo en `samples/` (comprobar que la app lo carga);
    - artefactos, nombres de fichero o instalación → `docs/releases*.md` y el
@@ -75,10 +75,11 @@ no consulta la API de GitHub en directo.
 | `sidestore/update-source.sh` | Script que regenera `apps.json` desde `gh release list` |
 | `sidestore/index.html` | Página con el botón "Add to SideStore" (servida por GitHub Pages) |
 | `docs/releases.md`, `docs/releases_en.md` | Instrucciones de verificación/instalación para humanos |
+| `docs/atajos-mac.md`, `docs/atajos-mac_en.md` | Atajos de teclado y ratón de la app de Mac |
 | `docs/formatos-de-listas.md`, `docs/formatos-de-listas_en.md` | Referencia de los formatos de lista (M3U, JSON, catálogos, guía, catchup) |
 | `samples/` | Listas de ejemplo; `catalogo-vod.json` es el catálogo de películas y series |
 | `privacidad.md` | Política de privacidad (español e inglés en el mismo fichero) |
-| `README.md`, `README_en.md` | Punto de entrada público, enlaza el source de SideStore |
+| `README.md`, `README_en.md` | Punto de entrada público (breve: descargas, SideStore, formatos); sin capturas, que viven en la web |
 
 ## Formato del source
 

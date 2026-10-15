@@ -82,7 +82,7 @@ usual: **from a URL** and **creating a playlist by hand**. If your playlist is
 in a file and you would rather not touch settings, upload it anywhere that
 gives a direct link and add it by URL.
 
-With the [SideStore source](../README_en.md#add-inputstream-player-as-a-sidestore-source)
+With the [SideStore source](../README_en.md#sidestore)
 you do not need to download anything by hand: new versions show up in SideStore.
 
 ## Apple TV
@@ -143,7 +143,7 @@ choose in Preferences ("Media center" and "Classic"). Verify it against its
   first time. Open it from **System Settings → Privacy & Security → Open
   Anyway**, or remove the quarantine flag with
   `xattr -dr com.apple.quarantine /Applications/ISPlayer.app`.
-- Keyboard and mouse shortcuts: [README → Mac shortcuts](../README_en.md#mac-shortcuts).
+- Keyboard and mouse shortcuts: [Mac shortcuts](atajos-mac_en.md).
 - Its settings and secrets are stored in `~/Library/Application Support/ISPlayer/`
   and in the app's preferences; it does not use the Keychain.
 

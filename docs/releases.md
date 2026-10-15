@@ -82,7 +82,7 @@ funcionan igual: **desde una URL** y **crear una lista a mano**. Si tienes la
 lista en un archivo y no quieres tocar ajustes, súbela a cualquier sitio que
 dé un enlace directo y añádela por URL.
 
-Con el [source de SideStore](../README.md#añadir-inputstream-player-como-source-de-sidestore)
+Con el [source de SideStore](../README.md#sidestore)
 no hace falta descargar nada a mano: las versiones nuevas aparecen en SideStore.
 
 ## Apple TV
@@ -144,6 +144,6 @@ elegibles en Preferencias («Centro multimedia» y «Clásica»). Verifícala co
   Ábrela desde **Ajustes del Sistema → Privacidad y seguridad → Abrir
   igualmente**, o quita la cuarentena con
   `xattr -dr com.apple.quarantine /Applications/ISPlayer.app`.
-- Atajos de teclado y ratón: [README → Atajos en Mac](../README.md#atajos-en-mac).
+- Atajos de teclado y ratón: [Atajos en Mac](atajos-mac.md).
 - Sus ajustes y secretos se guardan en `~/Library/Application Support/ISPlayer/`
   y en las preferencias de la app; no usa el Llavero.
