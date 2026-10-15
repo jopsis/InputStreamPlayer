@@ -80,7 +80,7 @@ while IFS= read -r tag; do
       minOSVersion: $minOSVersion
     }
     + (if $sha256 != "" then {sha256: $sha256} else {} end)
-    + (if $localizedDescription != "" then {localizedDescription: $localizedDescription} else {localizedDescription: ("Versión " + $version + ".")} end)
+    + (if $localizedDescription != "" then {localizedDescription: $localizedDescription} else {localizedDescription: ("Version " + $version + ".")} end)
   ')"
 
   versions_json="$(jq -c --argjson v "$version_entry" '. + [$v]' <<<"$versions_json")"
@@ -102,8 +102,8 @@ jq -n \
   --arg appName "InputStream Player" \
   --arg bundleIdentifier "com.InputStreamPlayer" \
   --arg developerName "jopsis" \
-  --arg subtitle "Reproductor HLS/DASH/Smooth Streaming con ClearKey raw-key" \
-  --arg localizedDescription "Reproductor de listas HLS, DASH/MPD y Microsoft Smooth Streaming (ISML) para iPhone, iPad, Apple TV, Mac y Android, con soporte ClearKey/raw-key para el contenido autorizado por el usuario. Directo con guía y catchup, películas y series bajo demanda, addons de Stremio y sincronización opcional con Google Drive y Trakt. No implementa FairPlay, Widevine ni PlayReady." \
+  --arg subtitle "HLS/DASH/Smooth Streaming player with raw-key ClearKey" \
+  --arg localizedDescription "Player for HLS, DASH/MPD and Microsoft Smooth Streaming (ISML) playlists on iPhone, iPad, Apple TV, Mac and Android, with ClearKey/raw-key support for content the user is authorized to watch. Live TV with guide and catch-up, on-demand movies and series, Stremio add-ons and optional sync through Google Drive and Trakt. It does not implement FairPlay, Widevine or PlayReady." \
   --arg iconURL "$icon_url" \
   --arg tintColor "14B85C" \
   --argjson versions "$versions_json" \

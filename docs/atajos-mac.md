@@ -1,35 +1,35 @@
-# Atajos en Mac
+# Mac shortcuts
 
 [← README](../README.md)
 
-Teclado y ratón de la app de Mac. También los tienes en **Preferencias**.
+Keyboard and mouse in the Mac app. They are also listed in **Preferences**.
 
-**Por las pantallas**
+**Moving around the screens**
 
-| Tecla | Qué hace |
+| Key | What it does |
 |---|---|
-| Flechas o Tab (Mayús+Tab, hacia atrás) | Mover el foco |
-| Intro o Espacio | Elegir lo enfocado |
-| Esc o Retroceso | Volver atrás / cerrar la pantalla de arriba |
-| ⌃⌘F | Pantalla completa (también en el menú **Visualización**) |
+| Arrows or Tab (Shift+Tab goes back) | Move the focus |
+| Return or Space | Choose the focused item |
+| Esc or Delete | Go back / close the top screen |
+| ⌃⌘F | Full screen (also in the **View** menu) |
 
-Escribiendo en el buscador las teclas son del campo; **Esc** lo suelta y las
-flechas vuelven a mover el foco.
+While you type in the search box the keys belong to the field; **Esc** releases
+it and the arrows move the focus again.
 
-**En el reproductor**
+**In the player**
 
-| Tecla | Qué hace |
+| Key | What it does |
 |---|---|
-| Espacio | Pausa / reanudar |
-| ← → | Atrás / adelante 10 s (en directos con retroceso y vídeos) |
-| J / L | Atrás / adelante 10 s |
-| ↑ ↓ | Canal anterior / siguiente (con los controles ocultos); con ellos a la vista, mueven el foco |
-| M | Silenciar |
-| F | Pantalla completa |
-| I | Información de la reproducción |
-| Intro | Mostrar los controles |
-| Esc | Ocultar los controles; con ellos ocultos, cerrar el reproductor |
+| Space | Pause / resume |
+| ← → | Back / forward 10 s (videos and live streams with rewind) |
+| J / L | Back / forward 10 s |
+| ↑ ↓ | Previous / next channel (with the controls hidden); with them shown they move the focus |
+| M | Mute |
+| F | Full screen |
+| I | Playback information |
+| Return | Show the controls |
+| Esc | Hide the controls; with them hidden, close the player |
 
-**Ratón:** pasar por encima resalta, un clic elige, y mover el ratón muestra
-los controles. Un clic sobre el vídeo los muestra u oculta, un doble clic activa
-la pantalla completa y se puede arrastrar la barra de progreso para saltar.
+**Mouse:** hovering highlights, a click chooses, and moving the mouse shows
+the controls. A click on the video shows or hides them, a double click toggles
+full screen, and you can drag the progress bar to seek.

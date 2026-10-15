@@ -1,166 +1,165 @@
-# Formatos de listas
+# Playlist formats
 
-InputStream Player importa listas M3U/M3U8 y JSON codificadas en UTF-8. Una
-lista puede contener canales claros y canales con ClearKey/raw-key; las claves
-son opcionales y nunca deben compartirse sin autorización del titular del
-contenido.
+InputStream Player imports UTF-8 encoded M3U/M3U8 and JSON playlists. A
+playlist can contain clear channels and channels with a ClearKey/raw key; keys
+are optional and must never be shared without the content owner's permission.
 
 ## M3U / M3U8
 
-Cada canal se declara con `#EXTINF` y una URL en la línea siguiente. Se
-reconocen los atributos `tvg-logo` y `group-title`. `tvg-id` puede conservarse
-como metadato de la lista para otros clientes.
+Declare each channel with `#EXTINF` and its URL on the next line. The app reads
+the `tvg-logo` and `group-title` attributes. `tvg-id` can remain in the
+playlist as metadata for other clients.
 
 ```m3u
 #EXTM3U
-#EXTINF:-1 tvg-id="canal-demo" tvg-logo="https://example.invalid/logo.png" group-title="Demo",Canal Demo
-https://example.invalid/directo/playlist.m3u8
+#EXTINF:-1 tvg-id="demo-channel" tvg-logo="https://example.invalid/logo.png" group-title="Demo",Demo Channel
+https://example.invalid/live/playlist.m3u8
 ```
 
-Para indicar el tipo de manifiesto o una clave ClearKey se usa la convención de
-`inputstream.adaptive` de Kodi antes de la URL:
+Use Kodi's `inputstream.adaptive` convention before the URL to declare the
+manifest type or a ClearKey:
 
 ```m3u
-#EXTINF:-1 group-title="Demostración",Canal DASH con ClearKey
+#EXTINF:-1 group-title="Demo",DASH channel with ClearKey
 #KODIPROP:inputstream.adaptive.manifest_type=mpd
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=00112233445566778899aabbccddeeff:ffeeddccbbaa99887766554433221100
-https://example.invalid/canal/manifest.mpd
+https://example.invalid/channel/manifest.mpd
 ```
 
-Valores admitidos de `manifest_type`:
+Supported `manifest_type` values:
 
-| Valor | Formato |
+| Value | Format |
 | --- | --- |
-| `hls` | HLS, incluido SAMPLE-AES con clave autorizada |
-| `mpd` | DASH / MPD con ClearKey/raw-key autorizada |
-| `ism` | Smooth Streaming (`.ism`/`.isml`) con ClearKey/raw-key autorizada |
+| `hls` | HLS, including SAMPLE-AES with an authorized key |
+| `mpd` | DASH / MPD with an authorized ClearKey/raw key |
+| `ism` | Smooth Streaming (`.ism`/`.isml`) with an authorized ClearKey/raw key |
 
-La clave utiliza `KID:KEY`, ambos en hexadecimal y de 16 bytes (32 caracteres
-hexadecimales cada uno). Si cada pista va cifrada con una clave distinta se
-ponen varias parejas separadas por comas (`KID1:KEY1,KID2:KEY2`); también se
-acepta el objeto JSON de ClearKey.
+Keys use `KID:KEY`, with both values encoded as 16-byte hexadecimal strings
+(32 hexadecimal characters each). When each track is encrypted with a
+different key, list several pairs separated by commas (`KID1:KEY1,KID2:KEY2`);
+the ClearKey JSON object is accepted too.
 
-También se acepta `#EXTVLCOPT:http-user-agent=` para declarar un agente de
-usuario y `inputstream.adaptive.stream_headers` para cabeceras HTTP, con la
-forma `Nombre=valor&Otro=valor`:
+`#EXTVLCOPT:http-user-agent=` can set a user agent, and
+`inputstream.adaptive.stream_headers` can set HTTP headers, in the form
+`Name=value&Other=value`:
 
 ```m3u
 #KODIPROP:inputstream.adaptive.stream_headers=X-Token=abc123&Referer=https://example.invalid/
 ```
 
-### Películas y series (bajo demanda)
+### Movies and series (on demand)
 
-Una lista puede mezclar canales en directo con películas y episodios. Los que
-son bajo demanda aparecen en **Emisiones → Bajo demanda**, no en el directo.
-Como el M3U no tiene un campo para eso, se deduce de lo que dice cada entrada,
-por este orden:
+A playlist can mix live channels with movies and episodes. On-demand entries
+show up under **Emisiones → Bajo demanda** (On demand), not in live TV. M3U has
+no field for this, so it is worked out from what each entry says, in this
+order:
 
-1. **El tipo declarado:** `tvg-type`, `type`, `media-type` o `group-type` con
-   `movie`, `series`, `vod`, `episode`… (o `live` para forzar directo).
-2. **La ruta de Xtream Codes:** `/movie/…` y `/series/…` son bajo demanda;
-   `/live/…`, directo.
-3. **La extensión:** `.mp4`, `.mkv`, `.avi`, `.mov`… son ficheros de vídeo.
-4. **La duración del `#EXTINF`:** los canales llevan `-1`; una duración de
-   dos minutos o más se toma como película.
+1. **The declared type:** `tvg-type`, `type`, `media-type`, or `group-type` set
+   to `movie`, `series`, `vod`, `episode`… (or `live` to force live).
+2. **The Xtream Codes path:** `/movie/…` and `/series/…` are on demand;
+   `/live/…` is live.
+3. **The extension:** `.mp4`, `.mkv`, `.avi`, `.mov`… are video files.
+4. **The `#EXTINF` duration:** channels use `-1`; a duration of two minutes or
+   more is taken as a movie.
 
-El nombre del grupo no cuenta: hay canales en directo en grupos que se llaman
-«Cine» o «Series».
+The group name does not count: there are live channels in groups called
+"Movies" or "Series".
 
-Los episodios se agrupan por serie y temporada a partir del nombre:
-`Serie S01E02`, `Serie.s1.e2`, `Serie - T01E02` o `Serie 1x02`.
+Episodes are grouped by series and season from their name: `Show S01E02`,
+`Show.s1.e2`, `Show - T01E02`, or `Show 1x02`.
 
 ```m3u
-#EXTINF:120 tvg-type="movie" tvg-logo="https://example.invalid/poster.jpg" group-title="Películas",Película Demo
-https://example.invalid/vod/pelicula-demo.mp4
-#EXTINF:-1 tvg-type="series" group-title="Series",Serie Demo S01E01
-https://example.invalid/vod/serie-demo/s01e01.mkv
+#EXTINF:120 tvg-type="movie" tvg-logo="https://example.invalid/poster.jpg" group-title="Movies",Demo Movie
+https://example.invalid/vod/demo-movie.mp4
+#EXTINF:-1 tvg-type="series" group-title="Series",Demo Show S01E01
+https://example.invalid/vod/demo-show/s01e01.mkv
 ```
 
 ## JSON
 
-El formato plano es un array de canales. Los campos requeridos son `name` y
-`url`; los demás son opcionales:
+The flat format is an array of channels. `name` and `url` are required; the
+rest are optional:
 
-| Campo | Para qué sirve |
+| Field | Purpose |
 | --- | --- |
-| `key` | Clave ClearKey, con las mismas formas que `license_key` del M3U |
-| `group` | Grupo del canal |
-| `logo` | Logotipo |
-| `tvg_id` | Identificador del canal en la guía |
-| `user_agent` | Agente de usuario para pedir el vídeo |
-| `type` | `movie`, `episode`, `series`… para contenido bajo demanda; `live` para directo |
-| `serie_name`, `season`, `episode` | De qué serie, temporada y episodio es |
-| `catchup_url`, `catchup_key`, `catchup_days`… | Ver [Catchup](#catchup) |
+| `key` | ClearKey key, in the same forms as the M3U `license_key` |
+| `group` | Channel group |
+| `logo` | Logo |
+| `tvg_id` | Channel identifier in the guide |
+| `user_agent` | User agent used to request the video |
+| `type` | `movie`, `episode`, `series`… for on-demand content; `live` for live |
+| `serie_name`, `season`, `episode` | Which series, season, and episode it is |
+| `catchup_url`, `catchup_key`, `catchup_days`… | See [Catch-up](#catch-up) |
 
 ```json
 [
   {
-    "name": "Canal Demo",
-    "url": "https://example.invalid/directo/playlist.m3u8",
+    "name": "Demo Channel",
+    "url": "https://example.invalid/live/playlist.m3u8",
     "key": "00112233445566778899aabbccddeeff:ffeeddccbbaa99887766554433221100",
-    "tvg_id": "canal-demo",
+    "tvg_id": "demo-channel",
     "group": "Demo",
-    "logo": "https://example.invalid/canal-demo.png"
+    "logo": "https://example.invalid/demo-channel.png"
   }
 ]
 ```
 
-`key` sigue la misma sintaxis `KID:KEY` de M3U. `tvg_id` se permite como
-metadato adicional para mantener compatibilidad con listas existentes; la
-aplicación ignora de forma segura los campos que no necesita.
+`key` uses the same `KID:KEY` syntax as M3U. `tvg_id` is accepted as extra
+metadata for compatibility with existing playlists; the app safely ignores
+fields it does not need.
 
-También se admite un esquema agrupado: cada grupo define `name`, `logo`
-opcional y `samples`; cada sample declara `name`, `uri`, `logo`, `kid`, `key`
-y `user_agent` opcionales.
+The grouped schema is also supported: each group declares `name`, an optional
+`logo`, and `samples`; each sample can declare `name`, `uri`, `logo`, `kid`,
+`key`, and `user_agent`.
 
-Consulta los ficheros completos en [samples](../samples/).
+See the complete files in [samples](../samples/).
 
-## Catálogos de películas y series (JSON)
+## Movie and series catalogs (JSON)
 
-Para contenido bajo demanda con ficha completa hay un tercer esquema JSON: un
-array de títulos (o un único título). Es el mismo formato que el
-[«Media library file» de OTT Navigator](https://ottnav.github.io/faq.html#media-library-file-json),
-así que sus listas sirven tal cual. Todo lo que contiene va a **Bajo
-demanda**. Una **película** lleva `video` (o `videos`, una lista de
-versiones); una **serie** lleva `seasons`.
+For on-demand content with full details there is a third JSON schema: an
+array of titles (or a single title). It is the same format as
+[OTT Navigator's "Media library file"](https://ottnav.github.io/faq.html#media-library-file-json),
+so its playlists work as they are. Everything in it goes to **Bajo demanda**
+(On demand). A **movie** has `video` (or `videos`, a list of versions); a
+**series** has `seasons`.
 
 ```json
 [
   {
-    "name": "Película Demo",
-    "category": "Películas",
-    "trailer": "https://example.invalid/trailers/pelicula-demo.mpd",
-    "video": "https://example.invalid/vod/pelicula-demo/manifest.mpd",
+    "name": "Demo Movie",
+    "category": "Movies",
+    "trailer": "https://example.invalid/trailers/demo-movie.mpd",
+    "video": "https://example.invalid/vod/demo-movie/manifest.mpd",
     "drm": "clearkey",
     "drmkey": "00112233445566778899aabbccddeeff:ffeeddccbbaa99887766554433221100",
     "headers": "X-Token=abc123",
     "info": {
-      "poster": "https://example.invalid/posters/pelicula-demo.jpg",
-      "bg": "https://example.invalid/fondos/pelicula-demo.jpg",
-      "plot": "Sinopsis de la película.",
+      "poster": "https://example.invalid/posters/demo-movie.jpg",
+      "bg": "https://example.invalid/backdrops/demo-movie.jpg",
+      "plot": "Movie plot.",
       "rating": "7.4",
       "year": "2025",
-      "genre": ["Drama", "Aventura"],
-      "cast": ["Actriz Uno", "Actor Dos"],
-      "director": ["Directora Demo"],
-      "country": ["España"],
+      "genre": ["Drama", "Adventure"],
+      "cast": ["Actress One", "Actor Two"],
+      "director": ["Demo Director"],
+      "country": ["Spain"],
       "duration": 6540
     }
   },
   {
-    "name": "Serie Demo",
+    "name": "Demo Show",
     "category": "Series",
-    "info": { "plot": "Sinopsis de la serie entera.", "year": "2026", "genre": "Comedia" },
+    "info": { "plot": "Plot of the whole series.", "year": "2026", "genre": "Comedy" },
     "seasons": [
       {
         "season": 1,
         "episodes": [
           {
             "episode": 1,
-            "name": "El principio",
-            "video": "https://example.invalid/vod/serie-demo/s01e01.m3u8",
-            "info": { "plot": "Sinopsis del episodio.", "duration": 47 }
+            "name": "The beginning",
+            "video": "https://example.invalid/vod/demo-show/s01e01.m3u8",
+            "info": { "plot": "Episode plot.", "duration": 47 }
           }
         ]
       }
@@ -169,206 +168,206 @@ versiones); una **serie** lleva `seasons`.
 ]
 ```
 
-| Campo | Para qué sirve |
+| Field | Purpose |
 | --- | --- |
-| `name` | Título |
-| `category` | Grupo en el que aparece (Películas, Series…) |
-| `video` | Dirección del vídeo (HLS, DASH, Smooth o fichero) |
-| `videos` | La película como lista de versiones, cada una con su `video`, `drm`, `drmkey`, `headers` e `info`. Se reproduce la primera que tenga `video` |
-| `seasons` | Temporadas: `season` (número) y `episodes`, cada uno con `episode`, `name`, `video`, `drm`, `drmkey`, `headers` e `info`. Sin números, se numeran por su posición (1, 2, 3…) |
-| `drm` | `clearkey` si va cifrado; sin él, se reproduce en claro |
-| `drmkey` | Clave en la forma `KID:KEY` (o varias, separadas por comas) |
-| `headers` | Cabeceras HTTP, como `Nombre=valor&Otro=valor` o como objeto (`{"User-Agent": "…"}`) |
-| `trailer` | Tráiler: una dirección de vídeo, o de YouTube (o solo el id del vídeo), que se abre en YouTube. Aparece el botón «Tráiler» en la ficha. También vale dentro de `info` |
-| `info` | La ficha (ver abajo) |
+| `name` | Title |
+| `category` | Group it appears in (Movies, Series…) |
+| `video` | Video address (HLS, DASH, Smooth, or a file) |
+| `videos` | The movie as a list of versions, each with its own `video`, `drm`, `drmkey`, `headers`, and `info`. The first one with a `video` is played |
+| `seasons` | Seasons: `season` (number) and `episodes`, each with `episode`, `name`, `video`, `drm`, `drmkey`, `headers`, and `info`. Without numbers, they are numbered by position (1, 2, 3…) |
+| `drm` | `clearkey` if encrypted; without it, it plays in the clear |
+| `drmkey` | Key as `KID:KEY` (or several, separated by commas) |
+| `headers` | HTTP headers, as `Name=value&Other=value` or as an object (`{"User-Agent": "…"}`) |
+| `trailer` | Trailer: a video address, or a YouTube one (or just the video id), which opens in YouTube. Adds a "Tráiler" button to the detail page. Also accepted inside `info` |
+| `info` | The details (see below) |
 
-Campos de `info`, todos opcionales:
+`info` fields, all optional:
 
-| Campo | Contenido |
+| Field | Content |
 | --- | --- |
-| `poster`, `bg` (o `backdrop`) | Cartel y fondo |
-| `plot` | Sinopsis. En una serie, la de la serie; cada episodio puede traer la suya |
-| `rating`, `year` | Valoración y año; valen como número o como texto |
-| `genre`, `cast`, `director`, `country` | Una lista de nombres o un texto con comas |
-| `duration` | En minutos (`47`) o en segundos (`3420`): por encima de 400 se toma como segundos |
+| `poster`, `bg` (or `backdrop`) | Poster and backdrop |
+| `plot` | Plot. In a series, the series plot; each episode can carry its own |
+| `rating`, `year` | Rating and year; numbers or text both work |
+| `genre`, `cast`, `director`, `country` | A list of names or comma-separated text |
+| `duration` | In minutes (`47`) or seconds (`3420`): above 400 it is taken as seconds |
 
-La lista es tolerante: los campos que no se usan se ignoran, un valor vacío o a
-cero (`"rating": "0"`, `"plot": ""`) cuenta como que no se sabe, y un título,
-temporada o episodio que no se pueda leer se salta sin tumbar el resto. Un
-episodio hereda de la serie lo que no traiga (año, géneros, reparto…), y si no
-tiene `name` se llama «Episodio N».
+The parser is lenient: unused fields are ignored, an empty or zero value
+(`"rating": "0"`, `"plot": ""`) counts as unknown, and a title, season, or
+episode that cannot be read is skipped without breaking the rest. An episode
+inherits from the series whatever it lacks (year, genres, cast…), and without a
+`name` it is called "Episodio N".
 
-Como en OTT Navigator, también se admiten:
+As in OTT Navigator, these are accepted too:
 
-- **Textos por idioma:** `"name:es": "…"` sustituye a `name` si el aparato
-  está en ese idioma (vale para cualquier campo).
-- **BASE64:** un elemento técnico `{ "base64": "name,video" }` en la lista
-  dice qué campos van codificados (sin relleno); `*` marca todos los textos.
+- **Per-language text:** `"name:es": "…"` replaces `name` when the device is
+  in that language (works for any field).
+- **BASE64:** a technical item `{ "base64": "name,video" }` in the list says
+  which fields are encoded (no padding); `*` marks every text value.
 
-`drm` solo admite `clearkey`: Widevine y otros con servidor de licencias no.
+`drm` only accepts `clearkey`: Widevine and others needing a license server
+are not supported.
 
-Ejemplo completo en [samples/catalogo-vod.json](../samples/catalogo-vod.json).
+Complete example in [samples/catalogo-vod.json](../samples/catalogo-vod.json).
 
-## Guía de programación (EPG)
+## Programme guide (EPG)
 
-La aplicación empareja cada canal con su programación de una guía XMLTV. El
-emparejado usa primero `tvg-id` y, si no cuadra, el nombre del canal
-normalizado, así que conviene declarar `tvg-id` con el mismo identificador que
-use la guía.
+The app matches each channel against an XMLTV guide. Matching uses `tvg-id`
+first and falls back to the normalized channel name, so declare `tvg-id` with
+the same identifier the guide uses.
 
-Una lista puede declarar su guía en la cabecera `#EXTM3U`, con `x-tvg-url`
-(también se aceptan `url-tvg` y `tvg-url`). Varias guías van separadas por
-comas. La aplicación ofrece darla de alta; no la descarga sin permiso, porque
-suelen ser decenas de megas.
+A playlist can declare its guide in the `#EXTM3U` header with `x-tvg-url`
+(`url-tvg` and `tvg-url` are also accepted). Separate several guides with
+commas. The app offers to add it; it never downloads one without permission,
+because guides are usually tens of megabytes.
 
 ```m3u
-#EXTM3U x-tvg-url="https://example.invalid/guia.xml.gz"
+#EXTM3U x-tvg-url="https://example.invalid/guide.xml.gz"
 ```
 
-Se admiten guías sin comprimir y con gzip.
+Plain and gzipped guides are both supported.
 
-## Catchup
+## Catch-up
 
-El catchup permite ver un programa que ya se emitió. La aplicación necesita dos
-cosas: la **guía**, que dice a qué hora empezó y terminó cada programa, y la
-declaración del **archivo** en la lista, que dice a qué dirección hay que
-pedirlo.
+Catch-up plays a programme that already aired. The app needs two things: the
+**guide**, which says when each programme started and ended, and the **archive**
+declaration in the playlist, which says where to request it.
 
 ### M3U
 
-Los atributos van en la línea `#EXTINF` y también valen en la cabecera
-`#EXTM3U`, donde sirven de valor por defecto para toda la lista: un canal solo
-tiene que declarar lo que cambie.
+The attributes go on the `#EXTINF` line, and also work on the `#EXTM3U` header,
+where they act as a default for the whole playlist: a channel only declares
+what differs.
 
-| Atributo | Para qué sirve |
+| Attribute | Purpose |
 | --- | --- |
-| `catchup` (o `catchup-type`) | Modo: `default`, `append` o `shift`. Por omisión, `default` |
-| `catchup-source` | La dirección del archivo (`default`) o el trozo de consulta que se añade a la del canal (`append`) |
-| `catchup-days` | Días que guarda el archivo. Si no se declara se suponen 8 |
-| `catchup-correction` | Corrección en horas, para archivos que no van sincronizados con la guía |
-| `timeshift`, `tvg-rec`, `catchup-time` | Formas antiguas de declarar los días de archivo |
+| `catchup` (or `catchup-type`) | Mode: `default`, `append` or `shift`. Defaults to `default` |
+| `catchup-source` | The archive address (`default`) or the query fragment appended to the channel URL (`append`) |
+| `catchup-days` | Days the archive keeps. Assumed to be 8 when absent |
+| `catchup-correction` | Correction in hours, for archives not aligned with the guide |
+| `timeshift`, `tvg-rec`, `catchup-time` | Legacy ways of declaring the archive length |
 
-Modos:
+Modes:
 
-- **`default`**: `catchup-source` es la dirección entera.
-- **`append`**: `catchup-source` se le pega a la URL del canal, arreglando el
-  separador (`?` o `&`) según haga falta.
-- **`shift`**: no hace falta `catchup-source`; se le añade a la URL del canal
-  `?utc={utc}&lutc={lutc}`.
+- **`default`**: `catchup-source` is the whole address.
+- **`append`**: `catchup-source` is glued onto the channel URL, fixing the
+  separator (`?` or `&`) as needed.
+- **`shift`**: no `catchup-source` needed; `?utc={utc}&lutc={lutc}` is appended
+  to the channel URL.
 
-### Marcadores de `catchup-source`
+### `catchup-source` placeholders
 
-Se sustituyen por el momento del programa elegido. Las horas se calculan en
+They expand to the moment of the chosen programme. Times are computed in
 **UTC**.
 
-| Marcador | Valor |
+| Placeholder | Value |
 | --- | --- |
-| `{utc}` · `${start}` | Inicio del programa, en segundos desde el epoch |
-| `{utcend}` · `${end}` | Fin del programa |
-| `{lutc}` · `${now}` · `${timestamp}` | Momento actual |
-| `{duration}` · `{duration:X}` | Duración en segundos, o dividida entre X |
-| `{offset}` · `{offset:X}` | Segundos transcurridos desde el inicio, o divididos entre X |
-| `{Y}` `{m}` `{d}` `{H}` `{M}` `{S}` | Partes de la fecha de inicio, con ceros por delante |
-| `{utc:Ymd-H-M}` · `${end:YmdHM}` | Fecha compuesta: las letras `YmdHMS` se sustituyen y lo demás pasa como separador |
-| `{start_iso}` · `{end_iso}` · `{now_iso}` | Fecha ISO-8601 en UTC: `2026-09-21T09:30:00Z` |
+| `{utc}` · `${start}` | Programme start, in seconds since the epoch |
+| `{utcend}` · `${end}` | Programme end |
+| `{lutc}` · `${now}` · `${timestamp}` | Current moment |
+| `{duration}` · `{duration:X}` | Duration in seconds, or divided by X |
+| `{offset}` · `{offset:X}` | Seconds elapsed since the start, or divided by X |
+| `{Y}` `{m}` `{d}` `{H}` `{M}` `{S}` | Parts of the start date, zero padded |
+| `{utc:Ymd-H-M}` · `${end:YmdHM}` | Composed date: the letters `YmdHMS` are substituted and anything else passes through as a separator |
+| `{start_iso}` · `{end_iso}` · `{now_iso}` | ISO-8601 date in UTC: `2026-09-21T09:30:00Z` |
 
-Los tres últimos no son estándar: ningún reproductor los define, y lo corriente
-es componer la fecha a mano con `{Y}-{m}-{d}T{H}:{M}:{S}Z`, que también se
-acepta. Existen porque hay archivos que piden la hora en esa forma y escribirla
-a mano es una errata esperando a pasar.
+The last three are not standard: no player defines them, and the usual way is
+to compose the date by hand with `{Y}-{m}-{d}T{H}:{M}:{S}Z`, which is also
+accepted. They exist because some archives want the time in that shape, and
+writing it by hand is a typo waiting to happen.
 
-Lo que no se reconozca se deja tal cual, así que una dirección con llaves por
-otros motivos no se estropea.
+Anything unrecognized is left untouched, so an address that contains braces for
+other reasons is not mangled.
 
-**Si `catchup-source` no lleva ningún marcador de tiempo**, se le añade
-`start_time` y `end_time` en ISO. Es lo que hace falta para los archivos que
-solo publican la dirección base: sin la ventana no saben qué servir.
+**If `catchup-source` carries no time placeholder at all**, `start_time` and
+`end_time` are appended in ISO form. That is what archives which only publish
+their base address need: without the window they do not know what to serve.
 
-### Clave propia del archivo
+### The archive's own key
 
-El archivo suele ir cifrado con una clave distinta a la del directo. Se declara
-con un `#KODIPROP` propio o con un atributo, lo que resulte más cómodo:
+Archives are usually encrypted with a different key from the live channel.
+Declare it with its own `#KODIPROP` or with an attribute, whichever is handier:
 
 ```
 #KODIPROP:inputstream.adaptive.catchup_license_key=KID:KEY
 #KODIPROP:inputstream.adaptive.catchup_manifest_type=ism
 ```
 
-o, en la línea `#EXTINF`, `catchup-key="KID:KEY"` y
-`catchup-manifest-type="ism"`. Acepta las mismas formas que
-`inputstream.adaptive.license_key`: `kid:key`, varias parejas separadas por
-comas y el objeto JSON.
+or, on the `#EXTINF` line, `catchup-key="KID:KEY"` and
+`catchup-manifest-type="ism"`. It accepts the same forms as
+`inputstream.adaptive.license_key`: `kid:key`, several comma-separated pairs,
+and the JSON object.
 
-Sin clave propia se usa la del directo. Una clave de catchup mal formada deja
-al canal sin archivo, pero **no** sin directo.
+Without its own key, the live one is used. A malformed catch-up key leaves the
+channel without an archive, but **not** without its live stream.
 
-`catchup-manifest-type` solo hace falta cuando el archivo usa otro protocolo
-que el directo; si no se declara, se deduce de la dirección.
+`catchup-manifest-type` is only needed when the archive uses a different
+protocol from the live stream; otherwise it is inferred from the address.
 
-### Ejemplo completo
+### Complete example
 
 ```m3u
-#EXTM3U x-tvg-url="https://example.invalid/guia.xml.gz"
+#EXTM3U x-tvg-url="https://example.invalid/guide.xml.gz"
 
-#EXTINF:-1 tvg-id="canal-demo" group-title="Demo" catchup="default" catchup-days="8" catchup-source="https://example.invalid/archivo/canal-demo/Manifest?device_profile=mss&start_time={start_iso}&end_time={end_iso}",Canal Demo
+#EXTINF:-1 tvg-id="demo-channel" group-title="Demo" catchup="default" catchup-days="8" catchup-source="https://example.invalid/archive/demo-channel/Manifest?device_profile=mss&start_time={start_iso}&end_time={end_iso}",Demo Channel
 #KODIPROP:inputstream.adaptive.manifest_type=ism
 #KODIPROP:inputstream.adaptive.license_type=clearkey
 #KODIPROP:inputstream.adaptive.license_key=00112233445566778899aabbccddeeff:ffeeddccbbaa99887766554433221100
 #KODIPROP:inputstream.adaptive.catchup_license_key=aabbccddeeff00112233445566778899:99887766554433221100ffeeddccbbaa
-https://example.invalid/directo/canal-demo/Manifest
+https://example.invalid/live/demo-channel/Manifest
 ```
 
-En modo `append`, lo mismo se escribe así:
+In `append` mode the same thing reads:
 
 ```m3u
-#EXTINF:-1 catchup="append" catchup-days="7" catchup-source="?utc={utc}&utcend={utcend}",Canal Demo
-https://example.invalid/directo/canal-demo/manifest.mpd
+#EXTINF:-1 catchup="append" catchup-days="7" catchup-source="?utc={utc}&utcend={utcend}",Demo Channel
+https://example.invalid/live/demo-channel/manifest.mpd
 ```
 
 ### JSON
 
-En el esquema plano, los campos de catchup son opcionales:
+In the flat schema the catch-up fields are optional:
 
 ```json
 [
   {
-    "name": "Canal Demo",
-    "url": "https://example.invalid/directo/canal-demo/Manifest",
+    "name": "Demo Channel",
+    "url": "https://example.invalid/live/demo-channel/Manifest",
     "key": "00112233445566778899aabbccddeeff:ffeeddccbbaa99887766554433221100",
-    "tvg_id": "canal-demo",
+    "tvg_id": "demo-channel",
     "group": "Demo",
-    "catchup_url": "https://example.invalid/archivo/canal-demo/Manifest?device_profile=mss",
+    "catchup_url": "https://example.invalid/archive/demo-channel/Manifest?device_profile=mss",
     "catchup_key": "aabbccddeeff00112233445566778899:99887766554433221100ffeeddccbbaa",
     "catchup_days": 8
   }
 ]
 ```
 
-| Campo | Equivale a |
+| Field | Equivalent to |
 | --- | --- |
-| `catchup_url` | `catchup-source` en modo `default` |
+| `catchup_url` | `catchup-source` in `default` mode |
 | `catchup_key` | `catchup_license_key` |
 | `catchup_days` | `catchup-days` |
 | `catchup_type` | `catchup` |
-| `catchup_source` | `catchup-source`, si se prefiere el nombre del M3U |
+| `catchup_source` | `catchup-source`, if you prefer the M3U name |
 
-En el ejemplo, `catchup_url` no lleva marcadores, así que la aplicación le
-añade `start_time` y `end_time` en ISO. Un canal sin `catchup_url` (o con el
-campo vacío) simplemente no ofrece archivo.
+In the example `catchup_url` carries no placeholders, so the app appends
+`start_time` and `end_time` in ISO form. A channel without `catchup_url` (or
+with an empty one) simply offers no archive.
 
-### Cuánto pasado se ve
+### How far back you can watch
 
-El archivo del servidor y la guía son cosas distintas, y mandan las dos: solo
-se puede ver un programa que el archivo guarde **y** que la guía liste.
+The server's archive and the guide are different things, and both have a say:
+you can only watch a programme the archive keeps **and** the guide lists.
 
-La mayoría de guías XMLTV son de futuro y traen poco o ningún pasado. La
-aplicación conserva los programas ya emitidos de cada refresco, así que el
-pasado se va llenando día a día hasta los que declare `catchup-days`. Recién
-instalada verás solo lo que traiga tu guía; el resto llega con los días.
+Most XMLTV guides look forward and carry little or no past. The app keeps the
+already-aired programmes from each refresh, so the past fills in day by day up
+to whatever `catchup-days` declares. Freshly installed you will only see what
+your guide brings; the rest arrives with the days.
 
-## Demostraciones públicas
+## Public demonstrations
 
-El sample M3U incluye transmisiones públicas de Unified Streaming y un vector
-de prueba ClearKey de Axinom. Se ofrecen para comprobar la compatibilidad de la
-aplicación, no como garantía de disponibilidad ni como fuente de contenido.
-Solo añade a una lista claves y URLs que puedas usar y redistribuir legalmente.
+The M3U sample includes public Unified Streaming streams and an Axinom
+ClearKey test vector. They are provided to test app compatibility, not as a
+guarantee of availability or a source of content. Only add keys and URLs that
+you may legally use and redistribute.
+

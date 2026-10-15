@@ -1,80 +1,83 @@
 # InputStream Player
 
-Reproductor de **tus propias listas** de TV en directo, películas y series, para
-iPhone, iPad, Apple TV, Mac y Android/Google TV. En las tiendas y cajones de
-apps aparece como **ISPlayer**.
+A player for **your own playlists** of live TV, movies and series on iPhone,
+iPad, Apple TV, Mac and Android/Google TV. In app launchers it appears as
+**ISPlayer**.
 
-**[isplayer.joplabs.app](https://isplayer.joplabs.app)** · [English](README_en.md)
+**[isplayer.joplabs.app](https://isplayer.joplabs.app)** · [Español](README_es.md)
 
-> No incluye listas, credenciales ni claves de terceros. Está pensado para
-> contenido al que tienes derecho a acceder.
+> It ships no playlists, credentials or third-party keys. It is meant for
+> content you are entitled to access.
 
-Este repositorio es solo de distribución: **releases verificables**,
-documentación, ejemplos de listas e incidencias.
+This repository is for distribution only: **verifiable releases**,
+documentation, sample playlists and issues.
 
-## Descargas
+## Downloads
 
-| Plataforma | Cómo instalarla |
+| Platform | How to install |
 |---|---|
-| **iPhone y iPad** | Con [SideStore](#sidestore): añade el source y recibirás cada versión. |
-| **Apple TV** | IPA sin firmar en la [última versión](https://github.com/jopsis/InputStreamPlayer/releases/latest); fírmala con tu cuenta de Apple. |
-| **Mac** (Apple Silicon) | ZIP en la [última versión](https://github.com/jopsis/InputStreamPlayer/releases/latest). No está notarizada: [cómo abrirla](docs/releases.md#mac-con-apple-silicon). |
-| **Android y Google TV** | APK en la [última versión](https://github.com/jopsis/InputStreamPlayer/releases/latest); después se actualiza sola. Si dudas, el *universal*. |
+| **iPhone and iPad** | With [SideStore](#sidestore): add the source and you get every version. |
+| **Apple TV** | Unsigned IPA in the [latest release](https://github.com/jopsis/InputStreamPlayer/releases/latest); sign it with your own Apple account. |
+| **Mac** (Apple Silicon) | ZIP in the [latest release](https://github.com/jopsis/InputStreamPlayer/releases/latest). Not notarized: [how to open it](docs/releases.md#apple-silicon-macs). |
+| **Android and Google TV** | APK in the [latest release](https://github.com/jopsis/InputStreamPlayer/releases/latest); it updates itself afterwards. If unsure, take the *universal* one. |
 
-Cada archivo lleva su SHA-256. Pasos detallados y verificación:
-[guía de instalación](docs/releases.md). Todas las versiones en
+Every file has its SHA-256. Detailed steps and verification:
+[install guide](docs/releases.md). All versions in
 [Releases](https://github.com/jopsis/InputStreamPlayer/releases).
 
 ### SideStore
 
-[![Añadir a SideStore](https://img.shields.io/badge/SideStore-A%C3%B1adir%20source-14B85C)](sidestore://source?url=https%3A%2F%2Fjopsis.github.io%2FInputStreamPlayer%2Fsidestore%2Fapps.json)
+[![Add to SideStore](https://img.shields.io/badge/SideStore-Add%20source-14B85C)](sidestore://source?url=https%3A%2F%2Fjopsis.github.io%2FInputStreamPlayer%2Fsidestore%2Fapps.json)
 
-Desde el iPhone, pulsa el botón; o en SideStore → Sources → **+**:
+On the iPhone, tap the button; or in SideStore → Sources → **+**:
 `https://jopsis.github.io/InputStreamPlayer/sidestore/apps.json`.
-Instala antes [SideStore](https://docs.sidestore.io/docs/installation/install)
-(mejor con [LiveContainer](https://livecontainer.github.io/docs/installation)).
+Install [SideStore](https://docs.sidestore.io/docs/installation/install) first
+(ideally with [LiveContainer](https://livecontainer.github.io/docs/installation)).
 
-> **Con LiveContainer, activa «Corregir selector de archivos»** en los ajustes
-> de la app, o importar una lista desde fichero no hará nada.
-> [Más detalle](docs/releases.md#ajuste-obligatorio-en-livecontainer-el-selector-de-archivos).
+> **With LiveContainer, turn on “Fix file picker”** in the app's settings, or
+> importing a playlist from a file will do nothing.
+> [More detail](docs/releases.md#required-livecontainer-setting-the-file-picker).
 
-## Qué hace
+## What it does
 
-- **TV en directo** con guía (XMLTV), zapping con el mando y catch-up.
-- **Películas y series** de tus listas, con «Continuar» y marcas de visto.
-- **Add-ons de Stremio** y listas de **Trakt**; OpenSubtitles de serie.
-- **Favoritos, recientes y Multiview** (hasta cuatro canales a la vez).
-- **Sincronización opcional** con tu propio Google Drive y con Trakt.
-- **Listas cifradas** `.ispl`: cífralas en el
-  [cifrador web](https://isplayer.joplabs.app/cifrar/) y comparte solo la
-  dirección y una clave.
-- **Android:** motores ExoPlayer y mpv, a elegir.
+- **Live TV** with a guide (XMLTV), remote-control zapping and catch-up.
+- **Movies and series** from your lists, with “Continue” and watched marks.
+- **Stremio add-ons** and **Trakt** lists; OpenSubtitles built in.
+- **Favorites, recents and Multiview** (up to four channels at once).
+- **Optional sync** through your own Google Drive and Trakt.
+- **Encrypted playlists** `.ispl`: encrypt them with the
+  [web encryptor](https://isplayer.joplabs.app/encrypt/) and share only the
+  address and a key.
+- **Android:** ExoPlayer and mpv engines, your choice.
+- **English and Spanish** interface: it follows the system language (English if
+  yours isn't available) and can be changed in Preferences.
 
-Más información y capturas en la [web](https://isplayer.joplabs.app).
+More information and screenshots on the [website](https://isplayer.joplabs.app/).
 
-## Formatos
+## Formats
 
-HLS (incluido SAMPLE-AES), DASH/MPD con CENC y Smooth Streaming, con ClearKey
-autorizada; MP4, MKV y TS directos. Listas **M3U/M3U8**, **JSON** y catálogos
-VOD, por dirección o fichero, y `.ispl` cifradas. No se admiten licencias
-FairPlay, Widevine ni PlayReady que requieran servidor de licencias.
+HLS (including SAMPLE-AES), DASH/MPD with CENC and Smooth Streaming, with
+authorized ClearKey; direct MP4, MKV and TS. **M3U/M3U8**, **JSON** and VOD
+catalog lists, by address or file, and encrypted `.ispl`. FairPlay, Widevine
+and PlayReady licenses that need a license server are not supported.
 
-- [Referencia de formatos de lista](docs/formatos-de-listas.md)
-- Ejemplos: [M3U](samples/inputstreamplayer.m3u) ·
+- [Playlist format reference](docs/formatos-de-listas.md)
+- Samples: [M3U](samples/inputstreamplayer.m3u) ·
   [JSON](samples/inputstreamplayer.json) ·
-  [catálogo VOD](samples/catalogo-vod.json)
+  [VOD catalog](samples/catalogo-vod.json)
 
 ## Mac
 
-Dos interfaces (Centro multimedia y Clásica), decodificación por hardware,
-teclado y ratón. [Atajos](docs/atajos-mac.md).
+Two interfaces (Media center and Classic), hardware decoding, keyboard and
+mouse. [Shortcuts](docs/atajos-mac.md).
 
-## Privacidad e incidencias
+## Privacy and issues
 
-Sin servidores propios ni analítica: [política de privacidad](privacidad.md).
+No servers of its own and no analytics: [privacy policy](privacidad.md).
 
-¿Algo falla? Abre una [incidencia](https://github.com/jopsis/InputStreamPlayer/issues)
-con la versión, el aparato y lo que pasa, sin listas, claves ni tokens. En
-Android, **Ajustes → Preferencias → Enviar registro** lo prepara ya limpio.
+Something wrong? Open an [issue](https://github.com/jopsis/InputStreamPlayer/issues)
+with the version, the device and what happens, without playlists, keys or
+tokens. On Android, **Settings → Preferences → Send log** prepares it already
+cleaned.
 
-Este repositorio no publica código fuente, claves ni material de terceros.
+This repository does not publish source code, keys or third-party material.

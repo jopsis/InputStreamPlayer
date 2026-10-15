@@ -1,32 +1,32 @@
 # Releases
 
-Las builds públicas se publican exclusivamente desde la sección
-[Releases](https://github.com/jopsis/InputStreamPlayer/releases) de este
-repositorio. La más reciente está siempre en
+Public builds are released only from this repository's
+[Releases](https://github.com/jopsis/InputStreamPlayer/releases) section. The
+most recent one is always at
 [releases/latest](https://github.com/jopsis/InputStreamPlayer/releases/latest).
 
-InputStream Player está disponible para **iOS**, **tvOS**, **macOS** (Mac con
-Apple Silicon, app nativa) y **Android** (móvil, Google TV y Android
-TV). En los cajones de aplicaciones aparece como **ISPlayer**. Cada release
-incluye (`X.Y.Z` es la versión y `N`, el número de build):
+InputStream Player is available for **iOS**, **tvOS**, **macOS** (Apple
+Silicon Macs, native app), and **Android** (phone, Google TV and Android
+TV). In app drawers it shows up as **ISPlayer**. Each release includes
+(`X.Y.Z` is the version and `N` the build number):
 
-- `InputStreamPlayer-iOS-X.Y.Z-N-unsigned.ipa`: iPhone y iPad (SideStore/LiveContainer);
+- `InputStreamPlayer-iOS-X.Y.Z-N-unsigned.ipa`: iPhone and iPad (SideStore/LiveContainer);
 - `InputStreamPlayer-tvOS-X.Y.Z-N-unsigned.ipa`: Apple TV;
-- `InputStreamPlayer-macOS-X.Y.Z-N.zip`: app nativa para Mac con Apple Silicon
-  (ver más abajo);
-- `InputStreamPlayer-Android-arm64-X.Y.Z-N.apk`: Android de 64 bits (móviles y
-  teles modernas);
-- `InputStreamPlayer-Android-armv7-X.Y.Z-N.apk`: Android de 32 bits (p. ej.
-  Chromecast con Google TV);
-- `InputStreamPlayer-Android-universal-X.Y.Z-N.apk`: los dos anteriores en uno;
-- un fichero `.sha256` con la suma SHA-256 de cada IPA, ZIP y APK;
-- la versión, fecha y notas de cambio;
-- cualquier requisito de compatibilidad conocido.
+- `InputStreamPlayer-macOS-X.Y.Z-N.zip`: native app for Apple Silicon Macs
+  (see below);
+- `InputStreamPlayer-Android-arm64-X.Y.Z-N.apk`: 64-bit Android (modern phones
+  and TVs);
+- `InputStreamPlayer-Android-armv7-X.Y.Z-N.apk`: 32-bit Android (e.g.
+  Chromecast with Google TV);
+- `InputStreamPlayer-Android-universal-X.Y.Z-N.apk`: both of the above in one;
+- a `.sha256` file with each IPA, ZIP and APK's SHA-256 checksum;
+- version, date, and release notes;
+- any known compatibility requirements.
 
-## Verificación
+## Verification
 
-Antes de instalar, descarga el IPA, el ZIP o el APK y su fichero `.sha256` desde la
-misma release y comprueba que coinciden:
+Before installing, download the IPA or APK and its `.sha256` file from the
+same release and verify that they match:
 
 ```sh
 # macOS
@@ -37,113 +37,113 @@ sha256sum InputStreamPlayer-*.apk
 Get-FileHash InputStreamPlayer-*.apk -Algorithm SHA256
 ```
 
-El resultado debe ser idéntico al checksum publicado. No instales archivos
-recibidos por canales distintos de esta release o cuyo checksum no coincida.
+The output must exactly match the published checksum. Do not install files
+received through other channels or files whose checksum does not match.
 
-## Instalación en iPhone y iPad
+## Installing on iPhone and iPad
 
-InputStream Player se instala a través de **SideStore** y se ejecuta dentro de
-**LiveContainer**. Antes de descargar una release, configura ambas herramientas
-siguiendo su documentación oficial:
+Install InputStream Player through **SideStore** and run it inside
+**LiveContainer**. Before downloading a release, set up both tools using their
+official documentation:
 
-- [Guía de instalación de SideStore](https://docs.sidestore.io/docs/installation/install)
-- [Guía de instalación de LiveContainer con SideStore](https://livecontainer.github.io/docs/installation)
+- [SideStore installation guide](https://docs.sidestore.io/docs/installation/install)
+- [LiveContainer installation guide with SideStore](https://livecontainer.github.io/docs/installation)
 
-Después, descarga la IPA y su checksum desde esta release, verifica el archivo
-e impórtalo en LiveContainer. Consulta la guía oficial de LiveContainer para
-sus requisitos, compatibilidad y pasos de importación.
+Then download the IPA and its checksum from this release, verify the file, and
+import it into LiveContainer. Refer to LiveContainer's official guide for its
+requirements, compatibility, and import steps.
 
-### Ajuste obligatorio en LiveContainer: el selector de archivos
+### Required LiveContainer setting: the file picker
 
-Si vas a añadir listas con **«Desde un fichero» → «Elegir fichero…»**, activa
-antes este ajuste o esa opción no funcionará:
+If you plan to add playlists with **"From a file" -> "Choose file..."**, turn
+this on first or that option will not work:
 
-> LiveContainer → ajustes **de InputStream Player** (no los generales) →
-> **«Corregir selector de archivos»** *(Fix File Picker)*
+> LiveContainer -> settings **for InputStream Player** (not the global ones) ->
+> **"Fix File Picker"**
 
-Sin él, el síntoma es muy concreto: el selector se abre con normalidad, se ven
-los archivos y los recientes, pero al pulsar «Abrir» no pasa nada y no se
-importa ninguna lista.
+Without it the symptom is very specific: the picker opens normally, you can see
+your files and recents, but tapping "Open" does nothing and no playlist is
+imported.
 
-No es un fallo de InputStream Player. El selector de archivos de iOS es un
-servicio aparte del sistema, y entrega el archivo comprobando la identidad de
-la app que lo pidió. LiveContainer ejecuta la app bajo su propia identidad, así
-que esa comprobación no cuadra y el sistema no entrega nada. LiveContainer trae
-la corrección, pero **viene desactivada** salvo que el propio LiveContainer se
-esté ejecutando bajo SideStore. Por eso quien instala con SideStore no se
-encuentra con esto y quien usa LiveContainer directamente sí.
+This is not an InputStream Player bug. The iOS file picker is a separate system
+service, and it hands the file over by checking the identity of the app that
+asked for it. LiveContainer runs the app under its own identity, so that check
+does not match and the system hands nothing back. LiveContainer ships the fix,
+but it is **off by default** unless LiveContainer itself is running under
+SideStore. That is why people installing through SideStore never hit this and
+people using LiveContainer directly do.
 
-Si con ese ajuste sigue sin funcionar, prueba también
-**«(Heredado) Corregir Selector de archivos»**, que ataca el mismo problema de
-otra forma: copia el archivo elegido a la bandeja de entrada de la app.
+If it still fails with that setting on, try **"(Legacy) Fix File Picker"** too,
+which tackles the same problem differently: it copies the chosen file into the
+app's inbox.
 
-Mientras tanto, las otras dos formas de añadir una lista no se ven afectadas y
-funcionan igual: **desde una URL** y **crear una lista a mano**. Si tienes la
-lista en un archivo y no quieres tocar ajustes, súbela a cualquier sitio que
-dé un enlace directo y añádela por URL.
+In the meantime the other two ways to add a playlist are unaffected and work as
+usual: **from a URL** and **creating a playlist by hand**. If your playlist is
+in a file and you would rather not touch settings, upload it anywhere that
+gives a direct link and add it by URL.
 
-Con el [source de SideStore](../README.md#sidestore)
-no hace falta descargar nada a mano: las versiones nuevas aparecen en SideStore.
+With the [SideStore source](../README.md#sidestore)
+you do not need to download anything by hand: new versions show up in SideStore.
 
 ## Apple TV
 
-La IPA `InputStreamPlayer-tvOS-X.Y.Z-N-unsigned.ipa` va sin firmar. SideStore no
-instala apps de Apple TV: hay que firmarla con tu propia cuenta de Apple e
-instalarla con la herramienta que uses para ello.
+The `InputStreamPlayer-tvOS-X.Y.Z-N-unsigned.ipa` IPA is unsigned. SideStore
+does not install Apple TV apps: you need to sign it with your own Apple account
+and install it with the tool you use for that.
 
-## Android (móvil, Google TV y Android TV)
+## Android (phone, Google TV and Android TV)
 
-La release incluye tres APKs:
+The release includes three APKs:
 
-- `InputStreamPlayer-Android-arm64-X.Y.Z-N.apk`: móviles y teles modernas de 64 bits.
-- `InputStreamPlayer-Android-armv7-X.Y.Z-N.apk`: teles de 32 bits, como el
-  Chromecast con Google TV.
-- `InputStreamPlayer-Android-universal-X.Y.Z-N.apk`: vale para los dos; ocupa
-  más. Si no sabes cuál es el tuyo, usa este.
+- `InputStreamPlayer-Android-arm64-X.Y.Z-N.apk`: modern 64-bit phones and TVs.
+- `InputStreamPlayer-Android-armv7-X.Y.Z-N.apk`: 32-bit TVs, such as Chromecast
+  with Google TV.
+- `InputStreamPlayer-Android-universal-X.Y.Z-N.apk`: works on both; it is
+  larger. If you are not sure which one you need, use this one.
 
-Descarga el APK adecuado para tu aparato, verifica su checksum `.sha256` y
-instálalo permitiendo aplicaciones de orígenes desconocidos si el sistema lo
-pide. En Google TV o Android TV puedes usar un navegador, un pendrive o `adb`.
+Download the right APK for your device, verify its `.sha256` checksum, and
+install it allowing apps from unknown sources if the system asks. On Google TV
+or Android TV, use a browser, a USB drive, or `adb` to transfer and install it.
 
-### Actualizaciones
+### Updates
 
-Después de la primera instalación no hace falta volver aquí: la app busca
-versiones nuevas sola y también a mano, en **Ajustes → Buscar
-actualizaciones**. Descarga el APK de tu aparato, comprueba su SHA-256 contra el
-publicado en la release y abre el instalador del sistema; el progreso se ve en
-esa misma fila.
+After the first install you do not need to come back here: the app looks for
+new versions by itself and by hand, under **Ajustes → Buscar
+actualizaciones**. It downloads the APK for your device, checks its SHA-256
+against the one published in the release, and opens the system installer;
+progress shows on that same row.
 
-### «La aplicación no se ha instalado debido a un conflicto con un paquete»
+### "App not installed as package conflicts with an existing package"
 
-Significa que en el aparato hay otra copia de la app firmada con una clave
-distinta (por ejemplo, una versión de pruebas), aunque no se vea: puede estar
-instalada en **otro perfil** de Google TV. Todas las releases de este
-repositorio van firmadas con la misma clave, así que entre ellas no pasa.
+There is another copy of the app on the device signed with a different key
+(for example, a test build), even if you cannot see it: it may be installed in
+**another Google TV profile**. Every release in this repository is signed with
+the same key, so this never happens between them.
 
-Desinstálala desde Ajustes → Aplicaciones (mira también en los demás perfiles)
-o, con `adb`, para todos los perfiles a la vez:
+Uninstall it from Settings → Apps (check the other profiles too) or, with
+`adb`, for every profile at once:
 
 ```sh
 adb uninstall com.inputstreamplayer
 ```
 
-Al desinstalar se borran los datos locales de la app. Las fuentes por URL, los
-ajustes y lo visto vuelven al iniciar sesión otra vez en Google Drive, si
-usabas la sincronización; las listas añadidas desde un fichero hay que volver a
-añadirlas.
+Uninstalling deletes the app's local data. URL sources, settings, and watch
+history come back when you sign in to Google Drive again, if you were using
+sync; playlists added from a file have to be added again.
 
-## Mac con Apple Silicon
+## Apple Silicon Macs
 
-`InputStreamPlayer-macOS-….zip` contiene **ISPlayer.app**, una app nativa de Mac
-(SwiftUI) con el reproductor por hardware (VideoToolbox) y dos interfaces
-elegibles en Preferencias («Centro multimedia» y «Clásica»). Verifícala con su
-`.sha256`, descomprímela y arrástrala a *Aplicaciones*.
+`InputStreamPlayer-macOS-….zip` contains **ISPlayer.app**, a native Mac app
+(SwiftUI) with hardware playback (VideoToolbox) and two interfaces you can
+choose in Preferences ("Media center" and "Classic"). Verify it against its
+`.sha256`, unzip it and drag it to *Applications*.
 
-- Solo Mac con **Apple Silicon** (M1 o posterior).
-- La firma es ad hoc y **no está notarizada**: macOS la bloquea la primera vez.
-  Ábrela desde **Ajustes del Sistema → Privacidad y seguridad → Abrir
-  igualmente**, o quita la cuarentena con
+- Apple **Silicon** Macs only (M1 or later).
+- The signature is ad hoc and the app is **not notarized**: macOS blocks it the
+  first time. Open it from **System Settings → Privacy & Security → Open
+  Anyway**, or remove the quarantine flag with
   `xattr -dr com.apple.quarantine /Applications/ISPlayer.app`.
-- Atajos de teclado y ratón: [Atajos en Mac](atajos-mac.md).
-- Sus ajustes y secretos se guardan en `~/Library/Application Support/ISPlayer/`
-  y en las preferencias de la app; no usa el Llavero.
+- Keyboard and mouse shortcuts: [Mac shortcuts](atajos-mac.md).
+- Its settings and secrets are stored in `~/Library/Application Support/ISPlayer/`
+  and in the app's preferences; it does not use the Keychain.
+
