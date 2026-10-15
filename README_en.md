@@ -70,8 +70,8 @@ The app's interface is in Spanish.
 
 ## Compatibility
 
-- Versions for **iOS** (iPhone and iPad), **tvOS**, **macOS** (Apple Silicon
-  Macs, through PlayCover and with a limited experience; see below), and
+- Versions for **iOS** (iPhone and iPad), **tvOS**, **macOS** (native app for
+  Apple Silicon Macs; see below), and
   **Android** (phone, Google TV and Android TV, 32- and 64-bit).
 - **HLS** (`.m3u8`), including **SAMPLE-AES** when the source provides an
   authorized ClearKey/raw key.
@@ -160,24 +160,24 @@ Once installed, the app looks for new versions by itself (and by hand, under
 **Ajustes → Buscar actualizaciones**): it downloads the APK for your device,
 checks its SHA-256 against the published one, and opens the system installer.
 
-## Apple Silicon Macs (PlayCover)
+## Apple Silicon Macs
 
-Each release includes `InputStreamPlayer-macOS-PlayCover-X.Y.Z-N.ipa`: the same
-iPhone app, prepared to be installed on an M-series Mac through
-[PlayCover](https://playcover.io). Drag it into PlayCover and open it from
-there.
+Each release includes `InputStreamPlayer-macOS-X.Y.Z-N.zip`: a native Mac app
+(SwiftUI), not the iPhone app in a window. Unzip it, drag **ISPlayer** to
+*Applications* and open it.
 
-It is an option **with a limited experience**:
-
-- It only works on **Apple Silicon** Macs (M1 or later). There is no way to run
-  it on Intel Macs.
-- It is an iPhone/iPad app in a window, designed for a touch screen: no Mac
-  menus and few keyboard shortcuts.
-- If a button or menu does not respond, turn off PlayCover's **keymapping** for
-  this app (right-click the app in PlayCover → Settings).
-
-Playback is the same as on iPhone. To install on iPhone or iPad use the iOS
-IPA, not this one.
+- It only works on **Apple Silicon** Macs (M1 or later).
+- It has two interfaces, switched in **Preferences** or from the **View** menu:
+  "Media center" (the Apple TV one, meant to be used from the keyboard at a
+  distance) and "Classic" (the iPhone one). It runs windowed or full screen
+  (⌃⌘F), with keyboard and mouse; the shortcut cheat sheet is in Preferences.
+- Playback uses the Mac's hardware decoder (VideoToolbox).
+- **The app is not notarized** (there is no paid Apple Developer account), so
+  macOS blocks it the first time. To open it: try to open it, then go to
+  **System Settings → Privacy & Security** and click **Open Anyway**; or remove
+  the quarantine flag with
+  `xattr -dr com.apple.quarantine /Applications/ISPlayer.app`.
+- Verify the ZIP against its `.sha256`, like any other download.
 
 ## Privacy
 

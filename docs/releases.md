@@ -6,31 +6,31 @@ repositorio. La más reciente está siempre en
 [releases/latest](https://github.com/jopsis/InputStreamPlayer/releases/latest).
 
 InputStream Player está disponible para **iOS**, **tvOS**, **macOS** (Mac con
-Apple Silicon, mediante PlayCover) y **Android** (móvil, Google TV y Android
+Apple Silicon, app nativa) y **Android** (móvil, Google TV y Android
 TV). En los cajones de aplicaciones aparece como **ISPlayer**. Cada release
 incluye (`X.Y.Z` es la versión y `N`, el número de build):
 
 - `InputStreamPlayer-iOS-X.Y.Z-N-unsigned.ipa`: iPhone y iPad (SideStore/LiveContainer);
 - `InputStreamPlayer-tvOS-X.Y.Z-N-unsigned.ipa`: Apple TV;
-- `InputStreamPlayer-macOS-PlayCover-X.Y.Z-N.ipa`: Mac con Apple Silicon, con
-  PlayCover y experiencia limitada (ver más abajo);
+- `InputStreamPlayer-macOS-X.Y.Z-N.zip`: app nativa para Mac con Apple Silicon
+  (ver más abajo);
 - `InputStreamPlayer-Android-arm64-X.Y.Z-N.apk`: Android de 64 bits (móviles y
   teles modernas);
 - `InputStreamPlayer-Android-armv7-X.Y.Z-N.apk`: Android de 32 bits (p. ej.
   Chromecast con Google TV);
 - `InputStreamPlayer-Android-universal-X.Y.Z-N.apk`: los dos anteriores en uno;
-- un fichero `.sha256` con la suma SHA-256 de cada IPA y APK;
+- un fichero `.sha256` con la suma SHA-256 de cada IPA, ZIP y APK;
 - la versión, fecha y notas de cambio;
 - cualquier requisito de compatibilidad conocido.
 
 ## Verificación
 
-Antes de instalar, descarga el IPA o el APK y su fichero `.sha256` desde la
+Antes de instalar, descarga el IPA, el ZIP o el APK y su fichero `.sha256` desde la
 misma release y comprueba que coinciden:
 
 ```sh
 # macOS
-shasum -a 256 InputStreamPlayer-*.ipa
+shasum -a 256 InputStreamPlayer-*.ipa InputStreamPlayer-*.zip
 # Linux
 sha256sum InputStreamPlayer-*.apk
 # Windows (PowerShell)
@@ -132,15 +132,17 @@ ajustes y lo visto vuelven al iniciar sesión otra vez en Google Drive, si
 usabas la sincronización; las listas añadidas desde un fichero hay que volver a
 añadirlas.
 
-## Mac con Apple Silicon (PlayCover)
+## Mac con Apple Silicon
 
-La IPA `InputStreamPlayer-macOS-PlayCover-….ipa` es la misma app de iPhone,
-firmada para que [PlayCover](https://playcover.io) la acepte. Verifícala como
-cualquier otra y arrástrala a PlayCover.
+`InputStreamPlayer-macOS-….zip` contiene **ISPlayer.app**, una app nativa de Mac
+(SwiftUI) con el reproductor por hardware (VideoToolbox) y dos interfaces
+elegibles en Preferencias («Centro multimedia» y «Clásica»). Verifícala con su
+`.sha256`, descomprímela y arrástrala a *Aplicaciones*.
 
-Tiene **experiencia limitada**:
-
-- Solo Mac con **Apple Silicon** (M1 o posterior); en Mac con Intel no funciona.
-- Es una app de iPhone/iPad en una ventana, pensada para pantalla táctil.
-- Si algún botón o menú no responde, desactiva el **mapeo de teclas** de
-  PlayCover para esta app (clic derecho sobre la app en PlayCover → Ajustes).
+- Solo Mac con **Apple Silicon** (M1 o posterior).
+- La firma es ad hoc y **no está notarizada**: macOS la bloquea la primera vez.
+  Ábrela desde **Ajustes del Sistema → Privacidad y seguridad → Abrir
+  igualmente**, o quita la cuarentena con
+  `xattr -dr com.apple.quarantine /Applications/ISPlayer.app`.
+- Sus ajustes y secretos se guardan en `~/Library/Application Support/ISPlayer/`
+  y en las preferencias de la app; no usa el Llavero.
