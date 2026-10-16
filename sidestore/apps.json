@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.43",
+          "date": "2026-10-16",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.43/InputStreamPlayer-iOS-0.9.43-97-unsigned.ipa",
+          "size": 16999048,
+          "minOSVersion": "16.0",
+          "sha256": "c407c550d080c16dd6512dca6c4e8a76dbf20ec2e1cf16df19462a217218c573",
+          "localizedDescription": "Smarter guide, M3U catch-up fixes and a DNS proxy fix.\n\n- Guide: tap a programme to play it, long-press for the catch-up source picker and the channel schedule. The time window is continuous (it crosses midnight, one-hour steps, snaps to the hour) and the header names the day. When you come back from the player the guide stays where you were (a window showing 'now' follows now; another hour or day stays put).\n- M3U catch-up: the catch-up now inherits the list's inputstream.adaptive.manifest_type unless catchup_manifest_type says otherwise, so Movistar-style catch-up URLs ending in Manifest.mpd that actually serve Smooth Streaming play instead of failing with 'unrecognized file format'.\n- Custom DNS: the local proxy no longer sends a later request to the wrong server after a redirect (ISML lists failed with 404 / 'unrecognized file format' on macOS and elsewhere).\n\nEspañol: guía más intuitiva (pulsar reproduce, pulsación larga para elegir lista de catchup o ver la programación del canal, ventana continua que cruza la medianoche y se queda donde ibas al volver del reproductor); el catchup de listas M3U hereda el manifest_type de la lista, con lo que las URL de catchup terminadas en Manifest.mpd que sirven Smooth Streaming ya reproducen; y el proxy del DNS propio ya no manda una petición posterior al servidor equivocado tras un redirect (las listas ISML daban 404 / «unrecognized file format»)."
+        },
+        {
           "version": "0.9.42",
           "date": "2026-10-16",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.42/InputStreamPlayer-iOS-0.9.42-96-unsigned.ipa",
