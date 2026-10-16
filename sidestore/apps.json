@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.42",
+          "date": "2026-10-16",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.42/InputStreamPlayer-iOS-0.9.42-96-unsigned.ipa",
+          "size": 16947423,
+          "minOSVersion": "16.0",
+          "sha256": "1f6c5e09a320df298448872d740e81137a4a99792799581a9d851378914ef5c6",
+          "localizedDescription": "Catch-up fixes: a guide that offers every list holding the programme, and two encrypted catch-up formats that now play.\n\n- The guide no longer loses the catch-up button when the same channel appears in several lists and the first copy has none: it keeps a copy that has it. When several lists hold the programme, pressing it asks \"Watch from…\" (iOS and Android; same-named lists are numbered). With a guide, a channel is grouped by name and group, so the same channel is no longer listed twice when two guides name it differently.\n- Android: catch-up of a Smooth stream now plays with ExoPlayer. It used to stay at 0:00 while memory grew until the system killed the app.\n- Encrypted HLS catch-up (HLS_TV_FAIRPLAY, SAMPLE-AES) now plays on iOS and Android: the SAMPLE-AES decryptor stopped silently on PES headers with ES_rate and on packets of PIDs the PMT does not declare. It also stops the \"PES packet size mismatch\" warnings.\n- Live DASH smoothing from 0.9.41 is unchanged.\n\nResumen en español: la guía ya no pierde el botón de catchup cuando el canal está repetido en varias listas y pregunta de cuál ver el programa; en Android el catchup Smooth reproduce con ExoPlayer (antes se quedaba en 0:00 y llenaba la memoria); y el catchup HLS cifrado de Movistar (SAMPLE-AES) vuelve a reproducirse en iOS y Android."
+        },
+        {
           "version": "0.9.41",
           "date": "2026-10-16",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.41/InputStreamPlayer-iOS-0.9.41-95-unsigned.ipa",
