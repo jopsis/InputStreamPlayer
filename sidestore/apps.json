@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.41",
+          "date": "2026-10-16",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.41/InputStreamPlayer-iOS-0.9.41-95-unsigned.ipa",
+          "size": 16932696,
+          "minOSVersion": "16.0",
+          "sha256": "391c0b59b9b4a8221fa5a53ae0c7ad27127c31c4d1a14ac5cbdec20c824b6f5b",
+          "localizedDescription": "Smoother live DASH and ExoPlayer support for cbcs-encrypted streams.\n\n- Live DASH streams (with SegmentTimeline) no longer stutter on iOS, tvOS, Mac and Android with mpv: the local proxy now prefetches segments in parallel and merges segments made of two fragments, which used to cut the stream and force a reconnect every minute. Measured on a OnePlus 7 Pro and the iPhone simulator: from 8-12 audio skips per minute to none.\n- ExoPlayer (Android) now plays live DASH encrypted with cbcs and ClearKey keys: the core decrypts the segments and hands ExoPlayer clear DASH.\n\nResumen en español: los directos DASH ya no van a tirones (precarga de segmentos en paralelo y fusión de segmentos de dos fragmentos) y ExoPlayer en Android reproduce DASH en directo cifrado con cbcs y claves ClearKey."
+        },
+        {
           "version": "0.9.40",
           "date": "2026-10-15",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.40/InputStreamPlayer-iOS-0.9.40-94-unsigned.ipa",
