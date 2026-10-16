@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.45",
+          "date": "2026-10-16",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.45/InputStreamPlayer-iOS-0.9.45-99-unsigned.ipa",
+          "size": 17034713,
+          "minOSVersion": "16.0",
+          "sha256": "fc36a552f2fc7d18a79edf5caa871891d4f71a8141d282a78e006c8e695e076c",
+          "localizedDescription": "Fix: live DASH channels play with ExoPlayer again, plus Widevine license servers on Android.\n\n- DASH live with ExoPlayer: a regression from 0.9.41 made ExoPlayer fail on some live DASH channels (e.g. Movistar) with 'The video format isn't supported' (ERROR_CODE_PARSING_CONTAINER_UNSUPPORTED). The fragment merging added for mpv is now applied only with mpv. If ExoPlayer ever meets an MP4 it can't read, the app switches to mpv by itself.\n- Widevine (Android): M3U channels with a Widevine license server (license_key=URL|headers) now play with ExoPlayer using the system CDM. mpv has no CDM, so those channels always open with ExoPlayer; on iOS, tvOS and macOS they are dimmed with an 'Android only' label.\n- ClearKey keys written as {kid:key} without quotes are now accepted, and ExoPlayer plays ClearKey DASH whose manifest only declares Widevine/PlayReady.\n- A catch-up request outside what the server archives now says so (404/410) instead of a generic error.\n\nEspañol: arreglo de los canales DASH en directo con ExoPlayer, que fallaban desde la 0.9.41 («El formato del vídeo no es compatible», p. ej. Movistar); la fusión de fragmentos pensada para mpv ahora solo se aplica con mpv, y si ExoPlayer no sabe leer un MP4 la app pasa sola a mpv. Novedades: Widevine con servidor de licencias en Android (los canales Widevine salen atenuados y con «Solo Android» en iOS, tvOS y Mac), claves ClearKey {kid:clave} sin comillas, ExoPlayer con ClearKey en manifiestos que solo declaran Widevine/PlayReady, y un aviso claro cuando un catchup queda fuera del archivo del servidor."
+        },
+        {
           "version": "0.9.44",
           "date": "2026-10-16",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.44/InputStreamPlayer-iOS-0.9.44-98-unsigned.ipa",
