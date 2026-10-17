@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.49",
+          "date": "2026-10-17",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.49/InputStreamPlayer-iOS-0.9.49-103-unsigned.ipa",
+          "size": 17079166,
+          "minOSVersion": "16.0",
+          "sha256": "ec8512735e451208eefd9f95afe4f88284443270b84b6a3c3a7f53c99f84691e",
+          "localizedDescription": "The guide no longer freezes when you open it (iOS and tvOS). The log sent from a real iPhone showed the main thread stalling for up to 1.6 s while the guide grid recomputed its time window for every programme block, and rebuilding the guide snapshots over and over while lists were still loading. Both are fixed: the window is computed once and snapshots wait for your channels to settle.\n\nLa guía ya no se queda pillada al entrar (iOS y tvOS). El registro enviado desde un iPhone real mostró el hilo principal parado hasta 1,6 s mientras la rejilla recalculaba la ventana horaria por cada bloque de programa, y las instantáneas de la guía se rehacían una y otra vez mientras las listas aún cargaban. Las dos cosas están arregladas: la ventana se calcula una vez y las instantáneas esperan a que tus canales se estabilicen."
+        },
+        {
           "version": "0.9.48",
           "date": "2026-10-17",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.48/InputStreamPlayer-iOS-0.9.48-102-unsigned.ipa",
