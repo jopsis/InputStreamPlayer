@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.47",
+          "date": "2026-10-17",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.47/InputStreamPlayer-iOS-0.9.47-101-unsigned.ipa",
+          "size": 17041966,
+          "minOSVersion": "16.0",
+          "sha256": "0fcd654d33c92cb3b20086f35d54a30978f3e00b7a4dc685a8a2a1fa07067cd8",
+          "localizedDescription": "## What's new in 0.9.47\n\n**Series and movies look more like Stremio.**\n- **Episode thumbnails.** The episode list of a series now shows each episode's thumbnail (when the add-on provides it, as Cinemeta does), on Android, iPhone/iPad, Mac and Apple TV. Without a thumbnail the row looks as before.\n- **Age rating.** The title page of a movie or series now shows its age rating for the country of your device next to the star rating — for example \"2010 · 148 min · ★ 8.8 · 12+\" in Spain, or \"PG-13\" in the US. It comes from TMDb in the same request that already fetches the synopsis and trailer, so there are no extra requests. If TMDb has no rating for your country, nothing is shown.\n\n**En español:** la 0.9.47 acerca las fichas a Stremio. La lista de episodios de una serie muestra la miniatura de cada capítulo (si el addon la da, como Cinemeta), en Android, iPhone/iPad, Mac y Apple TV. Y la ficha de una película o serie muestra la clasificación por edad del país de tu dispositivo junto a la nota ★ (por ejemplo «12+» o «18+» en España). Sale de TMDb en la misma petición que ya trae la sinopsis y el tráiler, sin llamadas de más; si TMDb no tiene clasificación para tu país, no se muestra nada."
+        },
+        {
           "version": "0.9.46",
           "date": "2026-10-17",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.46/InputStreamPlayer-iOS-0.9.46-100-unsigned.ipa",
