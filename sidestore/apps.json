@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.46",
+          "date": "2026-10-17",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.46/InputStreamPlayer-iOS-0.9.46-100-unsigned.ipa",
+          "size": 17032332,
+          "minOSVersion": "16.0",
+          "sha256": "d5eaec62254ff6e2a14c9ec6c6931ac01f36e2250438779601686b64d1be745a",
+          "localizedDescription": "## What's new in 0.9.46\n\n**Android is lighter and cleaner inside.**\n- **The Android APK shrinks from ~66 MB to ~42 MB** (arm64 and 32-bit). The native libraries were being shipped with debug symbols; they are now stripped.\n- **One network stack.** Everything the Swift core downloads on Android now goes through the app's OkHttp client (system TLS and certificates, shared connection pool, HTTP/2, the custom DNS). The old curl-based stack (FoundationNetworking) and its memory workarounds for 32-bit devices are gone. Checked on a phone and on a Chromecast with Google TV: native memory is stable with ExoPlayer and with mpv, with no leak.\n- **Guides cache.** The downloaded guide XML now lives in a cache folder that Android can clear when it needs space, as on Apple platforms.\n- **Catchup of a programme in progress** (Movistar-style dynamic DASH) now starts at the beginning of the programme instead of at the live edge.\n\niOS, tvOS and macOS behave as in 0.9.45.\n\n**En español:** la 0.9.46 hace la app de Android más ligera (el APK pasa de unos 66 MB a unos 42 MB) y con una sola pila de red: todo lo que descarga el núcleo va por OkHttp, sin el curl antiguo ni sus parches de memoria para 32 bits. Comprobado en un móvil y en un Chromecast con Google TV, sin fugas con ExoPlayer ni con mpv. El XML de las guías va a una caché que Android puede vaciar, y «Ver desde el principio» en un programa en curso de Movistar arranca al principio y no en el directo. iOS, tvOS y macOS se comportan como en la 0.9.45."
+        },
+        {
           "version": "0.9.45",
           "date": "2026-10-16",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.45/InputStreamPlayer-iOS-0.9.45-99-unsigned.ipa",
