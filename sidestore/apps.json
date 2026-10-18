@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.50",
+          "date": "2026-10-18",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.50/InputStreamPlayer-iOS-0.9.50-104-unsigned.ipa",
+          "size": 17107785,
+          "minOSVersion": "16.0",
+          "sha256": "598599d90e45a4693d055b6f4882a7b40b0370a1324596b6ef70206c18653b9b",
+          "localizedDescription": "**Playlists: what OTT Navigator documents**\n- M3U: `#EXTHTTP` headers, `#EXTVLCOPT` referrer and origin, `#EXTGRP`, `manifest_type=dash`, `manifest_headers` and `drm_legacy`.\n- ClearKey from a license server (`license_key=https://…`): the keys are requested when the channel opens. Before, those channels were dropped.\n- OTT Navigator channel lists in JSON (OTC): guide, categories, BASE64, per-language text, DRM, headers and catch-up.\n- `tvg-shift` / `epg_shift`: the guide of \"+1\" channels moves with them.\n- Catch-up `flussonic` and `xc` (Xtream Codes): the archive address comes from the channel's.\n- Widevine with a license server still plays only on Android (ExoPlayer).\n\n**macOS**: keys of encrypted playlists no longer go to the Keychain, so the app no longer asks for Keychain access at launch after each update. Keys saved there before are asked for once more.\n\n---\n\n**Listas: lo que documenta OTT Navigator**\n- M3U: cabeceras `#EXTHTTP`, referrer y origin en `#EXTVLCOPT`, `#EXTGRP`, `manifest_type=dash`, `manifest_headers` y `drm_legacy`.\n- ClearKey con servidor de licencias (`license_key=https://…`): las claves se piden al abrir el canal. Antes esos canales se descartaban.\n- Listas de canales de OTT Navigator en JSON (OTC): guía, categorías, BASE64, textos por idioma, DRM, cabeceras y catchup.\n- `tvg-shift` / `epg_shift`: la guía de los canales «+1» se mueve con ellos.\n- Catchup `flussonic` y `xc` (Xtream Codes): la dirección del archivo sale de la del canal.\n- Widevine con servidor de licencias sigue siendo solo de Android (ExoPlayer).\n\n**macOS**: las claves de las listas cifradas ya no van al Llavero, así que la app deja de pedir acceso al Llavero al arrancar tras cada actualización. Las claves guardadas allí antes se piden una vez más."
+        },
+        {
           "version": "0.9.49",
           "date": "2026-10-17",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.49/InputStreamPlayer-iOS-0.9.49-103-unsigned.ipa",
