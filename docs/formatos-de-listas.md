@@ -32,7 +32,7 @@ Supported `manifest_type` values:
 | Value | Format |
 | --- | --- |
 | `hls` | HLS, including SAMPLE-AES with an authorized key |
-| `mpd` | DASH / MPD with an authorized ClearKey/raw key |
+| `mpd` (or `dash`) | DASH / MPD with an authorized ClearKey/raw key |
 | `ism` | Smooth Streaming (`.ism`/`.isml`) with an authorized ClearKey/raw key |
 
 Keys use `KID:KEY`, with both values encoded as 16-byte hexadecimal strings
@@ -47,6 +47,32 @@ the ClearKey JSON object is accepted too.
 ```m3u
 #KODIPROP:inputstream.adaptive.stream_headers=X-Token=abc123&Referer=https://example.invalid/
 ```
+
+Other ways to set headers, all accepted:
+
+- `#EXTVLCOPT:http-referrer=` and `#EXTVLCOPT:http-origin=` (Referer and Origin).
+- `#EXTHTTP:{"User-Agent":"…","Referer":"…"}`: the headers as a JSON object.
+- `inputstream.adaptive.manifest_headers`: same form as `stream_headers`. The
+  app sends them with every request, not only the manifest.
+- After the URL, separated by `|`: `https://…/playlist.m3u8|User-Agent=…&Referer=…`.
+
+`#EXTGRP:Name` on its own line works as `group-title` when the `#EXTINF` has none.
+
+### Other DRM forms
+
+- **`drm_legacy`**: the type and the license in one line,
+  `#KODIPROP:inputstream.adaptive.drm_legacy=org.w3.clearkey|KID:KEY` or
+  `…=com.widevine.alpha|https://license.invalid/wv|Header=value`.
+- **ClearKey license server**: with `license_type=clearkey`, a `license_key`
+  that is an address (`https://license.invalid/clearkey|Header=value`) is asked
+  for the keys when the channel opens. The request is the standard EME one (the
+  KIDs from the manifest) and the answer a JWK key set.
+- **Widevine** (`license_type=com.widevine.alpha` with the license server
+  address) only plays on Android with the ExoPlayer engine. On iPhone, iPad,
+  Apple TV, and Mac those channels show up dimmed and marked "Solo Android".
+
+An `#EXTINF` with `type="playlist"` (a link to another playlist, as OTT
+Navigator uses it) is skipped: it is not a channel.
 
 ### Movies and series (on demand)
 
@@ -114,6 +140,52 @@ The grouped schema is also supported: each group declares `name`, an optional
 `key`, and `user_agent`.
 
 See the complete files in [samples](../samples/).
+
+## OTT Navigator channel list (JSON)
+
+The [OTT Navigator "OTC" format](https://ottnav.github.io/faq.html) is also
+read: an object with `provider`, `categories`, and `channels`.
+
+```json
+{
+  "provider": { "epg": "https://example.invalid/guide.xml.gz", "archive_type": "shift", "archive_days": 3 },
+  "categories": { "news": { "name": "News", "name:es": "Noticias" } },
+  "channels": [
+    {
+      "category": "news",
+      "name": "Demo Channel",
+      "url": "https://example.invalid/live/demo/manifest.mpd",
+      "icon": "https://example.invalid/demo.png",
+      "epg_id": "demo-channel",
+      "user_agent": "Demo/1.0",
+      "referrer": "https://example.invalid/",
+      "drm_type": "clearkey",
+      "drm_key": "00112233445566778899aabbccddeeff:ffeeddccbbaa99887766554433221100"
+    }
+  ]
+}
+```
+
+| Field | Purpose |
+| --- | --- |
+| `provider.epg` | Guide for the whole list (offered like `x-tvg-url`) |
+| `provider.archive_type`, `provider.archive_days` | Catch-up default for every channel |
+| `provider.base64` | Fields encoded in BASE64 (`"url,name"`, or `*` for every text) |
+| `categories` | Id → `name`; a channel's `category` points here |
+| `name`, `url` | Required |
+| `icon` | Logo |
+| `epg_id` (or `epg_name`) | Channel in the guide |
+| `epg_shift` | Guide shift, like `tvg-shift` |
+| `user_agent`, `referrer`, `headers` | HTTP headers (`headers` as `Name=value&…` or an object) |
+| `drm_type` | `clearkey` or `widevine` (Widevine only on Android) |
+| `drm_key` | ClearKey keys, as in M3U |
+| `drm_url` | License server (ClearKey or Widevine) |
+| `archive_type`, `archive_source`, `archive_days` | Catch-up, like `catchup`, `catchup-source`, `catchup-days` |
+| `source-format` | `hls`, `dash`, or `ss` (Smooth) when the address does not say |
+| `type` | `movie`, `series`… for on-demand content |
+
+Per-language text (`"name:es"`) works as in the catalogs. Fields that belong to
+OTT Navigator's own player (`codec`, preferred tracks, `number`…) are ignored.
 
 ## Movie and series catalogs (JSON)
 
@@ -226,6 +298,10 @@ because guides are usually tens of megabytes.
 
 Plain and gzipped guides are both supported.
 
+`tvg-shift` moves a channel's guide, for "+1" channels that reuse the original's
+guide: in hours from -12 to 12 (`tvg-shift="1"`, `"1.5"`), in seconds outside
+that range. On the `#EXTM3U` header it applies to the whole playlist.
+
 ## Catch-up
 
 Catch-up plays a programme that already aired. The app needs two things: the
@@ -240,7 +316,7 @@ what differs.
 
 | Attribute | Purpose |
 | --- | --- |
-| `catchup` (or `catchup-type`) | Mode: `default`, `append` or `shift`. Defaults to `default` |
+| `catchup` (or `catchup-type`) | Mode: `default`, `append`, `shift`, `flussonic` or `xc`. Defaults to `default` |
 | `catchup-source` | The archive address (`default`) or the query fragment appended to the channel URL (`append`) |
 | `catchup-days` | Days the archive keeps. Assumed to be 8 when absent |
 | `catchup-correction` | Correction in hours, for archives not aligned with the guide |
@@ -253,6 +329,14 @@ Modes:
   separator (`?` or `&`) as needed.
 - **`shift`**: no `catchup-source` needed; `?utc={utc}&lutc={lutc}` is appended
   to the channel URL.
+- **`flussonic`** (also `flussonic-hls`, `flussonic-dash`, `flussonic-ts`, `fs`):
+  no `catchup-source` needed; the archive address is derived from the channel's,
+  `…/channel/index.m3u8` → `…/channel/index-{utc}-{duration}.m3u8`, and
+  `…/channel/mpegts` → `…/channel/timeshift_abs-{utc}.ts`.
+- **`xc`** (Xtream Codes): no `catchup-source` needed;
+  `…/live/user/pass/1234.ts` → `…/timeshift/user/pass/{duration:60}/{Y}-{m}-{d}:{H}-{M}/1234.ts`.
+  The date goes in UTC; if your server wants its local time, use
+  `catchup-correction`.
 
 ### `catchup-source` placeholders
 

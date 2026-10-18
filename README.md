@@ -57,9 +57,11 @@ More information and screenshots on the [website](https://isplayer.joplabs.app/)
 ## Formats
 
 HLS (including SAMPLE-AES), DASH/MPD with CENC and Smooth Streaming, with
-authorized ClearKey; direct MP4, MKV and TS. **M3U/M3U8**, **JSON** and VOD
-catalog lists, by address or file, and encrypted `.ispl`. FairPlay, Widevine
-and PlayReady licenses that need a license server are not supported.
+authorized ClearKey (written in the list or from a ClearKey license server);
+direct MP4, MKV and TS. **M3U/M3U8**, **JSON**, OTT Navigator channel lists
+(OTC) and VOD catalog lists, by address or file, and encrypted `.ispl`.
+Widevine with a license server plays only on Android (ExoPlayer); FairPlay and
+PlayReady are not supported.
 
 - [Playlist format reference](docs/formatos-de-listas.md)
 - Samples: [M3U](samples/inputstreamplayer.m3u) ·

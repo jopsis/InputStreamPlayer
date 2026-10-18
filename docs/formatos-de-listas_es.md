@@ -33,7 +33,7 @@ Valores admitidos de `manifest_type`:
 | Valor | Formato |
 | --- | --- |
 | `hls` | HLS, incluido SAMPLE-AES con clave autorizada |
-| `mpd` | DASH / MPD con ClearKey/raw-key autorizada |
+| `mpd` (o `dash`) | DASH / MPD con ClearKey/raw-key autorizada |
 | `ism` | Smooth Streaming (`.ism`/`.isml`) con ClearKey/raw-key autorizada |
 
 La clave utiliza `KID:KEY`, ambos en hexadecimal y de 16 bytes (32 caracteres
@@ -48,6 +48,32 @@ forma `Nombre=valor&Otro=valor`:
 ```m3u
 #KODIPROP:inputstream.adaptive.stream_headers=X-Token=abc123&Referer=https://example.invalid/
 ```
+
+Otras formas de poner cabeceras, todas admitidas:
+
+- `#EXTVLCOPT:http-referrer=` y `#EXTVLCOPT:http-origin=` (Referer y Origin).
+- `#EXTHTTP:{"User-Agent":"…","Referer":"…"}`: las cabeceras como objeto JSON.
+- `inputstream.adaptive.manifest_headers`: misma forma que `stream_headers`. La
+  app las manda en todas las peticiones, no solo en la del manifiesto.
+- Tras la URL, separadas por `|`: `https://…/playlist.m3u8|User-Agent=…&Referer=…`.
+
+`#EXTGRP:Nombre` en su propia línea vale como `group-title` si el `#EXTINF` no lo trae.
+
+### Otras formas de DRM
+
+- **`drm_legacy`**: el tipo y la licencia en una línea,
+  `#KODIPROP:inputstream.adaptive.drm_legacy=org.w3.clearkey|KID:KEY` o
+  `…=com.widevine.alpha|https://licencia.invalid/wv|Cabecera=valor`.
+- **Servidor de licencias ClearKey**: con `license_type=clearkey`, un
+  `license_key` que sea una dirección (`https://licencia.invalid/clearkey|Cabecera=valor`)
+  se consulta al abrir el canal para pedirle las claves. La petición es la
+  estándar de EME (los KID del manifiesto) y la respuesta, un juego de claves JWK.
+- **Widevine** (`license_type=com.widevine.alpha` con la dirección del servidor
+  de licencias) solo se reproduce en Android con el motor ExoPlayer. En iPhone,
+  iPad, Apple TV y Mac esos canales salen atenuados y con la etiqueta «Solo Android».
+
+Un `#EXTINF` con `type="playlist"` (un enlace a otra lista, como lo usa OTT
+Navigator) se salta: no es un canal.
 
 ### Películas y series (bajo demanda)
 
@@ -115,6 +141,53 @@ opcional y `samples`; cada sample declara `name`, `uri`, `logo`, `kid`, `key`
 y `user_agent` opcionales.
 
 Consulta los ficheros completos en [samples](../samples/).
+
+## Lista de canales de OTT Navigator (JSON)
+
+También se lee el [formato «OTC» de OTT Navigator](https://ottnav.github.io/faq.html):
+un objeto con `provider`, `categories` y `channels`.
+
+```json
+{
+  "provider": { "epg": "https://example.invalid/guia.xml.gz", "archive_type": "shift", "archive_days": 3 },
+  "categories": { "noticias": { "name": "News", "name:es": "Noticias" } },
+  "channels": [
+    {
+      "category": "noticias",
+      "name": "Canal de demostración",
+      "url": "https://example.invalid/directo/demo/manifest.mpd",
+      "icon": "https://example.invalid/demo.png",
+      "epg_id": "canal-demo",
+      "user_agent": "Demo/1.0",
+      "referrer": "https://example.invalid/",
+      "drm_type": "clearkey",
+      "drm_key": "00112233445566778899aabbccddeeff:ffeeddccbbaa99887766554433221100"
+    }
+  ]
+}
+```
+
+| Campo | Uso |
+| --- | --- |
+| `provider.epg` | Guía de toda la lista (se ofrece como la de `x-tvg-url`) |
+| `provider.archive_type`, `provider.archive_days` | Catchup por omisión para todos los canales |
+| `provider.base64` | Campos codificados en BASE64 (`"url,name"`, o `*` para todos los textos) |
+| `categories` | Id → `name`; el `category` de cada canal apunta aquí |
+| `name`, `url` | Obligatorios |
+| `icon` | Logo |
+| `epg_id` (o `epg_name`) | Canal en la guía |
+| `epg_shift` | Desplazamiento de la guía, como `tvg-shift` |
+| `user_agent`, `referrer`, `headers` | Cabeceras HTTP (`headers` como `Nombre=valor&…` o como objeto) |
+| `drm_type` | `clearkey` o `widevine` (Widevine solo en Android) |
+| `drm_key` | Claves ClearKey, como en M3U |
+| `drm_url` | Servidor de licencias (ClearKey o Widevine) |
+| `archive_type`, `archive_source`, `archive_days` | Catchup, como `catchup`, `catchup-source` y `catchup-days` |
+| `source-format` | `hls`, `dash` o `ss` (Smooth) cuando la dirección no lo dice |
+| `type` | `movie`, `series`… para contenido bajo demanda |
+
+Los textos por idioma (`"name:es"`) funcionan como en los catálogos. Lo que es
+propio del reproductor de OTT Navigator (`codec`, pistas preferidas, `number`…)
+se ignora.
 
 ## Catálogos de películas y series (JSON)
 
@@ -227,6 +300,10 @@ suelen ser decenas de megas.
 
 Se admiten guías sin comprimir y con gzip.
 
+`tvg-shift` mueve la guía de un canal, para los «+1» que usan la del original:
+en horas entre -12 y 12 (`tvg-shift="1"`, `"1.5"`), en segundos fuera de ese
+margen. En la cabecera `#EXTM3U` vale para toda la lista.
+
 ## Catchup
 
 El catchup permite ver un programa que ya se emitió. La aplicación necesita dos
@@ -242,7 +319,7 @@ tiene que declarar lo que cambie.
 
 | Atributo | Para qué sirve |
 | --- | --- |
-| `catchup` (o `catchup-type`) | Modo: `default`, `append` o `shift`. Por omisión, `default` |
+| `catchup` (o `catchup-type`) | Modo: `default`, `append`, `shift`, `flussonic` o `xc`. Por omisión, `default` |
 | `catchup-source` | La dirección del archivo (`default`) o el trozo de consulta que se añade a la del canal (`append`) |
 | `catchup-days` | Días que guarda el archivo. Si no se declara se suponen 8 |
 | `catchup-correction` | Corrección en horas, para archivos que no van sincronizados con la guía |
@@ -255,6 +332,14 @@ Modos:
   separador (`?` o `&`) según haga falta.
 - **`shift`**: no hace falta `catchup-source`; se le añade a la URL del canal
   `?utc={utc}&lutc={lutc}`.
+- **`flussonic`** (también `flussonic-hls`, `flussonic-dash`, `flussonic-ts`,
+  `fs`): no hace falta `catchup-source`; la dirección del archivo sale de la del
+  canal, `…/canal/index.m3u8` → `…/canal/index-{utc}-{duration}.m3u8`, y
+  `…/canal/mpegts` → `…/canal/timeshift_abs-{utc}.ts`.
+- **`xc`** (Xtream Codes): no hace falta `catchup-source`;
+  `…/live/usuario/clave/1234.ts` → `…/timeshift/usuario/clave/{duration:60}/{Y}-{m}-{d}:{H}-{M}/1234.ts`.
+  La fecha va en UTC; si tu servidor la quiere en su hora local, usa
+  `catchup-correction`.
 
 ### Marcadores de `catchup-source`
 
