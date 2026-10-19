@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.54",
+          "date": "2026-10-19",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.54/InputStreamPlayer-iOS-0.9.54-108-unsigned.ipa",
+          "size": 17165071,
+          "minOSVersion": "16.0",
+          "sha256": "ac0b1c01e727bce7d263a219f65abfdbce2514b0c11b3ccd2de84d2df7289f3e",
+          "localizedDescription": "**English**\n\n- M3U playlists: an invisible character (BOM or zero-width space) at the start of a line, usually from copy and paste, made the URL invalid and the whole playlist failed to load. These characters are now ignored on every platform.\n\n**Español**\n\n- Listas M3U: un carácter invisible (BOM o espacio de ancho cero) al principio de una línea, normalmente por copiar y pegar, hacía inválida la URL y la lista entera no cargaba. Ahora se ignoran en todas las plataformas."
+        },
+        {
           "version": "0.9.53",
           "date": "2026-10-19",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.53/InputStreamPlayer-iOS-0.9.53-107-unsigned.ipa",
