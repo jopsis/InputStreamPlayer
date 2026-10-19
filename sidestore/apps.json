@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.51",
+          "date": "2026-10-19",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.51/InputStreamPlayer-iOS-0.9.51-105-unsigned.ipa",
+          "size": 17107760,
+          "minOSVersion": "16.0",
+          "sha256": "2270f5ca4ded06cc17d53e845e98c1ec672a93fd862ce1dd22be585912ad16d2",
+          "localizedDescription": "**English**\n- Channel lists in JSON can now carry per-channel HTTP headers (`headers`, e.g. a CDN token or Referer).\n- Fix: lists that are not UTF-8 (a single accented character in Latin-1) now import instead of failing.\n- Fix: ClearKey keys written as a JWK key set (`{\"keys\":[…]}`) in the list are now accepted.\n\n**Español**\n- Las listas JSON de canales admiten cabeceras HTTP por canal (`headers`, p. ej. un token de CDN o el Referer).\n- Arreglo: las listas que no son UTF-8 (una sola letra con tilde en Latin-1) ahora se importan en vez de fallar.\n- Arreglo: las claves ClearKey escritas como juego JWK (`{\"keys\":[…]}`) en la lista ya se aceptan."
+        },
+        {
           "version": "0.9.50",
           "date": "2026-10-18",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.50/InputStreamPlayer-iOS-0.9.50-104-unsigned.ipa",
