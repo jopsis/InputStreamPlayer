@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.52",
+          "date": "2026-10-19",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.52/InputStreamPlayer-iOS-0.9.52-106-unsigned.ipa",
+          "size": 17115629,
+          "minOSVersion": "16.0",
+          "sha256": "49bae8b371f89fec920475e94068237fa2a952bc990ed6fb0cd91fa62fbd0c79",
+          "localizedDescription": "**English**\n- Lists with `license_type=fairplay` and the keys written in `license_key` (`{\"kid\":\"key\"}`, `kid:key`) now import the keys as ClearKey, so HLS SAMPLE-AES channels get decrypted.\n- ClearKey keys without a KID (`license_key=:key`, or just the key) now work on DASH: the KID is read from the manifest.\n- Includes the 0.9.51 fixes: per-channel `headers` in JSON lists, non-UTF-8 lists, and JWK key sets in `license_key`.\n\n**Español**\n- Las listas con `license_type=fairplay` y las claves escritas en `license_key` (`{\"kid\":\"clave\"}`, `kid:clave`) ahora importan las claves como ClearKey, y los canales HLS SAMPLE-AES se descifran.\n- Las claves ClearKey sin KID (`license_key=:clave`, o solo la clave) funcionan en DASH: el KID se lee del manifiesto.\n- Incluye los arreglos de la 0.9.51: `headers` por canal en las listas JSON, listas que no son UTF-8 y claves JWK en `license_key`."
+        },
+        {
           "version": "0.9.51",
           "date": "2026-10-19",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.51/InputStreamPlayer-iOS-0.9.51-105-unsigned.ipa",
