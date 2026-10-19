@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.53",
+          "date": "2026-10-19",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.53/InputStreamPlayer-iOS-0.9.53-107-unsigned.ipa",
+          "size": 17164800,
+          "minOSVersion": "16.0",
+          "sha256": "eb012e693e1b7fd9700aa6f6d58e089b11ee07f4e305020d4b1e0057b4325894",
+          "localizedDescription": "**English**\n- New preference \"Group the same channel from different sources\" (off by default): the same channel from several lists shows as one card, and when you play it you pick the source, with its format (DASH, HLS, ISML…) and a lock if it is encrypted. The last source you chose comes first and is used when switching channels.\n- iOS: the \"Send log\" row in Preferences is a single row again.\n\n**Español**\n- Nueva preferencia «Agrupar el mismo canal de distintas fuentes» (apagada por defecto): el mismo canal de varias listas sale en una sola tarjeta y al reproducirlo eliges la fuente, con su formato (DASH, HLS, ISML…) y un candado si va cifrada. La última fuente elegida sale la primera y es la que se usa al cambiar de canal.\n- iOS: la fila «Enviar registro» de Preferencias vuelve a ser una sola."
+        },
+        {
           "version": "0.9.52",
           "date": "2026-10-19",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.52/InputStreamPlayer-iOS-0.9.52-106-unsigned.ipa",
