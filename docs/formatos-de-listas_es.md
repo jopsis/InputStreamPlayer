@@ -71,6 +71,12 @@ Otras formas de poner cabeceras, todas admitidas:
   estándar de EME (los KID del manifiesto) y la respuesta, un juego de claves JWK.
 - **JWK escrito en la lista**: `license_key={"keys":[{"kty":"oct","k":"…","kid":"…"}]}`,
   con `kid` y `k` en BASE64 (de URL o normal).
+- **Clave sin KID**: `license_key=:clave` (o solo `clave`, 32 dígitos hexadecimales)
+  con `license_type=clearkey`. Vale para todas las pistas de un DASH: el KID se
+  lee del manifiesto al abrir el canal.
+- **`license_type=fairplay` con claves**: si el `license_key` trae las claves
+  escritas (`{"kid":"clave"}`, `kid:clave`) se tratan como ClearKey, también en HLS
+  SAMPLE-AES.
 - **Widevine** (`license_type=com.widevine.alpha` con la dirección del servidor
   de licencias) solo se reproduce en Android con el motor ExoPlayer. En iPhone,
   iPad, Apple TV y Mac esos canales salen atenuados y con la etiqueta «Solo Android».

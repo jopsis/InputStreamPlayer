@@ -70,6 +70,11 @@ Other ways to set headers, all accepted:
   KIDs from the manifest) and the answer a JWK key set.
 - **JWK written in the list**: `license_key={"keys":[{"kty":"oct","k":"…","kid":"…"}]}`,
   with `kid` and `k` in BASE64 (URL-safe or standard).
+- **Key without a KID**: `license_key=:key` (or just `key`, 32 hex digits) with
+  `license_type=clearkey`. It applies to every track of a DASH stream: the KID is
+  read from the manifest when the channel opens.
+- **`license_type=fairplay` with keys**: if `license_key` carries written keys
+  (`{"kid":"key"}`, `kid:key`) they are treated as ClearKey, HLS SAMPLE-AES included.
 - **Widevine** (`license_type=com.widevine.alpha` with the license server
   address) only plays on Android with the ExoPlayer engine. On iPhone, iPad,
   Apple TV, and Mac those channels show up dimmed and marked "Solo Android".
