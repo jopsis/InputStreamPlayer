@@ -1,6 +1,7 @@
 # Playlist formats
 
-InputStream Player imports UTF-8 encoded M3U/M3U8 and JSON playlists. A
+InputStream Player imports UTF-8 encoded M3U/M3U8 and JSON playlists (anything else is read as
+Windows-1252). A
 playlist can contain clear channels and channels with a ClearKey/raw key; keys
 are optional and must never be shared without the content owner's permission.
 
@@ -67,6 +68,8 @@ Other ways to set headers, all accepted:
   that is an address (`https://license.invalid/clearkey|Header=value`) is asked
   for the keys when the channel opens. The request is the standard EME one (the
   KIDs from the manifest) and the answer a JWK key set.
+- **JWK written in the list**: `license_key={"keys":[{"kty":"oct","k":"…","kid":"…"}]}`,
+  with `kid` and `k` in BASE64 (URL-safe or standard).
 - **Widevine** (`license_type=com.widevine.alpha` with the license server
   address) only plays on Android with the ExoPlayer engine. On iPhone, iPad,
   Apple TV, and Mac those channels show up dimmed and marked "Solo Android".
@@ -114,6 +117,7 @@ rest are optional:
 | `logo` | Logo |
 | `tvg_id` | Channel identifier in the guide |
 | `user_agent` | User agent used to request the video |
+| `headers` | Other HTTP headers (a CDN token, `Referer`…): a JSON object or `Name=value&Other=value` text. A `User-Agent` in it wins over `user_agent` |
 | `type` | `movie`, `episode`, `series`… for on-demand content; `live` for live |
 | `serie_name`, `season`, `episode` | Which series, season, and episode it is |
 | `catchup_url`, `catchup_key`, `catchup_days`… | See [Catch-up](#catch-up) |

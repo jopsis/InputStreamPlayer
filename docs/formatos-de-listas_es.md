@@ -1,6 +1,7 @@
 # Formatos de listas
 
-InputStream Player importa listas M3U/M3U8 y JSON codificadas en UTF-8. Una
+InputStream Player importa listas M3U/M3U8 y JSON codificadas en UTF-8 (si no lo están, se leen
+como Windows-1252). Una
 lista puede contener canales claros y canales con ClearKey/raw-key; las claves
 son opcionales y nunca deben compartirse sin autorización del titular del
 contenido.
@@ -68,6 +69,8 @@ Otras formas de poner cabeceras, todas admitidas:
   `license_key` que sea una dirección (`https://licencia.invalid/clearkey|Cabecera=valor`)
   se consulta al abrir el canal para pedirle las claves. La petición es la
   estándar de EME (los KID del manifiesto) y la respuesta, un juego de claves JWK.
+- **JWK escrito en la lista**: `license_key={"keys":[{"kty":"oct","k":"…","kid":"…"}]}`,
+  con `kid` y `k` en BASE64 (de URL o normal).
 - **Widevine** (`license_type=com.widevine.alpha` con la dirección del servidor
   de licencias) solo se reproduce en Android con el motor ExoPlayer. En iPhone,
   iPad, Apple TV y Mac esos canales salen atenuados y con la etiqueta «Solo Android».
@@ -115,6 +118,7 @@ El formato plano es un array de canales. Los campos requeridos son `name` y
 | `logo` | Logotipo |
 | `tvg_id` | Identificador del canal en la guía |
 | `user_agent` | Agente de usuario para pedir el vídeo |
+| `headers` | Otras cabeceras HTTP (un token de CDN, `Referer`…): objeto JSON o texto `Nombre=valor&Otro=valor`. Si trae `User-Agent`, gana a `user_agent` |
 | `type` | `movie`, `episode`, `series`… para contenido bajo demanda; `live` para directo |
 | `serie_name`, `season`, `episode` | De qué serie, temporada y episodio es |
 | `catchup_url`, `catchup_key`, `catchup_days`… | Ver [Catchup](#catchup) |
