@@ -13,13 +13,22 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.56",
+          "date": "2026-10-20",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.56/InputStreamPlayer-iOS-0.9.56-110-unsigned.ipa",
+          "size": 17190638,
+          "minOSVersion": "16.0",
+          "sha256": "11cd0fd63a8c66b71cc6bee04d0284bc10e4818adaf9b63aa3e1924743a79ffc",
+          "localizedDescription": "**English**\n\n- Fixed: some live encrypted channels failed to open, or opened and then stalled, when the source answered with occasional errors. The app now retries.\n\n**Español**\n\n- Arreglado: algunos canales cifrados en directo no abrían, o se paraban al poco, cuando el origen daba errores sueltos. La app ahora reintenta."
+        },
+        {
           "version": "0.9.55",
           "date": "2026-10-20",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.55/InputStreamPlayer-iOS-0.9.55-109-unsigned.ipa",
           "size": 17186989,
           "minOSVersion": "16.0",
           "sha256": "a405d16ed5739f2977a2c961198c29a7808ec44f356174dc8dc87de2c9cc298b",
-          "localizedDescription": "**English**\n\n- Fixed: some DASH ClearKey channels (e.g. Oqee / beIN SPORTS FRA) would not open in the mpv player (\"unrecognized file format\") even with the right keys. Their init segment declares a zero key ID and the wrong IV size; the app now repairs it locally while playing. ExoPlayer was not affected.\n- Note: URLs on api-proxad.dc2.oqee.net no longer have a valid TLS certificate; use api-proxad.oqee.net in your list.\n\n**Español**\n\n- Arreglado: algunos canales DASH con ClearKey (p. ej. Oqee / beIN SPORTS FRA) no abrían en el reproductor mpv («unrecognized file format») aunque las claves fueran las buenas. Su segmento de inicio declara un KID a ceros y un tamaño de IV equivocado; la app lo repara en local al reproducir. ExoPlayer no estaba afectado.\n- Aviso: las URLs de api-proxad.dc2.oqee.net ya no tienen un certificado TLS válido; usa api-proxad.oqee.net en tu lista."
+          "localizedDescription": "**English**\n\n- Fixed: some encrypted DASH channels did not open in the mpv player.\n\n**Español**\n\n- Arreglado: algunos canales DASH cifrados no abrían en el reproductor mpv."
         },
         {
           "version": "0.9.54",
@@ -28,7 +37,7 @@
           "size": 17165071,
           "minOSVersion": "16.0",
           "sha256": "ac0b1c01e727bce7d263a219f65abfdbce2514b0c11b3ccd2de84d2df7289f3e",
-          "localizedDescription": "**English**\n\n- M3U playlists: an invisible character (BOM or zero-width space) at the start of a line, usually from copy and paste, made the URL invalid and the whole playlist failed to load. These characters are now ignored on every platform.\n\n**Español**\n\n- Listas M3U: un carácter invisible (BOM o espacio de ancho cero) al principio de una línea, normalmente por copiar y pegar, hacía inválida la URL y la lista entera no cargaba. Ahora se ignoran en todas las plataformas."
+          "localizedDescription": "**English**\n\n- Fixed: M3U lists failed to load when a line started with an invisible character.\n\n**Español**\n\n- Arreglado: las listas M3U no cargaban si una línea empezaba con un carácter invisible."
         },
         {
           "version": "0.9.53",
@@ -37,7 +46,7 @@
           "size": 17164800,
           "minOSVersion": "16.0",
           "sha256": "eb012e693e1b7fd9700aa6f6d58e089b11ee07f4e305020d4b1e0057b4325894",
-          "localizedDescription": "**English**\n- New preference \"Group the same channel from different sources\" (off by default): the same channel from several lists shows as one card, and when you play it you pick the source, with its format (DASH, HLS, ISML…) and a lock if it is encrypted. The last source you chose comes first and is used when switching channels.\n- iOS: the \"Send log\" row in Preferences is a single row again.\n\n**Español**\n- Nueva preferencia «Agrupar el mismo canal de distintas fuentes» (apagada por defecto): el mismo canal de varias listas sale en una sola tarjeta y al reproducirlo eliges la fuente, con su formato (DASH, HLS, ISML…) y un candado si va cifrada. La última fuente elegida sale la primera y es la que se usa al cambiar de canal.\n- iOS: la fila «Enviar registro» de Preferencias vuelve a ser una sola."
+          "localizedDescription": "**English**\n\n- New preference \"Group the same channel from different sources\" (off by default): the source is chosen when you play it. iOS: the \"Send log\" row is a single row again.\n\n**Español**\n\n- Nueva preferencia «Agrupar el mismo canal de distintas fuentes» (apagada por defecto): la fuente se elige al reproducirlo. iOS: la fila «Enviar registro» vuelve a ser una sola."
         },
         {
           "version": "0.9.52",
@@ -46,7 +55,7 @@
           "size": 17115629,
           "minOSVersion": "16.0",
           "sha256": "49bae8b371f89fec920475e94068237fa2a952bc990ed6fb0cd91fa62fbd0c79",
-          "localizedDescription": "**English**\n- Lists with `license_type=fairplay` and the keys written in `license_key` (`{\"kid\":\"key\"}`, `kid:key`) now import the keys as ClearKey, so HLS SAMPLE-AES channels get decrypted.\n- ClearKey keys without a KID (`license_key=:key`, or just the key) now work on DASH: the KID is read from the manifest.\n- Includes the 0.9.51 fixes: per-channel `headers` in JSON lists, non-UTF-8 lists, and JWK key sets in `license_key`.\n\n**Español**\n- Las listas con `license_type=fairplay` y las claves escritas en `license_key` (`{\"kid\":\"clave\"}`, `kid:clave`) ahora importan las claves como ClearKey, y los canales HLS SAMPLE-AES se descifran.\n- Las claves ClearKey sin KID (`license_key=:clave`, o solo la clave) funcionan en DASH: el KID se lee del manifiesto.\n- Incluye los arreglos de la 0.9.51: `headers` por canal en las listas JSON, listas que no son UTF-8 y claves JWK en `license_key`."
+          "localizedDescription": "**English**\n\n- Lists: more ways of writing encrypted-channel keys are accepted.\n\n**Español**\n\n- Listas: se aceptan más formas de escribir las claves de los canales cifrados."
         },
         {
           "version": "0.9.51",
@@ -55,7 +64,7 @@
           "size": 17107760,
           "minOSVersion": "16.0",
           "sha256": "2270f5ca4ded06cc17d53e845e98c1ec672a93fd862ce1dd22be585912ad16d2",
-          "localizedDescription": "**English**\n- Channel lists in JSON can now carry per-channel HTTP headers (`headers`, e.g. a CDN token or Referer).\n- Fix: lists that are not UTF-8 (a single accented character in Latin-1) now import instead of failing.\n- Fix: ClearKey keys written as a JWK key set (`{\"keys\":[…]}`) in the list are now accepted.\n\n**Español**\n- Las listas JSON de canales admiten cabeceras HTTP por canal (`headers`, p. ej. un token de CDN o el Referer).\n- Arreglo: las listas que no son UTF-8 (una sola letra con tilde en Latin-1) ahora se importan en vez de fallar.\n- Arreglo: las claves ClearKey escritas como juego JWK (`{\"keys\":[…]}`) en la lista ya se aceptan."
+          "localizedDescription": "**English**\n\n- Lists: per-channel HTTP headers in JSON, lists that are not UTF-8, and more key formats.\n\n**Español**\n\n- Listas: cabeceras HTTP por canal en JSON, listas que no son UTF-8 y más formatos de claves."
         },
         {
           "version": "0.9.50",
@@ -64,7 +73,7 @@
           "size": 17107785,
           "minOSVersion": "16.0",
           "sha256": "598599d90e45a4693d055b6f4882a7b40b0370a1324596b6ef70206c18653b9b",
-          "localizedDescription": "**Playlists: what OTT Navigator documents**\n- M3U: `#EXTHTTP` headers, `#EXTVLCOPT` referrer and origin, `#EXTGRP`, `manifest_type=dash`, `manifest_headers` and `drm_legacy`.\n- ClearKey from a license server (`license_key=https://…`): the keys are requested when the channel opens. Before, those channels were dropped.\n- OTT Navigator channel lists in JSON (OTC): guide, categories, BASE64, per-language text, DRM, headers and catch-up.\n- `tvg-shift` / `epg_shift`: the guide of \"+1\" channels moves with them.\n- Catch-up `flussonic` and `xc` (Xtream Codes): the archive address comes from the channel's.\n- Widevine with a license server still plays only on Android (ExoPlayer).\n\n**macOS**: keys of encrypted playlists no longer go to the Keychain, so the app no longer asks for Keychain access at launch after each update. Keys saved there before are asked for once more.\n\n---\n\n**Listas: lo que documenta OTT Navigator**\n- M3U: cabeceras `#EXTHTTP`, referrer y origin en `#EXTVLCOPT`, `#EXTGRP`, `manifest_type=dash`, `manifest_headers` y `drm_legacy`.\n- ClearKey con servidor de licencias (`license_key=https://…`): las claves se piden al abrir el canal. Antes esos canales se descartaban.\n- Listas de canales de OTT Navigator en JSON (OTC): guía, categorías, BASE64, textos por idioma, DRM, cabeceras y catchup.\n- `tvg-shift` / `epg_shift`: la guía de los canales «+1» se mueve con ellos.\n- Catchup `flussonic` y `xc` (Xtream Codes): la dirección del archivo sale de la del canal.\n- Widevine con servidor de licencias sigue siendo solo de Android (ExoPlayer).\n\n**macOS**: las claves de las listas cifradas ya no van al Llavero, así que la app deja de pedir acceso al Llavero al arrancar tras cada actualización. Las claves guardadas allí antes se piden una vez más."
+          "localizedDescription": "**English**\n\n- Wider list compatibility (more M3U and JSON fields, keys from a license server, guide time shift, more catch-up formats). macOS: no Keychain prompt at launch.\n\n**Español**\n\n- Más compatibilidad con listas (más campos M3U y JSON, claves desde un servidor de licencias, desfase de guía, más formatos de catchup). macOS: ya no pide acceso al llavero al arrancar."
         },
         {
           "version": "0.9.49",
@@ -73,7 +82,7 @@
           "size": 17079166,
           "minOSVersion": "16.0",
           "sha256": "ec8512735e451208eefd9f95afe4f88284443270b84b6a3c3a7f53c99f84691e",
-          "localizedDescription": "The guide no longer freezes when you open it (iOS and tvOS). The log sent from a real iPhone showed the main thread stalling for up to 1.6 s while the guide grid recomputed its time window for every programme block, and rebuilding the guide snapshots over and over while lists were still loading. Both are fixed: the window is computed once and snapshots wait for your channels to settle.\n\nLa guía ya no se queda pillada al entrar (iOS y tvOS). El registro enviado desde un iPhone real mostró el hilo principal parado hasta 1,6 s mientras la rejilla recalculaba la ventana horaria por cada bloque de programa, y las instantáneas de la guía se rehacían una y otra vez mientras las listas aún cargaban. Las dos cosas están arregladas: la ventana se calcula una vez y las instantáneas esperan a que tus canales se estabilicen."
+          "localizedDescription": "**English**\n\n- Fixed: the guide no longer freezes when you open it (iOS and tvOS).\n\n**Español**\n\n- Arreglado: la guía ya no se queda pillada al entrar (iOS y tvOS)."
         },
         {
           "version": "0.9.48",
@@ -82,7 +91,7 @@
           "size": 17076758,
           "minOSVersion": "16.0",
           "sha256": "02f2ea496f70329456506339c23de59477b19a67a673e1de62b11ff0d256c436",
-          "localizedDescription": "Send log on iOS, tvOS and macOS. Preferences › Help › Send log now sends the developer a report with device data, your playback settings and the app's own log (keys, tokens and debrid keys are hidden), or shares it as a file. The app now keeps a timestamped log and notes whenever the main thread stops responding and what it was doing, to track down slowness such as the lag when opening the guide.\n\nEnviar registro en iOS, tvOS y macOS. En Preferencias › Ayuda, «Enviar registro» manda al desarrollador un informe con datos del aparato, tus ajustes de reproducción y el registro de la app (las claves, los tokens y la clave de debrid se ocultan), o lo comparte como fichero. La app guarda ahora un registro con hora y anota cuándo el hilo principal deja de responder y qué estaba haciendo, para localizar lentitudes como el lag al entrar en la guía."
+          "localizedDescription": "**English**\n\n- New: Preferences › Help › Send log (iOS, tvOS and macOS). Keys and tokens are hidden.\n\n**Español**\n\n- Nuevo: Preferencias › Ayuda › Enviar registro (iOS, tvOS y macOS). Las claves y los tokens se ocultan."
         },
         {
           "version": "0.9.47",
@@ -91,7 +100,7 @@
           "size": 17041966,
           "minOSVersion": "16.0",
           "sha256": "0fcd654d33c92cb3b20086f35d54a30978f3e00b7a4dc685a8a2a1fa07067cd8",
-          "localizedDescription": "## What's new in 0.9.47\n\n**Series and movies look more like Stremio.**\n- **Episode thumbnails.** The episode list of a series now shows each episode's thumbnail (when the add-on provides it, as Cinemeta does), on Android, iPhone/iPad, Mac and Apple TV. Without a thumbnail the row looks as before.\n- **Age rating.** The title page of a movie or series now shows its age rating for the country of your device next to the star rating — for example \"2010 · 148 min · ★ 8.8 · 12+\" in Spain, or \"PG-13\" in the US. It comes from TMDb in the same request that already fetches the synopsis and trailer, so there are no extra requests. If TMDb has no rating for your country, nothing is shown.\n\n**En español:** la 0.9.47 acerca las fichas a Stremio. La lista de episodios de una serie muestra la miniatura de cada capítulo (si el addon la da, como Cinemeta), en Android, iPhone/iPad, Mac y Apple TV. Y la ficha de una película o serie muestra la clasificación por edad del país de tu dispositivo junto a la nota ★ (por ejemplo «12+» o «18+» en España). Sale de TMDb en la misma petición que ya trae la sinopsis y el tráiler, sin llamadas de más; si TMDb no tiene clasificación para tu país, no se muestra nada."
+          "localizedDescription": "**English**\n\n- Episode thumbnails and age rating on title pages.\n\n**Español**\n\n- Miniaturas de episodio y clasificación por edades en las fichas."
         },
         {
           "version": "0.9.46",
@@ -100,7 +109,7 @@
           "size": 17032332,
           "minOSVersion": "16.0",
           "sha256": "d5eaec62254ff6e2a14c9ec6c6931ac01f36e2250438779601686b64d1be745a",
-          "localizedDescription": "## What's new in 0.9.46\n\n**Android is lighter and cleaner inside.**\n- **The Android APK shrinks from ~66 MB to ~42 MB** (arm64 and 32-bit). The native libraries were being shipped with debug symbols; they are now stripped.\n- **One network stack.** Everything the Swift core downloads on Android now goes through the app's OkHttp client (system TLS and certificates, shared connection pool, HTTP/2, the custom DNS). The old curl-based stack (FoundationNetworking) and its memory workarounds for 32-bit devices are gone. Checked on a phone and on a Chromecast with Google TV: native memory is stable with ExoPlayer and with mpv, with no leak.\n- **Guides cache.** The downloaded guide XML now lives in a cache folder that Android can clear when it needs space, as on Apple platforms.\n- **Catchup of a programme in progress** (Movistar-style dynamic DASH) now starts at the beginning of the programme instead of at the live edge.\n\niOS, tvOS and macOS behave as in 0.9.45.\n\n**En español:** la 0.9.46 hace la app de Android más ligera (el APK pasa de unos 66 MB a unos 42 MB) y con una sola pila de red: todo lo que descarga el núcleo va por OkHttp, sin el curl antiguo ni sus parches de memoria para 32 bits. Comprobado en un móvil y en un Chromecast con Google TV, sin fugas con ExoPlayer ni con mpv. El XML de las guías va a una caché que Android puede vaciar, y «Ver desde el principio» en un programa en curso de Movistar arranca al principio y no en el directo. iOS, tvOS y macOS se comportan como en la 0.9.45."
+          "localizedDescription": "**English**\n\n- Android: smaller app (about 66 → 42 MB), a single network stack and a clearable guide cache. Catch-up of a programme in progress starts at its beginning.\n\n**Español**\n\n- Android: app más ligera (de ~66 a ~42 MB), una sola pila de red y caché de guías que el sistema puede limpiar. El catchup de un programa en curso empieza por el principio."
         },
         {
           "version": "0.9.45",
@@ -109,7 +118,7 @@
           "size": 17034713,
           "minOSVersion": "16.0",
           "sha256": "fc36a552f2fc7d18a79edf5caa871891d4f71a8141d282a78e006c8e695e076c",
-          "localizedDescription": "Fix: live DASH channels play with ExoPlayer again, plus Widevine license servers on Android.\n\n- DASH live with ExoPlayer: a regression from 0.9.41 made ExoPlayer fail on some live DASH channels (e.g. Movistar) with 'The video format isn't supported' (ERROR_CODE_PARSING_CONTAINER_UNSUPPORTED). The fragment merging added for mpv is now applied only with mpv. If ExoPlayer ever meets an MP4 it can't read, the app switches to mpv by itself.\n- Widevine (Android): M3U channels with a Widevine license server (license_key=URL|headers) now play with ExoPlayer using the system CDM. mpv has no CDM, so those channels always open with ExoPlayer; on iOS, tvOS and macOS they are dimmed with an 'Android only' label.\n- ClearKey keys written as {kid:key} without quotes are now accepted, and ExoPlayer plays ClearKey DASH whose manifest only declares Widevine/PlayReady.\n- A catch-up request outside what the server archives now says so (404/410) instead of a generic error.\n\nEspañol: arreglo de los canales DASH en directo con ExoPlayer, que fallaban desde la 0.9.41 («El formato del vídeo no es compatible», p. ej. Movistar); la fusión de fragmentos pensada para mpv ahora solo se aplica con mpv, y si ExoPlayer no sabe leer un MP4 la app pasa sola a mpv. Novedades: Widevine con servidor de licencias en Android (los canales Widevine salen atenuados y con «Solo Android» en iOS, tvOS y Mac), claves ClearKey {kid:clave} sin comillas, ExoPlayer con ClearKey en manifiestos que solo declaran Widevine/PlayReady, y un aviso claro cuando un catchup queda fuera del archivo del servidor."
+          "localizedDescription": "**English**\n\n- Fixed: some live DASH channels failed with ExoPlayer. Android: Widevine license servers now play. More key formats accepted.\n\n**Español**\n\n- Arreglado: algunos canales DASH en directo fallaban con ExoPlayer. Android: ya funcionan los servidores de licencias Widevine. Se aceptan más formatos de claves."
         },
         {
           "version": "0.9.44",
@@ -118,7 +127,7 @@
           "size": 16999736,
           "minOSVersion": "16.0",
           "sha256": "19ce24f38f337104bedd2240946c77cc477b686557fc803c9d5998646c34fa93",
-          "localizedDescription": "Fix: the Guide no longer freezes the app when you open it on iOS, tvOS and macOS.\n\nIn 0.9.43 the guide grid recomputed the limits of its time window for every programme block drawn, and that walked every channel of every list. With large lists the app sat at 100% CPU for a long time. The archive days declared by your lists are now cached and recomputed only when the lists change. Measured in the iPhone simulator with a 6000-channel list: about 25 s at 100% CPU before, idle after 6 s. Android was not affected.\n\nEspañol: arreglo de la guía, que dejaba la app colgada al entrar en iOS, tvOS y macOS. En la 0.9.43 la rejilla recalculaba los límites de la ventana por cada bloque pintado y eso recorría todos los canales de todas las listas; con listas grandes la app se quedaba al 100 % de CPU. Ahora los días de archivo se guardan y solo se recalculan si cambian las listas. En el simulador con 6000 canales: antes ~25 s al 100 %, ahora en reposo a los 6 s. Android no estaba afectado."
+          "localizedDescription": "**English**\n\n- Fixed: the guide froze the app when opened (iOS, tvOS and macOS).\n\n**Español**\n\n- Arreglado: la guía dejaba la app colgada al entrar (iOS, tvOS y macOS)."
         },
         {
           "version": "0.9.43",
@@ -127,7 +136,7 @@
           "size": 16999048,
           "minOSVersion": "16.0",
           "sha256": "c407c550d080c16dd6512dca6c4e8a76dbf20ec2e1cf16df19462a217218c573",
-          "localizedDescription": "Smarter guide, M3U catch-up fixes and a DNS proxy fix.\n\n- Guide: tap a programme to play it, long-press for the catch-up source picker and the channel schedule. The time window is continuous (it crosses midnight, one-hour steps, snaps to the hour) and the header names the day. When you come back from the player the guide stays where you were (a window showing 'now' follows now; another hour or day stays put).\n- M3U catch-up: the catch-up now inherits the list's inputstream.adaptive.manifest_type unless catchup_manifest_type says otherwise, so Movistar-style catch-up URLs ending in Manifest.mpd that actually serve Smooth Streaming play instead of failing with 'unrecognized file format'.\n- Custom DNS: the local proxy no longer sends a later request to the wrong server after a redirect (ISML lists failed with 404 / 'unrecognized file format' on macOS and elsewhere).\n\nEspañol: guía más intuitiva (pulsar reproduce, pulsación larga para elegir lista de catchup o ver la programación del canal, ventana continua que cruza la medianoche y se queda donde ibas al volver del reproductor); el catchup de listas M3U hereda el manifest_type de la lista, con lo que las URL de catchup terminadas en Manifest.mpd que sirven Smooth Streaming ya reproducen; y el proxy del DNS propio ya no manda una petición posterior al servidor equivocado tras un redirect (las listas ISML daban 404 / «unrecognized file format»)."
+          "localizedDescription": "**English**\n\n- Smarter guide (tap to play, long-press for options, continuous time window). Catch-up and custom DNS fixes.\n\n**Español**\n\n- Guía más intuitiva (tocar reproduce, pulsación larga ofrece opciones, ventana horaria continua). Arreglos de catchup y de DNS propio."
         },
         {
           "version": "0.9.42",
@@ -136,7 +145,7 @@
           "size": 16947423,
           "minOSVersion": "16.0",
           "sha256": "1f6c5e09a320df298448872d740e81137a4a99792799581a9d851378914ef5c6",
-          "localizedDescription": "Catch-up fixes: a guide that offers every list holding the programme, and two encrypted catch-up formats that now play.\n\n- The guide no longer loses the catch-up button when the same channel appears in several lists and the first copy has none: it keeps a copy that has it. When several lists hold the programme, pressing it asks \"Watch from…\" (iOS and Android; same-named lists are numbered). With a guide, a channel is grouped by name and group, so the same channel is no longer listed twice when two guides name it differently.\n- Android: catch-up of a Smooth stream now plays with ExoPlayer. It used to stay at 0:00 while memory grew until the system killed the app.\n- Encrypted HLS catch-up (HLS_TV_FAIRPLAY, SAMPLE-AES) now plays on iOS and Android: the SAMPLE-AES decryptor stopped silently on PES headers with ES_rate and on packets of PIDs the PMT does not declare. It also stops the \"PES packet size mismatch\" warnings.\n- Live DASH smoothing from 0.9.41 is unchanged.\n\nResumen en español: la guía ya no pierde el botón de catchup cuando el canal está repetido en varias listas y pregunta de cuál ver el programa; en Android el catchup Smooth reproduce con ExoPlayer (antes se quedaba en 0:00 y llenaba la memoria); y el catchup HLS cifrado de Movistar (SAMPLE-AES) vuelve a reproducirse en iOS y Android."
+          "localizedDescription": "**English**\n\n- Catch-up: choose which list to watch from; two encrypted catch-up formats now play.\n\n**Español**\n\n- Catchup: se elige de qué lista ver; dos formatos de catchup cifrado ya se reproducen."
         },
         {
           "version": "0.9.41",
@@ -145,7 +154,7 @@
           "size": 16932696,
           "minOSVersion": "16.0",
           "sha256": "391c0b59b9b4a8221fa5a53ae0c7ad27127c31c4d1a14ac5cbdec20c824b6f5b",
-          "localizedDescription": "Smoother live DASH and ExoPlayer support for cbcs-encrypted streams.\n\n- Live DASH streams (with SegmentTimeline) no longer stutter on iOS, tvOS, Mac and Android with mpv: the local proxy now prefetches segments in parallel and merges segments made of two fragments, which used to cut the stream and force a reconnect every minute. Measured on a OnePlus 7 Pro and the iPhone simulator: from 8-12 audio skips per minute to none.\n- ExoPlayer (Android) now plays live DASH encrypted with cbcs and ClearKey keys: the core decrypts the segments and hands ExoPlayer clear DASH.\n\nResumen en español: los directos DASH ya no van a tirones (precarga de segmentos en paralelo y fusión de segmentos de dos fragmentos) y ExoPlayer en Android reproduce DASH en directo cifrado con cbcs y claves ClearKey."
+          "localizedDescription": "**English**\n\n- Smoother live DASH. ExoPlayer plays more encrypted live streams.\n\n**Español**\n\n- Directos DASH más fluidos. ExoPlayer reproduce más directos cifrados."
         },
         {
           "version": "0.9.40",
@@ -154,7 +163,7 @@
           "size": 16869073,
           "minOSVersion": "16.0",
           "sha256": "b9b6409c56739eb21222f6fd6d0c7b3db3cf73e08b7230e8ca3d1d93751af9c6",
-          "localizedDescription": "**New:** reorder the categories of your lists (↕ button at the end of the category row, on iOS, tvOS, Mac and Android) and the order is remembered on each device. Movies and series no longer show up in the TV guide.\n\n**Novedades:** ordena las categorías de tus listas (botón ↕ al final de la fila de categorías, en iOS, tvOS, Mac y Android); el orden se recuerda en cada aparato. Las películas y series ya no aparecen en la guía de TV."
+          "localizedDescription": "**English**\n\n- Reorder the categories of your lists. Movies and series no longer appear in the guide.\n\n**Español**\n\n- Ordena las categorías de tus listas. Las películas y series ya no salen en la guía."
         },
         {
           "version": "0.9.39",
@@ -163,7 +172,7 @@
           "size": 16857425,
           "minOSVersion": "16.0",
           "sha256": "dfd0f2d890d3602001954c437c26323db57d977de09b81bd3b6d79af2f145642",
-          "localizedDescription": "New: the video information window now shows the dynamic range (HDR10, HLG, SDR, and Dolby Vision on Android with ExoPlayer) and the color space (BT.2020, BT.709…). Available on iPhone/iPad, Apple TV, Mac and Android.\n\nNuevo: la ventana de información del vídeo muestra ahora el rango dinámico (HDR10, HLG, SDR y, en Android con ExoPlayer, Dolby Vision) y el espacio de color (BT.2020, BT.709…). Disponible en iPhone/iPad, Apple TV, Mac y Android."
+          "localizedDescription": "**English**\n\n- The video information window shows dynamic range and color space.\n\n**Español**\n\n- La ventana de información del vídeo muestra el rango dinámico y el espacio de color."
         },
         {
           "version": "0.9.38",
@@ -172,7 +181,7 @@
           "size": 16856499,
           "minOSVersion": "16.0",
           "sha256": "e3f1fd7b2ada6eb6a2ede982f1b0cd17ab52d7ec13ee0a7659a79ad1d915c7a9",
-          "localizedDescription": "New: the interface is now available in English and Spanish on iPhone/iPad, Apple TV, Mac and Android. It follows the system language (English if yours is not available) and can be changed in Preferences → Interface language, with no restart.\n\nNuevo: la interfaz está disponible en inglés y español en iPhone/iPad, Apple TV, Mac y Android. Sigue el idioma del sistema (inglés si el tuyo no está) y se cambia en Preferencias → Idioma de la interfaz, sin reiniciar."
+          "localizedDescription": "**English**\n\n- The interface is now available in English and Spanish.\n\n**Español**\n\n- La interfaz está disponible en inglés y español."
         },
         {
           "version": "0.9.37",
@@ -181,7 +190,7 @@
           "size": 16830788,
           "minOSVersion": "16.0",
           "sha256": "b55ca981d45bf6d80eea41831d127fa21b31eb54c774c7bf360f9ac682704000",
-          "localizedDescription": "Mac: los controles se ocultan con el ratón quieto, las flechas siguen un orden lógico en las fichas de Addons (y Esc vuelve atrás), la banda «ISPlayer» ya no tapa el reproductor en pantalla completa y la fila enfocada no se sale de la pantalla. Android, iOS y tvOS: sin cambios de funcionamiento."
+          "localizedDescription": "**English**\n\n- Mac interface fixes.\n\n**Español**\n\n- Arreglos en la interfaz de Mac."
         },
         {
           "version": "0.9.36",
@@ -190,7 +199,7 @@
           "size": 16830788,
           "minOSVersion": "16.0",
           "sha256": "68c1a22c42f5fd246265da71bae551a153a64a3339d8b2288d7550a079f1bb6f",
-          "localizedDescription": "Arregla el error 310 al refrescar listas con el DNS propio tras suspender la app (todos los sistemas). Mac: el buscador ya no queda sobre el vídeo, los controles se ocultan con el ratón quieto y la cabecera dice macOS. Errores HTTP más claros (p. ej. 429)."
+          "localizedDescription": "**English**\n\n- Fixed a refresh error with custom DNS after the app was suspended. Mac fixes. Clearer HTTP errors.\n\n**Español**\n\n- Arreglado un error al refrescar con DNS propio tras suspender la app. Arreglos en Mac. Errores HTTP más claros."
         },
         {
           "version": "0.9.34",
@@ -199,7 +208,7 @@
           "size": 16828518,
           "minOSVersion": "16.0",
           "sha256": "6853501d48ae16520f9a3c0ade8a90e58f2a5f7ec628787ddccb205abbef6574",
-          "localizedDescription": "Las series se abren en la temporada por la que vas (antes siempre en la primera, aunque el «Continuar» fuera de la 2). iOS, tvOS y Mac. Android no cambia."
+          "localizedDescription": "**English**\n\n- Series open on the season you are watching.\n\n**Español**\n\n- Las series se abren en la temporada por la que vas."
         },
         {
           "version": "0.9.33",
@@ -208,7 +217,7 @@
           "size": 16828548,
           "minOSVersion": "16.0",
           "sha256": "4c6b15ddf7033cd1640328a95d71d81ed9cc86b666c0235486840d5affaeebf3",
-          "localizedDescription": "Nuevo: app nativa para Mac con Apple Silicon (ZIP), con dos interfaces y reproducción por hardware. Sustituye a la versión de PlayCover.\nAndroid TV: el foco del mando vuelve a donde estabas al salir de un canal o una ficha, las filas se entran por el primer elemento, las series abren en la temporada por la que vas y el aro de foco ya no pisa los títulos.\nAndroid: si ExoPlayer no puede reproducir el audio (por ejemplo Dolby Digital Plus en un Chromecast), la app pasa sola a mpv."
+          "localizedDescription": "**English**\n\n- New native Mac app for Apple Silicon. Android TV focus fixes. Android: falls back to mpv if ExoPlayer cannot play the audio.\n\n**Español**\n\n- Nueva app nativa para Mac con Apple Silicon. Arreglos de foco en Android TV. Android: pasa a mpv si ExoPlayer no puede reproducir el audio."
         },
         {
           "version": "0.9.32",
@@ -217,7 +226,7 @@
           "size": 16826005,
           "minOSVersion": "16.0",
           "sha256": "b676422f34f7b48f3587f98f2f309dcbce3c2c36300364734a0de5576776cf1b",
-          "localizedDescription": "\nUn log de la Bravia con la 0.9.31 (HLS cifrado de Top Gear, ExoPlayer) acababa en\n«sin memoria» a 1528 MB: la memoria nativa subía ~48 MB/min, al ritmo del vídeo,\ny no se liberaba. La 0.9.31 solo arreglaba el Smooth (ISML); el proxy HLS cifrado\nusaba `URLSession.data(for:)` para bajar cada segmento (~4,6 MB) y retenía todos.\n\n- **Perfil de heap en un Chromecast (32 bits):** con la cola directa solo en la\n  sesión, seguía retenida la copia que `completeTask` hace del cuerpo de cada\n  `data(for:)` (72 asignaciones, 75 MB en 100 s). La retención tiene dos partes\n  independientes: los trozos que se entregan por la `OperationQueue` de corelibs\n  (arreglada con `DirectOperationQueue`) y la tarea de `data(for:)`, que queda\n  viva con su cuerpo aunque la cola sea otra.\n- **Arreglo:** `DelegateDownloader` (ahora en PlaylistKit, antes\n  `SmoothDownloader`) descarga respuestas enteras con una tarea de delegado y\n  `DirectOperationQueue`; `AppNetwork.data(for:)` lo usa en Android y en el resto\n  sigue siendo `URLSession.data(for:)`. Pasan por él: manifiestos y fragmentos\n  Smooth, el proxy HLS cifrado y su metadata, el proxy DASH, Trakt y Drive,\n  Stremio/addons y el sondeo de canales. `AppNetwork.defaultSession`,\n  `makeSession` y `CustomDNS` llevan la cola directa a las sesiones que quedan.\n  Los delegados de streaming del proxy HLS (`streamingSession`) no se tocan: no\n  se pueden probar sin un canal de Movistar.\n- **Medido en el Chromecast, 5 min:** HLS cifrado con ExoPlayer, memoria nativa\n  **45–61 MB plana** (antes 85→272 MB y subiendo); ISML 56–68 MB (la pendiente\n  residual de la 0.9.31, ~3-4 MB/min, queda en ~1 MB/min o menos). Trakt\n  sincroniza («Sincronizado ahora mismo») y la pestaña Addons carga su catálogo y\n  «Seguir viendo» con el progreso de Trakt.\n- Sin probar en el OnePlus (se desconectó de adb), en la Bravia ni con Drive (la\n  cuenta de Google no está en el Chromecast). Apple no cambia.\n- Los 2 tests de `PlaybackModelTests.StreamInfoTests` ya fallaban antes (sin\n  relación)."
+          "localizedDescription": "**English**\n\n- Android: fixed memory growth on 32-bit devices with encrypted HLS.\n\n**Español**\n\n- Android: arreglado el crecimiento de memoria en aparatos de 32 bits con HLS cifrado."
         },
         {
           "version": "0.9.31",
@@ -226,7 +235,7 @@
           "size": 16819225,
           "minOSVersion": "16.0",
           "sha256": "2171a4c1a0adf8c7d1c8546b383986460752ade774f5be12d9e46d0027ed212d",
-          "localizedDescription": "\nUn log de la Bravia (0.9.30, ExoPlayer, Top Gear ISML) llegaba a 1,5 GB de\nmemoria nativa en 22 minutos y acababa en tirones y cierre; con mpv ya había\npasado (1481 MB). No se reproducía en el OnePlus (64 bits) ni en el emulador;\n**sí en el Chromecast con Google TV (32 bits)**: +34 MB cada 30 s, al ritmo del\nvídeo, con los dos motores, y sin liberarse al salir del canal.\n\n- **Causa:** un perfil de heap (`heapprofd`, con la app marcada «profileable» solo\n  en las pruebas) mostró retenidas las respuestas descargadas por `URLSession`\n  (de ~142 MB netos en 150 s). No era la caché (`urlCache = nil` no cambió nada).\n  Pasando el cuerpo por un delegado, lo retenido eran los trozos recibidos. La\n  retención desaparece al quitar la `OperationQueue` de corelibs por la que se\n  entregan: en Android cada trozo es un `addOperation` y esa cola deja vivos\n  los datos de lo que entrega.\n- **Arreglo:** `SmoothDownloader` (nuevo; solo en Android) descarga manifiestos y\n  fragmentos Smooth con una tarea de delegado y una `DirectOperationQueue` que\n  ejecuta cada bloque en una cola serie de libdispatch, sin `OperationQueue`. La\n  cola va **en serie**: con más de una operación a la vez los trozos de una\n  descarga se procesan desordenados y el vídeo llegaba corrupto («Invalid NAL\n  length»). En Apple no cambia nada: sigue `URLSession.data(for:)`.\n- **Medido en el Chromecast (32 bits), ISML con ExoPlayer, 3,5 min:** memoria\n  nativa **51–66 MB plana** (antes 99→290 MB y subiendo), posición al ritmo real\n  y buffer fijo en 12 s. En el OnePlus 7 Pro, ISML a 1080p sin cambios (nativa\n  47–52 MB, buffer 11–13 s).\n- **Pendiente / mismo riesgo, sin tocar:** el resto de sesiones de `URLSession`\n  del núcleo usan la misma cola: proxy HLS cifrado (`HLSClearKeyProxy`, segmentos\n  de varios MB), proxy DASH, listas, guías, addons y Drive. Las puntuales retienen\n  lo que descargan hasta cerrar la app; el proxy HLS cifrado puede retener\n  segmentos, y su cola de delegados es concurrente (12), lo que en corelibs no\n  garantiza el orden de los trozos de una descarga. Sin probar (necesita un canal\n  de Movistar).\n- **Límite al retraso de ExoPlayer en Smooth en directo:** el lector no se pausa\n  (ver `ExoPlayerEngine.makeFactory`), así que el `LoadControl` no acota el\n  buffer; en un aparato que decodifica más lento que el directo (el emulador) crecía\n  hasta `OutOfMemoryError`. Pasado el doble del buffer pedido (60 s con 30 s) el\n  canal se vuelve a abrir cerca del borde del directo, como mucho una vez cada\n  2 minutos.\n- **Registro:** la línea «Memoria» añade `buffer X s · posición Y s`."
+          "localizedDescription": "**English**\n\n- Android: fixed memory growth on 32-bit devices.\n\n**Español**\n\n- Android: arreglado el crecimiento de memoria en aparatos de 32 bits."
         },
         {
           "version": "0.9.30",
@@ -235,7 +244,7 @@
           "size": 16820288,
           "minOSVersion": "16.0",
           "sha256": "e304d3219c1eb129a566252039425563a8bac13bd0b1f3cf61596a986d2c6f5d",
-          "localizedDescription": "\n- Quien no haya elegido motor en Preferencias pasa a ExoPlayer (antes MPV).\n  Quien ya eligió uno conserva su elección (queda guardada en el aparato). Se\n  puede cambiar en Preferencias → Reproductor o desde el propio reproductor\n  (Pistas → Reproductor), y si un vídeo no abre la app ofrece probar con el otro.\n- El texto de Preferencias y los README públicos dicen ahora que ExoPlayer es el\n  predeterminado.\n- Sale como 0.9.30 y no como segunda 0.9.29: la versión ya estaba publicada y\n  el código de versión de Android sale de ella."
+          "localizedDescription": "**English**\n\n- Android: ExoPlayer is now the default player (your choice is kept; change it in Preferences or from the player).\n\n**Español**\n\n- Android: ExoPlayer pasa a ser el reproductor por defecto (se respeta tu elección; se cambia en Preferencias o desde el reproductor)."
         },
         {
           "version": "0.9.29",
@@ -244,7 +253,7 @@
           "size": 16820288,
           "minOSVersion": "16.0",
           "sha256": "e42395391365f643f866199ade9b7517b80a90c65b642ab1fde1b879db581c86",
-          "localizedDescription": "\nUn log de la Bravia (0.9.28, ExoPlayer, directo Smooth de 1080p) acaba en ANR\ncon 1704 MB de PSS tras minutos de tirones. El montón de Java iba en 18/36 MB,\nasí que lo que crece es memoria nativa; el log no dice qué. Revisado el código\nen busca de acumulaciones:\n\n- **Arreglado:** `ExoPlayerEngine.start` liberaba una sesión «caducada» con\n  `background.execute` aunque `release()` ya hubiera apagado el ejecutor:\n  `RejectedExecutionException` en el hilo principal y la sesión del núcleo\n  (proxies, alimentador Smooth) quedaba viva. Ahora se libera en un hilo\n  aparte si el ejecutor ya no acepta tareas (`MpvPlayer` ya lo protegía).\n- **Sin cambios, anotado:** el `LoadControl` en tiempo real de ExoPlayer para\n  Smooth pide 4× el búfer (120 s con 30 s) y con `prioritizeTimeOverSizeThresholds`\n  ignora el tope de bytes: ~100–150 MB por reproductor a 1080p, más con mayor\n  bitrate y × el número de reproductores en multiview. Tres diccionarios del\n  proxy HLS (`resourcesByToken`, `tokensByResource`, `explicitIVsByResource`)\n  crecen con cada segmento del directo y no se vacían: KB por hora, no explica\n  el caso. El alimentador Smooth no acumula (un fragmento a la vez, escritura\n  con contrapresión).\n- **Para medir:** el registro incluye ahora la pila del hilo principal de los\n  ANR («Cierres anteriores») y una línea «Memoria» cada 30 s mientras se\n  reproduce (total, Java, nativa, gráfica, código).\n- Probado en un OnePlus 7 Pro (64 bits, ExoPlayer, compilación de depuración):\n  LA 1 (ISML) 10 min seguidos con la memoria plana (307 → 315 MB de PSS),\n  12 aperturas y cierres de canales sin tendencia (318–343 MB), y BBC Top Gear\n  (ISML, el del log) con la memoria nativa en 57–66 MB durante 8 min, hasta\n  que el móvil se desconectó. No reproduce el problema de la Bravia (32 bits, 2\n  decodificadores); la pila del ANR no se ha podido forzar, sin probar."
+          "localizedDescription": "**English**\n\n- Android: fixed a crash and memory issue after long playback.\n\n**Español**\n\n- Android: arreglado un cierre y un problema de memoria tras reproducciones largas."
         },
         {
           "version": "0.9.28",
@@ -253,7 +262,7 @@
           "size": 16820288,
           "minOSVersion": "16.0",
           "sha256": "7feea2965848a136bd9a7e648130ead382965be15f008c624647f27883cd8db1",
-          "localizedDescription": "\n- Un perfil Dolby Vision 5 se ve morado y verdoso con ExoPlayer en una Bravia\n  VH21 y bien con mpv, sin que el log diga si la tele anuncia Dolby Vision\n  («BRAVIA 4K VH21» es una plataforma compartida por modelos con y sin él). El\n  encabezado del registro lleva ahora «Pantalla:» (tipos HDR que declara, la\n  misma consulta que usa ExoPlayer para elegir decodificador) y «Decodificadores\n  Dolby Vision:» con los perfiles de cada uno.\n- Prueba: con ExoPlayer, si el vídeo es HDR o Dolby Vision la ventana pide\n  `COLOR_MODE_HDR` (y lo deja en el de siempre al salir), por si la tele no\n  entraba en su modo HDR con el decodificador Dolby Vision. La Sony\n  XR-75X90K sí anuncia Dolby Vision; no hay certeza de que ésta sea la causa.\n  Compila; sin probar en aparato (no hay esa Bravia a mano)."
+          "localizedDescription": "**English**\n\n- Android: more diagnostic information about HDR and Dolby Vision.\n\n**Español**\n\n- Android: más información de diagnóstico sobre HDR y Dolby Vision."
         },
         {
           "version": "0.9.27",
@@ -262,7 +271,7 @@
           "size": 16820286,
           "minOSVersion": "16.0",
           "sha256": "2a7a99548ecaac8abec456c48cff0c4c9b340d5a72f3da69b8899dd22fd8a8f4",
-          "localizedDescription": "\n- Un usuario con una Bravia VH21 veía mal los colores de una película con\n  ExoPlayer y bien con mpv. El registro no decía nada: en producción ExoPlayer\n  no escribía el decodificador ni el formato, solo en depuración. Ahora, al\n  abrir el vídeo, deja en el registro el decodificador elegido y el formato\n  (códec, tamaño, bitrate y primarios/transferencia/rango de color). No cambia\n  la reproducción; solo sirve para diagnosticar el siguiente log. Lo único que\n  se sabía de la película por el lado de mpv: H.264 1080p SDR, BT.709, rango\n  limitado, con `OMX.MTK.VIDEO.DECODER.AVC`."
+          "localizedDescription": "**English**\n\n- Android: ExoPlayer now records its decoder and video format in the log.\n\n**Español**\n\n- Android: ExoPlayer anota ahora en el registro su decodificador y el formato de vídeo."
         },
         {
           "version": "0.9.26",
@@ -271,7 +280,7 @@
           "size": 16820288,
           "minOSVersion": "16.0",
           "sha256": "db555683a3a75bd2b69a148e7c9da942d3d3e527fa2e9a82b896cba8559839fe",
-          "localizedDescription": "\nAviso de un usuario de Apple TV.\n\n- **Preferencias:** la pantalla no tenía desplazamiento vertical y no cabía:\n  empezaba a media tarjeta de OpenGL/Sistema y no bajaba de «Red». Ahora va en\n  un `ScrollView`.\n- **Fuentes y Guías EPG:** el foco de tvOS solo baja a lo que tiene justo\n  debajo, y bajo «Cerrar» o el campo del nombre no había nada enfocable (el\n  icono de la tarjeta, el título de la fila). Cabecera, tarjeta de añadir y\n  cada fila son ahora `focusSection`: desde cualquier botón se baja y se sube.\n- **Guía:** desde «Antes» no se bajaba a la rejilla (debajo están los nombres\n  de los canales); ahora sí. La guía abre con el foco en lo que se emite en el\n  primer canal en vez de en «Cerrar». La franja pasa de cuatro a dos horas,\n  como en iPad y Android, y la rejilla llega al borde de abajo en vez de\n  cortarse a media fila dejando una franja libre.\n- `--ui-testing-show-guide-sources` abre la gestión de guías para pruebas.\n- Probado en el simulador de Apple TV 4K pulsando el mando desde un test de\n  interfaz (`XCUIRemote`); no en un Apple TV real."
+          "localizedDescription": "**English**\n\n- tvOS: scrollable Preferences, better focus navigation and guide fixes.\n\n**Español**\n\n- tvOS: Preferencias con desplazamiento, mejor navegación con el mando y arreglos en la guía."
         },
         {
           "version": "0.9.25",
@@ -280,7 +289,7 @@
           "size": 16820288,
           "minOSVersion": "16.0",
           "sha256": "4dd6bf8b4cc2ede68d8faf8ca74d04f80d55c52af3bb276825e8196415da1f73",
-          "localizedDescription": "\n- Un MKV Dolby Vision perfil 7 (`dvhe.07.06`, el de los UHD) en una Shield:\n  el aviso de la 0.9.24 saltó bien («el aparato no decodifica»), pero se\n  puede ver. `DolbyVisionCompat` envuelve los extractores de archivos y, si\n  ningún decodificador Dolby Vision del aparato admite el perfil 7, presenta\n  la pista como HEVC: el decodificador HEVC reproduce la capa base (HDR10) e\n  ignora la de mejora. Sin muestra de perfil 7 a mano: comprobado solo que MP4\n  y MKV normales siguen abriendo."
+          "localizedDescription": "**English**\n\n- Android: Dolby Vision profile 7 files play as HEVC on devices without support.\n\n**Español**\n\n- Android: los archivos Dolby Vision perfil 7 se reproducen como HEVC en aparatos sin soporte."
         },
         {
           "version": "0.9.24",
@@ -289,7 +298,7 @@
           "size": 16820288,
           "minOSVersion": "16.0",
           "sha256": "de5f0a02e816395c944510630b9b8c7c8b0a20ed59448d09719092d698062744",
-          "localizedDescription": "\n- **Cierre al cambiar de motor (Android, desde 0.9.22):** la superficie de\n  vídeo no se recreaba al pasar de ExoPlayer a MPV (o al revés), así que el\n  motor nuevo no tenía dónde pintar y mpv abortaba\n  (`vo_mediacodec_embed: WinID != 0`), visto en una Bravia. Ahora hay una\n  superficie por reproductor (`key(player)`). Probado en un OnePlus 7 Pro en\n  los dos sentidos.\n- **ExoPlayer sin imagen:** Dolby Vision o AV1 que el decodificador del aparato\n  no puede («excede sus capacidades») fallan al momento con el aviso de probar\n  el otro motor; y si hay vídeo en el búfer pero ninguna imagen en 20 s,\n  también (visto en una Shield con Dolby Vision perfil 10 sobre AV1, que se\n  quedaba cargando sin decir nada).\n- **Sin decodificadores libres** (multiview en una Bravia, que solo tiene dos):\n  el mensaje lo dice en vez de «el aparato no sabe decodificar este vídeo».\n- **Núcleo:** si el alimentador de un Smooth falla (un 412 al empezar), se\n  cierra el flujo; antes el reproductor se quedaba esperando para siempre sin\n  reconectar ni avisar.\n- **ISML en directo con ExoPlayer (OnePlus 7 Pro):** tardaba ~50 s en arrancar\n  (mpv, 9 s) y luego se paraba cada minuto. Tres causas, todas del lado de\n  ExoPlayer: el ajustador de tiempos compartido por vídeo y audio (ahora uno\n  por flujo: el núcleo ya los hace empezar en el mismo punto, medido a 9 ms);\n  el control de búfer, que no sabía cuánto llevaba y esperaba a llenarlo\n  (ahora arranca en cuanto hay datos); y el lector progresivo, que se detenía\n  cada 1 MB a esperar permiso y frenaba al alimentador (ahora no se detiene).\n  Medido: arranca en 0,7 s y sin paradas en más de 3 minutos.\n- Solo en depuración: `EventLogger` de ExoPlayer al registro, y en el núcleo\n  el instante del primer fragmento de cada pista."
+          "localizedDescription": "**English**\n\n- Android: fixed a crash when switching player; clearer messages when ExoPlayer cannot decode a video.\n\n**Español**\n\n- Android: arreglado un cierre al cambiar de reproductor; mensajes más claros cuando ExoPlayer no puede decodificar un vídeo."
         },
         {
           "version": "0.9.23",
@@ -298,7 +307,7 @@
           "size": 16819322,
           "minOSVersion": "16.0",
           "sha256": "81c5fa1954aa1cc064352be5292fbada4de64b8dedc5b57a1e7ae04815a478fa",
-          "localizedDescription": "\n- El arreglo de la 0.9.22 (`vo=libmpv`) no bastaba: reproducido en el\n  simulador con cuatro HLS locales y `--ui-testing-multiview` (solo Debug:\n  entra en el multiview y añade un cuadro cada 8 s).\n- Causa 1: al entrar en el multiview, SwiftUI aún actualizaba la superficie\n  de pantalla completa que se iba y su `updateUIView` le quitaba el\n  reproductor a la del cuadro. Ahora la vista nueva se engancha al crearse,\n  `updateUIView` solo engancha si no hay ninguna, y al quitarse una vista el\n  vídeo vuelve a la anterior que siga viva (`IOSMPVPlayerSurface` y\n  `TVOSMPVPlayerSurface` con coordinador).\n- Causa 2: al soltar la vista anterior se libera el contexto de render y con\n  él la salida de vídeo de mpv, que no vuelve ni con `vo` ni quitando y\n  poniendo la pista. Con el vídeo en marcha, cambiar de vista vuelve a abrir\n  el canal (lo que no es directo, por donde iba).\n- Comprobado en el simulador: los cuatro cuadros con imagen y solo suena el\n  elegido. ExoPlayer y multiview probados además en un OnePlus 7 Pro real\n  (4 canales a 720p por hardware, unos 386 MB)."
+          "localizedDescription": "**English**\n\n- iOS and tvOS: fixed black tiles in Multiview.\n\n**Español**\n\n- iOS y tvOS: arreglados los cuadros negros en Multiview."
         },
         {
           "version": "0.9.22",
@@ -307,7 +316,7 @@
           "size": 16816912,
           "minOSVersion": "16.0",
           "sha256": "edd3158e4efbe3d89f6caedb110bb0626fe03a505b894ccd5288e8121ada0114",
-          "localizedDescription": "\n#### ExoPlayer como segundo motor (Android)\n\n- Preferencias → Reproductor → Motor: MPV (por defecto) o ExoPlayer. No viaja\n  con la sincronización: depende de lo que decodifique cada aparato.\n- `PlaybackEngine` (interfaz común) con `MpvPlayer` y `ExoPlayerEngine`\n  (Media3 1.11.1). Los dos preparan con el núcleo, así que proxies, Smooth y\n  claves son los mismos. La pantalla, el multiview y el traspaso entre ellos\n  usan la interfaz.\n- El núcleo da ahora también `manifest`, `headers` y `clearKeys` (KID → clave)\n  en `playback.prepare`. ExoPlayer descifra ClearKey con el de Android; se\n  añade la clave para el KID cero, como hace FFmpeg con la clave por defecto.\n- Smooth servido por el núcleo: `TimestampAdjuster` compartido (los tiempos\n  de la emisión empiezan en miles de millones) y `SmoothDrmExtractor`, que\n  pone un `pssh` común en las pistas (el MP4 del núcleo no lo trae y sin él\n  ExoPlayer no abre sesión DRM).\n- Subtítulos: `SubtitleView` encima del vídeo; los de addons van en el\n  `MediaItem` y se fuerzan al elegirlos. Sin subtítulos al empezar, como mpv.\n- Si un vídeo no abre, el aviso dice con qué motor falló y ofrece «Probar con\n  …» el otro solo para ese vídeo (como Stremio). En la tele, el botón toma el\n  foco y los mandos no se dibujan encima.\n- En el reproductor, Pistas → «Reproductor»: cambiar de motor sin salir del\n  vídeo (solo para ese vídeo). Lo que no es directo sigue por donde iba.\n- Probado en emulador (móvil y Android TV): HLS fMP4/TS/directo/AES-128, HLS\n  SAMPLE-AES de Movistar+ por el proxy, DASH VOD/directo, DASH ClearKey\n  (Axinom, Shaka, Orange), Smooth VOD corto y largo, Smooth en directo cifrado\n  de Movistar, MP4, MKV, addon con MP4/HLS/MKV y subtítulos de OpenSubtitles,\n  multiview de 4 canales (unos 171 MB PSS) y la reconexión cortando la red.\n  Sin probar en aparato real.\n\n#### Reconexión del directo (Android, iOS y tvOS)\n\n- Un directo que ya se veía y se corta (fin del flujo o error) se vuelve a\n  preparar a los 1, 2, 4, 8 y 16 s; tras un minuto bien, se cuenta de cero.\n\n#### Núcleo\n\n- `SmoothLiveFeeder`: el 412 es «fragmento aún no publicado» (Unified\n  Streaming), como el 404, y no corta el canal. Test añadido.\n\n#### Multiview (iOS y tvOS)\n\n- El primer cuadro se quedaba negro y se oía (lo reportó un usuario en\n  iPhone): al pasar el reproductor a la vista del cuadro se libera el\n  contexto de render de mpv y, con él, la salida de vídeo. Ahora se vuelve a\n  poner `vo=libmpv` al enganchar una vista nueva. Lo mismo al volver a\n  pantalla completa con otro cuadro. Compila; sin probar en aparato.\n\n#### mpv (Android)\n\n- Con la libmpv de Stremio el fin de archivo solo llega por `endFile`: un\n  canal que no abría se quedaba cargando para siempre. Ahora enseña el error."
+          "localizedDescription": "**English**\n\n- Android: ExoPlayer as a second player (Preferences → Player). iOS: Multiview fix.\n\n**Español**\n\n- Android: ExoPlayer como segundo reproductor (Preferencias → Reproductor). iOS: arreglo de Multiview."
         },
         {
           "version": "0.9.21",
@@ -316,7 +325,7 @@
           "size": 16813072,
           "minOSVersion": "16.0",
           "sha256": "c4fe43d22174f346a673a9776c42b44807b52f417ee1f09d287f918335a8b5f7",
-          "localizedDescription": "\n- Una Bravia (Android 12, 32 bits) cerró la app tras unos 40 minutos de un\n  contenido HLS SAMPLE-AES bajo demanda, con tirones antes. El registro,\n  mandado desde el arranque siguiente, no traía nada del proceso que falló:\n  el logcat se filtraba por el pid actual.\n- `DiagnosticsLog.kt`: el logcat ya no se filtra por pid. Android solo deja\n  leer las líneas de la propia app, así que ahora entran también las del\n  proceso anterior.\n- Nueva sección «Cierres anteriores» con `getHistoricalProcessExitReasons`\n  (Android 11 o posterior): motivo (sin memoria, fallo de Java o nativo, ANR…),\n  hora, importancia, PSS/RSS y la descripción del sistema de los últimos cinco.\n- Compila; no se ha probado en aparato."
+          "localizedDescription": "**English**\n\n- Android: the log now includes information about previous crashes.\n\n**Español**\n\n- Android: el registro incluye ahora información de cierres anteriores."
         },
         {
           "version": "0.9.20",
@@ -325,7 +334,7 @@
           "size": 16813074,
           "minOSVersion": "16.0",
           "sha256": "7c85155be5eef4b2db2ac702a8d3c0c9d72bd7c8fc4001334b583e5480cd5a50",
-          "localizedDescription": "\n#### Multiview (Android, iOS y tvOS)\n\n- Botón «Multiview» en el reproductor, solo en directo. El canal que se ve\n  pasa al primer cuadro de una cuadrícula de 2×2 con el mismo reproductor, sin\n  volver a abrirse (`MultiviewScreen.kt`; `IOSMultiviewView.swift`, compartido\n  por iOS y tvOS, con `IOSPlaybackHandoff` para volver a pantalla completa con\n  otro cuadro).\n- «+» añade un canal de la lista de zapping, empezando por el siguiente. Suena\n  solo el cuadro elegido: los demás van con `mute` y no con `aid=no`, porque en\n  directo volver a poner la pista deja el canal parado hasta que el audio\n  alcanza al vídeo.\n- Menú de cada cuadro: pantalla completa, cambiar canal, quitar. «Atrás» sale a\n  pantalla completa con el cuadro elegido.\n- Tope de calidad: `maxVideoHeight` en `PlaybackPreparation.prepare` (DASH, HLS\n  con ClearKey y Smooth) y `hlsBitrateCap` para `hls-bitrate` de mpv cuando\n  mpv ve el master entero. Los cuadros nuevos abren a ≤720p; con el cuarto,\n  todos. Tests: `QualityCapTests`.\n- Varios controladores a la vez en iOS/tvOS: la sesión de audio y el «no\n  apagar la pantalla» se sueltan cuando ya no queda ninguno.\n- Probado en el Chromecast con Google TV (4 canales a 720p por hardware, unos\n  670 MB). iOS y tvOS compilan pero no se han probado en aparato.\n\n#### Favoritos y recientes (Android, iOS y tvOS)\n\n- Petición de un usuario. Dos grupos fijos, «★ Favoritos» y «Recientes»,\n  delante de «Todos» (solo en el directo). Un canal se marca manteniéndolo\n  pulsado en la rejilla (`combinedClickable` en Android, `contextMenu` en\n  iOS/tvOS) o con la estrella del reproductor; las tarjetas favoritas llevan\n  una estrella. Recientes: los últimos 20 canales en directo abiertos, también\n  al zapear, del último hacia atrás.\n- Se identifican por grupo + nombre, que sobrevive a recargar la lista (el id\n  es la posición). Se guardan en cada aparato; no se sincronizan por Drive.\n- Con «Favoritos» elegido, el zapping y el selector del multiview se mueven\n  entre favoritos. Sin probar en aparato.\n\n#### Android: el APK de la actualización ya no se queda en el aparato\n\n- `cache/update/update.apk` (unos 60 MB) seguía ahí tras instalarse hasta que\n  Android vaciaba la caché. `AppUpdater` lo borra al arrancar.\n\n#### Proxies que no se quedan sin hilos\n\n- Los `accept()` de los proxies DASH/HLS, el servidor de Smooth y el DNS\n  bloqueaban hilos de `DispatchQueue.global` y del pool de Swift, que en\n  Android tienen un hilo por núcleo. Con cuatro canales en el Chromecast (4\n  núcleos) todo se quedaba en «Conectando…», y cambiar de canal muy seguido\n  podía atascarse igual. `BlockingIO` (en `LiveHTTPServer.swift`) los saca a\n  hilos propios.\n\n#### Android: el renderizado por sistema ya no se cae al reabrir\n\n- `checkSystemRenderer` miraba `hwdec-current` en cuanto había tamaño de\n  vídeo, también entre un archivo y otro (cambiar de calidad), cuando mpv\n  responde «no», y pasaba a `vo=gpu` sin motivo. Ahora mira al arrancar la\n  reproducción y solo con un vídeo abierto.\n\n#### «Enviar registro» llega por Telegram (Android)\n\n- El registro se manda al desarrollador con el bot @isplayer_registry_bot\n  (`DiagnosticsLog.sendToDeveloper`), con lo que el usuario cuente y un código\n  para identificarlo. Uno por minuto como mucho. «Compartir» sigue como\n  alternativa. Token y chat en `Config/GoogleOAuth.local.xcconfig` (fuera del\n  repo); sin ellos, la app solo ofrece compartir. Sin probar el envío desde un\n  aparato."
+          "localizedDescription": "**English**\n\n- New: Multiview (up to four channels, Android, iOS and tvOS). Favorites and recents.\n\n**Español**\n\n- Nuevo: Multiview (hasta cuatro canales, en Android, iOS y tvOS). Favoritos y recientes."
         },
         {
           "version": "0.9.19",
@@ -334,7 +343,7 @@
           "size": 16723515,
           "minOSVersion": "16.0",
           "sha256": "35c51f57906b16f8e0b3bb7e4da356a5a79c8ca558f00df33f96c61fa052945e",
-          "localizedDescription": "\n#### Catálogos JSON con el formato de OTT Navigator\n\n- El catálogo JSON ya era el «Media library file» de OTT Navigator\n  (https://ottnav.github.io/faq.html#media-library-file-json); ahora se lee\n  entero. `OTVNormalizer` (en `JSONPlaylistParser.swift`) deja el JSON como\n  si no trajera lo siguiente antes de decodificarlo:\n  - textos en BASE64 sin relleno, según el elemento técnico\n    `{ \"base64\": \"name,video\" }` (`*`: todos los textos);\n  - textos por idioma (`\"name:es\"`): manda el del idioma del aparato.\n- `headers` como objeto JSON (`{\"User-Agent\": \"…\"}`). Antes un objeto hacía\n  fallar la decodificación y el título desaparecía de la lista.\n- Temporadas y episodios sin número se numeran por su posición.\n- `backdrop` como fondo y `trailer` dentro de `info`, también como id de\n  YouTube suelto.\n- Los tráileres de YouTube (`VODMetadata.trailerYouTubeID`) ya no intentan\n  abrirse en mpv, que no puede: se abren en YouTube (Safari o la app en iOS,\n  la app en tvOS, `vnd.youtube:` o el navegador en Android).\n- Tests: `OTTNavigatorCatalogTests`, con el ejemplo oficial tal cual. Sin\n  probar en aparato con una lista real.\n\n#### Addons detrás de un proxy (Pictorium)\n\n- Un addon cuya dirección lleva parámetros\n  (`…/api/proxy/manifest.json?url=…&u=…`, el proxy de pósters de Pictorium)\n  perdía la query al pedir catálogos, fichas, enlaces y subtítulos. Ahora\n  `StremioAddonURL.query` se añade a cada recurso, como hace Stremio.\n- Cinemeta y OpenSubtitles se reconocen por su dirección, no por su id: un\n  proxy repite el id del addon que envuelve y se confundía con el de serie.\n- El addon propio de Pictorium (`/u/…/manifest.json`) ya funcionaba. Su\n  proxy responde hoy 403 a cualquier petición (lado servidor), así que esa\n  forma no se ha podido probar contra el servicio real."
+          "localizedDescription": "**English**\n\n- JSON catalogs in OTT Navigator format are now fully supported.\n\n**Español**\n\n- Los catálogos JSON en formato OTT Navigator se leen ahora enteros."
         },
         {
           "version": "0.9.18",
@@ -343,7 +352,7 @@
           "size": 16710485,
           "minOSVersion": "16.0",
           "sha256": "8d89dd2e6d3e8f6f87305ce3a17bb25962787931b0f9fd70f112e49f140e24b6",
-          "localizedDescription": "\n#### Subtítulos de addons (OpenSubtitles por defecto)\n\n- Los addons de Stremio con el recurso `subtitles` ya sirven: antes se\n  rechazaban como «no aporta nada». `StremioClient.subtitles` y\n  `subtitleOptions` piden a todos los activos que los dan para el id de IMDb\n  (`movie` o `series` con `tt…:temporada:episodio`) y `StremioSubtitles`\n  los ordena (idioma preferido, inglés, resto), los etiqueta («Español ·\n  OpenSubtitles v3») y deja como mucho cuatro por idioma.\n- **OpenSubtitles v3** (`opensubtitles-v3.strem.io`, gratis y sin cuenta)\n  viene con la app como Cinemeta: se instala al entrar en Addons y se puede\n  desactivar, no quitar (`StremioOfficialAddons.builtIn`).\n- En el reproductor, los vídeos de Addons añaden esos subtítulos al menú.\n  Nada se descarga hasta elegir uno: entonces mpv lo carga con `sub-add`\n  (asíncrono en iOS/tvOS, `MPV_EVENT_COMMAND_REPLY`) y se recuerda su pista\n  para volver a él sin descargarlo. Sin idioma de audio elegido, manda el del\n  sistema.\n- Probado en el OnePlus con «Matrix Reloaded»: subtítulo en español de\n  OpenSubtitles cargado y en pantalla. En iOS/tvOS compila, sin probar en\n  ejecución.\n\n#### Navegación en Addons (Android)\n\n- **El diálogo de «visto» se cerraba solo con el mando:** al abrirse con una\n  pulsación larga, las repeticiones y el soltado del mismo OK pulsaban\n  «Cancelar». `Modifier.ignoringHeldSelectKey()` las ignora hasta soltar; se\n  aplica a episodios de Addons y Bajo demanda, programas de la Guía y quitar\n  de «Seguir viendo»/«Ver más tarde». Probado con el mando en el emulador de\n  Android TV.\n- **Volver atrás llevaba al principio de Addons:** cada pantalla de la pila\n  guarda ahora su estado (`rememberSaveableStateHolder`): búsqueda,\n  desplazamiento y filtros; la última búsqueda se guarda para no repetirla.\n- La ficha de un título pasa los botones a otra línea en vez de estrechar el\n  último («Tráiler» salía en columna)."
+          "localizedDescription": "**English**\n\n- Subtitles from Stremio add-ons; OpenSubtitles built in.\n\n**Español**\n\n- Subtítulos de addons de Stremio; OpenSubtitles de serie."
         },
         {
           "version": "0.9.17",
@@ -352,7 +361,7 @@
           "size": 16686919,
           "minOSVersion": "16.0",
           "sha256": "e8f9c133bf05d2bfc8ef0b1dad58de6fffff8a4e9ec30fd5b956b6025afefcc6",
-          "localizedDescription": "\n- **El fallo:** con dos guías dadas de alta (Doble M y fullEPG), «Cuatro» del\n  HLS (`tvg_id` «Cuatro») y del DASH (`tvg-id` «4524») salía «Sin guía»; solo\n  el ISML, que trae el `id` exacto de Doble M («Cuatro HD»), la tenía.\n  `EPGSchedule` fundía los canales de todas las guías en un solo índice y el\n  nombre normalizado «cuatro» apuntaba a dos canales distintos («Cuatro HD» en\n  una guía, «C4» en la otra): se descartaba por ambiguo y todos los canales que\n  dependían del emparejado por nombre se quedaban sin guía.\n- **Ahora** (`EPGChannelMatcher.index(sources:)`) un nombre solo es ambiguo si\n  choca dentro de una misma guía. Entre guías distintas es el mismo canal y se\n  queda el de la primera guía de la lista que lo resuelve. El `tvg-id` exacto\n  sigue mandando.\n- Con las listas y guías reales del usuario, canales con guía: ISML 156 → 177,\n  HLS 99 → 168, M3U DASH 73 → 202. Comprobado en el OnePlus con «Cuatro» en\n  las tres listas.\n- Tests nuevos: `EPGSeveralGuidesTests`."
+          "localizedDescription": "**English**\n\n- Fixed: channels with several guides could lose their guide.\n\n**Español**\n\n- Arreglado: los canales con varias guías podían quedarse sin guía."
         },
         {
           "version": "0.9.16",
@@ -361,7 +370,7 @@
           "size": 16685231,
           "minOSVersion": "16.0",
           "sha256": "a6c03460e5c0613e11e715d4ee00bc7934031c6adbdc23768d0c8315bc96b71d",
-          "localizedDescription": "\n#### Arranque más rápido de los canales con muchas pistas\n\n- **El problema:** FFmpeg abre **todas** las pistas del manifiesto antes de\n  empezar, una detrás de otra y con su primer fragmento. En Movistar son dos\n  escalones de vídeo en conjuntos distintos, dos de avance rápido, seis audios\n  y cinco subtítulos: unas treinta peticiones y 6–9 s en cada cambio de canal,\n  en iOS y en Android.\n- **DASH (`DASHManifestPruner`):** queda una sola representación de vídeo en\n  todo el manifiesto (antes, una por `AdaptationSet`), se quitan los\n  conjuntos de avance rápido (`dashif.org/guidelines/trickmode`, que tampoco\n  se ofrecen ya como calidad), un solo audio y ningún subtítulo: los de MP4\n  (`wvtt`, `stpp`) el demuxer los descargaba pero mpv nunca tenía pista con\n  ellos. El proxy DASH se monta ahora también cuando hay audios o subtítulos\n  que quitar.\n- **HLS cifrado (`HLSClearKeyProxy`):** un solo `#EXT-X-MEDIA` de audio y solo\n  el subtítulo pedido (`HLSMasterPlaylistParser.keepRenditions`); de las\n  copias de la variante de vídeo queda la que apunta al grupo de ese audio, o\n  se le cambia el grupo.\n- **Qué audio:** el elegido a mano o recordado en ese canal; si no, el del\n  idioma preferido (Ajustes), el que el manifiesto marca como principal o el\n  primero (`RenditionRequest`). Las pistas (`MediaRendition`) se numeran como\n  las numeraría mpv con el manifiesto entero, así que la pista recordada por\n  canal (`mpv:audio:N`, que viaja entre aparatos) sigue valiendo.\n- **El selector** sigue enseñando todos los audios (y en HLS todos los\n  subtítulos) desde el manifiesto; elegir otro vuelve a abrir el canal con él\n  (1,7 s en el OnePlus). Quitar los subtítulos o el audio es en caliente.\n  Hecho en iOS/tvOS (`IOSMPVPlaybackController`, `MPVTrackCatalogReader`) y en\n  Android (`MpvPlayer`, `IspPlayback`, `CorePlayback`).\n- **Medido en el OnePlus** (toque → primera imagen): Movistar DASH 9,0 → 1,9 s,\n  Movistar HLS 7,5 → 2,3 s, CMM 2,3 → 1,6 s, DAZN 3,2 → 2,7 s. En el\n  simulador de iPhone, Movistar de 3,3–6 s a ~0,8 s de apertura.\n- **Cierre de la app en Android al reabrir:** al cambiar de pista, a mpv le\n  quedaban peticiones al proxy anterior, cuya `URLSession` ya estaba\n  invalidada; en Android eso es un `fatalError` («Session invalidated»). Ahora\n  el proxy cerrado rechaza peticiones, cancela lo pendiente e invalida sus\n  sesiones diez segundos después (`ProxySessions.retire`).\n- Tests nuevos: `MediaRenditionTests` (DASH y HLS) y\n  `HLSMasterVariantPruneTests`.\n\n#### «ISPlayer» bajo el icono\n\n- En los cajones de apps no cabía «InputStreamPlayer» (el launcher del OnePlus\n  lo partía por dentro de la palabra). Bajo el icono ahora pone **ISPlayer**\n  en iOS, tvOS, Android (etiqueta de la actividad; la de la aplicación sigue\n  siendo «InputStream Player») y el Mac (`ISPlayer.app`). Dentro de la app se\n  sigue viendo el nombre completo."
+          "localizedDescription": "**English**\n\n- Faster start for channels with many tracks.\n\n**Español**\n\n- Arranque más rápido de los canales con muchas pistas."
         },
         {
           "version": "0.9.15",
@@ -370,7 +379,7 @@
           "size": 16655921,
           "minOSVersion": "16.0",
           "sha256": "4985c1f710117cd65aa6dd39c74cb3d79a2dfb812cbd44bcb3c797da4bcd14e5",
-          "localizedDescription": "\n- **Android:** `dev.jdtech.mpv:libmpv:1.0.0` (FFmpeg 8.1, Mbed TLS 3.6.6)\n  pasa a `com.github.Stremio:libmpv-android:v1.0.0-stremio01`, el fork de\n  Stremio del mismo proyecto: mpv 0.41.0, **FFmpeg 9.0.2** y **Mbed TLS\n  3.6.7**, con el mismo paquete `dev.jdtech.mpv`. Lo compila su CI desde el\n  código; JitPack solo reempaqueta el AAR de la release de GitHub (idéntico\n  byte a byte) y en `settings.gradle.kts` queda limitado a ese grupo. Mbed\n  TLS 3.6.7 corrige fallos de seguridad y de compatibilidad TLS 1.2/1.3.\n- La interfaz `EventObserver` de ese AAR añade `endFile(reason, error)`:\n  `MpvPlayer` anota en el registro el código de error de mpv cuando un\n  stream no abre, para que «Enviar registro» diga por qué.\n- **iOS, tvOS y macOS:** FFmpeg n9.0.1 → **n9.0.2** (unos 80 arreglos, muchos\n  de seguridad: escrituras fuera de límites, desbordamientos en mov, dash,\n  ogg…), FriBidi 1.0.16 → 1.0.17 y HarfBuzz 14.4.0 → 14.6.0 en los scripts\n  de `Tooling/{ios,tvos,poc0}`, sus README y el ADR-001. mpv sigue en 0.41.0\n  con los mismos parches.\n- Probado con cuatro listas reales (Movistar ISML, HLS y DASH ClearKey, DAZN\n  HLS, Vodafone por HTTP, Amazon y agiletv por HTTPS) en el simulador de\n  iPhone, el de Apple TV y el OnePlus en 64 y 32 bits. Los dos canales que no\n  abren tampoco lo hacían con la libmpv anterior (CDN de Movistar caído y un\n  403 de openstream)."
+          "localizedDescription": "**English**\n\n- Updated the playback libraries on all platforms.\n\n**Español**\n\n- Actualizadas las bibliotecas de reproducción en todas las plataformas."
         },
         {
           "version": "0.9.14",
@@ -379,7 +388,7 @@
           "size": 16632147,
           "minOSVersion": "16.0",
           "sha256": "b5b5cd01c7f6db8d487e5c6db70a0f4a8a75de78992681eab8b06f1ddccc420a",
-          "localizedDescription": "\n- **«Formato no válido» con `vod4`:** la ficha de la serie traía\n  `\"genre\": \"Drama\"` (texto en vez de lista) y un solo campo así tumbaba el\n  título, y con él la lista entera. La ficha se lee ahora campo a campo y sin\n  exigir tipos (`genre`, `cast`, `director`, `country` valen como lista o como\n  texto), los números de temporada y episodio pueden venir como texto, y un\n  título, temporada o episodio ilegible se salta en vez de anular la lista.\n- **`duration` en segundos** (3420) además de en minutos (47): por encima de\n  400 se toma como segundos.\n- **El 4K de Movistar no abría** («Unable to parse '' - missing root node» y\n  luego «Error when loading first fragment of playlist»). Tres fallos:\n  - `DASHManifestPruner` tomaba el primer `BaseURL` del documento como base de\n    todo, y en estos manifiestos el único va en la representación de\n    subtítulos: el vídeo y el audio quedaban relativos al proxy local. Ahora\n    solo cuenta un `BaseURL` del MPD o del `Period`; si no hay, se inyecta.\n  - El proxy DASH contestaba el manifiesto a **cualquier** ruta (un segmento\n    mal resuelto recibía otro manifiesto, que el demuxer pegaba al primero) y no\n    entendía `Range`. Ahora solo sirve `/manifest.mpd` (lo demás, 404) y\n    atiende `Range: bytes=N-` (206 / 416).\n  - Los subtítulos TTML sueltos (`application/ttml+xml` con un `BaseURL` a un\n    `.ttml`, sin plantilla de segmentos) se quitan del manifiesto: el demuxer\n    DASH de FFmpeg solo abre pistas en fragmentos MP4 y una que no puede abrir\n    tumba la reproducción. Los subtítulos en MP4 (`stpp`, `wvtt`) se quedan.\n- Probado en el OnePlus con la lista real y un token de Movistar válido:\n  «Sirat» en 4K HEVC, audio 5.1 en español."
+          "localizedDescription": "**English**\n\n- More tolerant JSON lists; fixed some 4K live channels that did not open.\n\n**Español**\n\n- Listas JSON más tolerantes; arreglados algunos canales 4K en directo que no abrían."
         },
         {
           "version": "0.9.13",
@@ -388,7 +397,7 @@
           "size": 16623442,
           "minOSVersion": "16.0",
           "sha256": "b49eee58219ed4cf13f1760332e644f46963f47db27575b602e6dda48086a0c7",
-          "localizedDescription": "\n#### Progreso de la descarga de actualizaciones (Android)\n\n- La fila **Buscar actualizaciones** enseña lo que hace el actualizador,\n  también cuando busca solo al abrir la app (antes descargaba sin que se viera):\n  «Descargando la versión 0.9.13… 45 % (27 de 61 MB)» con una barra de\n  progreso, y luego «Comprobando la descarga…» y «Abriendo el instalador…».\n  `AppUpdater.activity` es el estado; la descarga avisa cada 1 %.\n- Probado en el OnePlus con el feed de depuración (`ispUpdateFeed`) apuntando a\n  la release real con otra etiqueta: se ve el porcentaje y la barra.\n\n#### «Enviar registro» en Ajustes (Android)\n\n- **Ajustes → Preferencias → Ayuda → Enviar registro** (al final del todo: se usa muy de vez en cuando) prepara un `.txt` y abre «Compartir»\n  (Telegram, correo, Drive…); si el aparato no tiene con qué compartir, lo deja\n  en Descargas. Es para diagnosticar en aparatos que no tenemos (la Shield de un\n  usuario que no reproduce nada por HTTPS).\n- Lleva: versión, modelo, Android, ABIs y si el proceso es de 64 bits, los\n  ajustes que influyen (XDP DNS, renderizado, buffer), las últimas 3.000 líneas\n  de `core.log` y las últimas 6.000 del logcat de la app, donde mpv cuenta qué\n  abre y por qué falla (`[ffmpeg] tls: …`, `HTTP error …`).\n- **Se tapan los secretos** antes de compartir (`DiagnosticsLog.redact`): pares\n  ClearKey `kid:clave`, `cenc_decryption_key`, `alldebrid=` y demás debrid de\n  Torrentio, tokens y claves de cabeceras y parámetros (`x-tcdn-token`,\n  `api_key`, `Bearer`…) y los tramos largos de ruta con los que los addons\n  configurados guardan la configuración del usuario (`/c/AZqsUO…/` de Stremtir,\n  `enc_…` de Peerflix). Probado con un episodio real de AllDebrid en el OnePlus:\n  ninguna clave quedó a la vista."
+          "localizedDescription": "**English**\n\n- Android: update download progress and Send log in Settings.\n\n**Español**\n\n- Android: progreso de la descarga de actualizaciones y Enviar registro en Ajustes."
         },
         {
           "version": "0.9.12",
@@ -397,7 +406,7 @@
           "size": 16623441,
           "minOSVersion": "16.0",
           "sha256": "08bde45ae9d331ad8ef2da907ebdfddfd6294b73e881dd732092531c94530c82",
-          "localizedDescription": "\n- **La sinopsis de la serie** (`info.plot` del título) se perdía: cada episodio\n  se quedaba con la suya y la de la serie no iba a ningún sitio. Ahora viaja\n  aparte (`VODMetadata.seriesPlot`, `seriesPlot` en el núcleo de Android) y la\n  ficha de la serie la muestra. Un episodio sin sinopsis propia ya no hereda la\n  de la serie en su fila.\n- **La cabecera de una serie** no enseña la duración: la que había era la del\n  primer episodio («47 min»).\n- **Botones:** «Reproducir» y «Tráiler» van juntos (iOS: en la misma tarjeta;\n  Android: uno al lado del otro; tvOS: seguidos en la fila) y «Marcar vista»\n  pasa a la cabecera, debajo de los datos. Lo pidió un usuario.\n- Ganchos de prueba de iOS: `--playlist <ruta> --channel -1` carga la lista sin\n  reproducir nada, `--ui-testing-vod` vale también con `--playlist`, y\n  `--ui-testing-open-vod <título>` abre ese título."
+          "localizedDescription": "**English**\n\n- Series synopsis and a cleaner title page.\n\n**Español**\n\n- Sinopsis de la serie y ficha más limpia."
         },
         {
           "version": "0.9.11",
@@ -406,7 +415,7 @@
           "size": 16621480,
           "minOSVersion": "16.0",
           "sha256": "62445d75f1a8063e7b59ce6a5ed877f4b8dbcf86406301dcbc8c15da0de6bb3b",
-          "localizedDescription": "\n#### Tráileres en Addons (YouTube) y días de la Guía en español\n\n- **Botón «Tráiler» en las fichas de Addons.** El id de YouTube sale de TMDb,\n  en el idioma del aparato y si no en inglés (tráiler antes que teaser, oficial\n  antes que no oficial), o del propio addon (`trailerStreams` y `trailers` de\n  Cinemeta). A TMDb no se le hace ninguna petición más: los vídeos llegan en la\n  misma que la sinopsis (`append_to_response=videos`). Se abre en YouTube\n  porque mpv no puede reproducirlo (no llevamos yt-dlp): en Android y Google TV\n  con `vnd.youtube:` (o el navegador), en iOS con el enlace web (la app de\n  YouTube si está, o Safari) y en tvOS con `youtube://` (si no está la app, lo\n  avisa).\n- **Guía en iOS y tvOS:** el día de la semana del selector («Tuesday 6») salía\n  en el idioma del aparato. Ahora va en español, como «Hoy» y «Ayer», y como\n  ya lo hacía Android.\n- **«Vistos recientemente»:** «visto el 8 Oct» salía con el mes en el idioma\n  del aparato (`WatchDetailFormat` usaba `Locale.current`). Ahora, «8 oct».\n\n#### Fichas de los catálogos JSON: sinopsis, reparto, valoración y tráiler\n\n- **Películas con `videos: [...]`:** el catálogo del usuario da las películas\n  como una lista de versiones y no con `video`; por eso «Sirat» no salía. Se\n  usa la primera versión, con su propia ficha (`info.plot`, `duration`).\n- **La ficha (`VODMetadata`)**: sinopsis, valoración, año, géneros, reparto,\n  dirección, país, duración y tráiler, de `info` del título y de la versión o\n  el episodio (el episodio hereda lo de la serie). Lo vacío o a cero\n  (`\"rating\": \"0.0\"`, `\"year\": 0`, `\"plot\": \"\"`) no cuenta. Viaja al núcleo de\n  Android en `meta` de cada canal.\n- **En las fichas de «Bajo demanda»** (Android, iOS y tvOS): año, valoración y\n  duración junto al grupo; géneros; sinopsis plegable con «Ver más» (solo en\n  películas); dirección, reparto y país. Cada episodio enseña su duración y su\n  sinopsis. Las acciones quedan arriba, antes de la sinopsis.\n- **Botón «Tráiler»** si la lista lo trae: se reproduce como un vídeo sin clave\n  con las cabeceras del título (Android lo pide con el id del canal más\n  `#trailer`; `PlaylistEntry.trailerEntry`). Probado con el de «Sirat» (DASH\n  de Movistar, 1080p) en el OnePlus."
+          "localizedDescription": "**English**\n\n- Trailer button in Addons; Spanish weekday names in the guide.\n\n**Español**\n\n- Botón «Tráiler» en Addons; días de la semana en español en la guía."
         },
         {
           "version": "0.9.10",
@@ -415,7 +424,7 @@
           "size": 16557458,
           "minOSVersion": "16.0",
           "sha256": "a773514402cddf747993ed4a17e8c5bff72dc82688be3bbf242f020ec6d03812",
-          "localizedDescription": "\n#### Catálogos JSON con `video` y `seasons` (VOD)\n\n- `JSONPlaylistParser` entiende un tercer esquema: un catálogo de películas y\n  series donde cada título trae `name`, `category`, `info` (`poster`, `bg`),\n  `video`, `drm: \"clearkey\"` + `drmkey: \"kid:key\"` y `headers`\n  (`Nombre=valor&Otro=valor`, como el `stream_headers` de Kodi). Las series\n  traen `seasons[].episodes[]` con su propio `video`, `drm`, `drmkey` y\n  `headers`. Todo es bajo demanda; vale una lista o un único título.\n- Los episodios salen con su título (o «Episodio N») y su `SeriesInfo` (serie,\n  temporada y episodio), así que se agrupan en «Bajo demanda» como las series de las listas M3U. El póster es\n  el logo y `bg`, el fondo del reproductor. La sinopsis y el reparto de `info`\n  no se usan todavía.\n- Una clave `drmkey` mal formada descarta solo ese título; un `drm` que no sea\n  `clearkey` se reproduce sin clave. Una lista de canales no se confunde con un\n  catálogo (no tiene `video` ni `seasons`).\n- Probado con los dos ficheros de ejemplo, completados a mano porque\n  `vod2.txt` está cortado en mitad de la lista de episodios."
+          "localizedDescription": "**English**\n\n- JSON catalogs of movies and series are supported.\n\n**Español**\n\n- Se admiten catálogos JSON de películas y series."
         },
         {
           "version": "0.9.9",
@@ -424,7 +433,7 @@
           "size": 16546957,
           "minOSVersion": "16.0",
           "sha256": "ff28a1b7198522527deb4c75323849142cccd0e9715d5f873a629e9657d1c034",
-          "localizedDescription": "\n#### Información del canal desplazable con el mando (Android TV)\n\n- El diálogo de Información no se podía desplazar con el mando: el foco iba\n  directo al botón «Hecho» y lo que no cabía en pantalla quedaba fuera de\n  alcance. Ahora el contenido toma el foco: arriba y abajo lo desplazan y, al\n  llegar al final, abajo pasa a «Hecho» (y arriba vuelve al texto).\n- **Búfer en Información (Android):** nueva fila «Búfer» en Reproducción con los\n  segundos de vídeo que mpv tiene guardados por delante\n  (`demuxer-cache-duration`), como ya mostraban iOS y tvOS.\n\n#### Buffer configurable: directo y bajo demanda por separado\n\n- **Preferencias → Buffer** (Android, iOS y tvOS): segundos de vídeo por\n  adelantado para **Directo** (2–60 s, por defecto 30, como hasta ahora) y para\n  **Bajo demanda y addons** (10–300 s, por defecto 45). Lo segundo vale para\n  películas y episodios de listas, vídeos de addons y programas grabados, es\n  decir, todo lo que no es `isZappable`. Se aplica al abrir el siguiente vídeo.\n- Cambian `cache-secs` y `demuxer-readahead-secs` de mpv, y el tope de memoria\n  (`demuxer-max-bytes`) sube con los segundos: 3,2 MB por segundo, entre 96 y\n  384 MB. Son ajustes del aparato; no viajan con la sincronización.\n\n#### El zapping con arriba y abajo, solo en el directo\n\n- **Arriba y abajo (y el deslizamiento vertical en iOS) solo pasan de canal en el\n  directo.** Con una película, un episodio de una lista, un vídeo de un addon o\n  un programa grabado ya no cambian a otro canal: en Android y tvOS enseñan los\n  mandos, como el botón central, y en iOS no hacen nada. La regla es\n  `IOSLibraryChannel.isZappable` / `Channel.isZappable`: no es bajo demanda, no\n  lleva contexto de visto (addons) y no es catchup. El reproductor recibe el\n  zapping solo si el canal lo permite.\n- **El zapping nunca salta a una película:** con la pantalla en «Bajo demanda»,\n  los canales entre los que se zapea son todos los del directo\n  (`zapChannels`); antes salían de la lista filtrada, que ahí eran películas."
+          "localizedDescription": "**English**\n\n- Android TV: scrollable channel information. Configurable buffer for live and on-demand.\n\n**Español**\n\n- Android TV: información del canal desplazable. Buffer configurable para directo y bajo demanda."
         },
         {
           "version": "0.9.8",
@@ -433,7 +442,7 @@
           "size": 16544980,
           "minOSVersion": "16.0",
           "sha256": "92bf005f67e9e0776d993cdaa7b8c2ca5debb4de673d0be21624289d8f18b5e0",
-          "localizedDescription": "Novedades:\n- Nuevo selector «Directo / Bajo demanda» en Emisiones: las películas y series de tus listas salen aparte, con carteles, y no se mezclan con el directo.\n- Las series se agrupan: una tarjeta por serie, con sus temporadas y episodios.\n- Puedes reanudar por donde ibas, volver a empezar y marcar películas, episodios o temporadas como vistos. «Seguir viendo» aparece encima de los carteles.\n- Funciona en iOS, tvOS y Android (los APK siguen siendo arm64, armv7 y universal)."
+          "localizedDescription": "**English**\n\n- New Live / On-demand selector, series grouped, resume and watched marks.\n\n**Español**\n\n- Nuevo selector Directo / Bajo demanda, series agrupadas, reanudar y marcas de visto."
         },
         {
           "version": "0.9.7",
@@ -442,7 +451,7 @@
           "size": 16483652,
           "minOSVersion": "16.0",
           "sha256": "ce44e7361d22e36f3e070cb99798ca43bb9fd143575d47173434048f86c56aae",
-          "localizedDescription": "Novedades:\n- Tus listas personales de Trakt aparecen en la pestaña Addons (si has conectado Trakt): ábrelas para ver su contenido y entra en cualquier título.\n- Los botones «Ver más tarde» y «Vista» se distinguen ahora claramente cuando están activados.\n- Los enlaces de una película o serie se pueden filtrar por addon y por HDR, además de por calidad."
+          "localizedDescription": "**English**\n\n- Your Trakt lists in Addons; clearer buttons; filter links by add-on and HDR.\n\n**Español**\n\n- Tus listas de Trakt en Addons; botones más claros; enlaces filtrables por addon y HDR."
         },
         {
           "version": "0.9.6",
@@ -451,7 +460,7 @@
           "size": 16450127,
           "minOSVersion": "16.0",
           "sha256": "a9b87b17043b373e53e5984ec56666ed1e7cba64adf7bceb67eac25a997568c6",
-          "localizedDescription": "Novedades:\n- Nueva opción «Usar XDP DNS» en Preferencias › Red (desactivada por defecto): resuelve los nombres con el DNS cifrado de XDP en vez del de tu red. Puede arreglar canales o listas que no cargan por fallos o bloqueos del DNS de tu operador.\n- Funciona en iOS, tvOS y Android (los APK siguen siendo arm64, armv7 y universal)."
+          "localizedDescription": "**English**\n\n- New option \"Use XDP DNS\" in Preferences › Network (off by default).\n\n**Español**\n\n- Nueva opción «Usar XDP DNS» en Preferencias › Red (desactivada por defecto)."
         },
         {
           "version": "0.9.5",
@@ -460,7 +469,7 @@
           "size": 16420944,
           "minOSVersion": "16.0",
           "sha256": "7174df7e44f92fb5a36deb64266e6c1c3cb08ac5b0aedabc94e60430b018d375",
-          "localizedDescription": "Novedades:\n- Nueva fila «Vistos recientemente» en Addons; «Seguir viendo» solo muestra lo que está a medias.\n- Android: nuevo APK universal (arm64 + armv7) para quien no sepa cuál le toca, p. ej. Nvidia Shield. Siguen los APK arm64 y armv7 por separado.\n- Android: catchup con la ventana del programa.\n- iOS: la guía se mueve arrastrando en horizontal; al tocar una pestaña vuelve a su raíz."
+          "localizedDescription": "**English**\n\n- Recently watched row in Addons; universal Android APK; catch-up window; iOS guide scrolls by dragging.\n\n**Español**\n\n- Fila «Vistos recientemente» en Addons; APK universal de Android; ventana de catchup; la guía de iOS se mueve arrastrando."
         },
         {
           "version": "0.9.4",
@@ -469,7 +478,7 @@
           "size": 16418139,
           "minOSVersion": "16.0",
           "sha256": "68531e6b4bed5faacf0b0ffb71a619324a10706a34eea2a23cfa6b240af67387",
-          "localizedDescription": "\n- Incrementada y alineada la versión visible de iOS, tvOS y Android a `0.9.4`\n  (build 58). Android toma la versión del proyecto de iOS.\n- **Sinopsis en español en las tres plataformas.** Fichas y episodios de\n  Stremio/Cinemeta se traducen con TMDb (`GET /movie|tv/{id}?language=xx-XX`),\n  usando el idioma del sistema. Si el addon ya trae el texto en ese idioma o\n  TMDb no devuelve nada, se queda el que había. La serie grande se pide al\n  `tv/{id}` y las temporadas a `tv/{id}/season/{n}`, porque en un solo episodio\n  no sale el nombre de la serie.\n- **La clave de TMDb entra por la misma vía que las de Google y Trakt**: se\n  añade `ISP_TMDB_API_KEY` al `xcconfig` común y al `BuildConfig` de Android, y\n  cada app la publica en su `Info.plist`/build config. El valor real sigue\n  fuera del control de versiones; sin él, la app compila igual y las fichas se\n  quedan con la sinopsis en inglés.\n- **Sinopsis que ya no se cortan a trozos.** Ahora hay «Ver más» / «Ver menos»\n  donde el texto no cabe: en la ficha, en la fila de cada episodio y en la\n  guía EPG, en iOS, tvOS y Android. En tvOS la fila de episodio se expande al\n  enfocarla, porque un botón anidado dentro de otra fila clicable no recibe el\n  foco del mando.\n- **Zapeo con el mando y con gestos.** `ChannelUp`/`ChannelDown`, flecha\n  arriba/abajo en la superficie de vídeo y deslizar en vertical saltan al canal\n  contiguo dentro de lo que se está viendo (grupo + búsqueda), con vuelta al\n  principio al llegar al final. Sale un rótulo con el nombre del canal mientras\n  mpv pide el nuevo origen: en pantalla completa no hay nada más que mirar.\n- **El scroll de la rejilla de emisiones ya no se pierde** al abrir el\n  reproductor: el estado de scroll vive en la raíz, que sigue compuesta\n  mientras se reproduce, en lugar de dentro de la pantalla que se desmonta.\n- **En Android el «Ver más» se ha separado de la fila clicable y ocupa todo el\n  ancho.** El foco D-pad elige por distancia entre centros, así que un botón\n  estrecho a la izquierda perdía siempre contra la fila de al lado; y la\n  sinopsis envuelta en la fila hacía que el mando abriera el episodio en vez de\n  mover el foco. Toque único: la sinopsis de episodio ya no abre el episodio,\n  sigue haciéndolo su título.\n- **Nota de empaquetado:** `libISPAndroidCore.so` va precompilado en\n  `jniLibs`, así que cualquier cambio en el núcleo Swift hay que reconstruirlo\n  con `Android/scripts/build-swift-core.sh` antes de generar el APK; si no, el\n  APK sale con el núcleo viejo y los cambios «no llegan a Android»."
+          "localizedDescription": "**English**\n\n- Synopses in your language, via TMDb.\n\n**Español**\n\n- Sinopsis en tu idioma, mediante TMDb."
         },
         {
           "version": "0.9.3",
@@ -478,7 +487,7 @@
           "size": 16388676,
           "minOSVersion": "16.0",
           "sha256": "2f38b40062b6e69584eaed99e98c5f1236cce6c0c60dff85a7dcac6791638ed6",
-          "localizedDescription": "Trakt ahora se entera en cuanto termina el vídeo, no al salir de la pantalla: el historial y el punto de continuación se guardan igual que en Kodi.\n\nCambios completos en CHANGELOG.md."
+          "localizedDescription": "**English**\n\n- Trakt is updated as soon as the video ends.\n\n**Español**\n\n- Trakt se actualiza en cuanto termina el vídeo."
         },
         {
           "version": "0.9.2",
@@ -487,7 +496,7 @@
           "size": 16385771,
           "minOSVersion": "16.0",
           "sha256": "d169033b2dbea009801eb10d2abdab1641154ebc0938df60ba62de062238cc93",
-          "localizedDescription": "Overlay de carga estilo Stremio en las tres plataformas, diálogo de información unificado en Android y fila de cadencia (FPS) siempre visible en todas las plataformas.\n\nCambios completos en CHANGELOG.md."
+          "localizedDescription": "**English**\n\n- Stremio-style loading overlay, unified info dialog on Android and an always-visible frame rate row.\n\n**Español**\n\n- Pantalla de carga estilo Stremio, diálogo de información unificado en Android y fila de fotogramas por segundo siempre visible."
         },
         {
           "version": "0.9.1",
@@ -496,7 +505,7 @@
           "size": 16368568,
           "minOSVersion": "16.0",
           "sha256": "055a176a70c3728bcc0c0c5ab782ef7a7769f1fdb65a8e644da3bd19275a0a60",
-          "localizedDescription": "Novedades de 0.9.1 (build 55):\n• Ajustes → Actualizaciones → «Buscar actualizaciones»: comprueba si hay una versión nueva cuando quieras, sin esperar a la comprobación automática, y te cuenta qué está haciendo y el motivo exacto si algo falla.\n• El actualizador automático deja de callar los errores: sin conexión, sin APK para el equipo o con la firma distinta se explican en esa misma fila."
+          "localizedDescription": "**English**\n\n- Settings → Updates → \"Check for updates\"; the updater now explains errors.\n\n**Español**\n\n- Ajustes → Actualizaciones → «Buscar actualizaciones»; el actualizador explica ahora los errores."
         },
         {
           "version": "0.9.0",
@@ -505,7 +514,7 @@
           "size": 16368569,
           "minOSVersion": "16.0",
           "sha256": "b6c8ee3732dd578fd9cc5d3711c842f3b5ef2ff4e838fa05d4fb5819ff7cb0fa",
-          "localizedDescription": "Novedades de 0.9.0 (build 54):\n• Android: mientras se leen las listas se ve «Cargando canales» en lugar de «Sin resultados».\n• El formato de cada canal (HLS, DASH, ISML) baja al pie de la tarjeta en iOS, Android y Apple TV: se ve igual en las tres apps y no tapa el logo.\n• Con el mando, la barra de tiempo ya se puede usar: las flechas mueven el foco y el botón central activa el salto de 10 segundos.\n• El arranque de Android carga el núcleo y la configuración de guías y addons en segundo plano."
+          "localizedDescription": "**English**\n\n- Android: \"Loading channels\" while lists load. Format shown on each card. Remote-control seek bar.\n\n**Español**\n\n- Android: «Cargando canales» mientras se leen las listas. Formato en cada tarjeta. Barra de tiempo con el mando."
         },
         {
           "version": "0.8.3",
@@ -514,7 +523,7 @@
           "size": 16369829,
           "minOSVersion": "16.0",
           "sha256": "b79e0cc41b988b8b0a28248df67b1daccbb766026e42ee00e852667f110781cc",
-          "localizedDescription": "InputStream Player 0.8.3 (build 53).\n\nNovedades principales:\n- Arreglado: en Google TV la tele se iba a salvapantallas y se llevaba el vídeo mientras el audio seguía sonando, y en tablet la pantalla se atenuaba y se bloqueaba. La ventana se queda ahora encendida mientras se reproduce.\n- Arreglado: en pantalla completa la imagen salía estirada; la superficie del reproductor se dimensiona ahora con la proporción real del vídeo y se centra sobre el fondo negro.\n- Arreglado: con el renderizado por sistema, cierto Dolby Vision se oía pero no se veía; si el dispositivo no puede decodificarlo por hardware, se pasa al renderizado normal en lugar de quedarse sin imagen."
+          "localizedDescription": "**English**\n\n- Android: the screen stays on while playing; fixed stretched video and a Dolby Vision case with no picture.\n\n**Español**\n\n- Android: la pantalla se queda encendida al reproducir; arreglados el vídeo estirado y un caso de Dolby Vision sin imagen."
         },
         {
           "version": "0.8.2",
@@ -523,7 +532,7 @@
           "size": 16369828,
           "minOSVersion": "16.0",
           "sha256": "b2f534a421336cec374fed19d5183346a80100822b520103e1098c42d702852e",
-          "localizedDescription": "InputStream Player 0.8.2 (build 52).\n\nNovedades principales:\n- Se puede elegir la calidad de imagen en Android; cambiar de resolución ya no obliga a parar el canal.\n- El vídeo se dibuja por el sistema en Android («Renderizado por sistema», activado por defecto): menos consumo y menos tirones.\n- El HLS arranca bastante más rápido.\n- Android se actualiza solo: al abrir la app comprueba si hay una versión nueva y prepara la instalación.\n- Arreglado: en Android el filtro de variantes de HLS descartaba todas las de vídeo.\n- «Aparato» pasa a «Dispositivo» en los textos de sincronización."
+          "localizedDescription": "**English**\n\n- Android: picture quality selector, system rendering and faster HLS start.\n\n**Español**\n\n- Android: selector de calidad de imagen, renderizado por sistema y arranque de HLS más rápido."
         },
         {
           "version": "0.8.0",
@@ -532,7 +541,7 @@
           "size": 16369461,
           "minOSVersion": "16.0",
           "sha256": "48557fb0d0ce129b78990ed52a090446d939b7828355cd294a04a8eb858f7bfb",
-          "localizedDescription": "InputStream Player 0.8.0 (build 51).\n\nNovedades principales:\n- Nueva app de Android y Google TV, con el mismo núcleo Swift compartido por JNI.\n- Los proxies de HLS, DASH y Smooth Streaming pasan a un módulo compartido entre todas las plataformas.\n- Mejor estabilidad en HLS cifrado en directo.\n- Arreglos en sincronización y en listas JSON con claves mal escritas."
+          "localizedDescription": "**English**\n\n- New Android and Google TV app. More stable encrypted live HLS.\n\n**Español**\n\n- Nueva app de Android y Google TV. HLS cifrado en directo más estable."
         },
         {
           "version": "0.7.2",
@@ -541,7 +550,7 @@
           "size": 16336857,
           "minOSVersion": "16.0",
           "sha256": "db977a579095a44a59555780ed2721b692a280cb808d51c917343babbc60b416",
-          "localizedDescription": "\n- Incrementada y alineada la versión visible de iOS y tvOS a `0.7.2` (build 50). Incluye también la entrada siguiente.\n- **Arreglado el «cancelled» al conectar Trakt en el iPhone.** El enlace y\n  «Cancelar» iban en la misma fila de la lista, y en iOS tocar una fila pulsa\n  todos sus botones: abrir la página cancelaba la conexión sin que se viera.\n- **Los pasos, cada uno en su fila** (componente `IOSDeviceCodeRows`, para\n  Trakt y para Google con código):\n  1. La página de activación. Al tocarla se copia el código y se abre dentro\n     de la app.\n  2. El código grande, con botón de copiar.\n  3. Esperando.\n  4. «Ya lo he autorizado» (con tic), que pregunta en ese momento.\n  5. «Cancelar», aparte.\n- **Cerrar el navegador con la X no cancela:** solo pregunta en ese momento.\n- **Sin límite de tiempo:** si el código caduca, se pide otro y se enseña. Si\n  no hay red, se reintenta. Al volver a la app se pregunta enseguida. Solo se\n  deja de esperar con «Cancelar».\n- **El bloque ya no salta arriba** mientras hay un código, ni en iPhone ni en\n  Apple TV.\n- **Probado por el usuario** en el simulador de iPhone."
+          "localizedDescription": "**English**\n\n- Fixed the \"cancelled\" error when connecting Trakt on iPhone.\n\n**Español**\n\n- Arreglado el error «cancelled» al conectar Trakt en el iPhone."
         },
         {
           "version": "0.7.1",
@@ -550,7 +559,7 @@
           "size": 16326418,
           "minOSVersion": "16.0",
           "sha256": "f6c583befa1a6ec06d9b2565c92a1c39bfdbfb5a2e177a1c5b868f1644021748",
-          "localizedDescription": "\n- Incrementada y alineada la versión visible de iOS y tvOS a `0.7.1` (build 49).\n- **Arreglado: al conectar Trakt en el iPhone, la conexión fallaba al volver\n  de autorizar con «the network connection was lost».**\n  - Qué pasaba: se autorizaba en Safari en el mismo aparato, iOS congelaba la\n    app y cortaba la petición con la que preguntaba a Trakt si ya estaba\n    autorizado. Ese corte se tomaba como error y se descartaba el código,\n    aunque el usuario ya lo hubiera aceptado.\n  - Ahora los errores de red pasajeros (conexión perdida, tiempo agotado, sin\n    red) cuentan como «seguir esperando» y se sigue con el mismo código. Lo\n    mismo en el inicio de sesión de Google con código.\n- **En el iPhone, las páginas de Trakt y de Google se abren dentro de la app**\n  (Safari integrado), así que la app ya no pasa a segundo plano mientras se\n  autoriza.\n- **Con un código pendiente, su bloque va el primero** en «Ajustes ›\n  Sincronización», como ya pasaba en el Apple TV.\n- **Visto en el simulador:** 40 s en Safari y de vuelta, sigue esperando con el\n  mismo código.\n- **Confirmado por el uso real:** el iPhone del usuario, con el botón de Google\n  del navegador, aparece en la misma carpeta de Drive que el Apple TV (con\n  código)."
+          "localizedDescription": "**English**\n\n- Fixed Trakt connection failing after authorizing on iPhone.\n\n**Español**\n\n- Arreglado el fallo al conectar Trakt en el iPhone tras autorizar."
         },
         {
           "version": "0.7.0",
@@ -559,7 +568,7 @@
           "size": 16317071,
           "minOSVersion": "16.0",
           "sha256": "d324bcedb36dea3bee769a421c4acccd3e1bea2ab2fc824bc5e08bfc5bc4e60e",
-          "localizedDescription": "\n- Incrementada y alineada la versión visible de iOS y tvOS a `0.7.0` (build 48). Salto de versión menor por las funciones nuevas.\n\n- Plan en `docs/poc/plan-visto-y-sincronizacion.md`, que sustituye al punto a\n  punto (descartado: iOS y tvOS congelan las apps y dos aparatos solo se\n  sincronizarían si coincidieran abiertos).\n- **Núcleo** (`Sources/PlaylistKit/Sync/`, 12 pruebas nuevas):\n  - marca de tiempo lógica híbrida;\n  - registros «gana el último»;\n  - `SyncDocument` con títulos, vídeos, ajustes y aparatos. Juntar es\n    conmutativo, asociativo e idempotente (probado);\n  - reglas de Trakt: visto al 80 % y «continuar» entre el 2 y el 80 %.\n- **Addons, en iOS y tvOS**:\n  - marca de visto y barra de progreso en los pósters;\n  - filas «Seguir viendo» y «Ver más tarde» en la portada, con «Quitar»;\n  - en la ficha, «Continuar desde 23:14» o «Desde el principio», «Marcar\n    vista» y «Ver más tarde»;\n  - en series, «Continuar · T1E2», estado por episodio, marcar un episodio y\n    marcar la temporada.\n- **Reproductor:**\n  - arranca donde se dejó (`start` de mpv, una sola vez);\n  - guarda el progreso cada 15 s, al pausar y al cerrar;\n  - probado con un título real: retomó en 23:14 y guardó 24:13.\n- **Google Drive** (permiso `drive.file`, carpeta «InputStream Player», un\n  archivo por aparato):\n  - en iPhone, inicio de sesión en el navegador con PKCE; en Apple TV (y en\n    iPhone como alternativa), con código;\n  - tokens en el Llavero;\n  - se sincroniza al abrir, al volver a primer plano, 5 s después de cada\n    cambio y al pasar a segundo plano;\n  - «Ajustes › Sincronización» con cuenta, estado, nombre del aparato,\n    lista de aparatos y «Olvidar».\n- **Configuración sincronizada** elemento a elemento, con marca de «quitado»:\n  - fuentes por URL (con su clave), guías, addons, idioma de audio, pistas\n    recordadas y filtro de calidad;\n  - el motor de vídeo y la calidad de imagen no viajan, porque dependen del\n    aparato.\n- **Credenciales** en `Config/GoogleOAuth.local.xcconfig`, fuera de git, que\n  entran por `Config/ISPGoogle.xcconfig` (`#include?`). Sin ellas la app\n  compila y no ofrece sincronizar.\n- **Pruebas:** nuevos `--stremio-play`, `--ui-testing-sync-code` y\n  `--ui-testing-show-sync`.\n- **Probado con una cuenta real de Google** (inicio de sesión con código en los\n  simuladores de iPhone y Apple TV):\n  - del iPhone al Apple TV llegaron «Seguir viendo» con su progreso, «Ver más\n    tarde», 3 addons y 1 fuente;\n  - una película marcada vista en el Apple TV apareció vista en el iPhone;\n  - cada aparato ve a los dos en la lista.\n- **Ids externos de cada título:**\n  - de las fichas de los addons se leen `imdb_id` y `moviedb_id` (este puede\n    llegar como número o como texto), el propio id si ya es de IMDb, y un\n    enlace a IMDb en `links`;\n  - se guardan con lo visto (`TitleMeta.imdbID`/`tmdbID`), preparados para\n    Trakt;\n  - los documentos ya guardados sin ellos se siguen leyendo;\n  - 5 pruebas nuevas;\n  - Stremtir ya los publica: las películas con los dos ids, y las series de\n    momento solo con TMDB.\n- **Trakt, en las dos direcciones** (plan en `docs/poc/plan-trakt-y-sincronizacion.md`):\n  - **Conexión:** con código (`auth.trakt.tv/activate`) en iPhone y Apple TV,\n    una sesión por aparato y los tokens en el Llavero.\n  - **Bajar:** solo lo que cambió según `last_activities`: vistos (películas y\n    episodios), lo que va a medias y la watchlist. También detecta lo que se\n    quitó en Trakt.\n  - **Subir:** visto y no visto, y «Ver más tarde», agrupados y a una\n    escritura por segundo.\n  - **«Viendo ahora»:** *scrobble* desde los dos reproductores. Al pasar del\n    80 % lo apunta Trakt y no se duplica.\n  - **Sin duplicados entre aparatos:** copia «lo que Trakt tiene»\n    (`traktWatched`, `traktWatchlist`) que viaja por Drive.\n  - **Identificación:** solo títulos con IMDb o TMDB, emparejados con los del\n    addon. En TMDB se tiene en cuenta el tipo, porque película y serie pueden\n    compartir número.\n  - **Orden de cada sincronización:** Drive, luego Trakt y luego Drive. Sin\n    Google, Trakt va por su cuenta.\n  - **Pósters:** los de títulos venidos de Trakt salen de metahub a partir del\n    id de IMDb, como en Stremio, sin pedir nada.\n  - 12 pruebas nuevas.\n  - **Probado con una cuenta real:**\n    - bajó 2946 vistos de 344 títulos, la watchlist y las series en curso;\n    - subió 3 vistos y 2 títulos de «Ver más tarde» que solo estaban en la\n      app;\n    - el iPhone lo recibió todo por Drive sin tener Trakt conectado.\n- **«Seguir viendo»:** una serie con el último episodio terminado sale durante\n  60 días; algo a medias, durante un año. Con el historial de Trakt, 291 de 335\n  títulos tenían más de seis meses.\n- **Drive:** el documento se sube comprimido (LZFSE, cabecera `ISPZ1`); los\n  archivos antiguos, en JSON, se siguen leyendo. Con el historial de Trakt pasa\n  de 980 KB a unos 100. Probado entre los dos simuladores.\n- **Falta probar en un iPhone real:** el botón de Google en el navegador, y que\n  ese cliente vea los mismos archivos que el de la tele."
+          "localizedDescription": "**English**\n\n- Watched marks, Continue and Watch later in Addons (iOS and tvOS).\n\n**Español**\n\n- Marcas de visto, «Seguir viendo» y «Ver más tarde» en Addons (iOS y tvOS)."
         },
         {
           "version": "0.6.0",
@@ -568,7 +577,7 @@
           "size": 16001536,
           "minOSVersion": "16.0",
           "sha256": "407f7eb30dcfbafeaf49a8660aeb6ed7a8d73132eb80ac02602015ca2abebb15",
-          "localizedDescription": "\n- Incrementada y alineada la versión visible de iOS y tvOS a `0.6.0` (build 47). Salto de versión menor por el cambio de navegación y aspecto, aprobado por el usuario tras revisar las capturas.\n- Plan en `docs/poc/plan-rediseno-liquid-glass.md`. El vidrio es la capa de\n  control (barras, pestañas, chips, mandos, botones de tvOS); logos, pósters y\n  vídeo siguen opacos. Todo detrás de `#available(iOS 26, tvOS 26)`, con\n  material translúcido en versiones anteriores.\n- `ISPGlass.swift` (nuevo, compartido): `ispGlass`, `ISPGlassGroup`,\n  `ispGlassButton`, `ISPGlassChip` y `ISPAmbientBackground`, un fondo con dos\n  halos del verde de la marca.\n- **iOS**:\n  - **Navegación:** la barra lateral pasa a una barra de pestañas flotante\n    que se encoge al hacer scroll (Emisiones, Guía, Addons, Ajustes).\n    Fuentes, Guías EPG y Preferencias quedan dentro de Ajustes.\n  - **Emisiones:** chips de grupo en vidrio fijos bajo la barra; tarjetas sin\n    caja, con el formato en vidrio sobre el logo.\n  - **Reproductor:** oscuro, con los mandos en una cápsula de vidrio y la\n    pantalla completa en vidrio.\n  - **Addons:** chips de Explorar en vidrio y fondo de la película difuminado\n    tras la ficha.\n  - **Pruebas:** nuevo `--ui-testing-section settings`.\n- **tvOS**:\n  - `TVOSBrandButtonStyle` pasa a vidrio (con foco sigue blanco).\n  - Fondos ambientales y paneles de vidrio.\n  - Mandos del reproductor en un panel de vidrio flotante.\n  - Ficha con el fondo difuminado.\n  - **Pruebas:** nuevo `--ui-testing-keep-controls`, para capturar el\n    reproductor.\n- Textos que mandaban a «Fuentes» o «Guías EPG» ahora dicen «Ajustes › …».\n- **Addons: filtro por calidad** en la ficha (iOS y tvOS):\n  - **Chips:** las calidades que tiene ese título, con cuántos enlaces hay de\n    cada una («Todas · 12», «4K · 4», «1080p · 7»…).\n  - **Se recuerda** entre fichas (`stremioQualityFilter`).\n  - **«Reproducir»** elige el mejor enlace dentro del filtro.\n  - **Sin enlaces de esa calidad**, se ven todos: el filtro nunca deja una\n    ficha vacía.\n  - **Visto en el simulador:** con 4K recordado, la ficha solo enseña los 4 de\n    4K y el botón pasa a «Reproducir · 4K HDR»."
+          "localizedDescription": "**English**\n\n- New look and navigation for iOS and tvOS (Liquid Glass).\n\n**Español**\n\n- Nuevo aspecto y navegación para iOS y tvOS (Liquid Glass)."
         },
         {
           "version": "0.5.39",
@@ -577,7 +586,7 @@
           "size": 15967009,
           "minOSVersion": "16.0",
           "sha256": "a217a273d6e613504a00dbc69306ed119144ffa71223ae5c6aa7316d873800b4",
-          "localizedDescription": "\n- Incrementada y alineada la versión visible de iOS y tvOS a `0.5.39` (build 46).\n- **Arreglado: un canal DASH cuya dirección redirige a un manifiesto firmado\n  (`…/dash_high.mpd?token=…&cid=…&did=…`) no abría** («unrecognized file\n  format»). La app sirve a mpv una copia del manifiesto desde `127.0.0.1`, y\n  para que los segmentos relativos sigan resolviendo contra el origen le pone\n  un `BaseURL` absoluto. Ese `BaseURL` salía de `deletingLastPathComponent()`,\n  que conserva la query:\n  - metía un `&` sin escapar en el XML, y libxml2 no podía leerlo\n    («EntityRef: expecting ';'», «missing root node»);\n  - aunque se hubiera podido leer, los segmentos habrían quedado colgados\n    detrás de la query.\n\n  Ahora la base es el directorio del manifiesto sin query ni fragmento, que es\n  contra lo que resuelve un segmento relativo (RFC 3986), y todo lo que se\n  inserta en el XML va escapado. Los `$` de la ruta de sesión no molestan:\n  FFmpeg copia tal cual los `$…$` que no son campos de plantilla. Visto en el\n  simulador de iPhone con la URL del usuario: 1080p a 25 fps, audio AAC y\n  subtítulos. Dos pruebas nuevas en `DASHManifestPrunerTests`."
+          "localizedDescription": "**English**\n\n- Fixed: some DASH channels that redirect to the real manifest did not open.\n\n**Español**\n\n- Arreglado: algunos canales DASH que redirigen al manifiesto real no abrían."
         },
         {
           "version": "0.5.38",
@@ -586,7 +595,7 @@
           "size": 15965612,
           "minOSVersion": "16.0",
           "sha256": "bff5d7e71b7a85c0cbd70a7005e6f505d46612419fe86680a7a9a126ff5e906b",
-          "localizedDescription": "\n- Incrementada y alineada la versión visible de iOS y tvOS a `0.5.38` (build 45).\n- Incluye el plan aparcado de «visto», Trakt y sincronización entre aparatos (`docs/poc/plan-trakt-y-sincronizacion.md`).\n- **Los addons se activan y desactivan** como las fuentes de canales: en iOS\n  con un interruptor en cada fila de «Tus addons»; en tvOS con botones a la\n  vista (Ver, Refrescar, Activar/Desactivar, Eliminar). Un addon desactivado\n  sigue instalado con su configuración, pero no da filas, búsqueda, Explorar,\n  fichas ni enlaces.\n- **Cinemeta se puede desactivar, no quitar.** Si falta (primera vez, o sin red\n  la vez anterior) se vuelve a instalar al entrar en Addons; desaparecen el\n  bloque «Recomendado» y el botón «Añadir Cinemeta». Si solo quedan activos\n  addons de enlaces y Cinemeta está desactivado, la portada ofrece activarlo.\n- **Arreglado: Cinemeta salía dos veces y al quitar uno se iban los dos.**\n  `add()` comprobaba si ya existía antes de descargar el manifiesto y lo añadía\n  después; dos instalaciones seguidas pasaban las dos la comprobación. Ahora se\n  vuelve a comprobar tras la descarga, la instalación de Cinemeta no se lanza\n  dos veces a la vez, y al arrancar se quitan los repetidos ya guardados.\n  Comprobado en el simulador inyectando un Cinemeta repetido: al abrir queda\n  uno solo, también en lo guardado."
+          "localizedDescription": "**English**\n\n- Add-ons can be turned on and off.\n\n**Español**\n\n- Los addons se pueden activar y desactivar."
         },
         {
           "version": "0.5.37",
@@ -595,7 +604,7 @@
           "size": 15962431,
           "minOSVersion": "16.0",
           "sha256": "83b79f99d621b5fc7a47456d6e8b26d4007f82592140eb0f6cbf00bf0276cc58",
-          "localizedDescription": "\n- Incrementada y alineada la versión visible de iOS y tvOS a `0.5.37` (build 44).\n- **Cinemeta incluido**, como en Stremio: se instala solo la primera vez que se\n  entra en Addons (no al arrancar, para no gastar red a quien no usa la\n  sección). Da catálogos y fichas de películas y series con ids de IMDb. Si se\n  quita, no vuelve solo; «Tus addons» ofrece añadirlo de nuevo.\n- **Addons que solo dan enlaces** (Peerflix, Torrentio configurados con\n  debrid): antes se rechazaban por no tener catálogo; ahora se aceptan. Al abrir\n  un título se piden enlaces a todos los addons que los den para ese id, que es\n  como lo hace `stremio-core` (`AggrRequest::AllOfResource`). Los que solo\n  tienen subtítulos se siguen rechazando.\n- **La ficha se pide a cualquier addon que la resuelva**, primero al del\n  catálogo y luego al resto (`StremioRouting.metaSources`).\n- **Portada, búsqueda y Explorar**: la portada junta las filas de todos los\n  addons, con el tipo y el addon bajo cada título; la búsqueda pregunta a todos\n  a la vez; «Explorar» recorre cualquier catálogo por tipo, catálogo y género.\n  Los catálogos que exigen género (el «por año» de Cinemeta) empiezan por el\n  primero, como en Stremio. La gestión de addons pasa a «Tus addons».\n- Los catálogos de Cinemeta se muestran en español (Populares, Novedades,\n  Mejor valoradas).\n- Arreglado: los resultados de búsqueda ya no piden una segunda página (Cinemeta\n  respondía 504) y se titulan «Películas»/«Series» en vez de «Populares». Un\n  póster apaisado en una fila de verticales ya no se sale de su celda.\n- Distribución: la comprobación del arreglo de OpenGL ES para Mac en\n  `build-macos-playcover-ipa.sh` fallaba a veces aunque el arreglo estuviera:\n  con `pipefail`, `grep -q` cerraba la tubería y `strings` moría con SIGPIPE.\n  Ahora lee la salida entera.\n- Visto en los simuladores de iPhone y Apple TV con Cinemeta y un Peerflix con\n  debrid: portada, búsqueda, Explorar y la ficha de una película de Cinemeta con\n  seis enlaces 1080p de Peerflix. Para series, Peerflix da enlaces HTTP para los\n  ids de episodio de Cinemeta (11 para *Juego de Tronos* 1x1)."
+          "localizedDescription": "**English**\n\n- Cinemeta included; add-ons that only provide links are accepted.\n\n**Español**\n\n- Cinemeta incluido; se aceptan addons que solo dan enlaces."
         },
         {
           "version": "0.5.36",
@@ -604,7 +613,7 @@
           "size": 15917889,
           "minOSVersion": "16.0",
           "sha256": "69bd6992395aa44e1b9a3d5e8894883eb812626403d3618dc2c2b9a21633abfd",
-          "localizedDescription": "\n- Incrementada y alineada la versión visible de iOS y tvOS a `0.5.36` (build 43).\n- **Los canales Xtream sin extensión ya abren**: con una URL sin extensión\n  (`http://host:puerto/usuario/clave/id`), la app sondea el principio de la\n  respuesta para saber qué tipo de emisión es. El sondeo esperaba al cuerpo\n  entero, y un directo es un TS que no termina nunca: como el plazo solo cuenta\n  la inactividad, la apertura se quedaba para siempre en «Identificando el\n  manifiesto…», ocupando además la única conexión que suelen permitir estos\n  servidores. Ahora lee 4 KB y cierra. Comprobado contra un servidor local de\n  emisión continua: antes seguía colgado a los 40 s, ahora pasa en 0,3 s."
+          "localizedDescription": "**English**\n\n- Fixed: some channels with addresses without an extension did not open.\n\n**Español**\n\n- Arreglado: algunos canales con direcciones sin extensión no abrían."
         },
         {
           "version": "0.5.35",
@@ -613,7 +622,7 @@
           "size": 15917170,
           "minOSVersion": "16.0",
           "sha256": "ba0bf359e744da07d0355fac0f3c70ee5ac06067597094ee196e9f59345ce605",
-          "localizedDescription": "\n- Incrementada y alineada la versión visible de iOS y tvOS a `0.5.35` (build 42).\n- **Addons con catálogo de tipo `other`** (como Peerflix): se aceptan y se\n  muestran junto a los de películas y series.\n- **Streams incrustados en la meta**: algunos addons de debrid devuelven los\n  enlaces dentro de `videos[].streams` en lugar de por el endpoint `/stream`.\n  La app los usa directamente cuando están disponibles, y sigue llamando a\n  `/stream` como fallback para addons tradicionales.\n- Visto en simulador: Peerflix AD aparece, carga su catálogo «AllDebrid» y\n  enseña los títulos."
+          "localizedDescription": "**English**\n\n- More Stremio add-ons are accepted.\n\n**Español**\n\n- Se aceptan más addons de Stremio."
         },
         {
           "version": "0.5.34",
@@ -622,7 +631,7 @@
           "size": 15915522,
           "minOSVersion": "16.0",
           "sha256": "edf3007be697136ce66f3c15cbfeecf3a6523a40d812cd62953c510a8ae4224b",
-          "localizedDescription": "\n- Incrementada y alineada la versión visible de iOS y tvOS a `0.5.34` (build 41).\n- Recoge las entradas siguientes:\n  - **Motor de vídeo «Sistema» por defecto**: el vídeo se muestra sin OpenGL,\n    con la capa de vídeo del propio aparato. El 4K HDR de 10 bits, que antes\n    salía azul, se ve y en su formato. OpenGL queda como alternativa en\n    Preferencias.\n  - **Subtítulos** seleccionables desde el reproductor, apagados por defecto, y\n    las pistas de audio y subtítulos de los archivos directos (MKV/MP4) por fin\n    elegibles.\n  - **Addons de Stremio**: sección «Addons» con catálogo, búsqueda, géneros,\n    fichas de películas y series y todas las versiones de cada título\n    agrupadas por calidad.\n- Sin probar en Apple TV real: el motor «Sistema» y el botón atrás en las\n  pantallas de Addons."
+          "localizedDescription": "**English**\n\n- \"System\" video engine by default; subtitles; Stremio add-ons section.\n\n**Español**\n\n- Motor de vídeo «Sistema» por defecto; subtítulos; sección de addons de Stremio."
         },
         {
           "version": "0.5.33",
@@ -631,7 +640,7 @@
           "size": 15709683,
           "minOSVersion": "16.0",
           "sha256": "7578bed9e8dad63a60edb51a1f4dc1984ef104fec7db7122bc0888b3e85053d1",
-          "localizedDescription": "\n- Incrementada y alineada la versión visible de iOS y tvOS a `0.5.33` (build 40).\n- Recoge la entrada siguiente: cambiar de idioma en un directo ya no deja el\n  canal parado ni desfasado, nueva preferencia «Idioma de audio», la pista\n  elegida a mano se recuerda en cada canal, y en Apple TV el inicio pasa a 7\n  canales por fila, la guía muestra 4 horas con logos y el panel del\n  reproductor ocupa menos.\n- Incluye también `docs/poc/scope-picture-in-picture.md`: el PiP queda\n  analizado y aparcado para retomarlo."
+          "localizedDescription": "**English**\n\n- Audio language preference; the chosen track is remembered per channel.\n\n**Español**\n\n- Preferencia de idioma de audio; la pista elegida se recuerda en cada canal."
         },
         {
           "version": "0.5.32",
@@ -640,7 +649,7 @@
           "size": 15701042,
           "minOSVersion": "16.0",
           "sha256": "5780ecf96709bbc72c6d9d5ac36f1d4d8ce021d174afce35e2d1fb37e5827863",
-          "localizedDescription": "\n- Incrementada y alineada la versión visible de iOS y tvOS a `0.5.32` (build 39).\n- Recoge la entrada siguiente: la release incluye por primera vez una IPA para\n  Mac con Apple Silicon, instalable con PlayCover, con experiencia limitada (la\n  app de iPhone/iPad en una ventana). iPhone, iPad y Apple TV no cambian."
+          "localizedDescription": "**English**\n\n- The release now includes an IPA for Apple Silicon Macs.\n\n**Español**\n\n- La release incluye una IPA para Mac con Apple Silicon."
         },
         {
           "version": "0.5.31",
@@ -649,7 +658,7 @@
           "size": 15700958,
           "minOSVersion": "16.0",
           "sha256": "73220d223b00dcbc22e63e2e310939212e63c2336d25cc085780e72646d51ae1",
-          "localizedDescription": "\n- Incrementada y alineada la versión visible de iOS y tvOS a `0.5.31` (build 38).\n- Recoge la entrada siguiente. Sin cambios visibles para el usuario: corrige\n  cómo se prepara la superficie de vídeo para que cumpla las reglas de iOS."
+          "localizedDescription": "**English**\n\n- Internal video surface fix; no visible changes.\n\n**Español**\n\n- Arreglo interno de la superficie de vídeo; sin cambios visibles."
         },
         {
           "version": "0.5.30",
@@ -658,7 +667,7 @@
           "size": 15699309,
           "minOSVersion": "16.0",
           "sha256": "d7b9b36e7ab8dfd199fbdd72b8ed21791c7514c2065f6aca2fb23e52846aff9b",
-          "localizedDescription": "\n- Incrementada y alineada la versión visible de iOS y tvOS a `0.5.30` (build 37).\n- Recoge la entrada siguiente: nueva preferencia «Calidad de imagen», con\n  «Eficiente» por defecto para aligerar el trabajo de pintar cada fotograma,\n  sobre todo en equipos antiguos y en Apple TV 4K. «Alta calidad» conserva el\n  comportamiento anterior."
+          "localizedDescription": "**English**\n\n- New \"Image quality\" preference, \"Efficient\" by default.\n\n**Español**\n\n- Nueva preferencia «Calidad de imagen», «Eficiente» por defecto."
         },
         {
           "version": "0.5.29",
@@ -667,7 +676,7 @@
           "size": 15694561,
           "minOSVersion": "16.0",
           "sha256": "2e6c2b5d6364a9854a9495b508d84690fb43f2b342920045f8554483596c444f",
-          "localizedDescription": "\n- Incrementada y alineada la versión visible de iOS y tvOS a `0.5.29` (build 36).\n- Recoge la entrada siguiente: la decodificación deja de copiar cada fotograma\n  a memoria normal y de vuelta. Es el cambio de rendimiento más grande que ha\n  tenido la reproducción hasta ahora, y no toca ni una línea de la interfaz.\n- **tvOS va sin probar en aparato.** El cambio es el mismo código y la misma\n  biblioteca reconstruida, y en iPhone el color sale correcto, pero un Apple TV\n  no ha visto todavía esta versión. Si el color saliera mal, se vuelve atrás\n  con una línea."
+          "localizedDescription": "**English**\n\n- Much faster video decoding.\n\n**Español**\n\n- Decodificación de vídeo mucho más eficiente."
         },
         {
           "version": "0.5.28",
@@ -676,7 +685,7 @@
           "size": 15627244,
           "minOSVersion": "16.0",
           "sha256": "b576ba02ab50310f977d19c660433ea0aa0fd7597db7263e8ee97ececc97c5f0",
-          "localizedDescription": "Arreglos de campo\n\n• Los menús ya no van a tirones mientras se reproduce: el vídeo se componía en el hilo principal y ahora va en el suyo.\n• Apple TV: no se descargaba ninguna guía EPG. Las instantáneas iban a una carpeta donde tvOS no deja escribir.\n• Apple TV: ya se puede cambiar de pista de audio y de imagen. El panel se cerraba solo a los tres segundos y no respondía al OK.\n• «Ver desde el principio» seguía con el directo en lugar de ir al inicio del programa.\n• Una guía que no se descarga ahora dice por qué, en su propia fila.\n• Las listas con varias claves en una misma línea descifran mejor: se manda también una clave de reserva."
+          "localizedDescription": "**English**\n\n- Smoother menus during playback; Apple TV guide and track switching fixed.\n\n**Español**\n\n- Menús más fluidos durante la reproducción; arreglados la guía y el cambio de pistas en Apple TV."
         },
         {
           "version": "0.5.27",
@@ -685,7 +694,7 @@
           "size": 15614498,
           "minOSVersion": "16.0",
           "sha256": "9c125c4afcd6adf4b1435c5030833894855cd996b57d30034501b2bab3dbe13a",
-          "localizedDescription": "Guía navegable\n\n• La guía abre en rejilla y llega hasta ocho días atrás, para poder elegir un programa ya emitido.\n• Los canales sin guía, y los huecos de los que la tienen a ratos, se rellenan con bloques de una hora para poder saltar a un momento concreto.\n• Una guía añadida a mano se actualiza sola cada doce horas; antes se descargaba una vez y no volvía a mirarse.\n• tvOS: seis canales por fila en Emisiones, y en la rejilla el mando ya no se para en el borde de la franja horaria.\n• tvOS: el IPA lo rechazaban algunos instaladores de sideloading. Corregido."
+          "localizedDescription": "**English**\n\n- Navigable guide: grid view up to eight days back, hourly blocks for channels without guide.\n\n**Español**\n\n- Guía navegable: rejilla hasta ocho días atrás y bloques de una hora para canales sin guía."
         },
         {
           "version": "0.5.26",
@@ -694,7 +703,7 @@
           "size": 15606908,
           "minOSVersion": "16.0",
           "sha256": "b06cd7008664edd96b94d3130816a8f982a5f05fb975a291c92d1984e2ddf890",
-          "localizedDescription": "Catchup: ver programas ya emitidos\n\n• Desde la guía puedes pulsar un programa que ya pasó y verlo, si tu lista trae archivo. Funciona en iOS y en tvOS.\n• Se lee el formato de catchup de las listas M3U (catchup, catchup-source, catchup-days…) y los campos catchup_url y catchup_key de las listas JSON, con su clave propia.\n• El programa se sirve según se ve, sin descargarlo entero, y la barra de tiempo permite saltar a cualquier minuto.\n• La guía conserva ahora los programas ya emitidos, así que el pasado se va llenando día a día hasta lo que cubra tu archivo.\n• Botón de información con resolución, códecs y tasa de bits, y el código del servidor cuando un canal no abre.\n• tvOS: el selector de pistas y el de día pasan a un panel, y se arreglan los rótulos que se partían en dos líneas."
+          "localizedDescription": "**English**\n\n- Catch-up: play programmes that already aired, if your list provides it.\n\n**Español**\n\n- Catchup: reproduce programas ya emitidos, si tu lista lo permite."
         },
         {
           "version": "0.5.25",
@@ -703,7 +712,7 @@
           "size": 15541729,
           "minOSVersion": "16.0",
           "sha256": "3ddb4067143bf0b821b08ed140bb2d355b82888b9facbbe7b3909846148b3b9d",
-          "localizedDescription": "Una clave por calidad\n\n• Los canales cuyo manifiesto cifra cada calidad con una clave distinta ya arrancan: las pistas cuya clave no está en la lista se descartan en vez de tumbar el canal entero.\n• Esas calidades tampoco aparecen ya en el selector de imagen, porque no se pueden ver.\n• Corregido un fallo de la versión anterior que hacía que los canales DASH con una sola clave usaran el juego de claves indexado, y con algunos operadores eso no descifra."
+          "localizedDescription": "**English**\n\n- Channels that use a different key per quality now start.\n\n**Español**\n\n- Los canales con una clave distinta por calidad ya arrancan."
         },
         {
           "version": "0.5.24",
@@ -712,7 +721,7 @@
           "size": 15536527,
           "minOSVersion": "16.0",
           "sha256": "81d3f8fd40202ec07bd3a3a82e41c09e358516cda8a4cc23e04d45952c0c7da2",
-          "localizedDescription": "Información de la emisión\n\n• Botón de información en el reproductor: resolución, fotogramas por segundo, códecs, tasa de bits, sonido y si la decodificación va por hardware o por CPU.\n• Cuando un canal no abre, se enseña el código con el que contestó el servidor (401, 403, 404, 429, 502…) y qué significa, en vez de un «fallo al cargar» a secas.\n• Disponible en iOS y en tvOS."
+          "localizedDescription": "**English**\n\n- Information button in the player; clearer messages when a channel does not open.\n\n**Español**\n\n- Botón de información en el reproductor; mensajes más claros cuando un canal no abre."
         },
         {
           "version": "0.5.23",
@@ -721,7 +730,7 @@
           "size": 15517182,
           "minOSVersion": "16.0",
           "sha256": "8582c6850a9ea8d1947e7e7d4b8e4129cdc28a35e99d8ad3b83d9820b83f3835",
-          "localizedDescription": "Canales con varias claves\n\n• Los canales que declaran una clave por pista ya funcionan. Antes ni aparecían en la lista.\n• Se aceptan las tres formas de escribirlas: kid:clave, varias separadas por comas, y el objeto JSON.\n• Con varias claves se descifran todas las pistas. Antes, de haberlas leído, habrías tenido imagen sin sonido o al revés."
+          "localizedDescription": "**English**\n\n- Channels with several keys now work.\n\n**Español**\n\n- Los canales con varias claves ya funcionan."
         },
         {
           "version": "0.5.22",
@@ -730,7 +739,7 @@
           "size": 15511798,
           "minOSVersion": "16.0",
           "sha256": "2396c972d8501e1a32efd1e08a871931b5d81eeda7fc93092f37376907e017fe",
-          "localizedDescription": "Direcciones que redirigen al manifiesto\n\n• Ya funcionan las URLs que no acaban en .mpd o .m3u8 y redirigen al manifiesto real, como las de un proxy. Antes ni se reconocía el formato ni se reproducía.\n• Arreglado un fallo que mandaba los segmentos al servidor equivocado en cualquier canal DASH con varias calidades que llegue por redirección.\n• Si tu lista declara el tipo con KODIPROP, se sigue respetando."
+          "localizedDescription": "**English**\n\n- Addresses that redirect to the manifest now work.\n\n**Español**\n\n- Ya funcionan las direcciones que redirigen al manifiesto."
         },
         {
           "version": "0.5.21",
@@ -739,7 +748,7 @@
           "size": 15505026,
           "minOSVersion": "16.0",
           "sha256": "1e1a640f5cecbe593fc24aa018f49add0814546f815be5e04d2b2f2fc212e435",
-          "localizedDescription": "La guía, a tu manera\n\n• La guía sigue el orden de tus listas en vez del alfabético.\n• Nuevo filtro por grupo en la guía, para ir directo al que te interesa sin recorrerla entera.\n• Si tienes un canal en varios grupos, ahora aparece en todos y cada uno reproduce su propia versión.\n• Las categorías de Emisiones también salen en el orden de tus listas.\n• Añadir una fuente o una guía se ve más claro: cada forma de hacerlo en su bloque y con su botón."
+          "localizedDescription": "**English**\n\n- The guide follows your list order and can be filtered by group.\n\n**Español**\n\n- La guía sigue el orden de tus listas y se puede filtrar por grupo."
         },
         {
           "version": "0.5.20",
@@ -748,7 +757,7 @@
           "size": 15509203,
           "minOSVersion": "16.0",
           "sha256": "f85ae7c6fda93c2b9c1e5c6101fa8efd55192040b35a50726876519b85575e6d",
-          "localizedDescription": "Arreglada la guía que dejaba de responder\n\n• Al entrar en un canal desde la guía, volver atrás y entrar otra vez, la app se quedaba sin responder a nada. Ya no.\n• Volver a tocar la sección en la que ya estabas vuelve a abrirla.\n• La lista de la guía deja de leer del disco la sinopsis de cada canal cada vez que se dibuja."
+          "localizedDescription": "**English**\n\n- Fixed the guide becoming unresponsive.\n\n**Español**\n\n- Arreglada la guía que dejaba de responder."
         },
         {
           "version": "0.5.19",
@@ -757,7 +766,7 @@
           "size": 15502036,
           "minOSVersion": "16.0",
           "sha256": "8b5c23fd9973dbd50abc028bc42c0091f043eb90339e619005550d35683bf05c",
-          "localizedDescription": "Guía mucho más rápida\n\n• Entrar en la guía ya no deja la app bloqueada en dispositivos modestos: la pantalla se monta al instante.\n• Arrancar la app y refrescar una guía dejan de dar tirones; ahora el trabajo pesado va en segundo plano.\n• La rejilla muestra una ventana de dos horas que se mueve con las flechas, y va suelta aunque tengas cientos de canales.\n• Menos espacio ocupado: las sinopsis se guardan aparte y solo se leen al abrir un canal."
+          "localizedDescription": "**English**\n\n- Much faster guide.\n\n**Español**\n\n- Guía mucho más rápida."
         },
         {
           "version": "0.5.18",
@@ -766,7 +775,7 @@
           "size": 15487764,
           "minOSVersion": "16.0",
           "sha256": "098fde2758f1dc36a742a6ecf1daf20d9a4550154d8cf301cf43c3121a4ac8dc",
-          "localizedDescription": "Guía de programación (EPG)\n\n• Nueva sección Guía: mira qué están dando en cada canal, en lista o en rejilla, y salta a reproducirlo desde ahí.\n• Alta de guías XMLTV por URL, comprimidas o no, con refresco automático. Si tu lista ya trae la suya declarada, se da de alta sola.\n• Las tarjetas de canal muestran qué hay ahora y qué viene después.\n• El reproductor enseña el programa en curso y el siguiente.\n• Ya se aceptan enlaces de Google Drive: pega el de compartir y funciona."
+          "localizedDescription": "**English**\n\n- New: programme guide (EPG).\n\n**Español**\n\n- Nuevo: guía de programación (EPG)."
         },
         {
           "version": "0.5.17",
@@ -775,7 +784,7 @@
           "size": 15294620,
           "minOSVersion": "16.0",
           "sha256": "51d93418dab3c005b5218213769149e5c220f00f6077e1f2bf4b35cff7a939a3",
-          "localizedDescription": "Al girar el móvil a horizontal el vídeo pasa a pantalla completa. Además, borrar una lista ahora pide confirmación."
+          "localizedDescription": "**English**\n\n- Rotating to landscape goes full screen; deleting a list asks for confirmation.\n\n**Español**\n\n- Al girar a horizontal el vídeo pasa a pantalla completa; borrar una lista pide confirmación."
         },
         {
           "version": "0.5.16",
@@ -784,7 +793,7 @@
           "size": 15288146,
           "minOSVersion": "16.0",
           "sha256": "c2a372dfddef406c16acced4c8ccb7179daa22f762b83bffa62686ed2f33ce95",
-          "localizedDescription": "Los canales DASH en directo ahora abren mucho más rápido: de casi un minuto a unos pocos segundos."
+          "localizedDescription": "**English**\n\n- Live DASH channels open much faster.\n\n**Español**\n\n- Los canales DASH en directo abren mucho más rápido."
         },
         {
           "version": "0.5.15",
@@ -793,7 +802,7 @@
           "size": 15270393,
           "minOSVersion": "16.0",
           "sha256": "8791293418a81c80c83843b63a3f495bbb12820f3e8b515b3b853d3e33741b79",
-          "localizedDescription": "Corregido un fallo que cortaba la reproducción de muchos canales DASH en directo a los pocos segundos de empezar."
+          "localizedDescription": "**English**\n\n- Fixed playback of live DASH channels cutting out after a few seconds.\n\n**Español**\n\n- Arreglado un corte de los canales DASH en directo a los pocos segundos."
         },
         {
           "version": "0.5.14",
@@ -802,7 +811,7 @@
           "size": 15270437,
           "minOSVersion": "16.0",
           "sha256": "557462ac1aea2c33850b4cde042345c0e632d46fe292da1ed613df22be38baec",
-          "localizedDescription": "Nuevas listas personalizadas: crea tus propias listas y ve pegando canales en formato M3U, con la opción de borrarlos uno a uno."
+          "localizedDescription": "**English**\n\n- Custom lists: paste your own channels in M3U format.\n\n**Español**\n\n- Listas personalizadas: pega tus canales en formato M3U."
         },
         {
           "version": "0.5.13",
@@ -811,7 +820,7 @@
           "size": 15251204,
           "minOSVersion": "16.0",
           "sha256": "bb503000d044494eaa6df9fedf3ef04473c39e06934caaef922c9cf78c243309",
-          "localizedDescription": "Ahora puedes recargar tus listas cuando quieras, y programar que cada una se actualice sola cada X horas y minutos."
+          "localizedDescription": "**English**\n\n- Reload lists on demand or schedule automatic refreshes.\n\n**Español**\n\n- Recarga tus listas cuando quieras o programa su actualización automática."
         },
         {
           "version": "0.5.12",
@@ -820,7 +829,7 @@
           "size": 15224607,
           "minOSVersion": "16.0",
           "sha256": "474d77d0ba4743d6118d8c39867368fafe44f22c8032cd4560058e5bed0e7372",
-          "localizedDescription": "Las listas con alguna clave errónea ya se importan: solo se descarta el canal afectado en vez de fallar entera. Soporte para listas que declaran cabeceras en la propia URL."
+          "localizedDescription": "**English**\n\n- Lists with a wrong key now import; only the affected channel is dropped.\n\n**Español**\n\n- Las listas con alguna clave errónea ya se importan; solo se descarta el canal afectado."
         },
         {
           "version": "0.5.11",
@@ -829,7 +838,7 @@
           "size": 15223950,
           "minOSVersion": "16.0",
           "sha256": "56516ac27b62d64f83f9055809f7998e31af119b67d079219e997dd4a47a7930",
-          "localizedDescription": "Soporte para listas cifradas. Corregidos los fallos que impedían cargar listas guardadas en Windows y canales que necesitan cabeceras HTTP propias."
+          "localizedDescription": "**English**\n\n- Support for encrypted lists; fixes for lists saved on Windows and channels that need custom headers.\n\n**Español**\n\n- Soporte para listas cifradas; arreglos para listas guardadas en Windows y canales con cabeceras propias."
         },
         {
           "version": "0.5.9",
@@ -838,7 +847,7 @@
           "size": 15223389,
           "minOSVersion": "16.0",
           "sha256": "469328daadfe93b5aae096a5ade48ac3d90e7adc686e8852ac42f10851d1829d",
-          "localizedDescription": "MPD CBCD. Playlists .ispl (inputstreamplayer encriptadas). Corrección en canales que requieren cabeceras HTTP personalizadas."
+          "localizedDescription": "**English**\n\n- Encrypted .ispl playlists; fix for channels that need custom headers.\n\n**Español**\n\n- Listas .ispl cifradas; arreglo para canales con cabeceras propias."
         },
         {
           "version": "0.5.8",
@@ -847,7 +856,7 @@
           "size": 15194772,
           "minOSVersion": "16.0",
           "sha256": "fef0119eac45c0081f2c72444cb150907b778b760dbd73473844b7ae076b2e0b",
-          "localizedDescription": "Mejoras en código fuente"
+          "localizedDescription": "**English**\n\n- Internal improvements.\n\n**Español**\n\n- Mejoras internas."
         },
         {
           "version": "0.5.3",
@@ -856,7 +865,7 @@
           "size": 15191875,
           "minOSVersion": "16.0",
           "sha256": "5e9dfee5ef24f63502c197af0bd8db0f24de3c6c6c759ca096d11718e53b91c1",
-          "localizedDescription": "\n- Investigado si se podía sustituir el proxy HTTP local por un stream `stream_cb` de libmpv (sin socket, callback en proceso). Descartado con evidencia de código: `demux/demux_lavf.c:1067-1068` muestra que el demuxer HLS de FFmpeg abre variant playlists/keys/segmentos vía `nested_io_open` → `default_io_open`, el open **nativo** de FFmpeg — nunca pasa por `stream_cb` (que solo intercepta la apertura del fichero inicial de mpv, `stream/stream_cb.c`). Sin proxy HTTP real no hay forma de interceptar esas peticiones internas.\n- En su lugar, `HLSClearKeyProxy` ahora puede descifrar el segmento SAMPLE-AES él mismo antes de servirlo, en vez de reenviarlo cifrado para que lo descifre FFmpeg. Usa una nueva librería Rust vendorizada, `iori-ffi` (envuelve `iori-ssa`, `ThirdParty/src/iori-ssa/`, descifrado SAMPLE-AES de TS ya probado en producción por N_m3u8DL-RE/similares), compilada para `aarch64-apple-{darwin,ios,ios-sim,tvos,tvos-sim}` con `Tooling/rust/build-iori-ffi.sh` y expuesta a Swift como `CLibIoriFFI` (macOS, módulo SwiftPM) / vía bridging header (`iori_ffi.h`, iOS/tvOS).\n- Alcance deliberadamente acotado al caso seguro: solo descifra cuando hay IV **explícito** (atributo `IV=0x...` en `#EXT-X-KEY`, incluido el que ya materializa `HLSSampleAESPlaylistRewriter` desde un descriptor `skd://`) y la petición cubre el segmento desde el primer byte. Si el IV es implícito (número de secuencia, sin atributo) o el rango empieza a mitad de segmento, se reenvía sin tocar como hasta ahora — nunca peor que antes, solo deja de aplicarse la optimización para ese segmento.\n- Validando en Simulator con contenido real (Movistar+) se encontraron y corrigieron dos bugs que dejaban la optimización siempre inactiva en la práctica: (1) el escáner de IV explícito miraba la playlist *original*, pero la mayoría de orígenes reales codifican el IV dentro del propio descriptor `skd://` en base64, sin atributo `IV=` visible hasta que `HLSSampleAESPlaylistRewriter` lo decodifica y lo materializa al reescribir — ahora se escanea la playlist *reescrita*, emparejando línea a línea con la original (mismo número de líneas por contrato de `rewrite`) para conservar la URL de origen correcta como clave. (2) La condición exigía la ausencia total de cabecera `Range`, pero FFmpeg manda `Range: bytes=0-` incluso pidiendo el segmento completo — nunca sin cabecera — así que nunca se cumplía; se corrigió a \"empieza en el byte 0\", que es la condición real que importa para el estado CBC.\n- Al vendorizar `iori-ssa` se encontró y corrigió un bug de fondo: `decrypt_mpegts` volcaba los últimos paquetes PES pendientes de cada PID al final del segmento iterando un `HashMap`, cuyo orden de iteración es aleatorio por proceso en Rust — daba una salida no reproducible entre ejecuciones para segmentos con vídeo+audio cifrados simultáneamente (el caso normal). Se corrigió ordenando por PID antes de volcar (`ThirdParty/src/iori-ssa/src/lib.rs`). Verificado con `ffmpeg -f md5` por pista que el contenido decodificado es idéntico al de referencia en ambos casos (el desorden solo afectaba al orden relativo de los últimos ~6 paquetes TS entre PIDs distintos, no a ningún byte descifrado) — 5/5 ejecuciones consistentes tras el fix, frente a ~intermitente antes.\n- Tests unitarios nuevos en `iori-ffi` (Rust) contra fixtures reales AC-3/E-AC-3 SAMPLE-AES con clave/IV conocidos: coincidencia exacta con la referencia, detección de clave incorrecta, punteros nulos, entrada vacía.\n- Validado en Simulator iOS con la misma lista real usada en los pasos anteriores.\n- Incrementada y alineada la versión visible de iOS y tvOS a `0.5.3` (build 10)."
+          "localizedDescription": "**English**\n\n- Internal improvements.\n\n**Español**\n\n- Mejoras internas."
         },
         {
           "version": "0.5.2",
@@ -865,7 +874,7 @@
           "size": 14861505,
           "minOSVersion": "16.0",
           "sha256": "99678e49851197fc510d69b75049b307f1de00cfeb16a71ee79fbb8828af2457",
-          "localizedDescription": "\n- Segundo paso de optimización del arranque HLS ClearKey+SAMPLE-AES, tras el 0.5.1. `HLSMasterMetadataLoader.inspect` descarga la media playlist de la primera variante solo para distinguir TS de fMP4/CMAF, y ese cuerpo se descartaba. Ahora `HLSMasterInspection` lo expone (`sniffedVariant: HLSSniffedVariant?`) y `HLSClearKeyProxy.preparePlayback(for:prefetched:sniffedVariant:)` lo reescribe y lo prima en su caché (`primeSniffedVariant`, best-effort con `try?`) bajo la misma URL que calculará el rewriter del master para esa variante.\n- Si mpv acaba seleccionando justo esa variante (caso común: única variante, o automática = mayor bitrate = primera listada), se ahorra una segunda descarga real de su media playlist. Si elige otra, el dato simplemente no se usa — sin riesgo, sin cambio de comportamiento observable. Se marca `consumeOnce: true` igual que cualquier media playlist no primada, para que los refrescos de directo posteriores sigan yendo al origen.\n- Los tres puntos de llamada (`IOSMPVPlaybackController.swift` iOS/tvOS, `main.swift` y `GUIPlaybackSession.swift` macOS) pasan `inspection?.sniffedVariant`.\n- Validado en Simulator iOS con la misma lista real usada en el paso anterior.\n- Incrementada y alineada la versión visible de iOS y tvOS a `0.5.2` (build 9).\n\n- HLS con ClearKey + SAMPLE-AES legacy (TS) tardaba ~10-12s en arrancar. Parte de la causa: `HLSMasterMetadataLoader.inspect` descarga el manifiesto master para distinguir TS de fMP4, y justo después `HLSClearKeyProxy.preparePlayback` volvía a descargar el mismo master desde cero para reescribirlo — dos peticiones de red seriadas al mismo recurso antes de que mpv reciba una URL.\n- `HLSMasterInspection` ahora expone el cuerpo y la URL efectiva ya descargados (`rootPlaylist`, `rootEffectiveURL`). `HLSClearKeyProxy.preparePlayback(for:prefetched:)` acepta ese par opcional y se salta su propia descarga cuando lo recibe. Los tres puntos de llamada (`IOSMPVPlaybackController.swift` iOS/tvOS, `main.swift` y `GUIPlaybackSession.swift` macOS) pasan el resultado de `inspect()` en vez de descartarlo.\n- No cambia el comportamiento observable: mismo contenido, misma reescritura, mismo cacheo del master en el proxy — solo se ahorra una descarga real. El resto de causas identificadas (probesize forzado a 1 MiB, `cache-pause-wait=4`, la media playlist de la variante elegida sigue sin primar) quedan fuera de esta entrega, documentadas como optimizaciones futuras.\n- Validado en Simulator iOS con la lista real que reportó la lentitud original.\n- Incrementada y alineada la versión visible de iOS y tvOS a `0.5.1` (build 8); macOS no cambia de versión (comparte el fix de código, no tiene versión propia en este repo).\n\n- Un usuario reportó que en iPadOS, reproduciendo HLS, el vídeo \"se ralentiza y después acelera rápido hasta llegar al punto donde iba\". Causa: el render software de mpv (`MPV_RENDER_API_TYPE_SW`, introducido en el refactor a Metal del 2026-09-07) convierte cada frame a RGB en un único hilo de CPU — el propio `render.h` de mpv lo describe como \"extremely simple (but slow)... you probably don't want to use this\". Bajo la carga de CPU sostenida de iPadOS, ese hilo se atrasa del reloj de audio (independiente) y luego drena de golpe el backlog ya decodificado: el patrón exacto reportado.\n- `IOSMPVMetalView.swift`/`IOSMPVSoftwareMetalRenderer` se sustituyen por `IOSMPVRenderView.swift` (CAEAGLLayer + `EAGLContext(api: .openGLES3)` + `CADisplayLink`, la implementación real que existía antes del refactor a Metal, recuperada del historial). `IOSMPVPlaybackController` usa `gpu-api=opengl`.\n- En dispositivo se probaron `hwdec=videotoolbox` (interop de copia cero, `hwdec_ios_gl.m`) y `hwdec=auto-safe`; ambos dieron color incorrecto validado en un iPhone real. El propio `hwdec_ios_gl.m` (código de 2013/2017) intercambia formatos `GL_RED`/`GL_RG` por `GL_LUMINANCE`/`GL_LUMINANCE_ALPHA` para esquivar un error de `CVOpenGLESTextureCacheCreateTextureFromImage` en modo GLES3 (comentario del propio fichero); ese intercambio probablemente no informa bien al generador de shaders de mpv sobre el canal de croma resultante, produciendo el color equivocado — sin tocar mpv no hay forma limpia de confirmarlo o arreglarlo. Se cambia a `hwdec=videotoolbox-copy`: decodifica por hardware igual, pero copia el frame a memoria normal y sube la textura por la misma ruta que ya se confirmó con color correcto en Simulator (decodificación software con el mismo render OpenGL ES). Pendiente de validar en el iPhone real del usuario.\n- El Simulator mantiene `hwdec=no` y recupera el workaround `scale`/`cscale`/`dscale=bilinear` (los escaladores con LUT de mpv dejan una cuadrícula negra en el OpenGL ES emulado del Simulator al ampliar vídeo pequeño).\n- `Tooling/ios/build-libmpv-xcframework.sh` y `Tooling/tvos/build-libmpv-xcframework.sh`: `-Dgl/-Dplain-gl/-Dios-gl` pasan a `enabled` (libmpv), `-Dopengl` a `enabled` en libplacebo (Vulkan/D3D11 siguen `disabled`). `-Dvideotoolbox-gl` se queda en `disabled`: probamos activarlo pensando que sumaba el interop de copia cero, pero es la ruta macOS/Cocoa (`gl-cocoa`), mutuamente excluyente con `ios-gl` en `hwdec_vt.h` (`#if HAVE_VIDEOTOOLBOX_GL ... #elif HAVE_IOS_GL`); combinar ambos rompe la compilación de `hwdec_ios_gl.m` (referencia un campo del struct que solo existe en la otra rama). `ios-gl=enabled` por sí solo ya incluye su propio interop VideoToolbox→textura GLES completo. No cambia nada de FFmpeg (`--enable-videotoolbox` ya estaba activo).\n- Alcance acotado a iOS/tvOS: macOS se queda en el render software/Metal (`Sources/PlayerDemoApp/MPVMetalView.swift`), sin cambios — el bug es específico de iPadOS y nadie lo reportó en Mac.\n- Se descartó volver a AVPlayer (ya se probó en 2026-09-05/06 y se sustituyó por no soportar raw-key/ClearKey, DASH ni ISML) y usar Vulkan/D3D vía libplacebo (`gpu-next` es interno de mpv, no expone un tipo de Render API público para embedding — confirmado en `ThirdParty/src/mpv/include/mpv/render.h`, que solo declara `opengl` y `sw`).\n- Incrementada y alineada la versión visible de iOS y tvOS a `0.5.0` (build 7); macOS no cambia porque no se toca en esta entrega."
+          "localizedDescription": "**English**\n\n- Faster start for encrypted HLS channels.\n\n**Español**\n\n- Arranque más rápido de los canales HLS cifrados."
         },
         {
           "version": "0.4.1",
@@ -874,7 +883,7 @@
           "size": 14788256,
           "minOSVersion": "16.0",
           "sha256": "174c3a26586bb03072586ef614d598255953c5aa5c6c558130355292ae254fa3",
-          "localizedDescription": "- iOS conserva las fuentes de fichero entre reinicios mediante bookmarks persistentes; editar el nombre de una fuente ya no elimina su lista en iOS ni tvOS.\r\n- Los selectores de pistas iOS admiten catálogos largos con desplazamiento completo y la opción automática muestra la calidad efectiva. Los controles de pantalla completa de iOS y tvOS se ocultan tras unos segundos de inactividad y reaparecen al interactuar.\r\n- HLS SAMPLE-AES/ClearKey incorpora más margen de búfer, reintentos de segmento y un proxy progresivo robusto ante escrituras interrumpidas y respuestas parciales. ISML/ClearKey conserva el orden de los fragmentos, reintenta fallos transitorios y salta de forma acotada huecos que ya han abandonado la ventana DVR, sin detener definitivamente el feed.\r\n- El descifrado AES-CTR reutiliza el contexto criptográfico y procesa contadores por lotes; el escaneo y la normalización PIFF evitan conversiones y copias completas repetidas. En la prueba Release de 8 MiB, cifrar y descifrar tarda aproximadamente 29 ms en el equipo de validación.\r\n- Si dos paradas reales de caché se repiten en un minuto usando calidad automática, el reproductor selecciona una representación inferior y reconstruye la sesión una sola vez, evitando oscilaciones. Se añadieron métricas de caché, pérdidas de fotogramas y decoder para facilitar diagnósticos sin registrar URLs ni claves.\r\n- Corregido que iOS y tvOS atenuaran la pantalla y acabaran bloqueándola durante la reproducción: `IOSMPVPlaybackController` desactiva `UIApplication.isIdleTimerDisabled` mientras `pause=no` y lo restaura al pausar o detener la sesión. El audio en segundo plano y la restauración de la reproducción al desbloquear no cambian.\r\n- Corregido que una lista JSON completa fallara al importarse si un solo canal traía `\"key\": \"\"` (habitual en listas reales para \"todavía sin clave\"): `JSONPlaylistParser`/`M3UPlaylistParser` tratan una clave ClearKey vacía como contenido claro en vez de lanzar `invalidLicenseKey`. Además `PlaylistParsingError` ahora es `LocalizedError` con mensajes en español y envuelve los fallos de canal/muestra con su nombre (`Canal \"X\": …`), en vez del genérico \"The operation couldn't be completed (error N)\" de iOS.\r\n- Verificados 111 tests compartidos (107 de la base 0.4.0 más 4 de regresión para el fix de claves ClearKey vacías) y reproducción real de HLS SAMPLE-AES y ISML ClearKey en iPhone 17 Pro Simulator y Apple TV 4K Simulator, incluyendo recuperación adaptativa y continuidad de audio/vídeo. Los simuladores usan decodificación software; VideoToolbox continúa siendo la ruta solicitada en dispositivo. El fix de bloqueo de pantalla depende de hardware real para su validación: el Simulator no atenúa ni bloquea la pantalla.\r"
+          "localizedDescription": "**English**\n\n- Stability and playback improvements; file sources are kept across restarts on iOS.\n\n**Español**\n\n- Mejoras de estabilidad y reproducción; iOS conserva las fuentes de fichero entre reinicios."
         },
         {
           "version": "0.4.0",
@@ -883,7 +892,7 @@
           "size": 14786740,
           "minOSVersion": "16.0",
           "sha256": "9c15d485ac7274ccc1d56e0e9ba979da422246ce7a279b81eae5615777aa8cdd",
-          "localizedDescription": "Version 0.4.0."
+          "localizedDescription": "**English**\n\n- Version 0.4.0.\n\n**Español**\n\n- Versión 0.4.0."
         },
         {
           "version": "0.3.0",
@@ -892,7 +901,7 @@
           "size": 14743748,
           "minOSVersion": "16.0",
           "sha256": "9ca2bbaf3a19d9a2f869dbaf2892e28b111ef4e5be6b83342462a8019a45f3ad",
-          "localizedDescription": "Version 0.3.0."
+          "localizedDescription": "**English**\n\n- Version 0.3.0.\n\n**Español**\n\n- Versión 0.3.0."
         }
       ]
     }
