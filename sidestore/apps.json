@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.55",
+          "date": "2026-10-20",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.55/InputStreamPlayer-iOS-0.9.55-109-unsigned.ipa",
+          "size": 17186989,
+          "minOSVersion": "16.0",
+          "sha256": "a405d16ed5739f2977a2c961198c29a7808ec44f356174dc8dc87de2c9cc298b",
+          "localizedDescription": "**English**\n\n- Fixed: some DASH ClearKey channels (e.g. Oqee / beIN SPORTS FRA) would not open in the mpv player (\"unrecognized file format\") even with the right keys. Their init segment declares a zero key ID and the wrong IV size; the app now repairs it locally while playing. ExoPlayer was not affected.\n- Note: URLs on api-proxad.dc2.oqee.net no longer have a valid TLS certificate; use api-proxad.oqee.net in your list.\n\n**Español**\n\n- Arreglado: algunos canales DASH con ClearKey (p. ej. Oqee / beIN SPORTS FRA) no abrían en el reproductor mpv («unrecognized file format») aunque las claves fueran las buenas. Su segmento de inicio declara un KID a ceros y un tamaño de IV equivocado; la app lo repara en local al reproducir. ExoPlayer no estaba afectado.\n- Aviso: las URLs de api-proxad.dc2.oqee.net ya no tienen un certificado TLS válido; usa api-proxad.oqee.net en tu lista."
+        },
+        {
           "version": "0.9.54",
           "date": "2026-10-19",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.54/InputStreamPlayer-iOS-0.9.54-108-unsigned.ipa",
