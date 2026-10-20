@@ -42,7 +42,7 @@ Instala antes [SideStore](https://docs.sidestore.io/docs/installation/install)
 
 - **TV en directo** con guía (XMLTV), zapping con el mando y catch-up.
 - **Películas y series** de tus listas, con «Continuar» y marcas de visto.
-- **Add-ons de Stremio** y listas de **Trakt**; OpenSubtitles de serie.
+- **Add-ons de Stremio** y listas de **Trakt**; OpenSubtitles de serie. ¿Tienes un servidor Plex? El add-on de Stremio [Plexio](https://plexio.stream/) funciona con él.
 - **Favoritos, recientes y Multiview** (hasta cuatro canales a la vez).
 - **Un canal, una tarjeta aunque venga de varias listas** (opcional, apagado por defecto): el mismo canal de varias listas sale una sola vez y al reproducirlo eliges la fuente, con su formato.
 - **Sincronización opcional** con tu propio Google Drive y con Trakt.

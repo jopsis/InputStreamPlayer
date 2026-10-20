@@ -101,7 +101,7 @@ jq -n \
   --arg sourceURL "$source_url" \
   --arg appName "InputStream Player" \
   --arg bundleIdentifier "com.InputStreamPlayer" \
-  --arg developerName "jopsis" \
+  --arg developerName "Jop Labs LLC" \
   --arg subtitle "HLS/DASH/Smooth Streaming player with raw-key ClearKey" \
   --arg localizedDescription "Player for HLS, DASH/MPD and Microsoft Smooth Streaming (ISML) playlists on iPhone, iPad, Apple TV, Mac and Android, with ClearKey/raw-key support for content the user is authorized to watch. Live TV with guide and catch-up, on-demand movies and series, Stremio add-ons and optional sync through Google Drive and Trakt. It does not implement FairPlay, Widevine or PlayReady." \
   --arg iconURL "$icon_url" \
