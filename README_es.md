@@ -45,6 +45,7 @@ Instala antes [SideStore](https://docs.sidestore.io/docs/installation/install)
 - **Add-ons de Stremio** y listas de **Trakt**; OpenSubtitles de serie. ¿Tienes un servidor Plex? El add-on de Stremio [Plexio](https://plexio.stream/) funciona con él.
 - **Favoritos, recientes y Multiview** (hasta cuatro canales a la vez).
 - **Un canal, una tarjeta aunque venga de varias listas** (opcional, apagado por defecto): el mismo canal de varias listas sale una sola vez y al reproducirlo eliges la fuente, con su formato.
+- **Tus categorías, a tu orden:** ordena los grupos de tus listas; se recuerda en cada aparato.
 - **Sincronización opcional** con tu propio Google Drive y con Trakt.
 - **Listas cifradas** `.ispl`: cífralas en el
   [cifrador web](https://isplayer.joplabs.app/es/cifrar/) y comparte solo la

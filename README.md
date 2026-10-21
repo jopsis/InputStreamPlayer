@@ -45,6 +45,7 @@ Install [SideStore](https://docs.sidestore.io/docs/installation/install) first
 - **Stremio add-ons** and **Trakt** lists; OpenSubtitles built in. Got a Plex server? The [Plexio](https://plexio.stream/) Stremio add-on works with it.
 - **Favorites, recents and Multiview** (up to four channels at once).
 - **One card per channel across lists** (optional, off by default): the same channel from several lists shows once and you pick the source — with its format — when you play it.
+- **Your categories, your order:** reorder the groups of your lists; it is remembered on each device.
 - **Optional sync** through your own Google Drive and Trakt.
 - **Encrypted playlists** `.ispl`: encrypt them with the
   [web encryptor](https://isplayer.joplabs.app/encrypt/) and share only the
