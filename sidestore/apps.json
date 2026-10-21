@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.58",
+          "date": "2026-10-21",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.58/InputStreamPlayer-iOS-0.9.58-112-unsigned.ipa",
+          "size": 17206838,
+          "minOSVersion": "16.0",
+          "sha256": "363fcab0aac51b42396d64376fe0dfc2fba5fd0cce75353b5039236db3c01644",
+          "localizedDescription": "**English**\n\n- Multiview: leaving a tile's full screen now takes you back to the grid, not to the list or the guide. Back (or the new ✕) inside the multiview now leaves it; go full screen from the tile menu.\n\n**Español**\n\n- Multiview: al salir de la pantalla completa de un cuadro se vuelve a la cuadrícula, no a la lista ni a la guía. «Atrás» (o la nueva ✕) dentro del multiview sale de él; a pantalla completa se va desde el menú del cuadro."
+        },
+        {
           "version": "0.9.57",
           "date": "2026-10-21",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.57/InputStreamPlayer-iOS-0.9.57-111-unsigned.ipa",
@@ -902,15 +911,6 @@
           "minOSVersion": "16.0",
           "sha256": "9c15d485ac7274ccc1d56e0e9ba979da422246ce7a279b81eae5615777aa8cdd",
           "localizedDescription": "**English**\n\n- Version 0.4.0.\n\n**Español**\n\n- Versión 0.4.0."
-        },
-        {
-          "version": "0.3.0",
-          "date": "2026-09-08",
-          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.3.0/InputStreamPlayer-iOS-0.3.0-3-unsigned.ipa",
-          "size": 14743748,
-          "minOSVersion": "16.0",
-          "sha256": "9ca2bbaf3a19d9a2f869dbaf2892e28b111ef4e5be6b83342462a8019a45f3ad",
-          "localizedDescription": "**English**\n\n- Version 0.3.0.\n\n**Español**\n\n- Versión 0.3.0."
         }
       ]
     }
