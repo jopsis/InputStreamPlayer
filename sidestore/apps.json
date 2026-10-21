@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.57",
+          "date": "2026-10-21",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.57/InputStreamPlayer-iOS-0.9.57-111-unsigned.ipa",
+          "size": 17195739,
+          "minOSVersion": "16.0",
+          "sha256": "13a4aaa4a227eea19fbdc35f2223b9abf7de8878c609b47bc23647eaaa14cc89",
+          "localizedDescription": "**English**\n\n- Faster: the app no longer lags at startup with lists of thousands of channels (iOS, tvOS and Mac). Guide updates are batched on all platforms.\n\n**Español**\n\n- Más rápido: la app ya no va a tirones al arrancar con listas de miles de canales (iOS, tvOS y Mac). Las actualizaciones de la guía se agrupan en todas las plataformas."
+        },
+        {
           "version": "0.9.56",
           "date": "2026-10-20",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.56/InputStreamPlayer-iOS-0.9.56-110-unsigned.ipa",
