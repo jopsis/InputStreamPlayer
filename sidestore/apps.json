@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.59",
+          "date": "2026-10-22",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.59/InputStreamPlayer-iOS-0.9.59-113-unsigned.ipa",
+          "size": 17240520,
+          "minOSVersion": "16.0",
+          "sha256": "5db0920b2189cde3e7638352cbc005c0361eed68f8a63d277da8d91d53195895",
+          "localizedDescription": "\n- Pedido por un usuario: ver Emisiones como la rejilla de siempre, como lista o como guía. Un botón al principio de la fila de grupos\n  rota entre las tres y la elección se recuerda (`IOSChannelLayout`, `InputStreamPlayer.channelLayout.v1`; en Android `PlaylistLibrary.channelLayout`).\n- «Guía» reutiliza la rejilla de la pantalla Guía (`IOSEPGGridView`, `TVOSEPGGridView`, `GuideGrid`) con los canales que se ven ahora:\n  respeta el grupo y la búsqueda. Solo en directo; en «Bajo demanda» no hay selector. En tvOS no lleva selector de día\n  (para lo ya emitido está la pantalla Guía).\n- Probado en el simulador de iOS y de Apple TV; Mac y Android compilan. Sin probar con mando ni ratón.\n- Pruebas: la lista de `--playlist` avisa ahora a la guía de los canales nuevos (`loadStartupPlaylist`); antes la guía se quedaba con 0 filas."
+        },
+        {
           "version": "0.9.58",
           "date": "2026-10-21",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.58/InputStreamPlayer-iOS-0.9.58-112-unsigned.ipa",
@@ -902,15 +911,6 @@
           "minOSVersion": "16.0",
           "sha256": "174c3a26586bb03072586ef614d598255953c5aa5c6c558130355292ae254fa3",
           "localizedDescription": "**English**\n\n- Stability and playback improvements; file sources are kept across restarts on iOS.\n\n**Español**\n\n- Mejoras de estabilidad y reproducción; iOS conserva las fuentes de fichero entre reinicios."
-        },
-        {
-          "version": "0.4.0",
-          "date": "2026-09-09",
-          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.4.0/InputStreamPlayer-iOS-0.4.0-4-unsigned.ipa",
-          "size": 14786740,
-          "minOSVersion": "16.0",
-          "sha256": "9c15d485ac7274ccc1d56e0e9ba979da422246ce7a279b81eae5615777aa8cdd",
-          "localizedDescription": "**English**\n\n- Version 0.4.0.\n\n**Español**\n\n- Versión 0.4.0."
         }
       ]
     }
