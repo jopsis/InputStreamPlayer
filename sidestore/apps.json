@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.60",
+          "date": "2026-10-22",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.60/InputStreamPlayer-iOS-0.9.60-114-unsigned.ipa",
+          "size": 17188293,
+          "minOSVersion": "16.0",
+          "sha256": "7b9b0f9c1cfaed195543e915e7b652b1bfc5b9157f62da7ce28de457ec9525b1",
+          "localizedDescription": "\n- Android TV: interfaz «Centro multimedia» (la de tvOS y el Mac) por defecto, o la clásica en Ajustes → Preferencias → Interfaz.\n- iOS y Android: la pestaña Guía sobraba con la vista Guía de Emisiones y se quita; en iOS el selector de vista va en la línea del título.\n- Android: la actualización automática descarga y verifica, pero ya no abre el instalador: queda pendiente, con un punto en Ajustes.\n- Detalle en las tres entradas siguientes."
+        },
+        {
           "version": "0.9.59",
           "date": "2026-10-22",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.59/InputStreamPlayer-iOS-0.9.59-113-unsigned.ipa",
@@ -902,15 +911,6 @@
           "minOSVersion": "16.0",
           "sha256": "99678e49851197fc510d69b75049b307f1de00cfeb16a71ee79fbb8828af2457",
           "localizedDescription": "**English**\n\n- Faster start for encrypted HLS channels.\n\n**Español**\n\n- Arranque más rápido de los canales HLS cifrados."
-        },
-        {
-          "version": "0.4.1",
-          "date": "2026-09-09",
-          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.4.1/InputStreamPlayer-iOS-0.4.1-5-unsigned.ipa",
-          "size": 14788256,
-          "minOSVersion": "16.0",
-          "sha256": "174c3a26586bb03072586ef614d598255953c5aa5c6c558130355292ae254fa3",
-          "localizedDescription": "**English**\n\n- Stability and playback improvements; file sources are kept across restarts on iOS.\n\n**Español**\n\n- Mejoras de estabilidad y reproducción; iOS conserva las fuentes de fichero entre reinicios."
         }
       ]
     }
