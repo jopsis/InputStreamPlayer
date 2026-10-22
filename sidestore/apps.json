@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.61",
+          "date": "2026-10-22",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.61/InputStreamPlayer-iOS-0.9.61-115-unsigned.ipa",
+          "size": 17205033,
+          "minOSVersion": "16.0",
+          "sha256": "ac969e35311e0394b87598d64389bc0456fa30e588cdf9d6dbc29fdbfc47e36d",
+          "localizedDescription": "\n- Nueva vista de Emisiones, **Tarjetas** (cuarta opción del selector, tras Rejilla): tarjeta apaisada con el logo grande, lo que se emite ahora con su barra de progreso, el canal debajo y la marca de catch-up arriba a la derecha.\n  Colores de la app: degradado verde/azulado cuyo matiz sale del nombre del canal, con la misma cuenta en todas las plataformas.\n  iOS y Mac clásico (`IOSRootView`), tvOS y Mac «Centro multimedia» (`TVOSRootView`): `ISPChannelTile` en `ISPGlass.swift` (compartido), 2 por fila en iPhone y 5 en la tele. Android: `ChannelTile`.\n- La marca de catch-up (`ISPCatchupBadge` / `CatchupBadge`) también va en la rejilla de todas las plataformas, arriba a la derecha de la baldosa; la estrella de favorito pasa arriba a la izquierda.\n- Probado en el simulador de iPhone y de Apple TV, el emulador de Google TV y el OnePlus; el Mac compila, sin abrirlo.\n- Detalle de la prueba de concepto de Android en la entrada siguiente."
+        },
+        {
           "version": "0.9.60",
           "date": "2026-10-22",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.60/InputStreamPlayer-iOS-0.9.60-114-unsigned.ipa",
@@ -902,15 +911,6 @@
           "minOSVersion": "16.0",
           "sha256": "5e9dfee5ef24f63502c197af0bd8db0f24de3c6c6c759ca096d11718e53b91c1",
           "localizedDescription": "**English**\n\n- Internal improvements.\n\n**Español**\n\n- Mejoras internas."
-        },
-        {
-          "version": "0.5.2",
-          "date": "2026-09-09",
-          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.2/InputStreamPlayer-iOS-0.5.2-9-unsigned.ipa",
-          "size": 14861505,
-          "minOSVersion": "16.0",
-          "sha256": "99678e49851197fc510d69b75049b307f1de00cfeb16a71ee79fbb8828af2457",
-          "localizedDescription": "**English**\n\n- Faster start for encrypted HLS channels.\n\n**Español**\n\n- Arranque más rápido de los canales HLS cifrados."
         }
       ]
     }
