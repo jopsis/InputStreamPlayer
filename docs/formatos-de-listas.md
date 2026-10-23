@@ -11,6 +11,14 @@ Declare each channel with `#EXTINF` and its URL on the next line. The app reads
 the `tvg-logo` and `group-title` attributes. `tvg-id` can remain in the
 playlist as metadata for other clients.
 
+`group-logo` is optional and not part of the M3U standard: it is the logo of
+the channel's group. The "Groups" view of Broadcasts draws the group with it;
+without it, the group shows the logo of its first channel that has one.
+
+```m3u
+#EXTINF:-1 tvg-logo="https://example.invalid/logo.png" group-title="Sports" group-logo="https://example.invalid/sports.png",Demo Channel
+```
+
 ```m3u
 #EXTM3U
 #EXTINF:-1 tvg-id="demo-channel" tvg-logo="https://example.invalid/logo.png" group-title="Demo",Demo Channel
@@ -306,6 +314,24 @@ because guides are usually tens of megabytes.
 ```
 
 Plain and gzipped guides are both supported.
+
+A guide can give each programme a thumbnail with the standard XMLTV `<icon>`
+element. Several are allowed; give them `width` and `height` and the app picks
+the landscape one for the Cards and Grid views of Broadcasts. Without
+thumbnails, those views show the channel logo as before.
+
+```xml
+<programme start="20261015212400 +0000" stop="20261015223300 +0000" channel="demo-channel">
+  <title lang="es">Demo programme</title>
+  <icon src="https://example.invalid/p-landscape.jpg" width="312" height="234" />
+  <icon src="https://example.invalid/p-portrait.jpg" width="210" height="315" />
+</programme>
+```
+
+With several guides, a channel that more than one of them lists is shown with
+the one that has current programmes, then the one with thumbnails and a logo,
+and then the first in your list of guides. The same programme in two guides
+keeps the thumbnail of the one that has it.
 
 `tvg-shift` moves a channel's guide, for "+1" channels that reuse the original's
 guide: in hours from -12 to 12 (`tvg-shift="1"`, `"1.5"`), in seconds outside

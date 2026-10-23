@@ -12,6 +12,14 @@ Cada canal se declara con `#EXTINF` y una URL en la línea siguiente. Se
 reconocen los atributos `tvg-logo` y `group-title`. `tvg-id` puede conservarse
 como metadato de la lista para otros clientes.
 
+`group-logo` es opcional y no forma parte del estándar M3U: es el logo del
+grupo del canal. La vista «Grupos» de Emisiones pinta el grupo con él; sin él,
+el grupo enseña el logo de su primer canal que tenga uno.
+
+```m3u
+#EXTINF:-1 tvg-logo="https://example.invalid/logo.png" group-title="Deportes" group-logo="https://example.invalid/deportes.png",Canal de ejemplo
+```
+
 ```m3u
 #EXTM3U
 #EXTINF:-1 tvg-id="canal-demo" tvg-logo="https://example.invalid/logo.png" group-title="Demo",Canal Demo
@@ -309,6 +317,24 @@ suelen ser decenas de megas.
 ```
 
 Se admiten guías sin comprimir y con gzip.
+
+Una guía puede dar a cada programa una miniatura con el elemento estándar
+`<icon>` de XMLTV. Se admiten varios; con `width` y `height` la app elige el
+apaisado para las vistas Tarjetas y Rejilla de Emisiones. Sin miniaturas, esas
+vistas enseñan el logo del canal como antes.
+
+```xml
+<programme start="20261015212400 +0000" stop="20261015223300 +0000" channel="canal-demo">
+  <title lang="es">Programa de ejemplo</title>
+  <icon src="https://example.invalid/p-apaisada.jpg" width="312" height="234" />
+  <icon src="https://example.invalid/p-vertical.jpg" width="210" height="315" />
+</programme>
+```
+
+Con varias guías, un canal que traen más de una se enseña con la que tiene
+programación vigente, después la que trae miniaturas y logo, y después la
+primera de tu lista de guías. El mismo programa en dos guías conserva la
+miniatura de la que la tiene.
 
 `tvg-shift` mueve la guía de un canal, para los «+1» que usan la del original:
 en horas entre -12 y 12 (`tvg-shift="1"`, `"1.5"`), en segundos fuera de ese

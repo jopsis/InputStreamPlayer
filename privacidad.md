@@ -4,7 +4,7 @@ title: Privacy policy · Política de privacidad
 
 # InputStream Player privacy policy
 
-Last updated: October 10, 2026 (the log includes the app's last closures).
+Last updated: October 23, 2026 (images declared by lists and guides).
 
 InputStream Player (ISPlayer) is a video player for iPhone, iPad, Apple TV,
 Mac, and Android (phone, Google TV, and Android TV). This policy explains what
@@ -30,7 +30,9 @@ Apple TV, and Mac) or in the app's private storage, which no other app can
 access (Android).
 
 The app connects directly to the addresses you add (lists, guides, add-ons,
-videos). What those services do with your connection is up to them.
+videos) and to the image addresses that those lists and guides declare (channel
+and group logos, programme thumbnails). What those services do with your
+connection is up to them.
 
 ## Other services the app talks to
 
@@ -124,7 +126,7 @@ https://github.com/jopsis/InputStreamPlayer/issues
 
 # Política de privacidad de InputStream Player
 
-Última actualización: 10 de octubre de 2026 (el registro incluye los últimos cierres de la app).
+Última actualización: 23 de octubre de 2026 (imágenes que declaran listas y guías).
 
 InputStream Player (ISPlayer) es un reproductor de vídeo para iPhone, iPad,
 Apple TV, Mac y Android (móvil, Google TV y Android TV). Esta política explica
@@ -150,8 +152,9 @@ Las contraseñas y claves que introduces se guardan en el Llavero del sistema
 no accede ninguna otra app (Android).
 
 La app se conecta directamente a las direcciones que tú añades (listas,
-guías, addons, vídeos). Lo que hagan esos servicios con tu conexión depende de
-ellos.
+guías, addons, vídeos) y a las de las imágenes que esas listas y guías declaran
+(logos de canales y grupos, miniaturas de programas). Lo que hagan esos
+servicios con tu conexión depende de ellos.
 
 ## Otros servicios con los que habla la app
 
