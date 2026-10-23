@@ -93,9 +93,9 @@ Navigator uses it) is skipped: it is not a channel.
 ### Movies and series (on demand)
 
 A playlist can mix live channels with movies and episodes. On-demand entries
-show up under **Emisiones → Bajo demanda** (On demand), not in live TV. M3U has
-no field for this, so it is worked out from what each entry says, in this
-order:
+show up in the **Collections** tab (it only appears when a list has them), not
+in live TV (Broadcasts). M3U has no field for this, so it is worked out from
+what each entry says, in this order:
 
 1. **The declared type:** `tvg-type`, `type`, `media-type`, or `group-type` set
    to `movie`, `series`, `vod`, `episode`… (or `live` to force live).
@@ -110,6 +110,13 @@ The group name does not count: there are live channels in groups called
 
 Episodes are grouped by series and season from their name: `Show S01E02`,
 `Show.s1.e2`, `Show - T01E02`, or `Show 1x02`.
+
+Collections can be filtered by **All / Movies / Series**, and each kind has its
+own groups, taken from `group-title`: the genres of the movies and, for series,
+the category of the list. If a series' `group-title` is just the series name
+(a common way to organize episodes), the series go under a single "Series"
+group. **Favorites** and **Recents** are there too: press and hold a poster to
+mark a favorite. Favorites sync between your devices, live or on demand.
 
 ```m3u
 #EXTINF:120 tvg-type="movie" tvg-logo="https://example.invalid/poster.jpg" group-title="Movies",Demo Movie
@@ -209,8 +216,7 @@ OTT Navigator's own player (`codec`, preferred tracks, `number`…) are ignored.
 For on-demand content with full details there is a third JSON schema: an
 array of titles (or a single title). It is the same format as
 [OTT Navigator's "Media library file"](https://ottnav.github.io/faq.html#media-library-file-json),
-so its playlists work as they are. Everything in it goes to **Bajo demanda**
-(On demand). A **movie** has `video` (or `videos`, a list of versions); a
+so its playlists work as they are. Everything in it goes to **Collections**. A **movie** has `video` (or `videos`, a list of versions); a
 **series** has `seasons`.
 
 ```json

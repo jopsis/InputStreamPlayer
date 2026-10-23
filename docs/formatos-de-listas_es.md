@@ -95,9 +95,9 @@ Navigator) se salta: no es un canal.
 ### Películas y series (bajo demanda)
 
 Una lista puede mezclar canales en directo con películas y episodios. Los que
-son bajo demanda aparecen en **Emisiones → Bajo demanda**, no en el directo.
-Como el M3U no tiene un campo para eso, se deduce de lo que dice cada entrada,
-por este orden:
+son bajo demanda aparecen en la pestaña **Colecciones** (solo existe si alguna
+lista las trae), no en el directo (Emisiones). Como el M3U no tiene un campo
+para eso, se deduce de lo que dice cada entrada, por este orden:
 
 1. **El tipo declarado:** `tvg-type`, `type`, `media-type` o `group-type` con
    `movie`, `series`, `vod`, `episode`… (o `live` para forzar directo).
@@ -112,6 +112,14 @@ El nombre del grupo no cuenta: hay canales en directo en grupos que se llaman
 
 Los episodios se agrupan por serie y temporada a partir del nombre:
 `Serie S01E02`, `Serie.s1.e2`, `Serie - T01E02` o `Serie 1x02`.
+
+Colecciones se puede filtrar por **Todo / Películas / Series**, y cada tipo tiene
+sus propios grupos, sacados de `group-title`: los géneros de las películas y, en
+las series, la categoría de la lista. Si el `group-title` de una serie es solo su
+nombre (una forma habitual de ordenar episodios), las series van bajo un único
+grupo «Series». También hay **Favoritos** y **Recientes**: mantén pulsado un
+póster para marcar un favorito. Los favoritos se sincronizan entre tus aparatos,
+sean del directo o bajo demanda.
 
 ```m3u
 #EXTINF:120 tvg-type="movie" tvg-logo="https://example.invalid/poster.jpg" group-title="Películas",Película Demo
@@ -212,8 +220,8 @@ se ignora.
 Para contenido bajo demanda con ficha completa hay un tercer esquema JSON: un
 array de títulos (o un único título). Es el mismo formato que el
 [«Media library file» de OTT Navigator](https://ottnav.github.io/faq.html#media-library-file-json),
-así que sus listas sirven tal cual. Todo lo que contiene va a **Bajo
-demanda**. Una **película** lleva `video` (o `videos`, una lista de
+así que sus listas sirven tal cual. Todo lo que contiene va a
+**Colecciones**. Una **película** lleva `video` (o `videos`, una lista de
 versiones); una **serie** lleva `seasons`.
 
 ```json

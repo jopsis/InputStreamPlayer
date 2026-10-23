@@ -41,9 +41,9 @@ Install [SideStore](https://docs.sidestore.io/docs/installation/install) first
 ## What it does
 
 - **Live TV** with a guide (XMLTV), remote-control zapping and catch-up.
-- **Movies and series** from your lists, with “Continue” and watched marks.
+- **Collections:** the movies and series from your lists in their own tab (it only appears when a list has them), filtered by movies or series and by group, with “Continue”, watched marks, favorites and recents.
 - **Stremio add-ons** and **Trakt** lists; OpenSubtitles built in. Got a Plex server? The [Plexio](https://plexio.stream/) Stremio add-on works with it.
-- **Favorites, recents and Multiview** (up to four channels at once).
+- **Favorites, recents and Multiview** (up to four channels at once). Favorites — channels, movies and series — sync across your devices.
 - **One card per channel across lists** (optional, off by default): the same channel from several lists shows once and you pick the source — with its format — when you play it.
 - **Your categories, your order:** reorder the groups of your lists; it is remembered on each device.
 - **Optional sync** through your own Google Drive and Trakt.

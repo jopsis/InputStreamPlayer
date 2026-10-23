@@ -4,7 +4,7 @@ title: Privacy policy · Política de privacidad
 
 # InputStream Player privacy policy
 
-Last updated: October 23, 2026 (images declared by lists and guides).
+Last updated: October 23, 2026 (favorites sync with Google Drive).
 
 InputStream Player (ISPlayer) is a video player for iPhone, iPad, Apple TV,
 Mac, and Android (phone, Google TV, and Android TV). This policy explains what
@@ -83,6 +83,7 @@ across your devices using your own Google Drive:
   - your settings (lists, guides, add-ons with their addresses, preferences);
   - what you have watched, with where you left off;
   - your watch-later list;
+  - your favorites (channels, movies and series);
   - the name of each of your devices.
 - That data goes straight from your device to your Drive. It never passes
   through a server of ours and the developers have no access to it.
@@ -126,7 +127,7 @@ https://github.com/jopsis/InputStreamPlayer/issues
 
 # Política de privacidad de InputStream Player
 
-Última actualización: 23 de octubre de 2026 (imágenes que declaran listas y guías).
+Última actualización: 23 de octubre de 2026 (los favoritos se sincronizan con Google Drive).
 
 InputStream Player (ISPlayer) es un reproductor de vídeo para iPhone, iPad,
 Apple TV, Mac y Android (móvil, Google TV y Android TV). Esta política explica
@@ -205,6 +206,7 @@ visto entre tus aparatos usando tu propio Google Drive:
   - tu configuración (listas, guías, addons con sus direcciones, preferencias);
   - lo que has visto, con el punto por el que ibas;
   - tu lista «Ver más tarde»;
+  - tus favoritos (canales, películas y series);
   - el nombre de cada uno de tus aparatos.
 - Esos datos van directamente de tu aparato a tu Drive. No pasan por ningún
   servidor nuestro y los desarrolladores no tienen acceso a ellos.
