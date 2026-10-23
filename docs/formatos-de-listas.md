@@ -11,6 +11,9 @@ Declare each channel with `#EXTINF` and its URL on the next line. The app reads
 the `tvg-logo` and `group-title` attributes. `tvg-id` can remain in the
 playlist as metadata for other clients.
 
+Logos (`tvg-logo`, `group-logo`) can be PNG, JPEG or SVG. A logo that does not
+exist or does not load is simply left out; it is not shown as a spinner.
+
 `group-logo` is optional and not part of the M3U standard: it is the logo of
 the channel's group. The "Groups" view of Broadcasts draws the group with it;
 without it, the group shows the logo of its first channel that has one.

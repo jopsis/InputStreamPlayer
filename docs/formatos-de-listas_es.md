@@ -12,6 +12,9 @@ Cada canal se declara con `#EXTINF` y una URL en la línea siguiente. Se
 reconocen los atributos `tvg-logo` y `group-title`. `tvg-id` puede conservarse
 como metadato de la lista para otros clientes.
 
+Los logos (`tvg-logo`, `group-logo`) pueden ser PNG, JPEG o SVG. Un logo que no
+existe o que no carga se omite sin más; no se queda un indicador de carga.
+
 `group-logo` es opcional y no forma parte del estándar M3U: es el logo del
 grupo del canal. La vista «Grupos» de Emisiones pinta el grupo con él; sin él,
 el grupo enseña el logo de su primer canal que tenga uno.
