@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.64",
+          "date": "2026-10-23",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.64/InputStreamPlayer-iOS-0.9.64-118-unsigned.ipa",
+          "size": 17285611,
+          "minOSVersion": "16.0",
+          "sha256": "3b011d978e4f13f64c75cbc543e979b1df82a4d5df550f69a9079bda8e77f396",
+          "localizedDescription": "## Novedades\n\n- **Logos SVG**: los logos en formato SVG (por ejemplo los de RTVE) ya se ven en todas las plataformas.\n- **Logos que no cargan**: si un logo no existe o no llega, no se queda el indicador de carga girando: simplemente no se pinta.\n- **Iconos nuevos** en Android TV y Apple TV: el banner, el icono y la imagen de fondo ya no muestran bandas a los lados."
+        },
+        {
           "version": "0.9.63",
           "date": "2026-10-23",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.63/InputStreamPlayer-iOS-0.9.63-117-unsigned.ipa",
@@ -902,15 +911,6 @@
           "minOSVersion": "16.0",
           "sha256": "56516ac27b62d64f83f9055809f7998e31af119b67d079219e997dd4a47a7930",
           "localizedDescription": "**English**\n\n- Support for encrypted lists; fixes for lists saved on Windows and channels that need custom headers.\n\n**Español**\n\n- Soporte para listas cifradas; arreglos para listas guardadas en Windows y canales con cabeceras propias."
-        },
-        {
-          "version": "0.5.9",
-          "date": "2026-09-11",
-          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.9/InputStreamPlayer-iOS-0.5.9-16-unsigned.ipa",
-          "size": 15223389,
-          "minOSVersion": "16.0",
-          "sha256": "469328daadfe93b5aae096a5ade48ac3d90e7adc686e8852ac42f10851d1829d",
-          "localizedDescription": "**English**\n\n- Encrypted .ispl playlists; fix for channels that need custom headers.\n\n**Español**\n\n- Listas .ispl cifradas; arreglo para canales con cabeceras propias."
         }
       ]
     }
