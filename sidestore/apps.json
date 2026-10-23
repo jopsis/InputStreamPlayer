@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.63",
+          "date": "2026-10-23",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.63/InputStreamPlayer-iOS-0.9.63-117-unsigned.ipa",
+          "size": 17258423,
+          "minOSVersion": "16.0",
+          "sha256": "34444fe5466645d2f29ae322295ca11bc0afcf4966e596d65b523e933dde5396",
+          "localizedDescription": "- Nueva pestaña **Colecciones** con las películas y series de tus listas (solo aparece si alguna las trae). Filtra por todo, películas o series y, dentro, por grupo. Con favoritos y recientes; «Seguir viendo» sigue ahí. En Emisiones queda solo el directo.\n- **Favoritos sincronizados** entre tus aparatos (canales, películas y series) a través de tu Google Drive.\n- La app **recuerda la última pestaña** que elegiste en cada aparato.\n- En iPhone, iPad y Mac, la cabecera de Emisiones ya no deja ver el contenido a través de ella."
+        },
+        {
           "version": "0.9.62",
           "date": "2026-10-23",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.62/InputStreamPlayer-iOS-0.9.62-116-unsigned.ipa",
@@ -902,15 +911,6 @@
           "minOSVersion": "16.0",
           "sha256": "469328daadfe93b5aae096a5ade48ac3d90e7adc686e8852ac42f10851d1829d",
           "localizedDescription": "**English**\n\n- Encrypted .ispl playlists; fix for channels that need custom headers.\n\n**Español**\n\n- Listas .ispl cifradas; arreglo para canales con cabeceras propias."
-        },
-        {
-          "version": "0.5.8",
-          "date": "2026-09-10",
-          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.8/InputStreamPlayer-iOS-0.5.8-15-unsigned.ipa",
-          "size": 15194772,
-          "minOSVersion": "16.0",
-          "sha256": "fef0119eac45c0081f2c72444cb150907b778b760dbd73473844b7ae076b2e0b",
-          "localizedDescription": "**English**\n\n- Internal improvements.\n\n**Español**\n\n- Mejoras internas."
         }
       ]
     }
