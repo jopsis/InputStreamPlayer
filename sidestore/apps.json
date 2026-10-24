@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.65",
+          "date": "2026-10-24",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.65/InputStreamPlayer-iOS-0.9.65-119-unsigned.ipa",
+          "size": 17285836,
+          "minOSVersion": "16.0",
+          "sha256": "b8e4995fe42b1aef82f572174c06fa0eef2ac537f22cc36c1cb1a67354479e56",
+          "localizedDescription": "- Listas JSON: un canal con varias claves (KID1:KEY1,KID2:KEY2) ya se reproduce; antes se descartaba.\n- Un canal presente en varias listas ya no sale en «Sin grupo» si alguna de sus fuentes tiene grupo."
+        },
+        {
           "version": "0.9.64",
           "date": "2026-10-23",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.64/InputStreamPlayer-iOS-0.9.64-118-unsigned.ipa",
@@ -902,15 +911,6 @@
           "minOSVersion": "16.0",
           "sha256": "474d77d0ba4743d6118d8c39867368fafe44f22c8032cd4560058e5bed0e7372",
           "localizedDescription": "**English**\n\n- Lists with a wrong key now import; only the affected channel is dropped.\n\n**Español**\n\n- Las listas con alguna clave errónea ya se importan; solo se descarta el canal afectado."
-        },
-        {
-          "version": "0.5.11",
-          "date": "2026-09-13",
-          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.11/InputStreamPlayer-iOS-0.5.11-18-unsigned.ipa",
-          "size": 15223950,
-          "minOSVersion": "16.0",
-          "sha256": "56516ac27b62d64f83f9055809f7998e31af119b67d079219e997dd4a47a7930",
-          "localizedDescription": "**English**\n\n- Support for encrypted lists; fixes for lists saved on Windows and channels that need custom headers.\n\n**Español**\n\n- Soporte para listas cifradas; arreglos para listas guardadas en Windows y canales con cabeceras propias."
         }
       ]
     }
