@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.66",
+          "date": "2026-10-28",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.66/InputStreamPlayer-iOS-0.9.66-120-unsigned.ipa",
+          "size": 17295223,
+          "minOSVersion": "16.0",
+          "sha256": "e91bb1f2717404bdb2491d4cc0f06c3eb6c890b2aae70eea16962e774360e2c6",
+          "localizedDescription": "\n- **iOS y Mac**: el vídeo puede pasar a la ventana flotante del sistema. Va sobre la `AVSampleBufferDisplayLayer` de la superficie «Sistema», que ya no usa OpenGL, y era lo que bloqueaba el PiP (ver `docs/poc/scope-picture-in-picture.md`). `IOSPictureInPicture` (en `IOSMPVRenderView.swift`) lleva el `AVPictureInPictureController`. mpv sigue mandando: pausa y saltos de la ventana van al controlador. El rango está en el reloj del sistema, el mismo con el que se encolan los fotogramas, y en directo es infinito (sin barra). Botón `pip.enter` en la barra y en pantalla completa (iOS) y en los mandos (Mac, también con la tecla P). En iOS entra solo al salir a inicio con el vídeo en marcha. No hay PiP en el multiview ni con la superficie OpenGL. Los subtítulos no viajan a la ventana, porque van en otra capa.\n- **iOS: audio en segundo plano** (`UIBackgroundModes: audio`): instalada con Xcode o SideStore, el sonido ya no se para al salir de la app. La superficie OpenGL deja de pintar en segundo plano (`setSuspended`, con `glFinish`), porque iOS cierra la app que manda órdenes de OpenGL ES fuera de pantalla.\n- **Android** (teléfonos y tabletas; en la tele no): `supportsPictureInPicture` en `MainActivity`, y `PictureInPicture.kt` coordina la sesión que publica `PlayerScreen`. La proporción es la del vídeo y la ventana tiene botón de pausa. En Android 12+ entra solo al salir a inicio (`setAutoEnterEnabled`), y antes por `onUserLeaveHint`. En PiP solo queda el vídeo, y cerrar la ventana cierra el reproductor. Botón en la barra y en pantalla completa. No en el multiview.\n- tvOS y Android TV: sin cambios.\n- **Android, barra del reproductor**: el título iba centrado con un margen fijo de 90 dp y, con el cuarto icono, se metía debajo de la estrella. Ahora es una fila: «Cerrar», el título en el hueco que queda y los iconos.\n- **Android, pantalla completa tras el PiP**: la ventana de PiP es apaisada, y `PlayerScreen` lo tomaba por un giro del teléfono: al volver de la ventana se perdía la pantalla completa en vertical. La orientación sale ahora de la pantalla entera (`maximumWindowMetrics`), no de la ventana.\n- Probado: **OnePlus 7 Pro (Android 12)** con ExoPlayer y mpv, en bajo demanda (HLS de Apple) y en directo (LA 1, ISML): entrada con el botón, desde la pantalla completa y al salir a inicio; pausa y reanudación desde la ventana; volver de la ventana (a la vista normal o a pantalla completa); cerrar la ventana cierra el reproductor; girar sigue entrando y saliendo de pantalla completa. **iPhone 17 (iOS 27)**: el controlador se crea y el sistema da el PiP por posible; entrada con el botón, entrada sola al salir a inicio, volver a la app, y canal en directo sin barra, comprobado por el usuario y en el registro. Arrancarlo sin un toque del usuario falla (`PGPegasusErrorDomain -1003`), como manda iOS. Ni la pausa ni los saltos desde la ventana de iOS aparecen en el registro: puede que no se pulsaran. **Simulador de iPhone**: no admite PiP (`isPictureInPictureSupported()` da `false`) y el botón no aparece. Sin probar en el Mac abierto. iOS, Mac y tvOS compilan, y pasan los tests de `PlaybackModel`."
+        },
+        {
           "version": "0.9.65",
           "date": "2026-10-24",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.65/InputStreamPlayer-iOS-0.9.65-119-unsigned.ipa",
@@ -902,15 +911,6 @@
           "minOSVersion": "16.0",
           "sha256": "bb503000d044494eaa6df9fedf3ef04473c39e06934caaef922c9cf78c243309",
           "localizedDescription": "**English**\n\n- Reload lists on demand or schedule automatic refreshes.\n\n**Español**\n\n- Recarga tus listas cuando quieras o programa su actualización automática."
-        },
-        {
-          "version": "0.5.12",
-          "date": "2026-09-13",
-          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.12/InputStreamPlayer-iOS-0.5.12-19-unsigned.ipa",
-          "size": 15224607,
-          "minOSVersion": "16.0",
-          "sha256": "474d77d0ba4743d6118d8c39867368fafe44f22c8032cd4560058e5bed0e7372",
-          "localizedDescription": "**English**\n\n- Lists with a wrong key now import; only the affected channel is dropped.\n\n**Español**\n\n- Las listas con alguna clave errónea ya se importan; solo se descarta el canal afectado."
         }
       ]
     }
