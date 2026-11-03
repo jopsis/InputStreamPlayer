@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.67",
+          "date": "2026-11-03",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.67/InputStreamPlayer-iOS-0.9.67-121-unsigned.ipa",
+          "size": 17304345,
+          "minOSVersion": "16.0",
+          "sha256": "fcd1e2753ebbd48a93a1d7496ce99c0d1e7ccc902e5c5ea9e56b3eee814527f5",
+          "localizedDescription": "- Listas M3U más tolerantes: se leen las comillas tipográficas (“ ”), un canal con la URL en la misma línea que el #EXTINF y las directivas a las que les falta el #.\n- Un directo que se queda en «cargando» más de 5 segundos se reabre solo."
+        },
+        {
           "version": "0.9.66",
           "date": "2026-10-28",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.66/InputStreamPlayer-iOS-0.9.66-120-unsigned.ipa",
@@ -902,15 +911,6 @@
           "minOSVersion": "16.0",
           "sha256": "557462ac1aea2c33850b4cde042345c0e632d46fe292da1ed613df22be38baec",
           "localizedDescription": "**English**\n\n- Custom lists: paste your own channels in M3U format.\n\n**Español**\n\n- Listas personalizadas: pega tus canales en formato M3U."
-        },
-        {
-          "version": "0.5.13",
-          "date": "2026-09-15",
-          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.13/InputStreamPlayer-iOS-0.5.13-20-unsigned.ipa",
-          "size": 15251204,
-          "minOSVersion": "16.0",
-          "sha256": "bb503000d044494eaa6df9fedf3ef04473c39e06934caaef922c9cf78c243309",
-          "localizedDescription": "**English**\n\n- Reload lists on demand or schedule automatic refreshes.\n\n**Español**\n\n- Recarga tus listas cuando quieras o programa su actualización automática."
         }
       ]
     }
