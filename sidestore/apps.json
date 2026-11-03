@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.70",
+          "date": "2026-11-03",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.70/InputStreamPlayer-iOS-0.9.70-124-unsigned.ipa",
+          "size": 17328219,
+          "minOSVersion": "16.0",
+          "sha256": "37e4c4362b07f876fd75efbc15edd1cd40f2bc1fda18cb1e6e71065301f1edcd",
+          "localizedDescription": "- Series: nuevos botones de capítulo anterior y siguiente junto a pausa y los saltos de 10 segundos, en las series de addons y de listas.\n- Al salir del reproductor con «atrás» después de ver un capítulo, ahora se vuelve al listado de capítulos y no a la pantalla de inicio."
+        },
+        {
           "version": "0.9.69",
           "date": "2026-11-03",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.69/InputStreamPlayer-iOS-0.9.69-123-unsigned.ipa",
@@ -902,15 +911,6 @@
           "minOSVersion": "16.0",
           "sha256": "51d93418dab3c005b5218213769149e5c220f00f6077e1f2bf4b35cff7a939a3",
           "localizedDescription": "**English**\n\n- Rotating to landscape goes full screen; deleting a list asks for confirmation.\n\n**Español**\n\n- Al girar a horizontal el vídeo pasa a pantalla completa; borrar una lista pide confirmación."
-        },
-        {
-          "version": "0.5.16",
-          "date": "2026-09-15",
-          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.16/InputStreamPlayer-iOS-0.5.16-23-unsigned.ipa",
-          "size": 15288146,
-          "minOSVersion": "16.0",
-          "sha256": "c2a372dfddef406c16acced4c8ccb7179daa22f762b83bffa62686ed2f33ce95",
-          "localizedDescription": "**English**\n\n- Live DASH channels open much faster.\n\n**Español**\n\n- Los canales DASH en directo abren mucho más rápido."
         }
       ]
     }
