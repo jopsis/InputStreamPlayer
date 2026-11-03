@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.69",
+          "date": "2026-11-03",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.69/InputStreamPlayer-iOS-0.9.69-123-unsigned.ipa",
+          "size": 17311445,
+          "minOSVersion": "16.0",
+          "sha256": "2976951e68aebee034120aa8e791c7eff22d6d67e6d55940bde7bf78b896d4f2",
+          "localizedDescription": "- Canales HLS con audio en lista aparte (por ejemplo, Agile TV) que en iPhone, iPad, Apple TV y Mac salían con imagen pero sin sonido: ahora suenan.\n- Menos errores de descarga de segmentos con algunos servidores, que dejaban el canal en «cargando»."
+        },
+        {
           "version": "0.9.68",
           "date": "2026-11-03",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.68/InputStreamPlayer-iOS-0.9.68-122-unsigned.ipa",
@@ -902,15 +911,6 @@
           "minOSVersion": "16.0",
           "sha256": "c2a372dfddef406c16acced4c8ccb7179daa22f762b83bffa62686ed2f33ce95",
           "localizedDescription": "**English**\n\n- Live DASH channels open much faster.\n\n**Español**\n\n- Los canales DASH en directo abren mucho más rápido."
-        },
-        {
-          "version": "0.5.15",
-          "date": "2026-09-15",
-          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.15/InputStreamPlayer-iOS-0.5.15-22-unsigned.ipa",
-          "size": 15270393,
-          "minOSVersion": "16.0",
-          "sha256": "8791293418a81c80c83843b63a3f495bbb12820f3e8b515b3b853d3e33741b79",
-          "localizedDescription": "**English**\n\n- Fixed playback of live DASH channels cutting out after a few seconds.\n\n**Español**\n\n- Arreglado un corte de los canales DASH en directo a los pocos segundos."
         }
       ]
     }
