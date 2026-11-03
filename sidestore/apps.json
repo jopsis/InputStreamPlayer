@@ -19,7 +19,7 @@
           "size": 17311445,
           "minOSVersion": "16.0",
           "sha256": "2976951e68aebee034120aa8e791c7eff22d6d67e6d55940bde7bf78b896d4f2",
-          "localizedDescription": "- Canales HLS con audio en lista aparte (por ejemplo, Agile TV) que en iPhone, iPad, Apple TV y Mac salían con imagen pero sin sonido: ahora suenan.\n- Menos errores de descarga de segmentos con algunos servidores, que dejaban el canal en «cargando»."
+          "localizedDescription": "- Canales HLS con el audio en lista aparte que en iPhone, iPad, Apple TV y Mac salían con imagen pero sin sonido: ahora suenan.\n- Menos errores de descarga de segmentos con algunos servidores, que dejaban el canal en «cargando»."
         },
         {
           "version": "0.9.68",
