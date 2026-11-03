@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.68",
+          "date": "2026-11-03",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.68/InputStreamPlayer-iOS-0.9.68-122-unsigned.ipa",
+          "size": 17304344,
+          "minOSVersion": "16.0",
+          "sha256": "33ac925d66c6658ce5130d8ea023be33534af5c487fe3ded9ffe396d0f57b35f",
+          "localizedDescription": "- Listas M3U más tolerantes: se leen las comillas tipográficas (“ ”), un canal con la URL en la misma línea que el #EXTINF y las directivas a las que les falta el #.\n- Un directo que se queda en «cargando» más de 5 segundos se reabre solo."
+        },
+        {
           "version": "0.9.67",
           "date": "2026-11-03",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.67/InputStreamPlayer-iOS-0.9.67-121-unsigned.ipa",
@@ -902,15 +911,6 @@
           "minOSVersion": "16.0",
           "sha256": "8791293418a81c80c83843b63a3f495bbb12820f3e8b515b3b853d3e33741b79",
           "localizedDescription": "**English**\n\n- Fixed playback of live DASH channels cutting out after a few seconds.\n\n**Español**\n\n- Arreglado un corte de los canales DASH en directo a los pocos segundos."
-        },
-        {
-          "version": "0.5.14",
-          "date": "2026-09-15",
-          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.14/InputStreamPlayer-iOS-0.5.14-21-unsigned.ipa",
-          "size": 15270437,
-          "minOSVersion": "16.0",
-          "sha256": "557462ac1aea2c33850b4cde042345c0e632d46fe292da1ed613df22be38baec",
-          "localizedDescription": "**English**\n\n- Custom lists: paste your own channels in M3U format.\n\n**Español**\n\n- Listas personalizadas: pega tus canales en formato M3U."
         }
       ]
     }
