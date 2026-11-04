@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.71",
+          "date": "2026-11-04",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.71/InputStreamPlayer-iOS-0.9.71-125-unsigned.ipa",
+          "size": 17331140,
+          "minOSVersion": "16.0",
+          "sha256": "2739267547d840292ca02fce9b9d0db5cd762a4664155d67dbd6cfe825ae2f4c",
+          "localizedDescription": "Directos DASH: el audio ya no se queda en bucle.\n\nEn algunos servidores, a los pocos segundos de abrir un directo DASH el vídeo seguía pero el audio repetía el mismo trozo sin parar. Ahora la app evita que el reproductor reciba un segmento que el servidor todavía no ha anunciado en el manifiesto, de modo que el audio avanza a la par del vídeo."
+        },
+        {
           "version": "0.9.70",
           "date": "2026-11-03",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.70/InputStreamPlayer-iOS-0.9.70-124-unsigned.ipa",
@@ -902,15 +911,6 @@
           "minOSVersion": "16.0",
           "sha256": "098fde2758f1dc36a742a6ecf1daf20d9a4550154d8cf301cf43c3121a4ac8dc",
           "localizedDescription": "**English**\n\n- New: programme guide (EPG).\n\n**Español**\n\n- Nuevo: guía de programación (EPG)."
-        },
-        {
-          "version": "0.5.17",
-          "date": "2026-09-15",
-          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.17/InputStreamPlayer-iOS-0.5.17-24-unsigned.ipa",
-          "size": 15294620,
-          "minOSVersion": "16.0",
-          "sha256": "51d93418dab3c005b5218213769149e5c220f00f6077e1f2bf4b35cff7a939a3",
-          "localizedDescription": "**English**\n\n- Rotating to landscape goes full screen; deleting a list asks for confirmation.\n\n**Español**\n\n- Al girar a horizontal el vídeo pasa a pantalla completa; borrar una lista pide confirmación."
         }
       ]
     }
