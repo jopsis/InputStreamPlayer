@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.72",
+          "date": "2026-11-04",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.72/InputStreamPlayer-iOS-0.9.72-126-unsigned.ipa",
+          "size": 17333033,
+          "minOSVersion": "16.0",
+          "sha256": "0e0c27b0cc2f78960829432c52569e19b6d21f9725c1e23c2d1f483818724162",
+          "localizedDescription": "Emisiones en iOS: la barra superior y los filtros de grupos ahora tienen el mismo degradado suave y transparente que el resto de pantallas, sin cortes."
+        },
+        {
           "version": "0.9.71",
           "date": "2026-11-04",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.71/InputStreamPlayer-iOS-0.9.71-125-unsigned.ipa",
@@ -902,15 +911,6 @@
           "minOSVersion": "16.0",
           "sha256": "8b5c23fd9973dbd50abc028bc42c0091f043eb90339e619005550d35683bf05c",
           "localizedDescription": "**English**\n\n- Much faster guide.\n\n**Español**\n\n- Guía mucho más rápida."
-        },
-        {
-          "version": "0.5.18",
-          "date": "2026-09-16",
-          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.18/InputStreamPlayer-iOS-0.5.18-25-unsigned.ipa",
-          "size": 15487764,
-          "minOSVersion": "16.0",
-          "sha256": "098fde2758f1dc36a742a6ecf1daf20d9a4550154d8cf301cf43c3121a4ac8dc",
-          "localizedDescription": "**English**\n\n- New: programme guide (EPG).\n\n**Español**\n\n- Nuevo: guía de programación (EPG)."
         }
       ]
     }
