@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.73",
+          "date": "2026-11-05",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.73/InputStreamPlayer-iOS-0.9.73-127-unsigned.ipa",
+          "size": 17346399,
+          "minOSVersion": "16.0",
+          "sha256": "0426340a07eab8a1393f21f4d6329efff4fa3d89e7dda54f62693091b35ab9f5",
+          "localizedDescription": "- Series: al salir de un capítulo se vuelve a la lista de capítulos de la serie, en lugar de al listado de series (Android).\n- Rejilla y tarjetas: el texto que no cabe y sale con «…» (nombre del canal, lo que se emite ahora y lo que viene después) se desplaza hasta el final y vuelve cuando el cursor está encima, la tarjeta tiene el foco o hay un dedo apoyado en ella."
+        },
+        {
           "version": "0.9.72",
           "date": "2026-11-04",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.72/InputStreamPlayer-iOS-0.9.72-126-unsigned.ipa",
@@ -902,15 +911,6 @@
           "minOSVersion": "16.0",
           "sha256": "f85ae7c6fda93c2b9c1e5c6101fa8efd55192040b35a50726876519b85575e6d",
           "localizedDescription": "**English**\n\n- Fixed the guide becoming unresponsive.\n\n**Español**\n\n- Arreglada la guía que dejaba de responder."
-        },
-        {
-          "version": "0.5.19",
-          "date": "2026-09-16",
-          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.19/InputStreamPlayer-iOS-0.5.19-26-unsigned.ipa",
-          "size": 15502036,
-          "minOSVersion": "16.0",
-          "sha256": "8b5c23fd9973dbd50abc028bc42c0091f043eb90339e619005550d35683bf05c",
-          "localizedDescription": "**English**\n\n- Much faster guide.\n\n**Español**\n\n- Guía mucho más rápida."
         }
       ]
     }
