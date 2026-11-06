@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.74",
+          "date": "2026-11-06",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.74/InputStreamPlayer-iOS-0.9.74-128-unsigned.ipa",
+          "size": 17348499,
+          "minOSVersion": "16.0",
+          "sha256": "b7550c92e91f994977b858117ba6941041586b5e7c1d22ec4cdb603a6ac1d0c9",
+          "localizedDescription": "Addons: los títulos de las tarjetas ocupan una sola línea y, si son largos, se desplazan al enfocar la tarjeta, como en Emisiones. Se quita el año bajo el título. El botón de volver de las pantallas de detalle pasa a ser una cápsula de vidrio translúcido. El resaltado de un episodio deja margen bajo la miniatura."
+        },
+        {
           "version": "0.9.73",
           "date": "2026-11-05",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.73/InputStreamPlayer-iOS-0.9.73-127-unsigned.ipa",
@@ -902,15 +911,6 @@
           "minOSVersion": "16.0",
           "sha256": "1e1a640f5cecbe593fc24aa018f49add0814546f815be5e04d2b2f2fc212e435",
           "localizedDescription": "**English**\n\n- The guide follows your list order and can be filtered by group.\n\n**Español**\n\n- La guía sigue el orden de tus listas y se puede filtrar por grupo."
-        },
-        {
-          "version": "0.5.20",
-          "date": "2026-09-16",
-          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.20/InputStreamPlayer-iOS-0.5.20-27-unsigned.ipa",
-          "size": 15509203,
-          "minOSVersion": "16.0",
-          "sha256": "f85ae7c6fda93c2b9c1e5c6101fa8efd55192040b35a50726876519b85575e6d",
-          "localizedDescription": "**English**\n\n- Fixed the guide becoming unresponsive.\n\n**Español**\n\n- Arreglada la guía que dejaba de responder."
         }
       ]
     }
