@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.75",
+          "date": "2026-11-07",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.75/InputStreamPlayer-iOS-0.9.75-129-unsigned.ipa",
+          "size": 17348206,
+          "minOSVersion": "16.0",
+          "sha256": "00b2cd133f68d54849e9d656fe6ff44005e60d356024a29ce02dd4cd1ac257a8",
+          "localizedDescription": "Los títulos de «Ver más tarde» y de las listas de Trakt ya no muestran el año bajo el nombre."
+        },
+        {
           "version": "0.9.74",
           "date": "2026-11-06",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.74/InputStreamPlayer-iOS-0.9.74-128-unsigned.ipa",
@@ -902,15 +911,6 @@
           "minOSVersion": "16.0",
           "sha256": "2396c972d8501e1a32efd1e08a871931b5d81eeda7fc93092f37376907e017fe",
           "localizedDescription": "**English**\n\n- Addresses that redirect to the manifest now work.\n\n**Español**\n\n- Ya funcionan las direcciones que redirigen al manifiesto."
-        },
-        {
-          "version": "0.5.21",
-          "date": "2026-09-16",
-          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.21/InputStreamPlayer-iOS-0.5.21-28-unsigned.ipa",
-          "size": 15505026,
-          "minOSVersion": "16.0",
-          "sha256": "1e1a640f5cecbe593fc24aa018f49add0814546f815be5e04d2b2f2fc212e435",
-          "localizedDescription": "**English**\n\n- The guide follows your list order and can be filtered by group.\n\n**Español**\n\n- La guía sigue el orden de tus listas y se puede filtrar por grupo."
         }
       ]
     }
