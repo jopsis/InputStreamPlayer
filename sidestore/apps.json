@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.76",
+          "date": "2026-11-08",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.76/InputStreamPlayer-iOS-0.9.76-130-unsigned.ipa",
+          "size": 17350738,
+          "minOSVersion": "16.0",
+          "sha256": "4a94fe208ac094597dcb8da87854b03a7f4669af94cbee2d5485fb04b45b96ac",
+          "localizedDescription": "Addons: al salir de una pantalla ya no aparece un aviso de error falso.\nCuando un servidor rechaza un vídeo, la app muestra el motivo que da el servidor.\nEl informe de diagnóstico incluye el tipo de conexión y más datos de los directos para ayudar a encontrar los tirones."
+        },
+        {
           "version": "0.9.75",
           "date": "2026-11-07",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.75/InputStreamPlayer-iOS-0.9.75-129-unsigned.ipa",
@@ -902,15 +911,6 @@
           "minOSVersion": "16.0",
           "sha256": "8582c6850a9ea8d1947e7e7d4b8e4129cdc28a35e99d8ad3b83d9820b83f3835",
           "localizedDescription": "**English**\n\n- Channels with several keys now work.\n\n**Español**\n\n- Los canales con varias claves ya funcionan."
-        },
-        {
-          "version": "0.5.22",
-          "date": "2026-09-17",
-          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.22/InputStreamPlayer-iOS-0.5.22-29-unsigned.ipa",
-          "size": 15511798,
-          "minOSVersion": "16.0",
-          "sha256": "2396c972d8501e1a32efd1e08a871931b5d81eeda7fc93092f37376907e017fe",
-          "localizedDescription": "**English**\n\n- Addresses that redirect to the manifest now work.\n\n**Español**\n\n- Ya funcionan las direcciones que redirigen al manifiesto."
         }
       ]
     }
