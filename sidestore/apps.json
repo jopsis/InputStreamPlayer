@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.79",
+          "date": "2026-11-09",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.79/InputStreamPlayer-iOS-0.9.79-133-unsigned.ipa",
+          "size": 17463487,
+          "minOSVersion": "16.0",
+          "sha256": "c7ce8200fa97983d0b5b683a8e3f846d3c3c18e89a473d6c583efb3ac307944d",
+          "localizedDescription": "- iOS: la vista Rejilla de Emisiones vuelve a desplazarse y a responder al tocar un canal. También en los carteles de Addons.\n- En iPhone el nombre de las tarjetas ya no rota al dejar el dedo apoyado; con cursor (iPad y Mac) y en Apple TV sigue igual."
+        },
+        {
           "version": "0.9.78",
           "date": "2026-11-09",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.78/InputStreamPlayer-iOS-0.9.78-132-unsigned.ipa",
@@ -902,15 +911,6 @@
           "minOSVersion": "16.0",
           "sha256": "b06cd7008664edd96b94d3130816a8f982a5f05fb975a291c92d1984e2ddf890",
           "localizedDescription": "**English**\n\n- Catch-up: play programmes that already aired, if your list provides it.\n\n**Español**\n\n- Catchup: reproduce programas ya emitidos, si tu lista lo permite."
-        },
-        {
-          "version": "0.5.25",
-          "date": "2026-09-19",
-          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.25/InputStreamPlayer-iOS-0.5.25-32-unsigned.ipa",
-          "size": 15541729,
-          "minOSVersion": "16.0",
-          "sha256": "3ddb4067143bf0b821b08ed140bb2d355b82888b9facbbe7b3909846148b3b9d",
-          "localizedDescription": "**English**\n\n- Channels that use a different key per quality now start.\n\n**Español**\n\n- Los canales con una clave distinta por calidad ya arrancan."
         }
       ]
     }
