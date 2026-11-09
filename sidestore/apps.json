@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.80",
+          "date": "2026-11-09",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.80/InputStreamPlayer-iOS-0.9.80-134-unsigned.ipa",
+          "size": 17465229,
+          "minOSVersion": "16.0",
+          "sha256": "71cde386daf46b1445750161f1ba3dd1dabf1b9ab210b5322b46d2777c4b9443",
+          "localizedDescription": "- Las miniaturas de los programas en las vistas Rejilla y Tarjetas se ven enteras: ya no se recortan caras ni cabezas. El espacio que sobra se rellena con la misma imagen desenfocada."
+        },
+        {
           "version": "0.9.79",
           "date": "2026-11-09",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.79/InputStreamPlayer-iOS-0.9.79-133-unsigned.ipa",
@@ -902,15 +911,6 @@
           "minOSVersion": "16.0",
           "sha256": "9c125c4afcd6adf4b1435c5030833894855cd996b57d30034501b2bab3dbe13a",
           "localizedDescription": "**English**\n\n- Navigable guide: grid view up to eight days back, hourly blocks for channels without guide.\n\n**Español**\n\n- Guía navegable: rejilla hasta ocho días atrás y bloques de una hora para canales sin guía."
-        },
-        {
-          "version": "0.5.26",
-          "date": "2026-09-21",
-          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.26/InputStreamPlayer-iOS-0.5.26-33-unsigned.ipa",
-          "size": 15606908,
-          "minOSVersion": "16.0",
-          "sha256": "b06cd7008664edd96b94d3130816a8f982a5f05fb975a291c92d1984e2ddf890",
-          "localizedDescription": "**English**\n\n- Catch-up: play programmes that already aired, if your list provides it.\n\n**Español**\n\n- Catchup: reproduce programas ya emitidos, si tu lista lo permite."
         }
       ]
     }
