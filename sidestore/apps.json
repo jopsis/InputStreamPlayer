@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.77",
+          "date": "2026-11-09",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.77/InputStreamPlayer-iOS-0.9.77-131-unsigned.ipa",
+          "size": 17350738,
+          "minOSVersion": "16.0",
+          "sha256": "35c095061f5e9383950b148cc2cd65b96c1f5eac2eb13b1068c9e90cc896707c",
+          "localizedDescription": "- Addons: al acabar un capítulo de una serie, «atrás» vuelve a la ficha de la serie con la lista de episodios (Android TV).\n- Reproductor: los botones de capítulo anterior y siguiente funcionan con el mando, muestran que están cargando y avisan si el capítulo no tiene enlaces (Android TV)."
+        },
+        {
           "version": "0.9.76",
           "date": "2026-11-08",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.76/InputStreamPlayer-iOS-0.9.76-130-unsigned.ipa",
@@ -902,15 +911,6 @@
           "minOSVersion": "16.0",
           "sha256": "81d3f8fd40202ec07bd3a3a82e41c09e358516cda8a4cc23e04d45952c0c7da2",
           "localizedDescription": "**English**\n\n- Information button in the player; clearer messages when a channel does not open.\n\n**Español**\n\n- Botón de información en el reproductor; mensajes más claros cuando un canal no abre."
-        },
-        {
-          "version": "0.5.23",
-          "date": "2026-09-17",
-          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.23/InputStreamPlayer-iOS-0.5.23-30-unsigned.ipa",
-          "size": 15517182,
-          "minOSVersion": "16.0",
-          "sha256": "8582c6850a9ea8d1947e7e7d4b8e4129cdc28a35e99d8ad3b83d9820b83f3835",
-          "localizedDescription": "**English**\n\n- Channels with several keys now work.\n\n**Español**\n\n- Los canales con varias claves ya funcionan."
         }
       ]
     }
