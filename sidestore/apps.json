@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.78",
+          "date": "2026-11-09",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.78/InputStreamPlayer-iOS-0.9.78-132-unsigned.ipa",
+          "size": 17467194,
+          "minOSVersion": "16.0",
+          "sha256": "09cf917d4a01a3506bd1cc1c8be0a0790ca7dc483982d6987fa3a597b7ad1aa3",
+          "localizedDescription": "- **Nueva vista «Deportes» en Emisiones**: los partidos de ahora, de más tarde y de mañana, con filtros por deporte. Sale de tu guía EPG y de los nombres de los canales de eventos, sin consultar ningún servicio externo (por eso no hay marcadores ni resultados).\n- Cada partido reúne todos los canales que lo emiten, separados en directo, diferido y repetición. Con dos o más directos puedes verlos a la vez en multiview.\n- La guía EPG lee ahora las categorías de los programas, lo que ayuda a reconocer el deporte en canales generalistas.\n- iOS: los filtros de grupos ya no dejan una raya bajo la barra superior."
+        },
+        {
           "version": "0.9.77",
           "date": "2026-11-09",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.77/InputStreamPlayer-iOS-0.9.77-131-unsigned.ipa",
@@ -902,15 +911,6 @@
           "minOSVersion": "16.0",
           "sha256": "3ddb4067143bf0b821b08ed140bb2d355b82888b9facbbe7b3909846148b3b9d",
           "localizedDescription": "**English**\n\n- Channels that use a different key per quality now start.\n\n**Español**\n\n- Los canales con una clave distinta por calidad ya arrancan."
-        },
-        {
-          "version": "0.5.24",
-          "date": "2026-09-19",
-          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.24/InputStreamPlayer-iOS-0.5.24-31-unsigned.ipa",
-          "size": 15536527,
-          "minOSVersion": "16.0",
-          "sha256": "81d3f8fd40202ec07bd3a3a82e41c09e358516cda8a4cc23e04d45952c0c7da2",
-          "localizedDescription": "**English**\n\n- Information button in the player; clearer messages when a channel does not open.\n\n**Español**\n\n- Botón de información en el reproductor; mensajes más claros cuando un canal no abre."
         }
       ]
     }
