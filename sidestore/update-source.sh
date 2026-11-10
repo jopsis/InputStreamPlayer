@@ -11,16 +11,43 @@
 #     git commit -m "sidestore: actualiza apps.json para vX.Y.Z"
 #     git push
 #
+#   Para el source de Apple TV (atvloadly y similares):
+#     sidestore/update-source.sh tvos      # escribe sidestore/apps-tvos.json
+#
 # Requiere: gh (autenticado), jq.
 set -euo pipefail
 
+platform="${1:-ios}"
+case "$platform" in
+  ios)
+    file_name="apps.json"
+    asset_prefix="iOS"
+    source_id="com.InputStreamPlayer.sidestore-source"
+    source_name="InputStream Player"
+    subtitle="HLS/DASH/Smooth Streaming player with raw-key ClearKey"
+    # Versión mínima de iOS declarada por el target Xcode
+    # (Apps/InputStreamPlayerIOS, IPHONEOS_DEPLOYMENT_TARGET). Actualizar aquí
+    # si cambia el deployment target del proyecto.
+    min_os_version="16.0"
+    ;;
+  tvos)
+    file_name="apps-tvos.json"
+    asset_prefix="tvOS"
+    source_id="com.InputStreamPlayer.sidestore-source-tvos"
+    source_name="InputStream Player (Apple TV)"
+    subtitle="HLS/DASH/Smooth Streaming player for Apple TV"
+    # TVOS_DEPLOYMENT_TARGET de Apps/InputStreamPlayerTVOS.
+    min_os_version="16.0"
+    ;;
+  *)
+    echo "uso: $0 [ios|tvos]" >&2
+    exit 64
+    ;;
+esac
+
 repo="jopsis/InputStreamPlayer"
-source_url="https://jopsis.github.io/InputStreamPlayer/sidestore/apps.json"
+source_url="https://jopsis.github.io/InputStreamPlayer/sidestore/$file_name"
 icon_url="https://jopsis.github.io/InputStreamPlayer/assets/icon.png"
-# Versión mínima de iOS declarada por el target Xcode
-# (Apps/InputStreamPlayerIOS, IPHONEOS_DEPLOYMENT_TARGET). Actualizar aquí si
-# cambia el deployment target del proyecto.
-min_os_version="16.0"
 
 if ! command -v gh >/dev/null 2>&1; then
   echo "error: falta 'gh' (GitHub CLI)" >&2
@@ -32,7 +59,7 @@ if ! command -v jq >/dev/null 2>&1; then
 fi
 
 script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-out_file="$script_dir/apps.json"
+out_file="$script_dir/$file_name"
 
 tags="$(gh release list --repo "$repo" --limit 100 --json tagName,isDraft,isPrerelease \
   --jq '[.[] | select(.isDraft == false and .isPrerelease == false) | .tagName] | join("\n")')"
@@ -51,14 +78,14 @@ while IFS= read -r tag; do
   release_json="$(gh release view "$tag" --repo "$repo" \
     --json tagName,publishedAt,body,assets)"
 
-  ipa_entry="$(jq -c '
+  ipa_entry="$(jq -c --arg prefix "$asset_prefix" '
     .assets
-    | map(select(.name | test("^InputStreamPlayer-iOS-.*-unsigned\\.ipa$")))
+    | map(select(.name | test("^InputStreamPlayer-" + $prefix + "-.*-unsigned\\.ipa$")))
     | first
   ' <<<"$release_json")"
 
   if [[ "$ipa_entry" == "null" ]]; then
-    echo "aviso: $tag no tiene IPA de iOS sin firmar adjunto, se omite" >&2
+    echo "aviso: $tag no tiene IPA de $asset_prefix sin firmar adjunto, se omite" >&2
     continue
   fi
 
@@ -96,13 +123,13 @@ versions_json="$(jq -c '
 ' <<<"$versions_json")"
 
 jq -n \
-  --arg name "InputStream Player" \
-  --arg identifier "com.InputStreamPlayer.sidestore-source" \
+  --arg name "$source_name" \
+  --arg identifier "$source_id" \
   --arg sourceURL "$source_url" \
   --arg appName "InputStream Player" \
   --arg bundleIdentifier "com.InputStreamPlayer" \
   --arg developerName "Jop Labs LLC" \
-  --arg subtitle "HLS/DASH/Smooth Streaming player with raw-key ClearKey" \
+  --arg subtitle "$subtitle" \
   --arg localizedDescription "Player for HLS, DASH/MPD and Microsoft Smooth Streaming (ISML) playlists on iPhone, iPad, Apple TV, Mac and Android, with ClearKey/raw-key support for content the user is authorized to watch. Live TV with guide and catch-up, on-demand movies and series, Stremio add-ons and optional sync through Google Drive and Trakt. It does not implement FairPlay, Widevine or PlayReady." \
   --arg iconURL "$icon_url" \
   --arg tintColor "14B85C" \

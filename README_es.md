@@ -17,7 +17,7 @@ documentación, ejemplos de listas e incidencias.
 | Plataforma | Cómo instalarla |
 |---|---|
 | **iPhone y iPad** | Con [SideStore](#sidestore): añade el source y recibirás cada versión. |
-| **Apple TV** | IPA sin firmar en la [última versión](https://github.com/jopsis/InputStreamPlayer/releases/latest); fírmala con tu cuenta de Apple. |
+| **Apple TV** | Con [atvloadly](#apple-tv-atvloadly): añade el source y recibirás cada versión. O el IPA sin firmar de la [última versión](https://github.com/jopsis/InputStreamPlayer/releases/latest), que firmas con tu cuenta de Apple. |
 | **Mac** (Apple Silicon) | ZIP en la [última versión](https://github.com/jopsis/InputStreamPlayer/releases/latest). No está notarizada: [cómo abrirla](docs/releases_es.md#mac-con-apple-silicon). |
 | **Android y Google TV** | APK en la [última versión](https://github.com/jopsis/InputStreamPlayer/releases/latest); después se actualiza sola. Si dudas, el *universal*. |
 
@@ -37,6 +37,11 @@ Instala antes [SideStore](https://docs.sidestore.io/docs/installation/install)
 > **Con LiveContainer, activa «Corregir selector de archivos»** en los ajustes
 > de la app, o importar una lista desde fichero no hará nada.
 > [Más detalle](docs/releases_es.md#ajuste-obligatorio-en-livecontainer-el-selector-de-archivos).
+
+### Apple TV (atvloadly)
+
+En [atvloadly](https://github.com/bitxeno/atvloadly), añade este source AltStore e instala InputStream Player desde él (la app se vuelve a firmar con tu Apple ID):
+`https://jopsis.github.io/InputStreamPlayer/sidestore/apps-tvos.json`.
 
 ## Qué hace
 

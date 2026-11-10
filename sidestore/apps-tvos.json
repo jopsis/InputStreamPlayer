@@ -1,0 +1,919 @@
+{
+  "name": "InputStream Player (Apple TV)",
+  "identifier": "com.InputStreamPlayer.sidestore-source-tvos",
+  "sourceURL": "https://jopsis.github.io/InputStreamPlayer/sidestore/apps-tvos.json",
+  "apps": [
+    {
+      "name": "InputStream Player",
+      "bundleIdentifier": "com.InputStreamPlayer",
+      "developerName": "Jop Labs LLC",
+      "subtitle": "HLS/DASH/Smooth Streaming player for Apple TV",
+      "localizedDescription": "Player for HLS, DASH/MPD and Microsoft Smooth Streaming (ISML) playlists on iPhone, iPad, Apple TV, Mac and Android, with ClearKey/raw-key support for content the user is authorized to watch. Live TV with guide and catch-up, on-demand movies and series, Stremio add-ons and optional sync through Google Drive and Trakt. It does not implement FairPlay, Widevine or PlayReady.",
+      "iconURL": "https://jopsis.github.io/InputStreamPlayer/assets/icon.png",
+      "tintColor": "14B85C",
+      "versions": [
+        {
+          "version": "0.9.80",
+          "date": "2026-11-09",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.80/InputStreamPlayer-tvOS-0.9.80-134-unsigned.ipa",
+          "size": 19307578,
+          "minOSVersion": "16.0",
+          "sha256": "112f378c4d05a7840562e3c90c19cfc9c92f80f0124dd823a2e6a1d9a4130bb1",
+          "localizedDescription": "- Las miniaturas de los programas en las vistas Rejilla y Tarjetas se ven enteras: ya no se recortan caras ni cabezas. El espacio que sobra se rellena con la misma imagen desenfocada."
+        },
+        {
+          "version": "0.9.79",
+          "date": "2026-11-09",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.79/InputStreamPlayer-tvOS-0.9.79-133-unsigned.ipa",
+          "size": 19307611,
+          "minOSVersion": "16.0",
+          "sha256": "47c72d5c50b09589c73b64c2e05d9a96739ccf44bca5acdcb5e6163453a19e06",
+          "localizedDescription": "- iOS: la vista Rejilla de Emisiones vuelve a desplazarse y a responder al tocar un canal. También en los carteles de Addons.\n- En iPhone el nombre de las tarjetas ya no rota al dejar el dedo apoyado; con cursor (iPad y Mac) y en Apple TV sigue igual."
+        },
+        {
+          "version": "0.9.78",
+          "date": "2026-11-09",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.78/InputStreamPlayer-tvOS-0.9.78-132-unsigned.ipa",
+          "size": 19307610,
+          "minOSVersion": "16.0",
+          "sha256": "30649751808f04b82c98aad6bcc9c862b5b160bc253802298b77f2e91621a4de",
+          "localizedDescription": "- **Nueva vista «Deportes» en Emisiones**: los partidos de ahora, de más tarde y de mañana, con filtros por deporte. Sale de tu guía EPG y de los nombres de los canales de eventos, sin consultar ningún servicio externo (por eso no hay marcadores ni resultados).\n- Cada partido reúne todos los canales que lo emiten, separados en directo, diferido y repetición. Con dos o más directos puedes verlos a la vez en multiview.\n- La guía EPG lee ahora las categorías de los programas, lo que ayuda a reconocer el deporte en canales generalistas.\n- iOS: los filtros de grupos ya no dejan una raya bajo la barra superior."
+        },
+        {
+          "version": "0.9.77",
+          "date": "2026-11-09",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.77/InputStreamPlayer-tvOS-0.9.77-131-unsigned.ipa",
+          "size": 19188265,
+          "minOSVersion": "16.0",
+          "sha256": "8c075bbf39670cf74b819b7576cc2daeb97af359762a410f9b7905fcc51ddf81",
+          "localizedDescription": "- Addons: al acabar un capítulo de una serie, «atrás» vuelve a la ficha de la serie con la lista de episodios (Android TV).\n- Reproductor: los botones de capítulo anterior y siguiente funcionan con el mando, muestran que están cargando y avisan si el capítulo no tiene enlaces (Android TV)."
+        },
+        {
+          "version": "0.9.76",
+          "date": "2026-11-08",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.76/InputStreamPlayer-tvOS-0.9.76-130-unsigned.ipa",
+          "size": 19188265,
+          "minOSVersion": "16.0",
+          "sha256": "c2d7e0de15329361e740fea66798a8327df33c5070f928d0e2e9d9a288b870d2",
+          "localizedDescription": "Addons: al salir de una pantalla ya no aparece un aviso de error falso.\nCuando un servidor rechaza un vídeo, la app muestra el motivo que da el servidor.\nEl informe de diagnóstico incluye el tipo de conexión y más datos de los directos para ayudar a encontrar los tirones."
+        },
+        {
+          "version": "0.9.75",
+          "date": "2026-11-07",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.75/InputStreamPlayer-tvOS-0.9.75-129-unsigned.ipa",
+          "size": 19186008,
+          "minOSVersion": "16.0",
+          "sha256": "b02da67f5def710538f7057858520311bfc0211922f0d3be7d6c7fe332a3cc93",
+          "localizedDescription": "Los títulos de «Ver más tarde» y de las listas de Trakt ya no muestran el año bajo el nombre."
+        },
+        {
+          "version": "0.9.74",
+          "date": "2026-11-06",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.74/InputStreamPlayer-tvOS-0.9.74-128-unsigned.ipa",
+          "size": 19185961,
+          "minOSVersion": "16.0",
+          "sha256": "897c4a4e47b8a7b9e88687545ba3030da922672765e40066254c2fa469446c8d",
+          "localizedDescription": "Addons: los títulos de las tarjetas ocupan una sola línea y, si son largos, se desplazan al enfocar la tarjeta, como en Emisiones. Se quita el año bajo el título. El botón de volver de las pantallas de detalle pasa a ser una cápsula de vidrio translúcido. El resaltado de un episodio deja margen bajo la miniatura."
+        },
+        {
+          "version": "0.9.73",
+          "date": "2026-11-05",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.73/InputStreamPlayer-tvOS-0.9.73-127-unsigned.ipa",
+          "size": 19184220,
+          "minOSVersion": "16.0",
+          "sha256": "72e7fc330851fc66439390af2416a2b8fd178b5afd7b1f6a984be03a4f309189",
+          "localizedDescription": "- Series: al salir de un capítulo se vuelve a la lista de capítulos de la serie, en lugar de al listado de series (Android).\n- Rejilla y tarjetas: el texto que no cabe y sale con «…» (nombre del canal, lo que se emite ahora y lo que viene después) se desplaza hasta el final y vuelve cuando el cursor está encima, la tarjeta tiene el foco o hay un dedo apoyado en ella."
+        },
+        {
+          "version": "0.9.72",
+          "date": "2026-11-04",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.72/InputStreamPlayer-tvOS-0.9.72-126-unsigned.ipa",
+          "size": 19177133,
+          "minOSVersion": "16.0",
+          "sha256": "ec28821a3716b17143b964473de51ae31721b5e024f291b47becbc0b5749d470",
+          "localizedDescription": "Emisiones en iOS: la barra superior y los filtros de grupos ahora tienen el mismo degradado suave y transparente que el resto de pantallas, sin cortes."
+        },
+        {
+          "version": "0.9.71",
+          "date": "2026-11-04",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.71/InputStreamPlayer-tvOS-0.9.71-125-unsigned.ipa",
+          "size": 19177134,
+          "minOSVersion": "16.0",
+          "sha256": "879437ae53c3ef666e1bf5b814688d72e63cb80b10e748e85973a033ec1821c0",
+          "localizedDescription": "Directos DASH: el audio ya no se queda en bucle.\n\nEn algunos servidores, a los pocos segundos de abrir un directo DASH el vídeo seguía pero el audio repetía el mismo trozo sin parar. Ahora la app evita que el reproductor reciba un segmento que el servidor todavía no ha anunciado en el manifiesto, de modo que el audio avanza a la par del vídeo."
+        },
+        {
+          "version": "0.9.70",
+          "date": "2026-11-03",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.70/InputStreamPlayer-tvOS-0.9.70-124-unsigned.ipa",
+          "size": 19175426,
+          "minOSVersion": "16.0",
+          "sha256": "3a8c0aae1146c38dd847d77b86b06783e3562d4819aa2c08b22ad09980344692",
+          "localizedDescription": "- Series: nuevos botones de capítulo anterior y siguiente junto a pausa y los saltos de 10 segundos, en las series de addons y de listas.\n- Al salir del reproductor con «atrás» después de ver un capítulo, ahora se vuelve al listado de capítulos y no a la pantalla de inicio."
+        },
+        {
+          "version": "0.9.69",
+          "date": "2026-11-03",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.69/InputStreamPlayer-tvOS-0.9.69-123-unsigned.ipa",
+          "size": 19160091,
+          "minOSVersion": "16.0",
+          "sha256": "547f309fbabd93125d604cb875e691c2d48fdbc619e34ebe0683a3896df2c75a",
+          "localizedDescription": "- Canales HLS con el audio en lista aparte que en iPhone, iPad, Apple TV y Mac salían con imagen pero sin sonido: ahora suenan.\n- Menos errores de descarga de segmentos con algunos servidores, que dejaban el canal en «cargando»."
+        },
+        {
+          "version": "0.9.68",
+          "date": "2026-11-03",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.68/InputStreamPlayer-tvOS-0.9.68-122-unsigned.ipa",
+          "size": 19155223,
+          "minOSVersion": "16.0",
+          "sha256": "585cac24ee38d1773a61f5ac4dba0783034dc1e56d536a77d76acb4f080a3e17",
+          "localizedDescription": "- Listas M3U más tolerantes: se leen las comillas tipográficas (“ ”), un canal con la URL en la misma línea que el #EXTINF y las directivas a las que les falta el #.\n- Un directo que se queda en «cargando» más de 5 segundos se reabre solo."
+        },
+        {
+          "version": "0.9.67",
+          "date": "2026-11-03",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.67/InputStreamPlayer-tvOS-0.9.67-121-unsigned.ipa",
+          "size": 19155223,
+          "minOSVersion": "16.0",
+          "sha256": "f8993c98603c018af8271003862f919e7857922cec902cbcc8a52653c6d51832",
+          "localizedDescription": "- Listas M3U más tolerantes: se leen las comillas tipográficas (“ ”), un canal con la URL en la misma línea que el #EXTINF y las directivas a las que les falta el #.\n- Un directo que se queda en «cargando» más de 5 segundos se reabre solo."
+        },
+        {
+          "version": "0.9.66",
+          "date": "2026-10-28",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.66/InputStreamPlayer-tvOS-0.9.66-120-unsigned.ipa",
+          "size": 19145162,
+          "minOSVersion": "16.0",
+          "sha256": "88a24b2d48fc642292301c0c179c5d013c03ee5ceda81f55046dc51fde360ef4",
+          "localizedDescription": "\n- **iOS y Mac**: el vídeo puede pasar a la ventana flotante del sistema. Va sobre la `AVSampleBufferDisplayLayer` de la superficie «Sistema», que ya no usa OpenGL, y era lo que bloqueaba el PiP (ver `docs/poc/scope-picture-in-picture.md`). `IOSPictureInPicture` (en `IOSMPVRenderView.swift`) lleva el `AVPictureInPictureController`. mpv sigue mandando: pausa y saltos de la ventana van al controlador. El rango está en el reloj del sistema, el mismo con el que se encolan los fotogramas, y en directo es infinito (sin barra). Botón `pip.enter` en la barra y en pantalla completa (iOS) y en los mandos (Mac, también con la tecla P). En iOS entra solo al salir a inicio con el vídeo en marcha. No hay PiP en el multiview ni con la superficie OpenGL. Los subtítulos no viajan a la ventana, porque van en otra capa.\n- **iOS: audio en segundo plano** (`UIBackgroundModes: audio`): instalada con Xcode o SideStore, el sonido ya no se para al salir de la app. La superficie OpenGL deja de pintar en segundo plano (`setSuspended`, con `glFinish`), porque iOS cierra la app que manda órdenes de OpenGL ES fuera de pantalla.\n- **Android** (teléfonos y tabletas; en la tele no): `supportsPictureInPicture` en `MainActivity`, y `PictureInPicture.kt` coordina la sesión que publica `PlayerScreen`. La proporción es la del vídeo y la ventana tiene botón de pausa. En Android 12+ entra solo al salir a inicio (`setAutoEnterEnabled`), y antes por `onUserLeaveHint`. En PiP solo queda el vídeo, y cerrar la ventana cierra el reproductor. Botón en la barra y en pantalla completa. No en el multiview.\n- tvOS y Android TV: sin cambios.\n- **Android, barra del reproductor**: el título iba centrado con un margen fijo de 90 dp y, con el cuarto icono, se metía debajo de la estrella. Ahora es una fila: «Cerrar», el título en el hueco que queda y los iconos.\n- **Android, pantalla completa tras el PiP**: la ventana de PiP es apaisada, y `PlayerScreen` lo tomaba por un giro del teléfono: al volver de la ventana se perdía la pantalla completa en vertical. La orientación sale ahora de la pantalla entera (`maximumWindowMetrics`), no de la ventana.\n- Probado: **OnePlus 7 Pro (Android 12)** con ExoPlayer y mpv, en bajo demanda (HLS de Apple) y en directo (LA 1, ISML): entrada con el botón, desde la pantalla completa y al salir a inicio; pausa y reanudación desde la ventana; volver de la ventana (a la vista normal o a pantalla completa); cerrar la ventana cierra el reproductor; girar sigue entrando y saliendo de pantalla completa. **iPhone 17 (iOS 27)**: el controlador se crea y el sistema da el PiP por posible; entrada con el botón, entrada sola al salir a inicio, volver a la app, y canal en directo sin barra, comprobado por el usuario y en el registro. Arrancarlo sin un toque del usuario falla (`PGPegasusErrorDomain -1003`), como manda iOS. Ni la pausa ni los saltos desde la ventana de iOS aparecen en el registro: puede que no se pulsaran. **Simulador de iPhone**: no admite PiP (`isPictureInPictureSupported()` da `false`) y el botón no aparece. Sin probar en el Mac abierto. iOS, Mac y tvOS compilan, y pasan los tests de `PlaybackModel`."
+        },
+        {
+          "version": "0.9.65",
+          "date": "2026-10-24",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.65/InputStreamPlayer-tvOS-0.9.65-119-unsigned.ipa",
+          "size": 19144504,
+          "minOSVersion": "16.0",
+          "sha256": "0a9b2ebddc2a168dc8240a3e11b844a6f4fbf343e12f48e5e866b44195141e5a",
+          "localizedDescription": "- Listas JSON: un canal con varias claves (KID1:KEY1,KID2:KEY2) ya se reproduce; antes se descartaba.\n- Un canal presente en varias listas ya no sale en «Sin grupo» si alguna de sus fuentes tiene grupo."
+        },
+        {
+          "version": "0.9.64",
+          "date": "2026-10-23",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.64/InputStreamPlayer-tvOS-0.9.64-118-unsigned.ipa",
+          "size": 19144574,
+          "minOSVersion": "16.0",
+          "sha256": "fc92bcb60b99dda1622d6456ff0aa721d6dc9aea58d3472ed8b62469961ef796",
+          "localizedDescription": "## Novedades\n\n- **Logos SVG**: los logos en formato SVG (por ejemplo los de RTVE) ya se ven en todas las plataformas.\n- **Logos que no cargan**: si un logo no existe o no llega, no se queda el indicador de carga girando: simplemente no se pinta.\n- **Iconos nuevos** en Android TV y Apple TV: el banner, el icono y la imagen de fondo ya no muestran bandas a los lados."
+        },
+        {
+          "version": "0.9.63",
+          "date": "2026-10-23",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.63/InputStreamPlayer-tvOS-0.9.63-117-unsigned.ipa",
+          "size": 19585726,
+          "minOSVersion": "16.0",
+          "sha256": "5207673b13ab84d40d33a7974ced1e45157941cb3716988770716786c5b463ff",
+          "localizedDescription": "- Nueva pestaña **Colecciones** con las películas y series de tus listas (solo aparece si alguna las trae). Filtra por todo, películas o series y, dentro, por grupo. Con favoritos y recientes; «Seguir viendo» sigue ahí. En Emisiones queda solo el directo.\n- **Favoritos sincronizados** entre tus aparatos (canales, películas y series) a través de tu Google Drive.\n- La app **recuerda la última pestaña** que elegiste en cada aparato.\n- En iPhone, iPad y Mac, la cabecera de Emisiones ya no deja ver el contenido a través de ella."
+        },
+        {
+          "version": "0.9.62",
+          "date": "2026-10-23",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.62/InputStreamPlayer-tvOS-0.9.62-116-unsigned.ipa",
+          "size": 19569169,
+          "minOSVersion": "16.0",
+          "sha256": "75e86e7774a7bf5dd6bb4c2b5f1f1da905adbb1d4618ab745f173a0207272cb4",
+          "localizedDescription": "- Nueva vista **Grupos** en Emisiones: la lista de grupos con su número de canales; al entrar en uno salen sus canales. Si tu lista trae `group-logo`, el grupo se pinta con ese logo.\n- **Miniaturas de lo que echan ahora** en Tarjetas y Rejilla, cuando la guía trae imágenes (el `<icon>` estándar de XMLTV). La guía fullEPG ya las incluye.\n- La Rejilla es más compacta.\n- Con varias guías, un canal se enseña con la que tiene programación vigente, miniaturas y logo, en vez de la primera aunque esté caducada."
+        },
+        {
+          "version": "0.9.61",
+          "date": "2026-10-22",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.61/InputStreamPlayer-tvOS-0.9.61-115-unsigned.ipa",
+          "size": 19526019,
+          "minOSVersion": "16.0",
+          "sha256": "2838ba38510096bc2c083b4949880d58dd83d86971f8948dc1b75c45accfc11b",
+          "localizedDescription": "\n- Nueva vista de Emisiones, **Tarjetas** (cuarta opción del selector, tras Rejilla): tarjeta apaisada con el logo grande, lo que se emite ahora con su barra de progreso, el canal debajo y la marca de catch-up arriba a la derecha.\n  Colores de la app: degradado verde/azulado cuyo matiz sale del nombre del canal, con la misma cuenta en todas las plataformas.\n  iOS y Mac clásico (`IOSRootView`), tvOS y Mac «Centro multimedia» (`TVOSRootView`): `ISPChannelTile` en `ISPGlass.swift` (compartido), 2 por fila en iPhone y 5 en la tele. Android: `ChannelTile`.\n- La marca de catch-up (`ISPCatchupBadge` / `CatchupBadge`) también va en la rejilla de todas las plataformas, arriba a la derecha de la baldosa; la estrella de favorito pasa arriba a la izquierda.\n- Probado en el simulador de iPhone y de Apple TV, el emulador de Google TV y el OnePlus; el Mac compila, sin abrirlo.\n- Detalle de la prueba de concepto de Android en la entrada siguiente."
+        },
+        {
+          "version": "0.9.60",
+          "date": "2026-10-22",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.60/InputStreamPlayer-tvOS-0.9.60-114-unsigned.ipa",
+          "size": 19510640,
+          "minOSVersion": "16.0",
+          "sha256": "6ccee992f7238534b553757d1d5bd88cdf0d801ab7ef1442356d63c9b99b9edc",
+          "localizedDescription": "\n- Android TV: interfaz «Centro multimedia» (la de tvOS y el Mac) por defecto, o la clásica en Ajustes → Preferencias → Interfaz.\n- iOS y Android: la pestaña Guía sobraba con la vista Guía de Emisiones y se quita; en iOS el selector de vista va en la línea del título.\n- Android: la actualización automática descarga y verifica, pero ya no abre el instalador: queda pendiente, con un punto en Ajustes.\n- Detalle en las tres entradas siguientes."
+        },
+        {
+          "version": "0.9.59",
+          "date": "2026-10-22",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.59/InputStreamPlayer-tvOS-0.9.59-113-unsigned.ipa",
+          "size": 19510640,
+          "minOSVersion": "16.0",
+          "sha256": "f52246f3a40d248b1db62e384771c83e49af4ec18c4fd20a7cab92a2520ee0cb",
+          "localizedDescription": "\n- Pedido por un usuario: ver Emisiones como la rejilla de siempre, como lista o como guía. Un botón al principio de la fila de grupos\n  rota entre las tres y la elección se recuerda (`IOSChannelLayout`, `InputStreamPlayer.channelLayout.v1`; en Android `PlaylistLibrary.channelLayout`).\n- «Guía» reutiliza la rejilla de la pantalla Guía (`IOSEPGGridView`, `TVOSEPGGridView`, `GuideGrid`) con los canales que se ven ahora:\n  respeta el grupo y la búsqueda. Solo en directo; en «Bajo demanda» no hay selector. En tvOS no lleva selector de día\n  (para lo ya emitido está la pantalla Guía).\n- Probado en el simulador de iOS y de Apple TV; Mac y Android compilan. Sin probar con mando ni ratón.\n- Pruebas: la lista de `--playlist` avisa ahora a la guía de los canales nuevos (`loadStartupPlaylist`); antes la guía se quedaba con 0 filas."
+        },
+        {
+          "version": "0.9.58",
+          "date": "2026-10-21",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.58/InputStreamPlayer-tvOS-0.9.58-112-unsigned.ipa",
+          "size": 19489960,
+          "minOSVersion": "16.0",
+          "sha256": "522d6711fbdefff4c60ec523eeb555f107409f896cfb4ea072122a860ab558b4",
+          "localizedDescription": "**English**\n\n- Multiview: leaving a tile's full screen now takes you back to the grid, not to the list or the guide. Back (or the new ✕) inside the multiview now leaves it; go full screen from the tile menu.\n\n**Español**\n\n- Multiview: al salir de la pantalla completa de un cuadro se vuelve a la cuadrícula, no a la lista ni a la guía. «Atrás» (o la nueva ✕) dentro del multiview sale de él; a pantalla completa se va desde el menú del cuadro."
+        },
+        {
+          "version": "0.9.57",
+          "date": "2026-10-21",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.57/InputStreamPlayer-tvOS-0.9.57-111-unsigned.ipa",
+          "size": 19477168,
+          "minOSVersion": "16.0",
+          "sha256": "8ef5bc498965389a4da9e256d41cd7c0d0768fd14416924d07486a4c0231b435",
+          "localizedDescription": "**English**\n\n- Faster: the app no longer lags at startup with lists of thousands of channels (iOS, tvOS and Mac). Guide updates are batched on all platforms.\n\n**Español**\n\n- Más rápido: la app ya no va a tirones al arrancar con listas de miles de canales (iOS, tvOS y Mac). Las actualizaciones de la guía se agrupan en todas las plataformas."
+        },
+        {
+          "version": "0.9.56",
+          "date": "2026-10-20",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.56/InputStreamPlayer-tvOS-0.9.56-110-unsigned.ipa",
+          "size": 19473202,
+          "minOSVersion": "16.0",
+          "sha256": "8584b73067aa8b5d723378d0ae66733be50a5aa70e2bf14cf945361a755491af",
+          "localizedDescription": "**English**\n\n- Fixed: some live encrypted channels failed to open, or opened and then stalled, when the source answered with occasional errors. The app now retries.\n\n**Español**\n\n- Arreglado: algunos canales cifrados en directo no abrían, o se paraban al poco, cuando el origen daba errores sueltos. La app ahora reintenta."
+        },
+        {
+          "version": "0.9.55",
+          "date": "2026-10-20",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.55/InputStreamPlayer-tvOS-0.9.55-109-unsigned.ipa",
+          "size": 19470001,
+          "minOSVersion": "16.0",
+          "sha256": "4e4f271ea544bc4516261fa2571d209c65b67498b3118e3e2de0d49f26236e4d",
+          "localizedDescription": "**English**\n\n- Fixed: some encrypted DASH channels did not open in the mpv player.\n\n**Español**\n\n- Arreglado: algunos canales DASH cifrados no abrían en el reproductor mpv."
+        },
+        {
+          "version": "0.9.54",
+          "date": "2026-10-19",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.54/InputStreamPlayer-tvOS-0.9.54-108-unsigned.ipa",
+          "size": 19447305,
+          "minOSVersion": "16.0",
+          "sha256": "c96884cc94d2b086085a028de665c45034f0644ff46d894f107c8f2f3e5e479d",
+          "localizedDescription": "**English**\n\n- Fixed: M3U lists failed to load when a line started with an invisible character.\n\n**Español**\n\n- Arreglado: las listas M3U no cargaban si una línea empezaba con un carácter invisible."
+        },
+        {
+          "version": "0.9.53",
+          "date": "2026-10-19",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.53/InputStreamPlayer-tvOS-0.9.53-107-unsigned.ipa",
+          "size": 19447134,
+          "minOSVersion": "16.0",
+          "sha256": "17fee745366d580f7b542075df7e8d4306b377723293c82244ef59e7c85f97ea",
+          "localizedDescription": "**English**\n\n- New preference \"Group the same channel from different sources\" (off by default): the source is chosen when you play it. iOS: the \"Send log\" row is a single row again.\n\n**Español**\n\n- Nueva preferencia «Agrupar el mismo canal de distintas fuentes» (apagada por defecto): la fuente se elige al reproducirlo. iOS: la fila «Enviar registro» vuelve a ser una sola."
+        },
+        {
+          "version": "0.9.52",
+          "date": "2026-10-19",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.52/InputStreamPlayer-tvOS-0.9.52-106-unsigned.ipa",
+          "size": 19406058,
+          "minOSVersion": "16.0",
+          "sha256": "082f91b9adf1925b17d7378f49005cfaf9c28b69d2b7ec6067b39900aac0e3c4",
+          "localizedDescription": "**English**\n\n- Lists: more ways of writing encrypted-channel keys are accepted.\n\n**Español**\n\n- Listas: se aceptan más formas de escribir las claves de los canales cifrados."
+        },
+        {
+          "version": "0.9.51",
+          "date": "2026-10-19",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.51/InputStreamPlayer-tvOS-0.9.51-105-unsigned.ipa",
+          "size": 19397982,
+          "minOSVersion": "16.0",
+          "sha256": "407d5b05adcc6d7c9e017417b6156aae09aa9094ae7890a19a2ad3e9a11312fb",
+          "localizedDescription": "**English**\n\n- Lists: per-channel HTTP headers in JSON, lists that are not UTF-8, and more key formats.\n\n**Español**\n\n- Listas: cabeceras HTTP por canal en JSON, listas que no son UTF-8 y más formatos de claves."
+        },
+        {
+          "version": "0.9.50",
+          "date": "2026-10-18",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.50/InputStreamPlayer-tvOS-0.9.50-104-unsigned.ipa",
+          "size": 19395890,
+          "minOSVersion": "16.0",
+          "sha256": "a1af3055e144f585cb6f7834a35d7356c2c0c1c9c396040464cdcbd4b124403e",
+          "localizedDescription": "**English**\n\n- Wider list compatibility (more M3U and JSON fields, keys from a license server, guide time shift, more catch-up formats). macOS: no Keychain prompt at launch.\n\n**Español**\n\n- Más compatibilidad con listas (más campos M3U y JSON, claves desde un servidor de licencias, desfase de guía, más formatos de catchup). macOS: ya no pide acceso al llavero al arrancar."
+        },
+        {
+          "version": "0.9.49",
+          "date": "2026-10-17",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.49/InputStreamPlayer-tvOS-0.9.49-103-unsigned.ipa",
+          "size": 19369983,
+          "minOSVersion": "16.0",
+          "sha256": "1992a596593e37fa0d7f551f9dccf9f76d67b9e286053fd5831ad7f304d2151b",
+          "localizedDescription": "**English**\n\n- Fixed: the guide no longer freezes when you open it (iOS and tvOS).\n\n**Español**\n\n- Arreglado: la guía ya no se queda pillada al entrar (iOS y tvOS)."
+        },
+        {
+          "version": "0.9.48",
+          "date": "2026-10-17",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.48/InputStreamPlayer-tvOS-0.9.48-102-unsigned.ipa",
+          "size": 19368930,
+          "minOSVersion": "16.0",
+          "sha256": "3644540828f5c2a6d2ef4a869fcd8e7b18899cb0a052fa8e01a00210d1dbf8aa",
+          "localizedDescription": "**English**\n\n- New: Preferences › Help › Send log (iOS, tvOS and macOS). Keys and tokens are hidden.\n\n**Español**\n\n- Nuevo: Preferencias › Ayuda › Enviar registro (iOS, tvOS y macOS). Las claves y los tokens se ocultan."
+        },
+        {
+          "version": "0.9.47",
+          "date": "2026-10-17",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.47/InputStreamPlayer-tvOS-0.9.47-101-unsigned.ipa",
+          "size": 19334789,
+          "minOSVersion": "16.0",
+          "sha256": "e92f95104cd0d2017bb3af6cb04bab9f14091b8e485dbc6ca2ef7a191da012e5",
+          "localizedDescription": "**English**\n\n- Episode thumbnails and age rating on title pages.\n\n**Español**\n\n- Miniaturas de episodio y clasificación por edades en las fichas."
+        },
+        {
+          "version": "0.9.46",
+          "date": "2026-10-17",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.46/InputStreamPlayer-tvOS-0.9.46-100-unsigned.ipa",
+          "size": 19327407,
+          "minOSVersion": "16.0",
+          "sha256": "d5381a926c286f29c7379be1ecad687c7ef368f949fd5b28e15d8fb248eb8522",
+          "localizedDescription": "**English**\n\n- Android: smaller app (about 66 → 42 MB), a single network stack and a clearable guide cache. Catch-up of a programme in progress starts at its beginning.\n\n**Español**\n\n- Android: app más ligera (de ~66 a ~42 MB), una sola pila de red y caché de guías que el sistema puede limpiar. El catchup de un programa en curso empieza por el principio."
+        },
+        {
+          "version": "0.9.45",
+          "date": "2026-10-16",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.45/InputStreamPlayer-tvOS-0.9.45-99-unsigned.ipa",
+          "size": 19328171,
+          "minOSVersion": "16.0",
+          "sha256": "dfea3d400d601238cf7b99d881f75b348f9f599280afa093541e3a96c8f76058",
+          "localizedDescription": "**English**\n\n- Fixed: some live DASH channels failed with ExoPlayer. Android: Widevine license servers now play. More key formats accepted.\n\n**Español**\n\n- Arreglado: algunos canales DASH en directo fallaban con ExoPlayer. Android: ya funcionan los servidores de licencias Widevine. Se aceptan más formatos de claves."
+        },
+        {
+          "version": "0.9.44",
+          "date": "2026-10-16",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.44/InputStreamPlayer-tvOS-0.9.44-98-unsigned.ipa",
+          "size": 19296736,
+          "minOSVersion": "16.0",
+          "sha256": "847e4849170b96152228498e5bb27ea1113c6a621d7efa421c38550352f7ccb3",
+          "localizedDescription": "**English**\n\n- Fixed: the guide froze the app when opened (iOS, tvOS and macOS).\n\n**Español**\n\n- Arreglado: la guía dejaba la app colgada al entrar (iOS, tvOS y macOS)."
+        },
+        {
+          "version": "0.9.43",
+          "date": "2026-10-16",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.43/InputStreamPlayer-tvOS-0.9.43-97-unsigned.ipa",
+          "size": 19296415,
+          "minOSVersion": "16.0",
+          "sha256": "2da37179e3be1868edbcb58ca1c3589def5d3afebc3697ff05c2f1a45da0e65f",
+          "localizedDescription": "**English**\n\n- Smarter guide (tap to play, long-press for options, continuous time window). Catch-up and custom DNS fixes.\n\n**Español**\n\n- Guía más intuitiva (tocar reproduce, pulsación larga ofrece opciones, ventana horaria continua). Arreglos de catchup y de DNS propio."
+        },
+        {
+          "version": "0.9.42",
+          "date": "2026-10-16",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.42/InputStreamPlayer-tvOS-0.9.42-96-unsigned.ipa",
+          "size": 19255783,
+          "minOSVersion": "16.0",
+          "sha256": "6b1424c3395797cd8d8f96bacdcfac320f8dd602244748037b194a8d0419d67c",
+          "localizedDescription": "**English**\n\n- Catch-up: choose which list to watch from; two encrypted catch-up formats now play.\n\n**Español**\n\n- Catchup: se elige de qué lista ver; dos formatos de catchup cifrado ya se reproducen."
+        },
+        {
+          "version": "0.9.41",
+          "date": "2026-10-16",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.41/InputStreamPlayer-tvOS-0.9.41-95-unsigned.ipa",
+          "size": 19237805,
+          "minOSVersion": "16.0",
+          "sha256": "60feb9620aa98d6bdff368a2c73cdbb2939e0c9a64bb4283e06fa20885dae5a2",
+          "localizedDescription": "**English**\n\n- Smoother live DASH. ExoPlayer plays more encrypted live streams.\n\n**Español**\n\n- Directos DASH más fluidos. ExoPlayer reproduce más directos cifrados."
+        },
+        {
+          "version": "0.9.40",
+          "date": "2026-10-15",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.40/InputStreamPlayer-tvOS-0.9.40-94-unsigned.ipa",
+          "size": 19176621,
+          "minOSVersion": "16.0",
+          "sha256": "efe47a98d7bf03bf09d9144885a7575c964454138c0266a81eac6b85d0d17579",
+          "localizedDescription": "**English**\n\n- Reorder the categories of your lists. Movies and series no longer appear in the guide.\n\n**Español**\n\n- Ordena las categorías de tus listas. Las películas y series ya no salen en la guía."
+        },
+        {
+          "version": "0.9.39",
+          "date": "2026-10-15",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.39/InputStreamPlayer-tvOS-0.9.39-93-unsigned.ipa",
+          "size": 19168154,
+          "minOSVersion": "16.0",
+          "sha256": "b8678649fae08ca96fd4ee2eb7e33c0d6eb665bbd246be7fc91445a187b1c3ab",
+          "localizedDescription": "**English**\n\n- The video information window shows dynamic range and color space.\n\n**Español**\n\n- La ventana de información del vídeo muestra el rango dinámico y el espacio de color."
+        },
+        {
+          "version": "0.9.38",
+          "date": "2026-10-15",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.38/InputStreamPlayer-tvOS-0.9.38-92-unsigned.ipa",
+          "size": 19165086,
+          "minOSVersion": "16.0",
+          "sha256": "572c6302382e15d7aaacf25c34d58df115d6b4f46982d68afde9ab4ebc304bfc",
+          "localizedDescription": "**English**\n\n- The interface is now available in English and Spanish.\n\n**Español**\n\n- La interfaz está disponible en inglés y español."
+        },
+        {
+          "version": "0.9.37",
+          "date": "2026-10-15",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.37/InputStreamPlayer-tvOS-0.9.37-91-unsigned.ipa",
+          "size": 19136365,
+          "minOSVersion": "16.0",
+          "sha256": "de1175b755216119213828d6abb6be0369931bc13beaa3148642614484eae4ee",
+          "localizedDescription": "**English**\n\n- Mac interface fixes.\n\n**Español**\n\n- Arreglos en la interfaz de Mac."
+        },
+        {
+          "version": "0.9.36",
+          "date": "2026-10-15",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.36/InputStreamPlayer-tvOS-0.9.36-90-unsigned.ipa",
+          "size": 19136378,
+          "minOSVersion": "16.0",
+          "sha256": "f14bca8235bcbc6d24643edd756211ca485f3971faf69e68b29f0f9807324c8a",
+          "localizedDescription": "**English**\n\n- Fixed a refresh error with custom DNS after the app was suspended. Mac fixes. Clearer HTTP errors.\n\n**Español**\n\n- Arreglado un error al refrescar con DNS propio tras suspender la app. Arreglos en Mac. Errores HTTP más claros."
+        },
+        {
+          "version": "0.9.34",
+          "date": "2026-10-15",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.34/InputStreamPlayer-tvOS-0.9.34-88-unsigned.ipa",
+          "size": 19132534,
+          "minOSVersion": "16.0",
+          "sha256": "fe0daad278041ca365558b088fff4721b5d14ea6e47c41de5006a85e383e45e2",
+          "localizedDescription": "**English**\n\n- Series open on the season you are watching.\n\n**Español**\n\n- Las series se abren en la temporada por la que vas."
+        },
+        {
+          "version": "0.9.33",
+          "date": "2026-10-15",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.33/InputStreamPlayer-tvOS-0.9.33-87-unsigned.ipa",
+          "size": 19132483,
+          "minOSVersion": "16.0",
+          "sha256": "11349bc4d9f0d7d852c85466007a95aae703a8ad1f7e1ac3633061e639c96cab",
+          "localizedDescription": "**English**\n\n- New native Mac app for Apple Silicon. Android TV focus fixes. Android: falls back to mpv if ExoPlayer cannot play the audio.\n\n**Español**\n\n- Nueva app nativa para Mac con Apple Silicon. Arreglos de foco en Android TV. Android: pasa a mpv si ExoPlayer no puede reproducir el audio."
+        },
+        {
+          "version": "0.9.32",
+          "date": "2026-10-14",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.32/InputStreamPlayer-tvOS-0.9.32-86-unsigned.ipa",
+          "size": 19122946,
+          "minOSVersion": "16.0",
+          "sha256": "6d162da2301c47dbe2f44c5f08f2a609b6434d14a3a8ce42ce4e0df8b3851c0f",
+          "localizedDescription": "**English**\n\n- Android: fixed memory growth on 32-bit devices with encrypted HLS.\n\n**Español**\n\n- Android: arreglado el crecimiento de memoria en aparatos de 32 bits con HLS cifrado."
+        },
+        {
+          "version": "0.9.31",
+          "date": "2026-10-14",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.31/InputStreamPlayer-tvOS-0.9.31-85-unsigned.ipa",
+          "size": 19113973,
+          "minOSVersion": "16.0",
+          "sha256": "4b62a6c119d23dd9891ae3aa7653c5f90fce8846731b410f019d83c3909bb241",
+          "localizedDescription": "**English**\n\n- Android: fixed memory growth on 32-bit devices.\n\n**Español**\n\n- Android: arreglado el crecimiento de memoria en aparatos de 32 bits."
+        },
+        {
+          "version": "0.9.30",
+          "date": "2026-10-13",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.30/InputStreamPlayer-tvOS-0.9.30-84-unsigned.ipa",
+          "size": 19115390,
+          "minOSVersion": "16.0",
+          "sha256": "d832cd0ec9280d5539d9f81c3677ed659a76bb2a7bfac5f3a7d6387b6a17f162",
+          "localizedDescription": "**English**\n\n- Android: ExoPlayer is now the default player (your choice is kept; change it in Preferences or from the player).\n\n**Español**\n\n- Android: ExoPlayer pasa a ser el reproductor por defecto (se respeta tu elección; se cambia en Preferencias o desde el reproductor)."
+        },
+        {
+          "version": "0.9.29",
+          "date": "2026-10-12",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.29/InputStreamPlayer-tvOS-0.9.29-83-unsigned.ipa",
+          "size": 19115390,
+          "minOSVersion": "16.0",
+          "sha256": "3670fe6b0c21dbddefe4050ee38511b84557b463b200c5b58bd2a629a30ba70f",
+          "localizedDescription": "**English**\n\n- Android: fixed a crash and memory issue after long playback.\n\n**Español**\n\n- Android: arreglado un cierre y un problema de memoria tras reproducciones largas."
+        },
+        {
+          "version": "0.9.28",
+          "date": "2026-10-12",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.28/InputStreamPlayer-tvOS-0.9.28-82-unsigned.ipa",
+          "size": 19115391,
+          "minOSVersion": "16.0",
+          "sha256": "6b377e0fb5e475bf95ee69023854b81b6824a1bf4ef32aea80a9af6498b097ce",
+          "localizedDescription": "**English**\n\n- Android: more diagnostic information about HDR and Dolby Vision.\n\n**Español**\n\n- Android: más información de diagnóstico sobre HDR y Dolby Vision."
+        },
+        {
+          "version": "0.9.27",
+          "date": "2026-10-12",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.27/InputStreamPlayer-tvOS-0.9.27-81-unsigned.ipa",
+          "size": 19115391,
+          "minOSVersion": "16.0",
+          "sha256": "89f7597a833c5300c0edee983a4b63b86fc40137fa3a03c366e1782f09446bed",
+          "localizedDescription": "**English**\n\n- Android: ExoPlayer now records its decoder and video format in the log.\n\n**Español**\n\n- Android: ExoPlayer anota ahora en el registro su decodificador y el formato de vídeo."
+        },
+        {
+          "version": "0.9.26",
+          "date": "2026-10-11",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.26/InputStreamPlayer-tvOS-0.9.26-80-unsigned.ipa",
+          "size": 19115391,
+          "minOSVersion": "16.0",
+          "sha256": "393c8fc71253d474e00fed3e60431b582d1c98a60602061521fd09063f881e76",
+          "localizedDescription": "**English**\n\n- tvOS: scrollable Preferences, better focus navigation and guide fixes.\n\n**Español**\n\n- tvOS: Preferencias con desplazamiento, mejor navegación con el mando y arreglos en la guía."
+        },
+        {
+          "version": "0.9.25",
+          "date": "2026-10-11",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.25/InputStreamPlayer-tvOS-0.9.25-79-unsigned.ipa",
+          "size": 19109898,
+          "minOSVersion": "16.0",
+          "sha256": "c22eebf4b53a30780dd404aaa49bdee7c666e8091f1324bc39742aedda4bd0ef",
+          "localizedDescription": "**English**\n\n- Android: Dolby Vision profile 7 files play as HEVC on devices without support.\n\n**Español**\n\n- Android: los archivos Dolby Vision perfil 7 se reproducen como HEVC en aparatos sin soporte."
+        },
+        {
+          "version": "0.9.24",
+          "date": "2026-10-11",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.24/InputStreamPlayer-tvOS-0.9.24-78-unsigned.ipa",
+          "size": 19109898,
+          "minOSVersion": "16.0",
+          "sha256": "a334cf851c34f700e820a0cb1eb2a2f7cec3b2dc96adb0e38287dbbb94e4c126",
+          "localizedDescription": "**English**\n\n- Android: fixed a crash when switching player; clearer messages when ExoPlayer cannot decode a video.\n\n**Español**\n\n- Android: arreglado un cierre al cambiar de reproductor; mensajes más claros cuando ExoPlayer no puede decodificar un vídeo."
+        },
+        {
+          "version": "0.9.23",
+          "date": "2026-10-11",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.23/InputStreamPlayer-tvOS-0.9.23-77-unsigned.ipa",
+          "size": 19108231,
+          "minOSVersion": "16.0",
+          "sha256": "8624c91628af84fc5028e1caab80c501cd07025f0bf7793cc7a2e40db4004401",
+          "localizedDescription": "**English**\n\n- iOS and tvOS: fixed black tiles in Multiview.\n\n**Español**\n\n- iOS y tvOS: arreglados los cuadros negros en Multiview."
+        },
+        {
+          "version": "0.9.22",
+          "date": "2026-10-11",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.22/InputStreamPlayer-tvOS-0.9.22-76-unsigned.ipa",
+          "size": 19105987,
+          "minOSVersion": "16.0",
+          "sha256": "a27a30ff521699018bda675cf558cad70e3874688ff0f93095f1cb2521c1d65e",
+          "localizedDescription": "**English**\n\n- Android: ExoPlayer as a second player (Preferences → Player). iOS: Multiview fix.\n\n**Español**\n\n- Android: ExoPlayer como segundo reproductor (Preferencias → Reproductor). iOS: arreglo de Multiview."
+        },
+        {
+          "version": "0.9.21",
+          "date": "2026-10-10",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.21/InputStreamPlayer-tvOS-0.9.21-75-unsigned.ipa",
+          "size": 19100494,
+          "minOSVersion": "16.0",
+          "sha256": "5276acb62ca3bc3e7510fe8742e2b835aa8d562c0ecfe5a38b6a51d61babac27",
+          "localizedDescription": "**English**\n\n- Android: the log now includes information about previous crashes.\n\n**Español**\n\n- Android: el registro incluye ahora información de cierres anteriores."
+        },
+        {
+          "version": "0.9.20",
+          "date": "2026-10-10",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.20/InputStreamPlayer-tvOS-0.9.20-74-unsigned.ipa",
+          "size": 19100493,
+          "minOSVersion": "16.0",
+          "sha256": "c68cc1df039deb79a703ab5dbd34885351051c047fcb7b8cb8119b33ac5b31da",
+          "localizedDescription": "**English**\n\n- New: Multiview (up to four channels, Android, iOS and tvOS). Favorites and recents.\n\n**Español**\n\n- Nuevo: Multiview (hasta cuatro canales, en Android, iOS y tvOS). Favoritos y recientes."
+        },
+        {
+          "version": "0.9.19",
+          "date": "2026-10-10",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.19/InputStreamPlayer-tvOS-0.9.19-73-unsigned.ipa",
+          "size": 19018942,
+          "minOSVersion": "16.0",
+          "sha256": "a310a419a841d4fd3bef8a6dc9a6faf55bf566cbeec054a7d4c4288e138ef552",
+          "localizedDescription": "**English**\n\n- JSON catalogs in OTT Navigator format are now fully supported.\n\n**Español**\n\n- Los catálogos JSON en formato OTT Navigator se leen ahora enteros."
+        },
+        {
+          "version": "0.9.18",
+          "date": "2026-10-09",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.18/InputStreamPlayer-tvOS-0.9.18-72-unsigned.ipa",
+          "size": 19004951,
+          "minOSVersion": "16.0",
+          "sha256": "ed086de22a111272622839802cc8714ef52db9e3904a6a6e3e2ca047ccbfc3fc",
+          "localizedDescription": "**English**\n\n- Subtitles from Stremio add-ons; OpenSubtitles built in.\n\n**Español**\n\n- Subtítulos de addons de Stremio; OpenSubtitles de serie."
+        },
+        {
+          "version": "0.9.17",
+          "date": "2026-10-09",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.17/InputStreamPlayer-tvOS-0.9.17-71-unsigned.ipa",
+          "size": 18981818,
+          "minOSVersion": "16.0",
+          "sha256": "ebac8cd09801d13508bf9f5382e870c2b9103b6324ba8b9514aa345755cd93ff",
+          "localizedDescription": "**English**\n\n- Fixed: channels with several guides could lose their guide.\n\n**Español**\n\n- Arreglado: los canales con varias guías podían quedarse sin guía."
+        },
+        {
+          "version": "0.9.16",
+          "date": "2026-10-09",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.16/InputStreamPlayer-tvOS-0.9.16-70-unsigned.ipa",
+          "size": 18978599,
+          "minOSVersion": "16.0",
+          "sha256": "71b0c69ee8acd555305e54a329989499a711f1a8eb816d1743936a1b815a0448",
+          "localizedDescription": "**English**\n\n- Faster start for channels with many tracks.\n\n**Español**\n\n- Arranque más rápido de los canales con muchas pistas."
+        },
+        {
+          "version": "0.9.15",
+          "date": "2026-10-09",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.15/InputStreamPlayer-tvOS-0.9.15-69-unsigned.ipa",
+          "size": 18949426,
+          "minOSVersion": "16.0",
+          "sha256": "ddf5c11e9553018d7e1a9440b5ea8e6b0389cfea0ec8436445d9f4b906d361ba",
+          "localizedDescription": "**English**\n\n- Updated the playback libraries on all platforms.\n\n**Español**\n\n- Actualizadas las bibliotecas de reproducción en todas las plataformas."
+        },
+        {
+          "version": "0.9.14",
+          "date": "2026-10-09",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.14/InputStreamPlayer-tvOS-0.9.14-68-unsigned.ipa",
+          "size": 18927892,
+          "minOSVersion": "16.0",
+          "sha256": "43776c4ee1104b62a1122d84493c543eaeda7e4ff7d29443ef2039b834475d20",
+          "localizedDescription": "**English**\n\n- More tolerant JSON lists; fixed some 4K live channels that did not open.\n\n**Español**\n\n- Listas JSON más tolerantes; arreglados algunos canales 4K en directo que no abrían."
+        },
+        {
+          "version": "0.9.13",
+          "date": "2026-10-08",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.13/InputStreamPlayer-tvOS-0.9.13-67-unsigned.ipa",
+          "size": 18919732,
+          "minOSVersion": "16.0",
+          "sha256": "abd40d4db0bc87bedec5b821a550dbae344c81f4e86d3d9b90e7037b216aefdf",
+          "localizedDescription": "**English**\n\n- Android: update download progress and Send log in Settings.\n\n**Español**\n\n- Android: progreso de la descarga de actualizaciones y Enviar registro en Ajustes."
+        },
+        {
+          "version": "0.9.12",
+          "date": "2026-10-08",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.12/InputStreamPlayer-tvOS-0.9.12-66-unsigned.ipa",
+          "size": 18919732,
+          "minOSVersion": "16.0",
+          "sha256": "65e169005a5334bac57dab0511076245c3af737bd4f601aa96e709c5fe73f5a5",
+          "localizedDescription": "**English**\n\n- Series synopsis and a cleaner title page.\n\n**Español**\n\n- Sinopsis de la serie y ficha más limpia."
+        },
+        {
+          "version": "0.9.11",
+          "date": "2026-10-08",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.11/InputStreamPlayer-tvOS-0.9.11-65-unsigned.ipa",
+          "size": 18918087,
+          "minOSVersion": "16.0",
+          "sha256": "998ac4da5fa1da6d42f631c7944d7c30f84c0ec39304ce6e976661a56d79ccd7",
+          "localizedDescription": "**English**\n\n- Trailer button in Addons; Spanish weekday names in the guide.\n\n**Español**\n\n- Botón «Tráiler» en Addons; días de la semana en español en la guía."
+        },
+        {
+          "version": "0.9.10",
+          "date": "2026-10-08",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.10/InputStreamPlayer-tvOS-0.9.10-64-unsigned.ipa",
+          "size": 18857390,
+          "minOSVersion": "16.0",
+          "sha256": "d5287f157dd695470bc35a999223da8be94d88ac0540930c487e7e1af67e1335",
+          "localizedDescription": "**English**\n\n- JSON catalogs of movies and series are supported.\n\n**Español**\n\n- Se admiten catálogos JSON de películas y series."
+        },
+        {
+          "version": "0.9.9",
+          "date": "2026-10-08",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.9/InputStreamPlayer-tvOS-0.9.9-63-unsigned.ipa",
+          "size": 18850027,
+          "minOSVersion": "16.0",
+          "sha256": "337b4d2b54ce53350a4eb18008e13fefc071146797538d31c714e7bd134a0754",
+          "localizedDescription": "**English**\n\n- Android TV: scrollable channel information. Configurable buffer for live and on-demand.\n\n**Español**\n\n- Android TV: información del canal desplazable. Buffer configurable para directo y bajo demanda."
+        },
+        {
+          "version": "0.9.8",
+          "date": "2026-10-07",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.8/InputStreamPlayer-tvOS-0.9.8-62-unsigned.ipa",
+          "size": 18845549,
+          "minOSVersion": "16.0",
+          "sha256": "5da3944a55cc0939c57050f143919f3ebe8c33527caaa1992ccd71ef61f2f336",
+          "localizedDescription": "**English**\n\n- New Live / On-demand selector, series grouped, resume and watched marks.\n\n**Español**\n\n- Nuevo selector Directo / Bajo demanda, series agrupadas, reanudar y marcas de visto."
+        },
+        {
+          "version": "0.9.7",
+          "date": "2026-10-07",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.7/InputStreamPlayer-tvOS-0.9.7-61-unsigned.ipa",
+          "size": 18786264,
+          "minOSVersion": "16.0",
+          "sha256": "f03b158e7daf286fd3c6463a5eaae184a26b6f319b21a0b10df9b7cfbf65a76e",
+          "localizedDescription": "**English**\n\n- Your Trakt lists in Addons; clearer buttons; filter links by add-on and HDR.\n\n**Español**\n\n- Tus listas de Trakt en Addons; botones más claros; enlaces filtrables por addon y HDR."
+        },
+        {
+          "version": "0.9.6",
+          "date": "2026-10-04",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.6/InputStreamPlayer-tvOS-0.9.6-60-unsigned.ipa",
+          "size": 18762241,
+          "minOSVersion": "16.0",
+          "sha256": "6806a134f5a71e60784e44d603c079a6b573c8bb01edd6f29c0b2682e79effe2",
+          "localizedDescription": "**English**\n\n- New option \"Use XDP DNS\" in Preferences › Network (off by default).\n\n**Español**\n\n- Nueva opción «Usar XDP DNS» en Preferencias › Red (desactivada por defecto)."
+        },
+        {
+          "version": "0.9.5",
+          "date": "2026-10-01",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.5/InputStreamPlayer-tvOS-0.9.5-59-unsigned.ipa",
+          "size": 18734297,
+          "minOSVersion": "16.0",
+          "sha256": "1484abb129c352daec021878dba20ee4cf4ffa77311ee39fbff52fd4234bde81",
+          "localizedDescription": "**English**\n\n- Recently watched row in Addons; universal Android APK; catch-up window; iOS guide scrolls by dragging.\n\n**Español**\n\n- Fila «Vistos recientemente» en Addons; APK universal de Android; ventana de catchup; la guía de iOS se mueve arrastrando."
+        },
+        {
+          "version": "0.9.4",
+          "date": "2026-10-01",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.4/InputStreamPlayer-tvOS-0.9.4-58-unsigned.ipa",
+          "size": 18733143,
+          "minOSVersion": "16.0",
+          "sha256": "727b1fd5cb12dc55aaf03ea62e98434bc14f547341c94e58bec93e0b80d2db01",
+          "localizedDescription": "**English**\n\n- Synopses in your language, via TMDb.\n\n**Español**\n\n- Sinopsis en tu idioma, mediante TMDb."
+        },
+        {
+          "version": "0.9.3",
+          "date": "2026-09-30",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.3/InputStreamPlayer-tvOS-0.9.3-57-unsigned.ipa",
+          "size": 18698935,
+          "minOSVersion": "16.0",
+          "sha256": "30ddc098428376219198901b0e26be4e72e2024c4cf16e55c6054c8a2e213dcc",
+          "localizedDescription": "**English**\n\n- Trakt is updated as soon as the video ends.\n\n**Español**\n\n- Trakt se actualiza en cuanto termina el vídeo."
+        },
+        {
+          "version": "0.9.2",
+          "date": "2026-09-30",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.2/InputStreamPlayer-tvOS-0.9.2-56-unsigned.ipa",
+          "size": 18696156,
+          "minOSVersion": "16.0",
+          "sha256": "70c2f784d4188681cbd176c20a3cffc75e57ce3db0cab4b71dba7ff753e3d35d",
+          "localizedDescription": "**English**\n\n- Stremio-style loading overlay, unified info dialog on Android and an always-visible frame rate row.\n\n**Español**\n\n- Pantalla de carga estilo Stremio, diálogo de información unificado en Android y fila de fotogramas por segundo siempre visible."
+        },
+        {
+          "version": "0.9.1",
+          "date": "2026-09-30",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.1/InputStreamPlayer-tvOS-0.9.1-55-unsigned.ipa",
+          "size": 18678417,
+          "minOSVersion": "16.0",
+          "sha256": "00c3397858af7f428a52c624fc0b1df7424ee7c1e1a14d1e9c95c8869d552c66",
+          "localizedDescription": "**English**\n\n- Settings → Updates → \"Check for updates\"; the updater now explains errors.\n\n**Español**\n\n- Ajustes → Actualizaciones → «Buscar actualizaciones»; el actualizador explica ahora los errores."
+        },
+        {
+          "version": "0.9.0",
+          "date": "2026-09-30",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.0/InputStreamPlayer-tvOS-0.9.0-54-unsigned.ipa",
+          "size": 18678417,
+          "minOSVersion": "16.0",
+          "sha256": "3e89ac9bc79e46f41a90cf837cbc30bf90147f53856ea0959368f0134096755f",
+          "localizedDescription": "**English**\n\n- Android: \"Loading channels\" while lists load. Format shown on each card. Remote-control seek bar.\n\n**Español**\n\n- Android: «Cargando canales» mientras se leen las listas. Formato en cada tarjeta. Barra de tiempo con el mando."
+        },
+        {
+          "version": "0.8.3",
+          "date": "2026-09-29",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.8.3/InputStreamPlayer-tvOS-0.8.3-53-unsigned.ipa",
+          "size": 18678418,
+          "minOSVersion": "16.0",
+          "sha256": "eab6f8ee58d074bd35423cdcd7f0298679233ab53293ee136c65bf4a8b69e26e",
+          "localizedDescription": "**English**\n\n- Android: the screen stays on while playing; fixed stretched video and a Dolby Vision case with no picture.\n\n**Español**\n\n- Android: la pantalla se queda encendida al reproducir; arreglados el vídeo estirado y un caso de Dolby Vision sin imagen."
+        },
+        {
+          "version": "0.8.2",
+          "date": "2026-09-29",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.8.2/InputStreamPlayer-tvOS-0.8.2-52-unsigned.ipa",
+          "size": 18678418,
+          "minOSVersion": "16.0",
+          "sha256": "e8553d16d81251bdc9cbfdf1fe5949489e2710f5d15ac1f3fa3ca3c47bffc384",
+          "localizedDescription": "**English**\n\n- Android: picture quality selector, system rendering and faster HLS start.\n\n**Español**\n\n- Android: selector de calidad de imagen, renderizado por sistema y arranque de HLS más rápido."
+        },
+        {
+          "version": "0.8.0",
+          "date": "2026-09-29",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.8.0/InputStreamPlayer-tvOS-0.8.0-51-unsigned.ipa",
+          "size": 18678210,
+          "minOSVersion": "16.0",
+          "sha256": "9e2cd499bb62fbfe9f064df261ff5991865134ea0744df75bb3b3bea093deb3b",
+          "localizedDescription": "**English**\n\n- New Android and Google TV app. More stable encrypted live HLS.\n\n**Español**\n\n- Nueva app de Android y Google TV. HLS cifrado en directo más estable."
+        },
+        {
+          "version": "0.7.2",
+          "date": "2026-09-28",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.7.2/InputStreamPlayer-tvOS-0.7.2-50-unsigned.ipa",
+          "size": 18646160,
+          "minOSVersion": "16.0",
+          "sha256": "208fc191525b3f40e381d0892784bab3b1153db345297af5fb61f8bc43bdfe65",
+          "localizedDescription": "**English**\n\n- Fixed the \"cancelled\" error when connecting Trakt on iPhone.\n\n**Español**\n\n- Arreglado el error «cancelled» al conectar Trakt en el iPhone."
+        },
+        {
+          "version": "0.7.1",
+          "date": "2026-09-28",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.7.1/InputStreamPlayer-tvOS-0.7.1-49-unsigned.ipa",
+          "size": 18638987,
+          "minOSVersion": "16.0",
+          "sha256": "204e3b6902ad8f394a3e2e1838d1f4c6a9379d1a5064653edb78c08e4d81fcbc",
+          "localizedDescription": "**English**\n\n- Fixed Trakt connection failing after authorizing on iPhone.\n\n**Español**\n\n- Arreglado el fallo al conectar Trakt en el iPhone tras autorizar."
+        },
+        {
+          "version": "0.7.0",
+          "date": "2026-09-28",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.7.0/InputStreamPlayer-tvOS-0.7.0-48-unsigned.ipa",
+          "size": 18638178,
+          "minOSVersion": "16.0",
+          "sha256": "3dcdc273831d3700e45f94968c8eeea5adba215eec229030ac71a768b82e72ca",
+          "localizedDescription": "**English**\n\n- Watched marks, Continue and Watch later in Addons (iOS and tvOS).\n\n**Español**\n\n- Marcas de visto, «Seguir viendo» y «Ver más tarde» en Addons (iOS y tvOS)."
+        },
+        {
+          "version": "0.6.0",
+          "date": "2026-09-27",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.6.0/InputStreamPlayer-tvOS-0.6.0-47-unsigned.ipa",
+          "size": 18339523,
+          "minOSVersion": "16.0",
+          "sha256": "6db657f25fbc871ae017ab1537e5f96cb27f37093aa42b637d94b1297b71ac6e",
+          "localizedDescription": "**English**\n\n- New look and navigation for iOS and tvOS (Liquid Glass).\n\n**Español**\n\n- Nuevo aspecto y navegación para iOS y tvOS (Liquid Glass)."
+        },
+        {
+          "version": "0.5.39",
+          "date": "2026-09-27",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.39/InputStreamPlayer-tvOS-0.5.39-46-unsigned.ipa",
+          "size": 18320751,
+          "minOSVersion": "16.0",
+          "sha256": "88554391d0268f559887966e7f6892cf80a7bed61f5a2e2bcefa13b2a40eeb0c",
+          "localizedDescription": "**English**\n\n- Fixed: some DASH channels that redirect to the real manifest did not open.\n\n**Español**\n\n- Arreglado: algunos canales DASH que redirigen al manifiesto real no abrían."
+        },
+        {
+          "version": "0.5.38",
+          "date": "2026-09-26",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.38/InputStreamPlayer-tvOS-0.5.38-45-unsigned.ipa",
+          "size": 18319052,
+          "minOSVersion": "16.0",
+          "sha256": "2deae9f564f050862ee0070c760bec38443aaed58243218233c7b1a39b89bbfc",
+          "localizedDescription": "**English**\n\n- Add-ons can be turned on and off.\n\n**Español**\n\n- Los addons se pueden activar y desactivar."
+        },
+        {
+          "version": "0.5.37",
+          "date": "2026-09-25",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.37/InputStreamPlayer-tvOS-0.5.37-44-unsigned.ipa",
+          "size": 18309130,
+          "minOSVersion": "16.0",
+          "sha256": "7832554cb721e01d9dda321e64bcb8886aeb7b41eeebaf2cf86dec32ba5bb68d",
+          "localizedDescription": "**English**\n\n- Cinemeta included; add-ons that only provide links are accepted.\n\n**Español**\n\n- Cinemeta incluido; se aceptan addons que solo dan enlaces."
+        },
+        {
+          "version": "0.5.36",
+          "date": "2026-09-25",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.36/InputStreamPlayer-tvOS-0.5.36-43-unsigned.ipa",
+          "size": 18266060,
+          "minOSVersion": "16.0",
+          "sha256": "8fd7e59c370c20daa5cc4d671352b54a3544cb2b1e0071143873df159145784b",
+          "localizedDescription": "**English**\n\n- Fixed: some channels with addresses without an extension did not open.\n\n**Español**\n\n- Arreglado: algunos canales con direcciones sin extensión no abrían."
+        },
+        {
+          "version": "0.5.35",
+          "date": "2026-09-25",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.35/InputStreamPlayer-tvOS-0.5.35-42-unsigned.ipa",
+          "size": 18264066,
+          "minOSVersion": "16.0",
+          "sha256": "473ec4e74ab0fa7918edb4e76c88c6572094e25881deecaaf4fea747c9aed14b",
+          "localizedDescription": "**English**\n\n- More Stremio add-ons are accepted.\n\n**Español**\n\n- Se aceptan más addons de Stremio."
+        },
+        {
+          "version": "0.5.34",
+          "date": "2026-09-25",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.34/InputStreamPlayer-tvOS-0.5.34-41-unsigned.ipa",
+          "size": 18262699,
+          "minOSVersion": "16.0",
+          "sha256": "d1a6da2ea99905535d5ad167153cdf686bdfcfd2c881ad9e9a0405b4191a72d0",
+          "localizedDescription": "**English**\n\n- \"System\" video engine by default; subtitles; Stremio add-ons section.\n\n**Español**\n\n- Motor de vídeo «Sistema» por defecto; subtítulos; sección de addons de Stremio."
+        },
+        {
+          "version": "0.5.33",
+          "date": "2026-09-25",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.33/InputStreamPlayer-tvOS-0.5.33-40-unsigned.ipa",
+          "size": 18048765,
+          "minOSVersion": "16.0",
+          "sha256": "678f1c94bacf5abf66be57ec6df45c909a9a20f496b5ac0bfc428d4f2d5a8c4a",
+          "localizedDescription": "**English**\n\n- Audio language preference; the chosen track is remembered per channel.\n\n**Español**\n\n- Preferencia de idioma de audio; la pista elegida se recuerda en cada canal."
+        },
+        {
+          "version": "0.5.32",
+          "date": "2026-09-24",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.32/InputStreamPlayer-tvOS-0.5.32-39-unsigned.ipa",
+          "size": 18038220,
+          "minOSVersion": "16.0",
+          "sha256": "1f3bea8514a367e6c46a77e38c4a2beb23dc33ebbcf8bd33687050b099d1be14",
+          "localizedDescription": "**English**\n\n- The release now includes an IPA for Apple Silicon Macs.\n\n**Español**\n\n- La release incluye una IPA para Mac con Apple Silicon."
+        },
+        {
+          "version": "0.5.31",
+          "date": "2026-09-24",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.31/InputStreamPlayer-tvOS-0.5.31-38-unsigned.ipa",
+          "size": 18037376,
+          "minOSVersion": "16.0",
+          "sha256": "81ba0400f2d8460e5ea9ef0c99818b801ecd53af774741f8fc53618383303376",
+          "localizedDescription": "**English**\n\n- Internal video surface fix; no visible changes.\n\n**Español**\n\n- Arreglo interno de la superficie de vídeo; sin cambios visibles."
+        },
+        {
+          "version": "0.5.30",
+          "date": "2026-09-24",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.30/InputStreamPlayer-tvOS-0.5.30-37-unsigned.ipa",
+          "size": 18037006,
+          "minOSVersion": "16.0",
+          "sha256": "21686606f4c8859d11a27cf5c783c9c8920d3eebdce57e43cc1fab76f96cb2d6",
+          "localizedDescription": "**English**\n\n- New \"Image quality\" preference, \"Efficient\" by default.\n\n**Español**\n\n- Nueva preferencia «Calidad de imagen», «Eficiente» por defecto."
+        },
+        {
+          "version": "0.5.29",
+          "date": "2026-09-23",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.29/InputStreamPlayer-tvOS-0.5.29-36-unsigned.ipa",
+          "size": 18021471,
+          "minOSVersion": "16.0",
+          "sha256": "7330036588bc584035db15929afd37dac45b2d1e398b231266f656b70169afde",
+          "localizedDescription": "**English**\n\n- Much faster video decoding.\n\n**Español**\n\n- Decodificación de vídeo mucho más eficiente."
+        },
+        {
+          "version": "0.5.28",
+          "date": "2026-09-22",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.28/InputStreamPlayer-tvOS-0.5.28-35-unsigned.ipa",
+          "size": 17960026,
+          "minOSVersion": "16.0",
+          "sha256": "06e7481956e1d94d97ad70ab0b4ef505a967872d6a19989ce9d45029bc0bf7ec",
+          "localizedDescription": "**English**\n\n- Smoother menus during playback; Apple TV guide and track switching fixed.\n\n**Español**\n\n- Menús más fluidos durante la reproducción; arreglados la guía y el cambio de pistas en Apple TV."
+        },
+        {
+          "version": "0.5.27",
+          "date": "2026-09-21",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.27/InputStreamPlayer-tvOS-0.5.27-34-unsigned.ipa",
+          "size": 17946073,
+          "minOSVersion": "16.0",
+          "sha256": "879327ecc2c9468dae150f9b5f7a09f1a6fc221a7bc276bfe89144fcba79bb71",
+          "localizedDescription": "**English**\n\n- Navigable guide: grid view up to eight days back, hourly blocks for channels without guide.\n\n**Español**\n\n- Guía navegable: rejilla hasta ocho días atrás y bloques de una hora para canales sin guía."
+        }
+      ]
+    }
+  ],
+  "news": []
+}

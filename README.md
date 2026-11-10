@@ -17,7 +17,7 @@ documentation, sample playlists and issues.
 | Platform | How to install |
 |---|---|
 | **iPhone and iPad** | With [SideStore](#sidestore): add the source and you get every version. |
-| **Apple TV** | Unsigned IPA in the [latest release](https://github.com/jopsis/InputStreamPlayer/releases/latest); sign it with your own Apple account. |
+| **Apple TV** | With [atvloadly](#apple-tv-atvloadly): add the source and you get every version. Or take the unsigned IPA from the [latest release](https://github.com/jopsis/InputStreamPlayer/releases/latest) and sign it with your own Apple account. |
 | **Mac** (Apple Silicon) | ZIP in the [latest release](https://github.com/jopsis/InputStreamPlayer/releases/latest). Not notarized: [how to open it](docs/releases.md#apple-silicon-macs). |
 | **Android and Google TV** | APK in the [latest release](https://github.com/jopsis/InputStreamPlayer/releases/latest); it updates itself afterwards. If unsure, take the *universal* one. |
 
@@ -37,6 +37,11 @@ Install [SideStore](https://docs.sidestore.io/docs/installation/install) first
 > **With LiveContainer, turn on “Fix file picker”** in the app's settings, or
 > importing a playlist from a file will do nothing.
 > [More detail](docs/releases.md#required-livecontainer-setting-the-file-picker).
+
+### Apple TV (atvloadly)
+
+In [atvloadly](https://github.com/bitxeno/atvloadly), add this AltStore source and install InputStream Player from it (it re-signs the app with your Apple ID):
+`https://jopsis.github.io/InputStreamPlayer/sidestore/apps-tvos.json`.
 
 ## What it does
 
