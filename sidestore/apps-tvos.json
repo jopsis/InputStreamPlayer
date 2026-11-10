@@ -1,7 +1,7 @@
 {
   "name": "InputStream Player (Apple TV)",
   "identifier": "com.InputStreamPlayer.sidestore-source-tvos",
-  "sourceURL": "https://jopsis.github.io/InputStreamPlayer/sidestore/apps-tvos.json",
+  "sourceURL": "https://isplayer.joplabs.app/sidestore/apps-tvos.json",
   "apps": [
     {
       "name": "InputStream Player",

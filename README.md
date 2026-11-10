@@ -41,7 +41,7 @@ Install [SideStore](https://docs.sidestore.io/docs/installation/install) first
 ### Apple TV (atvloadly)
 
 In [atvloadly](https://github.com/bitxeno/atvloadly), add this AltStore source and install InputStream Player from it (it re-signs the app with your Apple ID):
-`https://jopsis.github.io/InputStreamPlayer/sidestore/apps-tvos.json`.
+`https://isplayer.joplabs.app/sidestore/apps-tvos.json`.
 
 ## What it does
 

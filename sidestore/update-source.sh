@@ -46,7 +46,11 @@ case "$platform" in
 esac
 
 repo="jopsis/InputStreamPlayer"
+# El de tvOS declara la URL propia (redirige con 302 a GitHub Pages desde el
+# Worker de isplayer.joplabs.app). El de iOS conserva la de GitHub Pages porque
+# sus usuarios ya lo tienen añadido así.
 source_url="https://jopsis.github.io/InputStreamPlayer/sidestore/$file_name"
+[[ "$platform" == "tvos" ]] && source_url="https://isplayer.joplabs.app/sidestore/$file_name"
 icon_url="https://jopsis.github.io/InputStreamPlayer/assets/icon.png"
 
 if ! command -v gh >/dev/null 2>&1; then
