@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.82",
+          "date": "2026-11-11",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.82/InputStreamPlayer-iOS-0.9.82-136-unsigned.ipa",
+          "size": 17670586,
+          "minOSVersion": "16.0",
+          "sha256": "b2848327a875ed959ea473164f989fb551f03e5e7440e56f69dad36c0c9f981a",
+          "localizedDescription": "Novedades:\n- Arreglo: la app de Mac no se abría; ya arranca con normalidad.\n- Arreglo: el botón para cambiar de gráfico del visualizador de audio no se podía pulsar en Mac ni seleccionar con el mando en Android TV."
+        },
+        {
           "version": "0.9.81",
           "date": "2026-11-11",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.81/InputStreamPlayer-iOS-0.9.81-135-unsigned.ipa",
@@ -902,15 +911,6 @@
           "minOSVersion": "16.0",
           "sha256": "2e6c2b5d6364a9854a9495b508d84690fb43f2b342920045f8554483596c444f",
           "localizedDescription": "**English**\n\n- Much faster video decoding.\n\n**Español**\n\n- Decodificación de vídeo mucho más eficiente."
-        },
-        {
-          "version": "0.5.28",
-          "date": "2026-09-22",
-          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.28/InputStreamPlayer-iOS-0.5.28-35-unsigned.ipa",
-          "size": 15627244,
-          "minOSVersion": "16.0",
-          "sha256": "b576ba02ab50310f977d19c660433ea0aa0fd7597db7263e8ee97ececc97c5f0",
-          "localizedDescription": "**English**\n\n- Smoother menus during playback; Apple TV guide and track switching fixed.\n\n**Español**\n\n- Menús más fluidos durante la reproducción; arreglados la guía y el cambio de pistas en Apple TV."
         }
       ]
     }
