@@ -4,7 +4,7 @@ title: Privacy policy · Política de privacidad
 
 # InputStream Player privacy policy
 
-Last updated: October 23, 2026 (favorites sync with Google Drive).
+Last updated: November 11, 2026 (internet radio).
 
 InputStream Player (ISPlayer) is a video player for iPhone, iPad, Apple TV,
 Mac, and Android (phone, Google TV, and Android TV). This policy explains what
@@ -23,11 +23,14 @@ To work, the app stores on your device what you set up:
 
 - the channel lists, guides and add-ons you add;
 - your preferences;
-- what you have watched and your watch-later list.
+- what you have watched and your watch-later list;
+- your favorite and recent radio stations (name, stream address and logo).
 
 Passwords and keys you enter are stored in the system Keychain (iPhone, iPad,
 Apple TV, and Mac) or in the app's private storage, which no other app can
 access (Android).
+
+On Android, while something is playing the app shows a notification with the playback controls (on Android 13 and later it asks permission to show notifications). It only holds what is playing and its buttons, and it is not sent anywhere.
 
 The app connects directly to the addresses you add (lists, guides, add-ons,
 videos) and to the image addresses that those lists and guides declare (channel
@@ -45,6 +48,16 @@ connection is up to them.
   downloaded if you pick one. It can be turned off in Tus addons.
 - **YouTube:** an add-on's "Tráiler" button opens the video in the YouTube app
   or the browser; from there, YouTube's policy applies.
+- **Radio directory (Radio Browser):** in the Radio tab, the app asks a public,
+  community-run directory of stations (`radio-browser.info`, open data) for
+  station lists, filters and searches. When you start playing a station from
+  the directory, the app also tells the directory that it was listened to, which
+  feeds its popularity ranking. Those requests carry the app name and version
+  (as the directory asks) and nothing about you: no account and no identifier.
+  Like any server, the directory sees your IP address. You can turn it off with
+  "Radio directory" in the Radio tab's menu: the tab then shows only the radios
+  in your lists and your favorites. The audio itself comes straight from each
+  station's server, which sees your connection.
 - **XDP DNS (optional):** if you turn on "Usar XDP DNS" in Preferences, the
   names of the servers the app connects to are resolved with XDP DNS
   (`lite.xdp.es`), encrypted, instead of your network's DNS. Off by default.
@@ -83,7 +96,7 @@ across your devices using your own Google Drive:
   - your settings (lists, guides, add-ons with their addresses, preferences);
   - what you have watched, with where you left off;
   - your watch-later list;
-  - your favorites (channels, movies and series);
+  - your favorites (channels, movies, series and radio stations; for a station, its name, stream address and logo, so another device can play it);
   - the name of each of your devices.
 - That data goes straight from your device to your Drive. It never passes
   through a server of ours and the developers have no access to it.
@@ -127,7 +140,7 @@ https://github.com/jopsis/InputStreamPlayer/issues
 
 # Política de privacidad de InputStream Player
 
-Última actualización: 23 de octubre de 2026 (los favoritos se sincronizan con Google Drive).
+Última actualización: 11 de noviembre de 2026 (radio por internet).
 
 InputStream Player (ISPlayer) es un reproductor de vídeo para iPhone, iPad,
 Apple TV, Mac y Android (móvil, Google TV y Android TV). Esta política explica
@@ -146,11 +159,14 @@ Para funcionar, la app guarda en tu aparato lo que tú configuras:
 
 - las listas de canales, guías y addons que añades;
 - tus preferencias;
-- lo que has visto y lo que quieres ver más tarde.
+- lo que has visto y lo que quieres ver más tarde;
+- tus emisoras de radio favoritas y recientes (nombre, dirección del flujo y logo).
 
 Las contraseñas y claves que introduces se guardan en el Llavero del sistema
 (iPhone, iPad, Apple TV y Mac) o en el almacenamiento privado de la app, al que
 no accede ninguna otra app (Android).
+
+En Android, mientras suena algo la app muestra una notificación con los controles de reproducción (en Android 13 o posterior pide permiso para mostrar notificaciones). Solo lleva lo que está sonando y sus botones; no se envía a ninguna parte.
 
 La app se conecta directamente a las direcciones que tú añades (listas,
 guías, addons, vídeos) y a las de las imágenes que esas listas y guías declaran
@@ -168,6 +184,17 @@ servicios con tu conexión depende de ellos.
   El fichero solo se descarga si eliges uno. Se puede desactivar en Tus addons.
 - **YouTube:** el botón «Tráiler» de un addon abre el vídeo en la app de
   YouTube o en el navegador; a partir de ahí se aplica la política de YouTube.
+- **Directorio de radios (Radio Browser):** en la pestaña Radio, la app pide a
+  un directorio público de emisoras mantenido por la comunidad
+  (`radio-browser.info`, datos abiertos) las listas, los filtros y las
+  búsquedas. Al empezar a oír una emisora del directorio, la app también le
+  avisa de que se ha escuchado, lo que alimenta su ranking de popularidad. Esas
+  peticiones llevan el nombre y la versión de la app (como pide el directorio)
+  y nada tuyo: ni cuenta ni identificador. Como cualquier servidor, el
+  directorio ve tu dirección IP. Se puede apagar con «Directorio de radios» en
+  el menú de la pestaña Radio: entonces la pestaña solo enseña las radios de tus
+  listas y tus favoritas. El audio llega directamente del servidor de cada
+  emisora, que ve tu conexión.
 - **XDP DNS (opcional):** si activas «Usar XDP DNS» en Preferencias, los
   nombres de los servidores a los que se conecta la app se resuelven con XDP
   DNS (`lite.xdp.es`), cifrado, en vez de con el DNS de tu red. Apagado por
@@ -206,7 +233,7 @@ visto entre tus aparatos usando tu propio Google Drive:
   - tu configuración (listas, guías, addons con sus direcciones, preferencias);
   - lo que has visto, con el punto por el que ibas;
   - tu lista «Ver más tarde»;
-  - tus favoritos (canales, películas y series);
+  - tus favoritos (canales, películas, series y emisoras de radio; de una emisora, su nombre, la dirección del flujo y su logo, para que otro aparato pueda reproducirla);
   - el nombre de cada uno de tus aparatos.
 - Esos datos van directamente de tu aparato a tu Drive. No pasan por ningún
   servidor nuestro y los desarrolladores no tienen acceso a ellos.

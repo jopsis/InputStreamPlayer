@@ -131,6 +131,27 @@ https://example.invalid/vod/pelicula-demo.mp4
 https://example.invalid/vod/serie-demo/s01e01.mkv
 ```
 
+### Emisoras de radio
+
+Una entrada M3U es una emisora de radio (solo audio) cuando su `#EXTINF` lo
+dice con `radio="true"` (también valen `1` y `yes`), o con `tvg-type="radio"` /
+`type="radio"`. Las emisoras salen en la pestaña **Radio**, en la fila «De tus
+listas», y no en la TV en directo (Emisiones). No se cruzan con la guía de
+programación y el reproductor enseña el logo, el nombre y la canción que anuncia
+el flujo (ICY), o el visualizador si lo eliges. El logo (`tvg-logo`) y el nombre
+funcionan como en cualquier canal; `group-title` sale como el género de la
+emisora.
+
+```m3u
+#EXTINF:-1 radio="true" tvg-logo="https://example.invalid/radio.png" group-title="Pop",Radio de demostración
+https://example.invalid/radio/demo.mp3
+```
+
+Vale cualquier flujo que abra el reproductor: MP3, AAC y Ogg (Icecast,
+SHOUTcast) y HLS de solo audio. Las radios de un directorio público ya están en
+la pestaña Radio: solo hace falta añadirlas a una lista si quieres tu propia
+selección o un flujo que el directorio no tiene.
+
 ## JSON
 
 El formato plano es un array de canales. Los campos requeridos son `name` y

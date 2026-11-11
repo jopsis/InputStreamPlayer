@@ -47,9 +47,11 @@ In [atvloadly](https://github.com/bitxeno/atvloadly), add this AltStore source a
 
 - **Live TV** with a guide (XMLTV), remote-control zapping and catch-up.
 - **Collections:** the movies and series from your lists in their own tab (it only appears when a list has them), filtered by movies or series and by group, with “Continue”, watched marks, favorites and recents.
+- **Internet radio:** a **Radio** tab with a public directory of stations from all over the world (search; filter by country, language, genre, quality; favorites and recents), plus the radios in your own lists. While it plays, pick the logo, **bars**, a **spectrum** or an oscilloscope **waveform**, always showing the station and what is playing.
 - **Stremio add-ons** and **Trakt** lists; OpenSubtitles built in. Got a Plex server? The [Plexio](https://plexio.stream/) Stremio add-on works with it.
-- **Picture in Picture** on iPhone, iPad, Mac and Android phones and tablets: keep watching in a floating window while you use other apps. On iPhone the sound keeps playing in the background.
-- **Favorites, recents and Multiview** (up to four channels at once). Favorites — channels, movies and series — sync across your devices.
+- **Picture in Picture** on iPhone, iPad, Mac and Android phones and tablets: keep watching in a floating window while you use other apps.
+- **Lock-screen controls:** with the screen off, pause, resume or skip to the next or previous channel or station from the lock screen, the notification, headphones or the car — for TV, add-ons and radio.
+- **Favorites, recents and Multiview** (up to four channels at once). Favorites — channels, movies, series and radio stations — sync across your devices.
 - **One card per channel across lists** (optional, off by default): the same channel from several lists shows once and you pick the source — with its format — when you play it.
 - **Your categories, your order:** reorder the groups of your lists; it is remembered on each device.
 - **Optional sync** through your own Google Drive and Trakt.

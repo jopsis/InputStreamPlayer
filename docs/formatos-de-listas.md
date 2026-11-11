@@ -128,6 +128,27 @@ https://example.invalid/vod/demo-movie.mp4
 https://example.invalid/vod/demo-show/s01e01.mkv
 ```
 
+### Radio stations
+
+An M3U entry is a radio station (audio only) when its `#EXTINF` says so with
+`radio="true"` (`1`, `yes` also work), or with `tvg-type="radio"` /
+`type="radio"`. Radio stations show up in the **Radio** tab, in the
+"From your lists" row, and not in live TV (Broadcasts). They are not matched
+with the programme guide and the player shows the station's logo, name and the
+song the stream announces (ICY), or the visualizer if you choose one. The
+logo (`tvg-logo`) and name are used as in any channel; `group-title` shows as
+the station's genre.
+
+```m3u
+#EXTINF:-1 radio="true" tvg-logo="https://example.invalid/radio.png" group-title="Pop",Demo Radio
+https://example.invalid/radio/demo.mp3
+```
+
+Any stream the player opens works: MP3, AAC and Ogg (Icecast, SHOUTcast) and
+audio-only HLS. Radios from a public directory are already in the Radio tab:
+you only need to add them to a list if you want your own selection or a stream
+the directory does not have.
+
 ## JSON
 
 The flat format is an array of channels. `name` and `url` are required; the
