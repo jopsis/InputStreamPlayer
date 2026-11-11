@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.81",
+          "date": "2026-11-11",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.81/InputStreamPlayer-iOS-0.9.81-135-unsigned.ipa",
+          "size": 17669610,
+          "minOSVersion": "16.0",
+          "sha256": "66464ad0023efb562551121df4fd04dc48c356d40240827b3e4e4d8f38dd0a68",
+          "localizedDescription": "Novedades:\n- Nuevo menú «Radio», entre Emisiones y Addons: un directorio público de emisoras de todo el mundo con búsqueda, filtros (país, idioma, género y calidad), favoritas y recientes. Las radios de tus listas también salen aquí.\n- Controles en la pantalla de bloqueo, en la notificación y en los auriculares para cualquier reproducción: pausar, reanudar, siguiente y anterior.\n- Visualizador de audio en la radio: barras, espectro u onda. Se elige con un botón y siempre se ve qué emisora es y qué está sonando.\n- Las radios favoritas se sincronizan con Drive.\n- Arreglo: el texto de la pantalla de carga salía descentrado."
+        },
+        {
           "version": "0.9.80",
           "date": "2026-11-09",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.80/InputStreamPlayer-iOS-0.9.80-134-unsigned.ipa",
@@ -902,15 +911,6 @@
           "minOSVersion": "16.0",
           "sha256": "b576ba02ab50310f977d19c660433ea0aa0fd7597db7263e8ee97ececc97c5f0",
           "localizedDescription": "**English**\n\n- Smoother menus during playback; Apple TV guide and track switching fixed.\n\n**Español**\n\n- Menús más fluidos durante la reproducción; arreglados la guía y el cambio de pistas en Apple TV."
-        },
-        {
-          "version": "0.5.27",
-          "date": "2026-09-21",
-          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.27/InputStreamPlayer-iOS-0.5.27-34-unsigned.ipa",
-          "size": 15614498,
-          "minOSVersion": "16.0",
-          "sha256": "9c125c4afcd6adf4b1435c5030833894855cd996b57d30034501b2bab3dbe13a",
-          "localizedDescription": "**English**\n\n- Navigable guide: grid view up to eight days back, hourly blocks for channels without guide.\n\n**Español**\n\n- Guía navegable: rejilla hasta ocho días atrás y bloques de una hora para canales sin guía."
         }
       ]
     }
