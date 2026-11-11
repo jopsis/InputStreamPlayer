@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.83",
+          "date": "2026-11-11",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.83/InputStreamPlayer-tvOS-0.9.83-137-unsigned.ipa",
+          "size": 19512964,
+          "minOSVersion": "16.0",
+          "sha256": "ec2e669a1d87ae2900af3e35a45e5b0b941102c7d6020fe053cee365cf56aae4",
+          "localizedDescription": "Novedades:\n- Radio: la lista filtrada de «Explorar» tiene ahora su propia barra de búsqueda. En iOS, Explorar es una pantalla de filtros con un botón «Ver emisoras».\n- iOS: Radio, Add-ons y Ajustes usan el mismo título grande que Emisiones, en la misma fila que los botones.\n- Android TV: interfaz más compacta (más canales por fila) y el borde de foco ya no tapa los textos de las radios."
+        },
+        {
           "version": "0.9.82",
           "date": "2026-11-11",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.82/InputStreamPlayer-tvOS-0.9.82-136-unsigned.ipa",
@@ -902,15 +911,6 @@
           "minOSVersion": "16.0",
           "sha256": "21686606f4c8859d11a27cf5c783c9c8920d3eebdce57e43cc1fab76f96cb2d6",
           "localizedDescription": "**English**\n\n- New \"Image quality\" preference, \"Efficient\" by default.\n\n**Español**\n\n- Nueva preferencia «Calidad de imagen», «Eficiente» por defecto."
-        },
-        {
-          "version": "0.5.29",
-          "date": "2026-09-23",
-          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.29/InputStreamPlayer-tvOS-0.5.29-36-unsigned.ipa",
-          "size": 18021471,
-          "minOSVersion": "16.0",
-          "sha256": "7330036588bc584035db15929afd37dac45b2d1e398b231266f656b70169afde",
-          "localizedDescription": "**English**\n\n- Much faster video decoding.\n\n**Español**\n\n- Decodificación de vídeo mucho más eficiente."
         }
       ]
     }
