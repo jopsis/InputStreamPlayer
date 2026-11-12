@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.84",
+          "date": "2026-11-12",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.84/InputStreamPlayer-tvOS-0.9.84-138-unsigned.ipa",
+          "size": 19513263,
+          "minOSVersion": "16.0",
+          "sha256": "ce00f5a4dc392b215c63aba2eeb2b9747d2f29523de9c742f4e42ff6bf4c16b1",
+          "localizedDescription": "Las miniaturas de los programas en Rejilla y Tarjetas se ven ahora apaisadas y enteras, sin recortar caras ni cabezas. Corrige un fallo en Apple por el que la miniatura seguía recortándose, y pide la versión apaisada cuando la guía solo indica un póster vertical. Hay que refrescar las guías para que se apliquen."
+        },
+        {
           "version": "0.9.83",
           "date": "2026-11-11",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.83/InputStreamPlayer-tvOS-0.9.83-137-unsigned.ipa",
@@ -902,15 +911,6 @@
           "minOSVersion": "16.0",
           "sha256": "81ba0400f2d8460e5ea9ef0c99818b801ecd53af774741f8fc53618383303376",
           "localizedDescription": "**English**\n\n- Internal video surface fix; no visible changes.\n\n**Español**\n\n- Arreglo interno de la superficie de vídeo; sin cambios visibles."
-        },
-        {
-          "version": "0.5.30",
-          "date": "2026-09-24",
-          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.30/InputStreamPlayer-tvOS-0.5.30-37-unsigned.ipa",
-          "size": 18037006,
-          "minOSVersion": "16.0",
-          "sha256": "21686606f4c8859d11a27cf5c783c9c8920d3eebdce57e43cc1fab76f96cb2d6",
-          "localizedDescription": "**English**\n\n- New \"Image quality\" preference, \"Efficient\" by default.\n\n**Español**\n\n- Nueva preferencia «Calidad de imagen», «Eficiente» por defecto."
         }
       ]
     }
