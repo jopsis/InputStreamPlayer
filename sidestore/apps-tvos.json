@@ -13,6 +13,15 @@
       "tintColor": "14B85C",
       "versions": [
         {
+          "version": "0.9.85",
+          "date": "2026-11-13",
+          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.85/InputStreamPlayer-tvOS-0.9.85-139-unsigned.ipa",
+          "size": 19513264,
+          "minOSVersion": "16.0",
+          "sha256": "450f8b63a8c5df99557e9a8679ba5f1f979ffd007f7e3e3b992955af7f927b8d",
+          "localizedDescription": "Radio: ahora puedes enviar la emisora que escuchas a un Chromecast, una tele o un altavoz con Google Cast (iOS y Android), y en iOS también por AirPlay.\nEl botón aparece en la pantalla de la radio cuando hay aparatos en tu red. En el aparato se ve el logo y el nombre de la emisora; el móvil sigue controlando la pausa y el cambio de emisora."
+        },
+        {
           "version": "0.9.84",
           "date": "2026-11-12",
           "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.9.84/InputStreamPlayer-tvOS-0.9.84-138-unsigned.ipa",
@@ -902,15 +911,6 @@
           "minOSVersion": "16.0",
           "sha256": "1f3bea8514a367e6c46a77e38c4a2beb23dc33ebbcf8bd33687050b099d1be14",
           "localizedDescription": "**English**\n\n- The release now includes an IPA for Apple Silicon Macs.\n\n**Español**\n\n- La release incluye una IPA para Mac con Apple Silicon."
-        },
-        {
-          "version": "0.5.31",
-          "date": "2026-09-24",
-          "downloadURL": "https://github.com/jopsis/InputStreamPlayer/releases/download/v0.5.31/InputStreamPlayer-tvOS-0.5.31-38-unsigned.ipa",
-          "size": 18037376,
-          "minOSVersion": "16.0",
-          "sha256": "81ba0400f2d8460e5ea9ef0c99818b801ecd53af774741f8fc53618383303376",
-          "localizedDescription": "**English**\n\n- Internal video surface fix; no visible changes.\n\n**Español**\n\n- Arreglo interno de la superficie de vídeo; sin cambios visibles."
         }
       ]
     }
